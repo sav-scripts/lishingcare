@@ -1,0 +1,316 @@
+/** common mixins **/
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+#scene-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#invisible-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+/* index */
+#index {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.13);
+}
+#index .layout {
+  z-index: 1;
+  position: absolute;
+  width: 1280px;
+  height: 962px;
+  background-image: url("../images/layout/index.jpg");
+  background-size: auto;
+}
+#index .content {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  width: 1280px;
+}
+#index .content .top-block {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+#index .content .top-block .logo {
+  position: absolute;
+  left: 505px;
+  top: 41px;
+  width: 270px;
+  height: 141px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/index-logo.png");
+  background-size: auto;
+}
+#index .content .middle-block {
+  position: relative;
+  width: 100%;
+  height: 606px;
+}
+#index .content .middle-block .part-1 {
+  position: relative;
+  float: left;
+  width: 640px;
+  height: 606px;
+  background-image: url("../images/index-img-1.jpg");
+  background-size: auto;
+}
+#index .content .middle-block .part-1 .option {
+  position: absolute;
+  left: 447px;
+  top: 27px;
+  width: 186px;
+  height: 49px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/index-label-text-1.png");
+  background-size: auto;
+}
+#index .content .middle-block .part-1:hover .option {
+  background-position-x: 5px;
+}
+#index .content .middle-block .part-2 {
+  position: relative;
+  float: left;
+  width: 640px;
+  height: 606px;
+  background-image: url("../images/index-img-2.jpg");
+  background-size: auto;
+}
+#index .content .middle-block .part-2 .option {
+  position: absolute;
+  left: 6px;
+  top: 27px;
+  width: 186px;
+  height: 49px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/index-label-text-2.png");
+  background-size: auto;
+}
+#index .content .middle-block .part-2:hover .option {
+  background-position-x: 25px;
+}
+#index .content .middle-block .part-1,
+#index .content .middle-block .part-2 {
+  cursor: pointer;
+}
+#index .content .middle-block .part-1 .option,
+#index .content .middle-block .part-2 .option {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  z-index: 30;
+  transition: background-position-x 0.4s ease-out;
+}
+#index .content .middle-block .main-label {
+  position: absolute;
+  left: 245px;
+  top: 23px;
+  width: 745px;
+  height: 78px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/index-white-label.png");
+  background-size: auto;
+  z-index: 20;
+}
+#index .content .bottom-block-1 {
+  position: relative;
+  width: 100%;
+  height: 88px;
+}
+#index .content .bottom-block-1 .text {
+  position: absolute;
+  left: 442px;
+  top: 26px;
+  width: 397px;
+  height: 28px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/index-bottom-text-1.png");
+  background-size: auto;
+}
+#index .content .bottom-block-2 {
+  position: relative;
+  width: 100%;
+  height: 46px;
+  background-color: #eae6e0;
+}
+#index .content .bottom-block-2 .text {
+  position: absolute;
+  left: 432px;
+  top: 16px;
+  width: 454px;
+  height: 15px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/index-bottom-text-2.png");
+  background-size: auto;
+}
+@media (max-width: 640px) {
+  /* index */
+  #index {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.13);
+  }
+  #index .layout {
+    z-index: 1;
+    position: absolute;
+    width: 640px;
+    height: 1436px;
+    background-image: url("../images/layout/index.m.jpg");
+    background-size: auto;
+  }
+  #index .content {
+    width: 640px;
+  }
+  #index .content .top-block {
+    position: relative;
+    width: 100%;
+    height: 282px;
+  }
+  #index .content .top-block .logo {
+    position: absolute;
+    left: 172px;
+    top: 42px;
+    width: 295px;
+    height: 153px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/index-logo.m.png");
+    background-size: auto;
+  }
+  #index .content .top-block .text {
+    position: absolute;
+    left: 85px;
+    top: 228px;
+    width: 470px;
+    height: 34px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/index-bottom-text-1.m.png");
+    background-size: auto;
+  }
+  #index .content .middle-block {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  #index .content .middle-block .part-1 {
+    position: relative;
+    width: 640px;
+    height: 538px;
+    float: none;
+    background-image: url("../images/index-img-1.m.jpg");
+    background-size: auto;
+  }
+  #index .content .middle-block .part-1 .option {
+    position: absolute;
+    left: 67px;
+    top: 453px;
+    width: 490px;
+    height: 87px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/index-label-text-1.m.png");
+    background-size: auto;
+  }
+  #index .content .middle-block .part-1:hover .option {
+    background-position-x: 0;
+  }
+  #index .content .middle-block .part-2 {
+    position: relative;
+    width: 640px;
+    height: 537px;
+    float: none;
+    background-image: url("../images/index-img-2.m.jpg");
+    background-size: auto;
+    margin-top: 8px;
+  }
+  #index .content .middle-block .part-2 .option {
+    position: absolute;
+    left: 67px;
+    top: 453px;
+    width: 490px;
+    height: 87px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/index-label-text-2.m.png");
+    background-size: auto;
+  }
+  #index .content .middle-block .part-2:hover .option {
+    background-position-x: 0;
+  }
+  #index .content .middle-block .part-1,
+  #index .content .middle-block .part-2 {
+    cursor: pointer;
+  }
+  #index .content .middle-block .part-1 .option,
+  #index .content .middle-block .part-2 .option {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    transition: none;
+  }
+  #index .content .middle-block .part-1 .option .arrow,
+  #index .content .middle-block .part-2 .option .arrow {
+    position: absolute;
+    left: 360px;
+    top: 18px;
+    width: 12px;
+    height: 14px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/index-arrow.png");
+    background-size: auto;
+  }
+  #index .content .middle-block .part-1:active .option .arrow,
+  #index .content .middle-block .part-2:active .option .arrow {
+    left: 365px;
+  }
+  #index .content .middle-block .main-label {
+    display: none;
+  }
+  #index .content .bottom-block-1 {
+    display: none;
+  }
+  #index .content .bottom-block-2 {
+    height: 66px;
+    margin-top: 5px;
+    background-color: #eae6e0;
+  }
+  #index .content .bottom-block-2 .text {
+    position: absolute;
+    left: 82px;
+    top: 29px;
+    width: 479px;
+    height: 13px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/index-bottom-text-2.m.png");
+    background-size: auto;
+  }
+}
