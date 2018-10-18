@@ -104,6 +104,7 @@
                          }
                      }());
 
+                    end();
                 });
 
                 /* care */
@@ -145,11 +146,14 @@
 
 
                 /* end */
-                $doms.container.waitForImages(function()
+                function end()
                 {
-                    $doms.container.detach();
-                    cb.call();
-                });
+                    $doms.container.waitForImages(function()
+                    {
+                        $doms.container.detach();
+                        cb.call();
+                    });
+                }
             }
         },
 

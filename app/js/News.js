@@ -54,7 +54,7 @@
                     for(var i=0;i<response.data_list.length;i++)
                     {
                         var obj = _data.data_list[i];
-                        createNews(i, obj)
+                        createNews(i, obj);
                     }
                     //_keyImageSlider = new ImageSlider(imageList, $container, "image");
 
@@ -74,16 +74,21 @@
 
                         $doms.newsContainer.append($news);
                     }
+
+                    end();
                 });
 
 
 
                 /* end */
-                $doms.container.waitForImages(function()
+                function end()
                 {
-                    $doms.container.detach();
-                    cb.call();
-                });
+                    $doms.container.waitForImages(function()
+                    {
+                        $doms.container.detach();
+                        cb.call();
+                    });
+                }
             }
         },
 

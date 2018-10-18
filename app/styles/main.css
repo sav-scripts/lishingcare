@@ -1088,7 +1088,6 @@ body.mapping #scene-container .content-mask {
 #news .news-container {
   position: relative;
   width: 100%;
-  min-height: 579px;
   overflow: auto;
   background-image: url("../images/news-bg.jpg");
   background-repeat: repeat-y;
@@ -1101,7 +1100,7 @@ body.mapping #scene-container .content-mask {
   overflow: hidden;
 }
 #news .news-container .news-block:nth-last-child(1) {
-  margin-bottom: 24px;
+  margin-bottom: 42px;
 }
 #news .news-container .news-block .top-bar {
   position: absolute;
@@ -1609,7 +1608,6 @@ body.mapping #scene-container .content-mask {
   float: left;
   width: 640px;
   height: 444px;
-  background-image: url("../images/env-part-1-image.jpg");
 }
 #environmental .part-1 .right-part {
   position: relative;
@@ -1745,7 +1743,6 @@ body.mapping #scene-container .content-mask {
 #environmental .part-3 {
   position: relative;
   width: 100%;
-  min-height: 276px;
   overflow: hidden;
   background-color: #f2f0ec;
 }
@@ -1890,12 +1887,19 @@ body.mapping #scene-container .content-mask {
   width: 300px;
   height: 300px;
   margin: 0 auto 0;
+  background-color: green;
+}
+#environmental .part-5 .part .image .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/env-baby-room-cover.png");
 }
 #environmental .part-5 .part:nth-child(1) .image {
-  background-image: url("../images/env-part-5-image-1.png");
+  background-image: url("../images/env-part-5-image-1.jpg");
 }
 #environmental .part-5 .part:nth-child(2) .image {
-  background-image: url("../images/env-part-5-image-2.png");
+  background-image: url("../images/env-part-5-image-2.jpg");
 }
 #environmental .part-5 .part .title {
   margin: 19px 0 0 5px;
