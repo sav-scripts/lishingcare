@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>麗格產後護理之家</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body onload="Main.init();">
+
+    <div id="invisible-wrapper">
+
+        <div id="invisible-container" class="scene-container"></div>
+
+    </div>
+
+    <div id="layout">
+
+        <!--<div class="layout-index"></div>-->
+        <!--<div class="layout-news"></div>-->
+        <!--<div class="layout-contact"></div>-->
+        <!--<div class="layout-care"></div>-->
+        <!--<div class="layout-environmental"></div>-->
+        <!--<div class="layout-vip-baby-1"></div>-->
+        <div class="layout-vip-baby-2"></div>
+        <!--<div class="layout-vip-baby-3"></div>-->
+
+    </div>
+
+    <div id="scene-container" class="scene-container">
+
+
+        <div id="nav">
+
+            <div class="logo"></div>
+
+            <div class="button-group">
+
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div>
+
+                <div class="btn-logout"></div>
+
+            </div>
+
+            <div class="vip-menu-cover"></div>
+
+            <div class="vip-menu">
+
+                <div class="button">寶寶記錄</div><div class="gap"></div>
+                <div class="button">媽媽課程</div><div class="gap"></div>
+                <div class="button">即時影像</div>
+
+            </div>
+
+            <div class="brown-bar"></div>
+
+        </div>
+
+        <div class="top-bleed"></div>
+
+        <div class="content-mask">
+
+            <div class="content-container"></div>
+
+        </div>
+
+
+        <div id="footer">
+
+            <div class="pink-bg"></div>
+
+            <div class="mode-1-content">
+
+                <div class="logo"></div>
+                <div class="misc-image"></div>
+
+                <a href="tel:0286269555"><div class="field-tel">02-8626-9555</div></a>
+                <a target="_blank" href="https://www.google.com.tw/maps/place/251%E6%96%B0%E5%8C%97%E5%B8%82%E6%B7%A1%E6%B0%B4%E5%8D%80%E6%B7%A1%E9%87%91%E8%B7%AF6%E8%99%9F/@25.1594371,121.4571995,19.46z/data=!4m5!3m4!1s0x3442afed7ac9b59d:0xae71800ff13829f4!8m2!3d25.1596106!4d121.4576637"><div class="field-address">新北市淡水區淡金路6號1樓</div></a>
+
+                <div class="facebook-page">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLihPaoLand%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                </div>
+
+            </div>
+
+            <div class="mode-2-content">
+                <div class="top-part">
+                    <div class="title-image"></div>
+                    <div class="title-text">台北麗格館</div>
+                    <a href="tel:0286269555"><div class="tel"><span class="tel-icon"></span>02-8626-9555</div></a>
+                    <a target="_blank" href="https://www.google.com.tw/maps/place/251%E6%96%B0%E5%8C%97%E5%B8%82%E6%B7%A1%E6%B0%B4%E5%8D%80%E6%B7%A1%E9%87%91%E8%B7%AF6%E8%99%9F/@25.1594371,121.4571995,19.46z/data=!4m5!3m4!1s0x3442afed7ac9b59d:0xae71800ff13829f4!8m2!3d25.1596106!4d121.4576637"><div class="address"><span class="address-icon"></span>新北市淡水區淡金路6號1樓</div></a>
+                </div>
+                <div class="bottom-part">
+
+                </div>
+            </div>
+
+            <div id="map" class="map"></div>
+
+        </div>
+
+        <div class="copy-right">
+
+            <div class="text">CopyRight (c) 2018　LIHSIN POSTPARTUM CAREー All Rights Reserved.</div>
+        </div>
+
+
+
+    </div>
+
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUz28xZ05DiXZuaR3JqXREm69h_EwjyEY&callback=initMap"></script>-->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.x-git.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+    <script>
+        if(window.location.host == 'local.savorks.com')
+        {
+            document.write('<script src="js/lib/FAKE_DATA.js"><\/script>');
+        }
+    </script>
+
+    <!-- build:js js/optimized.js -->
+    <script src="js/Main.js"></script>
+    <script src="js/lib/jquery.waitforimages.min.js"></script>
+    <script src="js/lib/ScrollListener.1.0.0.js"></script>
+    <script src="js/lib/Hash.1.0.0.js"></script>
+    <script src="js/lib/Utility.0.0.15.js"></script>
+    <script src="js/ApiProxy.js"></script>
+    <script src="js/Nav.js"></script>
+    <script src="js/MainPage.js"></script>
+    <script src="js/Footer.js"></script>
+    <script src="js/Index.js"></script>
+    <script src="js/AboutUs.js"></script>
+    <script src="js/Care.js"></script>
+    <script src="js/News.js"></script>
+    <script src="js/Contact.js"></script>
+    <script src="js/ImageSlider.js"></script>
+    <script src="js/Environmental.js"></script>
+    <script src="js/VipBaby.js"></script>
+    <script src="js/lib/MyLoader.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

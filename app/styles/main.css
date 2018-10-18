@@ -1,0 +1,2142 @@
+/** common mixins **/
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  background: #eeeeee;
+  padding: 0;
+  margin: 0;
+}
+.banner-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.spacer {
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+}
+/* layout */
+#layout {
+  z-index: -1;
+  position: absolute;
+  width: 1280px;
+  left: 50%;
+  margin-left: -640px;
+  height: auto;
+  opacity: 0.4;
+  display: none;
+}
+#layout .layout-index {
+  position: relative;
+  width: 100%;
+  height: 5008px;
+  background-image: url("../images/layout/index.jpg");
+}
+#layout .layout-news {
+  position: relative;
+  width: 100%;
+  height: 1735px;
+  background-image: url("../images/layout/news.jpg");
+}
+#layout .layout-contact {
+  position: relative;
+  width: 100%;
+  height: 1196px;
+  background-image: url("../images/layout/contact.jpg");
+}
+#layout .layout-care {
+  position: relative;
+  width: 100%;
+  height: 3825px;
+  background-image: url("../images/layout/care.jpg");
+}
+#layout .layout-environmental {
+  position: relative;
+  width: 100%;
+  height: 4628px;
+  background-image: url("../images/layout/environmental.jpg");
+}
+#layout .layout-vip-baby-1 {
+  position: relative;
+  width: 100%;
+  height: 1820px;
+  background-image: url("../images/layout/vip-baby-1.jpg");
+}
+#layout .layout-vip-baby-2 {
+  position: relative;
+  width: 100%;
+  height: 1820px;
+  background-image: url("../images/layout/vip-baby-2.jpg");
+}
+#layout .layout-vip-baby-3 {
+  position: relative;
+  width: 100%;
+  height: 1820px;
+  background-image: url("../images/layout/vip-baby-3.jpg");
+}
+body.mapping #layout {
+  display: block;
+}
+body.mapping #scene-container .content-mask {
+  opacity: 0.4;
+}
+/* scene-container */
+.scene-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.13);
+}
+.scene-container .top-bleed {
+  position: relative;
+  width: 100%;
+  height: 98px;
+  background-color: #a18b73;
+}
+#scene-container .content-mask {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: white;
+}
+#scene-container .content-mask .content-container {
+  position: relative;
+}
+#invisible-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#invisible-container {
+  visibility: hidden;
+}
+/* nav */
+#nav {
+  width: 1280px;
+  height: 98px;
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  margin-left: -640px;
+  top: 0;
+  transition: height 0.2s linear;
+}
+#nav.pin-mode {
+  height: 60px;
+}
+#nav.pin-mode .logo {
+  top: 9px;
+}
+#nav .logo {
+  position: absolute;
+  left: 61px;
+  top: 27px;
+  width: 176px;
+  height: 38px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/logo.png");
+  transition: top 0.2s linear;
+  cursor: pointer;
+}
+#nav .button-group {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 610px;
+  transition: width 0.3s linear 0.2s;
+}
+#nav .button-group .btn-logout {
+  position: relative;
+  float: right;
+  margin: 3px 30px 0 0;
+  width: 71px;
+  height: 21px;
+  background-image: url("../images/btn-logout.png");
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+  cursor: pointer;
+}
+#nav .button-group .btn-logout:active {
+  margin-top: 4px;
+}
+#nav .button-group .button {
+  position: relative;
+  padding: 5px 9px;
+  background-repeat: no-repeat;
+  float: left;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #000;
+  color: #666464;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+#nav .button-group .button:active {
+  margin-top: 1px;
+}
+#nav .button-group .gap {
+  position: relative;
+  width: 1px;
+  height: 15px;
+  background-color: #666464;
+  margin-top: 8px;
+  margin-left: 2px;
+  margin-right: 2px;
+  float: left;
+}
+#nav .button-group .button:nth-child(1):after {
+  content: '關於我們';
+}
+#nav .button-group .button:nth-child(3):after {
+  content: '最新消息';
+}
+#nav .button-group .button:nth-child(5):after {
+  content: '環境設施';
+}
+#nav .button-group .button:nth-child(7):after {
+  content: '月子膳食';
+}
+#nav .button-group .button:nth-child(9):after {
+  content: '專業照護';
+}
+#nav .button-group .button:nth-child(11):after {
+  content: '聯絡資訊';
+}
+#nav .button-group .button:nth-child(13):after {
+  content: '會員專屬';
+}
+#nav .vip-menu-cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1000;
+}
+#nav .vip-menu-cover.activated {
+  display: block;
+}
+#nav .vip-menu {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  width: 120px;
+  border: 2px solid #a18b73;
+  background-color: white;
+  z-index: 1100;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.25s, opacity 0.25s ease-out, top 0.25s ease-out;
+}
+#nav .vip-menu.activated {
+  visibility: visible;
+  opacity: 1;
+  top: 50px;
+  transition: visibility 0s linear, opacity 0.25s ease-out, top 0.25s ease-out;
+}
+#nav .vip-menu .button {
+  position: relative;
+  width: 100%;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #666464;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 22px;
+  padding: 3px 0;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#nav .vip-menu .button:active {
+  padding-top: 4px;
+  padding-bottom: 2px;
+}
+#nav .vip-menu .gap {
+  position: relative;
+  width: 60px;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #a18b73;
+  opacity: 0.4;
+}
+#nav.with-logout-btn .button-group {
+  width: 680px;
+  transition: width 0.3s linear;
+}
+#nav.with-logout-btn .button-group .btn-logout {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s linear 0.3s, opacity 0.2s linear 0.3s;
+}
+#nav.with-logout-btn .vip-menu {
+  right: 80px;
+}
+#nav .brown-bar {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  background-color: #a18b73;
+}
+/* page bottom*/
+#footer {
+  position: relative;
+  width: 1280px;
+  height: 500px;
+  overflow: hidden;
+  transition: height 0.4s ease-out;
+  background-image: url("../images/footer-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+#footer .pink-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffebef;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s linear, visibility 0s linear 0.5s;
+}
+#footer.pink-mode .pink-bg {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s linear, visibility 0s linear;
+}
+#footer.map-only-mode {
+  height: 664px;
+}
+#footer.map-only-mode .mode-1-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-out, visibility 0.4s linear;
+}
+#footer.map-only-mode .mode-2-content {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease-out, visibility 0s linear;
+}
+#footer.map-only-mode #map {
+  left: 334px;
+  top: 213px;
+  width: 616px;
+  height: 416px;
+}
+#footer .mode-1-content {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease-out, visibility 0s linear;
+}
+#footer .mode-1-content .logo {
+  position: absolute;
+  left: 212px;
+  top: 66px;
+  width: 111px;
+  height: 97px;
+  background-image: url("../images/logo-2.png");
+}
+#footer .mode-1-content .misc-image {
+  position: absolute;
+  left: 382px;
+  top: 68px;
+  width: 348px;
+  height: 138px;
+  background-image: url("../images/index-page-bottom-misc-1.png");
+}
+#footer .mode-1-content .field-tel,
+#footer .mode-1-content .field-address {
+  position: absolute;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #666464;
+}
+#footer .mode-1-content .field-tel {
+  left: 407px;
+  top: 116px;
+  letter-spacing: 2px;
+}
+#footer .mode-1-content .field-address {
+  left: 404px;
+  top: 146px;
+  letter-spacing: 1px;
+}
+#footer .mode-1-content .facebook-page {
+  position: absolute;
+  left: 770px;
+  top: 80px;
+  width: 273px;
+  height: 370px;
+}
+#footer .mode-2-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-out, visibility 0.4s linear;
+}
+#footer .mode-2-content .top-part {
+  position: absolute;
+  width: 100%;
+  top: 33px;
+}
+#footer .mode-2-content .top-part .title-image {
+  position: relative;
+  width: 400px;
+  height: 66px;
+  margin: 0 auto 17px;
+  background-image: url("../images/footer-contact-title.png");
+}
+#footer .mode-2-content .top-part a {
+  text-decoration: none;
+}
+#footer .mode-2-content .top-part .title-text,
+#footer .mode-2-content .top-part .tel,
+#footer .mode-2-content .top-part .address {
+  position: relative;
+  margin: 5px auto;
+  text-align: center;
+  letter-spacing: 1px;
+}
+#footer .mode-2-content .top-part .title-text {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18px;
+  color: #666464;
+}
+#footer .mode-2-content .top-part .tel {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #666464;
+  line-height: 20px;
+}
+#footer .mode-2-content .top-part .tel .tel-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/tel-icon.png");
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: -3px;
+}
+#footer .mode-2-content .top-part .address {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #666464;
+  line-height: 20px;
+}
+#footer .mode-2-content .top-part .address .address-icon {
+  width: 15px;
+  height: 22px;
+  background-image: url("../images/address-icon.png");
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: -4px;
+}
+#footer .mode-2-content .bottom-part {
+  position: absolute;
+  left: 331px;
+  top: 210px;
+  width: 620px;
+  height: 420px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.13);
+}
+#footer #map {
+  position: absolute;
+  left: 379px;
+  top: 213px;
+  width: 344px;
+  height: 233px;
+  transition: left 0.4s ease-out, top 0.4s ease-out, width 0.4s ease-out, height 0.4s ease-out;
+}
+.copy-right {
+  position: relative;
+  width: 1280px;
+  height: 40px;
+  background-color: #eae6e0;
+}
+.copy-right .text {
+  font-family: sans-serif;
+  font-size: 9px;
+  text-align: center;
+  line-height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #666464;
+}
+/* index */
+#index {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+#index.onloading {
+  opacity: 0;
+}
+#index .key-images {
+  position: relative;
+  width: 1280px;
+  height: 706px;
+}
+#index .key-images .image-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#index .key-images .reservation-icon {
+  position: absolute;
+  right: 25px;
+  bottom: 19px;
+  width: 137px;
+  height: 137px;
+  background-image: url("../images/index-reservation.png");
+  cursor: pointer;
+}
+#index .key-images .reservation-icon:active {
+  margin-bottom: -1px;
+}
+#index .brown-bar {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: #a18b73;
+}
+#index .about-us {
+  position: relative;
+  width: 1280px;
+  height: 457px;
+  background-color: white;
+}
+#index .about-us .left-part {
+  position: absolute;
+  left: 99px;
+  top: 40px;
+  width: 446px;
+}
+#index .about-us .left-part .title-image {
+  position: relative;
+  width: 186px;
+  height: 45px;
+  margin: 0 auto 0;
+  background-image: url("../images/index-about-us-title.png");
+}
+#index .about-us .left-part .title-text {
+  position: relative;
+  margin: 16px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .about-us .left-part .line {
+  position: relative;
+  margin: 12px auto 0;
+  background-color: #a18b73;
+  width: 446px;
+  height: 1px;
+}
+#index .about-us .left-part .contents {
+  position: relative;
+  width: 446px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #666464;
+  line-height: 25px;
+  margin-top: 18px;
+  letter-spacing: 1px;
+}
+#index .about-us .left-part .bottom-text {
+  margin-top: 25px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #a08c6e;
+  letter-spacing: 1px;
+  width: 270px;
+  float: left;
+}
+#index .about-us .left-part .btn-more {
+  position: relative;
+  width: 123px;
+  height: 26px;
+  background-image: url("../images/btn-more.png");
+  background-position: top;
+  cursor: pointer;
+  margin-top: 22px;
+  float: right;
+}
+#index .about-us .left-part .btn-more:active {
+  background-position: bottom;
+}
+#index .about-us .left-part .btn-more:active {
+  background-position: bottom;
+}
+#index .about-us .right-part {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("../images/index-about-us-image.jpg");
+  width: 642px;
+  height: 457px;
+}
+#index .environmental {
+  position: relative;
+  width: 1280px;
+  height: 620px;
+  background-image: url("../images/index-environmental-bg.jpg");
+}
+#index .environmental .top-part {
+  position: absolute;
+  left: 50%;
+  margin-left: -223px;
+  top: 37px;
+}
+#index .environmental .top-part .title-image {
+  position: relative;
+  width: 312px;
+  height: 53px;
+  background-image: url("../images/index-environmental-title.png");
+  margin: 0 auto 0;
+}
+#index .environmental .top-part .title-text {
+  position: relative;
+  margin: 9px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .environmental .top-part .line {
+  position: relative;
+  margin: 14px auto 0;
+  background-color: #a18b73;
+  width: 446px;
+  height: 1px;
+}
+#index .environmental .top-part .detail {
+  position: relative;
+  width: 446px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #666464;
+  line-height: 25px;
+  margin-top: 16px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .environmental .sample-part {
+  position: absolute;
+  width: 100%;
+  top: 274px;
+  text-align: center;
+}
+#index .environmental .sample-part .sample {
+  position: relative;
+  display: inline-block;
+  width: 377px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+#index .environmental .sample-part .sample:active .sample-bottom .text .triangle {
+  background-position: 5px 4px;
+}
+#index .environmental .sample-part .sample .image {
+  position: relative;
+  width: 377px;
+  height: 251px;
+  background-color: rgba(255, 0, 0, 0.4);
+}
+#index .environmental .sample-part .sample .sample-bottom {
+  position: relative;
+  width: 377px;
+  height: 35px;
+  background-color: rgba(161, 139, 115, 0.25);
+}
+#index .environmental .sample-part .sample .sample-bottom .text {
+  position: relative;
+  width: 100%;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #666464;
+  letter-spacing: 5px;
+  text-align: center;
+  line-height: 35px;
+}
+#index .environmental .sample-part .sample .sample-bottom .text .triangle {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url("../images/triangle-1.png");
+  background-position: 0 4px;
+  background-repeat: no-repeat;
+  margin-left: -5px;
+}
+#index .environmental .sample-part .sample:nth-child(1) .sample-bottom .text:before {
+  content: '房型介紹';
+}
+#index .environmental .sample-part .sample:nth-child(2) .sample-bottom .text:before {
+  content: '公共區域';
+}
+#index .environmental .sample-part .sample:nth-child(3) .sample-bottom .text:before {
+  content: '嬰兒室';
+}
+#index .malt {
+  position: relative;
+  width: 1280px;
+  height: 808px;
+  background-color: #f3f3f3;
+}
+#index .malt .top-part {
+  position: absolute;
+  left: 50%;
+  margin-left: -500px;
+  top: 24px;
+  width: 1000px;
+}
+#index .malt .top-part .title-image {
+  position: relative;
+  width: 281px;
+  height: 67px;
+  background-image: url("../images/index-malt-title.png");
+  margin: 0 auto 0;
+}
+#index .malt .top-part .title-text {
+  position: relative;
+  margin: 6px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .malt .top-part .line {
+  position: relative;
+  margin: 14px auto 0;
+  background-color: #a18b73;
+  width: 446px;
+  height: 1px;
+}
+#index .malt .top-part .detail {
+  position: relative;
+  width: 100%;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #666464;
+  line-height: 25px;
+  margin-top: 11px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .malt .sample-part {
+  position: absolute;
+  width: 100%;
+  top: 170px;
+  text-align: center;
+}
+#index .malt .sample-part .sample {
+  position: relative;
+  display: inline-block;
+  width: 312px;
+  margin: 0 20px;
+}
+#index .malt .sample-part .sample .sample-top {
+  position: absolute;
+  width: 312px;
+  height: 312px;
+  z-index: 2;
+  background-image: url("../images/index-malt-top.png");
+}
+#index .malt .sample-part .sample .sample-top .title-image {
+  position: absolute;
+  left: 50%;
+  width: 244px;
+  height: 92px;
+  margin-left: -122px;
+  top: 22px;
+}
+#index .malt .sample-part .sample .sample-top .title {
+  position: absolute;
+  width: 100%;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #a08c6e;
+  line-height: 25px;
+  top: 80px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .malt .sample-part .sample .sample-top .contents {
+  position: relative;
+  width: 100%;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #666464;
+  line-height: 22px;
+  margin-top: 120px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .malt .sample-part .sample .image {
+  position: absolute;
+  width: 258px;
+  height: 258px;
+  background-image: url("../images/index-malt-sample-1.jpg");
+  left: 50%;
+  margin-left: -129px;
+  top: 276px;
+  clip-path: circle(129px at center);
+  z-index: 1;
+}
+#index .malt .sample-part .sample:nth-child(1) .image {
+  background-image: url("../images/index-malt-sample-1.jpg");
+}
+#index .malt .sample-part .sample:nth-child(1) .sample-top .title-image {
+  background-image: url("../images/index-malt-title-1.png");
+}
+#index .malt .sample-part .sample:nth-child(2) .image {
+  background-image: url("../images/index-malt-sample-2.jpg");
+}
+#index .malt .sample-part .sample:nth-child(2) .sample-top .title-image {
+  background-image: url("../images/index-malt-title-2.png");
+}
+#index .malt .sample-part .sample:nth-child(3) .image {
+  background-image: url("../images/index-malt-sample-3.jpg");
+}
+#index .malt .sample-part .sample:nth-child(3) .sample-top .title-image {
+  background-image: url("../images/index-malt-title-3.png");
+}
+#index .malt .bottom-part {
+  position: absolute;
+  width: 100%;
+  bottom: 28px;
+  text-align: center;
+  text-indent: -67px;
+}
+#index .malt .bottom-part .text {
+  position: relative;
+  width: 200px;
+  display: inline-block;
+  text-align: right;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #666464;
+}
+#index .malt .bottom-part .btn-more {
+  position: relative;
+  width: 123px;
+  height: 26px;
+  background-image: url("../images/btn-more.png");
+  background-position: top;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 13px;
+}
+#index .malt .bottom-part .btn-more:active {
+  background-position: bottom;
+}
+#index .malt .bottom-part .btn-more:active {
+  background-position: bottom;
+}
+#index .care {
+  position: relative;
+  width: 1280px;
+  background-color: white;
+}
+#index .care .block {
+  position: relative;
+  width: 1280px;
+  height: 420px;
+}
+#index .care .block .image {
+  position: absolute;
+  width: 670px;
+  height: 420px;
+}
+#index .care .block .cover {
+  position: absolute;
+  width: 30px;
+  height: 420px;
+  left: 50%;
+}
+#index .care .block .detail {
+  position: absolute;
+  width: 640px;
+  height: 420px;
+  display: table;
+}
+#index .care .block .detail .middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+#index .care .block .detail .middle > div {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+#index .care .block .detail .middle .title-image {
+  position: relative;
+  width: 345px;
+  height: 67px;
+  margin: 0 auto 0;
+  background-image: url("../images/index-care-title.png");
+}
+#index .care .block .detail .middle .title-text {
+  position: relative;
+  margin: 6px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#index .care .block .detail .middle .line {
+  position: relative;
+  margin: 14px auto 0;
+  background-color: #a18b73;
+  width: 446px;
+  height: 1px;
+}
+#index .care .block .detail .middle .contents {
+  margin-top: 40px;
+  text-align: center;
+}
+#index .care .block .detail .middle .contents .brown-block {
+  display: inline-block;
+  vertical-align: top;
+  width: 114px;
+  height: 75px;
+  background-image: url("../images/index-care-brown-square.png");
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  line-height: 75px;
+  letter-spacing: 2px;
+  margin-left: 32px;
+}
+#index .care .block .detail .middle .contents .texts {
+  display: inline-block;
+  vertical-align: top;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: #666464;
+  text-align: left;
+  line-height: 29px;
+  margin-left: 13px;
+  margin-top: -5px;
+}
+#index .care .block .detail .middle .btn-more {
+  position: relative;
+  width: 126px;
+  height: 25px;
+  background-image: url("../images/btn-more-2.png");
+  background-position: top;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+#index .care .block .detail .middle .btn-more:active {
+  background-position: bottom;
+}
+#index .care .block .detail .middle .btn-more:active {
+  background-position: bottom;
+}
+#index .care .block.align-left .image {
+  right: 0;
+}
+#index .care .block.align-left .cover {
+  background-image: url("../images/index-care-cover-1.png");
+  margin-left: -30px;
+}
+#index .care .block.align-left .detail {
+  left: 0;
+}
+#index .care .block.align-right .image {
+  left: 0;
+}
+#index .care .block.align-right .cover {
+  background-image: url("../images/index-care-cover-2.png");
+}
+#index .care .block.align-right .detail {
+  right: 0;
+}
+#index .care .block:nth-child(1) .image {
+  background-image: url("../images/index-care-image-1.jpg");
+}
+#index .care .block:nth-child(1) .brown-block:after {
+  content: '醫療團隊';
+}
+#index .care .block:nth-child(2) .image {
+  background-image: url("../images/index-care-image-2.jpg");
+}
+#index .care .block:nth-child(2) .brown-block:after {
+  content: '媽媽照護';
+}
+#index .care .block:nth-child(3) .image {
+  background-image: url("../images/index-care-image-3.jpg");
+}
+#index .care .block:nth-child(3) .brown-block:after {
+  content: '寶寶照護';
+}
+#index .care .block:nth-child(4) .image {
+  background-image: url("../images/index-care-image-4.jpg");
+}
+#index .care .block:nth-child(4) .brown-block:after {
+  content: '產後教育';
+}
+#index .back-to-top {
+  position: relative;
+  width: 1280px;
+  height: 62px;
+  background-color: #e1d6e0;
+  cursor: pointer;
+}
+#index .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#index .back-to-top:active .icon {
+  background-position: right;
+}
+#index .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#index .back-to-top:active .icon {
+  background-position: right;
+}
+/* about-us */
+#about-us {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+  height: 600px;
+  background-color: green;
+}
+/* news */
+#news {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+#news .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/news-key-image.jpg");
+}
+#news > .title {
+  position: relative;
+  width: 100%;
+  height: 126px;
+  overflow: hidden;
+  background-color: white;
+}
+#news > .title .title-image {
+  position: relative;
+  width: 113px;
+  height: 42px;
+  margin: 27px auto 0;
+  background-image: url("../images/news-title.png");
+}
+#news > .title .title-text {
+  position: relative;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15px;
+  color: #a08c6e;
+  margin: 16px auto 0;
+  text-align: center;
+  letter-spacing: 3px;
+}
+#news .news-container {
+  position: relative;
+  width: 100%;
+  min-height: 579px;
+  overflow: auto;
+  background-image: url("../images/news-bg.jpg");
+  background-repeat: repeat-y;
+}
+#news .news-container .news-block {
+  position: relative;
+  margin: 24px auto 0;
+  width: 802px;
+  background-color: white;
+  overflow: hidden;
+}
+#news .news-container .news-block:nth-last-child(1) {
+  margin-bottom: 24px;
+}
+#news .news-container .news-block .top-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 46px;
+  background-color: #e8e1db;
+}
+#news .news-container .news-block .date-bar {
+  position: absolute;
+  left: 98px;
+  top: 0;
+  width: 95px;
+  height: 122px;
+  background-color: #a18b73;
+}
+#news .news-container .news-block .date-bar .year {
+  position: absolute;
+  width: 100%;
+  top: 15px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: white;
+  font-family: arial, sans-serif;
+  text-align: center;
+}
+#news .news-container .news-block .date-bar .month,
+#news .news-container .news-block .date-bar .day {
+  position: absolute;
+  width: 60px;
+  margin-left: -30px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  font-style: italic;
+}
+#news .news-container .news-block .date-bar .month {
+  left: 26px;
+  top: 41px;
+}
+#news .news-container .news-block .date-bar .slash {
+  position: absolute;
+  left: 25px;
+  top: 50px;
+  width: 40px;
+  height: 45px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/news-slash.png");
+}
+#news .news-container .news-block .date-bar .day {
+  left: 64px;
+  top: 63px;
+}
+#news .news-container .news-block > .title {
+  position: relative;
+  margin-left: 270px;
+  margin-top: 12px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18px;
+  color: #a18b73;
+  letter-spacing: 2px;
+}
+#news .news-container .news-block > .detail {
+  position: relative;
+  margin-left: 270px;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13.5px;
+  color: #666464;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+#news .news-container .news-block .image-1,
+#news .news-container .news-block .image-2 {
+  position: relative;
+  width: 350px;
+  height: 264px;
+  margin-top: -2px;
+}
+#news .news-container .news-block .image-1 {
+  margin-left: 45px;
+  float: left;
+}
+#news .news-container .news-block .image-2 {
+  margin-right: 45px;
+  float: right;
+  margin-bottom: 40px;
+}
+/* contact */
+#contact {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+#contact .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/contact-key-image.jpg");
+}
+/* care */
+#care {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+#care .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/care-key-image.jpg");
+}
+#care .part-1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 422px;
+  background-image: url("../images/care-title-bg.jpg");
+  background-repeat: repeat-y;
+  overflow: hidden;
+}
+#care .part-1 .title-image {
+  position: relative;
+  margin: 28px auto 0;
+  width: 345px;
+  height: 66px;
+  background-image: url("../images/care-title.png");
+}
+#care .part-1 .title-text {
+  position: relative;
+  margin: 3px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.5px;
+  color: #a18b73;
+  text-align: center;
+  letter-spacing: 3px;
+}
+#care .part-1 .title-block {
+  position: relative;
+  margin: 37px auto 0;
+  width: 557px;
+  height: 50px;
+  background-image: url("../images/care-brown-bar-1.png");
+  overflow: hidden;
+}
+#care .part-1 .title-block .text {
+  position: relative;
+  margin: 14px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16.4px;
+  color: white;
+  text-align: center;
+  letter-spacing: 4px;
+}
+#care .part-1 .detail {
+  position: relative;
+  margin-top: 34px;
+  margin-bottom: 34px;
+  left: 50%;
+  margin-left: -200px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15px;
+  color: #666464;
+  line-height: 30px;
+}
+#care .part-1 .detail li {
+  margin-bottom: 18px;
+}
+#care .part-2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 517px;
+  background-repeat: repeat-y;
+  overflow: hidden;
+}
+#care .part-2 .left-part {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 640px;
+  height: 100%;
+  background-image: url("../images/care-image-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#care .part-2 .right-part {
+  position: relative;
+  float: right;
+  width: 640px;
+  height: auto;
+}
+#care .part-2 .right-part .title {
+  position: relative;
+  margin: 23px 0 0 36px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15px;
+  color: #a18b73;
+  letter-spacing: 1px;
+}
+#care .part-2 .right-part .list {
+  position: relative;
+  margin: 20px 0 0 37px;
+  overflow: hidden;
+}
+#care .part-2 .right-part .list .list-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+#care .part-2 .right-part .list .list-item:last-child {
+  margin-bottom: 10px;
+}
+#care .part-2 .right-part .list .list-item .title-block {
+  position: relative;
+  float: left;
+  clear: left;
+  margin: 0 0 0 0;
+  width: 105px;
+  height: 75px;
+  background-image: url("../images/care-brown-bar-2.png");
+  overflow: hidden;
+}
+#care .part-2 .right-part .list .list-item .title-block .text {
+  position: relative;
+  margin: 26px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16.5px;
+  color: white;
+  letter-spacing: 4px;
+  text-align: center;
+}
+#care .part-2 .right-part .list .list-item .detail {
+  position: relative;
+  float: left;
+  margin: 2px 0 0 0;
+  width: 350px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15px;
+  color: #666464;
+  letter-spacing: 0.3px;
+  line-height: 25px;
+}
+#care .part-3 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 526px;
+  overflow: hidden;
+}
+#care .part-3 .left-part {
+  position: relative;
+  float: left;
+  width: 640px;
+  height: auto;
+  overflow: hidden;
+}
+#care .part-3 .left-part .item {
+  float: right;
+  margin-right: -26px;
+}
+#care .part-3 .right-part {
+  position: relative;
+  float: right;
+  width: 640px;
+  height: auto;
+}
+#care .part-3 .right-part .item {
+  float: left;
+  margin-left: -26px;
+}
+#care .part-3 .left-part .item,
+#care .part-3 .right-part .item {
+  position: relative;
+  width: 100%;
+  margin-top: 41px;
+}
+#care .part-3 .left-part .item .title-block,
+#care .part-3 .right-part .item .title-block {
+  position: relative;
+  margin: 0 auto 0;
+  width: 557px;
+  height: 50px;
+  background-image: url("../images/care-brown-bar-1.png");
+  overflow: hidden;
+}
+#care .part-3 .left-part .item .title-block .text,
+#care .part-3 .right-part .item .title-block .text {
+  position: relative;
+  margin: 14px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16.5px;
+  color: white;
+  letter-spacing: 4px;
+  text-align: center;
+}
+#care .part-3 .left-part .item .list,
+#care .part-3 .right-part .item .list {
+  position: relative;
+  margin-top: 36px;
+  margin-left: 100px;
+}
+#care .part-3 .left-part .item .list .list-item,
+#care .part-3 .right-part .item .list .list-item {
+  position: relative;
+}
+#care .part-3 .left-part .item .list .list-item .title,
+#care .part-3 .right-part .item .list .list-item .title {
+  position: relative;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14.58px;
+  color: #a18b73;
+  letter-spacing: 0.3px;
+}
+#care .part-3 .left-part .item .list .list-item.no-detail .title,
+#care .part-3 .right-part .item .list .list-item.no-detail .title {
+  color: #666464;
+}
+#care .part-3 .left-part .item .list .list-item .detail,
+#care .part-3 .right-part .item .list .list-item .detail {
+  position: relative;
+  margin-top: 10px;
+  margin-left: -20px;
+  width: 420px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14.58px;
+  color: #666464;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+}
+#care .part-3 .left-part .item .list .list-item .detail li,
+#care .part-3 .right-part .item .list .list-item .detail li {
+  margin-bottom: 10px;
+}
+#care .part-3 .left-part .item .list .list-item .detail li:last-child,
+#care .part-3 .right-part .item .list .list-item .detail li:last-child {
+  margin-bottom: 5px;
+}
+#care .malt-part {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 1266px;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+#care .malt-part .title-image {
+  position: relative;
+  margin: 30px auto 0;
+  width: 281px;
+  height: 66px;
+  background-image: url("../images/care-malt-title.png");
+}
+#care .malt-part .title-text-1 {
+  position: relative;
+  margin: 7px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.6px;
+  color: #a18b73;
+  letter-spacing: 3px;
+  text-align: center;
+}
+#care .malt-part .line {
+  position: relative;
+  width: 502px;
+  height: 1px;
+  margin: 15px auto 0;
+  background-color: #a18b73;
+}
+#care .malt-part .title-text-2 {
+  position: relative;
+  margin: 15px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 12.85px;
+  color: #666464;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#care .malt-part .step-1 {
+  position: relative;
+  margin: 30px auto 0;
+  width: 792px;
+  height: 312px;
+  background-image: url("../images/malt-step-1.png");
+}
+#care .malt-part .step-2 {
+  position: relative;
+  margin: 23px auto 0;
+  width: 794px;
+  height: 312px;
+  background-image: url("../images/malt-step-2.png");
+}
+#care .malt-part .step-3 {
+  position: relative;
+  margin: 29px auto 0;
+  width: 785px;
+  height: 312px;
+  background-image: url("../images/malt-step-3.png");
+}
+#care .malt-part .step-1 .title,
+#care .malt-part .step-2 .title,
+#care .malt-part .step-3 .title {
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  text-align: center;
+  top: 85px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 1px;
+}
+#care .malt-part .step-1 .detail,
+#care .malt-part .step-2 .detail,
+#care .malt-part .step-3 .detail {
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  margin-left: -193px;
+  text-align: center;
+  top: 128px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 12.82px;
+  color: #666464;
+  letter-spacing: 1px;
+  line-height: 22px;
+}
+#care .back-to-top {
+  position: relative;
+  width: 1280px;
+  height: 62px;
+  background-color: #e1d6e0;
+  cursor: pointer;
+}
+#care .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#care .back-to-top:active .icon {
+  background-position: right;
+}
+#care .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#care .back-to-top:active .icon {
+  background-position: right;
+}
+/* environmental */
+#environmental {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+#environmental .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+}
+#environmental .part-1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+#environmental .part-1 .title-image {
+  position: relative;
+  width: 491px;
+  height: 52px;
+  background-image: url("../images/env-title.png");
+  margin: 28px auto 0;
+}
+#environmental .part-1 .title-text {
+  position: relative;
+  margin: 9px auto 17px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.6px;
+  color: #a18b73;
+  letter-spacing: 4px;
+  text-align: center;
+}
+#environmental .part-1 .left-part {
+  position: relative;
+  float: left;
+  width: 640px;
+  height: 444px;
+  background-image: url("../images/env-part-1-image.jpg");
+}
+#environmental .part-1 .right-part {
+  position: relative;
+  float: right;
+  width: 640px;
+  height: 444px;
+  background-image: url("../images/env-part-1-bg.png");
+}
+#environmental .part-1 .right-part .title {
+  position: relative;
+  margin: 113px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16.56px;
+  color: #a18b73;
+  letter-spacing: 4px;
+  text-align: center;
+}
+#environmental .part-1 .right-part .line {
+  position: relative;
+  width: 364px;
+  height: 1px;
+  background-color: #a18b73;
+  margin: 19px auto 0;
+}
+#environmental .part-1 .right-part .detail {
+  position: relative;
+  margin: 13px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14.58px;
+  color: #666464;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 29px;
+}
+#environmental .part-2 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+#environmental .part-2 .container {
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  margin: 55px auto 23px;
+}
+#environmental .part-2 .container .room {
+  position: relative;
+  float: left;
+  margin: 0 12px 30px;
+}
+#environmental .part-2 .container .room:last-child {
+  margin-bottom: 0;
+}
+#environmental .part-2 .container .room .image {
+  position: relative;
+  width: 100%;
+}
+#environmental .part-2 .container .room .detail {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background-color: #e9e5df;
+}
+#environmental .part-2 .container .room .detail .line {
+  position: absolute;
+  width: 1px;
+  height: 40px;
+  background-color: #666464;
+  left: 50%;
+  top: 18px;
+  margin-left: 8px;
+}
+#environmental .part-2 .container .room .detail .left-part {
+  position: absolute;
+  left: 50%;
+  margin-left: -169px;
+  top: 29px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #666464;
+  letter-spacing: 0.5px;
+  width: 160px;
+  text-align: center;
+}
+#environmental .part-2 .container .room .detail .right-part {
+  position: absolute;
+  left: 50%;
+  margin-left: 42px;
+  top: 16px;
+}
+#environmental .part-2 .container .room .detail .right-part .row {
+  position: relative;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 12.85px;
+  color: #666464;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+#environmental .part-2 .container .room.small {
+  width: 376px;
+}
+#environmental .part-2 .container .room.small .image {
+  height: 250px;
+}
+#environmental .part-2 .container .room.large {
+  width: 776px;
+}
+#environmental .part-2 .container .room.large .image {
+  height: 400px;
+}
+#environmental .part-2 .container .room:nth-child(1) .image {
+  background-image: url("../images/env-room-1.jpg");
+}
+#environmental .part-2 .container .room:nth-child(2) .image {
+  background-image: url("../images/env-room-2.jpg");
+}
+#environmental .part-2 .container .room:nth-child(3) .image {
+  background-image: url("../images/env-room-3.jpg");
+}
+#environmental .part-2 .container .room:nth-child(4) .image {
+  background-image: url("../images/env-room-4.jpg");
+}
+#environmental .part-2 .container .room:nth-child(5) .image {
+  background-image: url("../images/env-room-5.jpg");
+}
+#environmental .part-2 .triangle {
+  position: relative;
+  width: 29px;
+  height: 29px;
+  background-image: url("../images/triangle-2.png");
+  margin: 0 auto;
+}
+#environmental .part-3 {
+  position: relative;
+  width: 100%;
+  min-height: 276px;
+  overflow: hidden;
+  background-color: #f2f0ec;
+}
+#environmental .part-3 .container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 274px;
+  margin-top: 28px;
+}
+#environmental .part-3 .container .item {
+  position: relative;
+  float: left;
+  width: 450px;
+  margin-bottom: 17px;
+}
+#environmental .part-3 .container .item .title {
+  position: relative;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #a18b73;
+  letter-spacing: 1px;
+}
+#environmental .part-3 .container .item .title .heart {
+  display: inline-block;
+  width: 20px;
+  height: 18px;
+  background-image: url("../images/heart-icon.png");
+  margin: 0 7px -3px 0;
+}
+#environmental .part-3 .container .item .detail {
+  position: relative;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #666464;
+  letter-spacing: 1px;
+  margin: 3px 0 0 2px;
+}
+#environmental .part-4 {
+  position: relative;
+  width: 100%;
+  background-image: url("../images/env-part-4-bg.jpg");
+  background-repeat: repeat-y;
+  overflow: hidden;
+}
+#environmental .part-4 .title-image {
+  position: relative;
+  margin: 29px auto 0;
+  width: 255px;
+  height: 45px;
+  background-image: url("../images/env-part-4-title.png");
+}
+#environmental .part-4 .title-text {
+  position: relative;
+  margin: 14px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 3px;
+  text-align: center;
+}
+#environmental .part-4 .container {
+  position: relative;
+  overflow: hidden;
+  width: 800px;
+  margin: 17px auto 35px;
+}
+#environmental .part-4 .container .room {
+  position: relative;
+  float: left;
+  margin: 0 12px 15px;
+}
+#environmental .part-4 .container .room .image {
+  position: relative;
+  width: 376px;
+  height: 222px;
+}
+#environmental .part-4 .container .room .detail {
+  position: relative;
+  height: 30px;
+  background-color: #a9947c;
+  overflow: hidden;
+}
+#environmental .part-4 .container .room .detail .text {
+  position: relative;
+  margin: 6px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 12.85px;
+  color: white;
+  letter-spacing: 4px;
+  text-align: center;
+}
+#environmental .part-4 .container .room:nth-child(1) {
+  background-image: url("../images/env-part-4-image-1.jpg");
+}
+#environmental .part-4 .container .room:nth-child(2) {
+  background-image: url("../images/env-part-4-image-2.jpg");
+}
+#environmental .part-4 .container .room:nth-child(3) {
+  background-image: url("../images/env-part-4-image-3.jpg");
+}
+#environmental .part-4 .container .room:nth-child(4) {
+  background-image: url("../images/env-part-4-image-4.jpg");
+}
+#environmental .part-5 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+#environmental .part-5 .title-image {
+  position: relative;
+  width: 260px;
+  height: 66px;
+  background-image: url("../images/env-part-5-title.png");
+  margin: 30px auto 0;
+}
+#environmental .part-5 .title-text {
+  position: relative;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #c490bf;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: -7px auto 0;
+}
+#environmental .part-5 .container {
+  position: relative;
+  width: 100%;
+  margin: 20px 0 13px;
+  text-align: center;
+}
+#environmental .part-5 .part {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  width: 350px;
+  margin: 0 30px 0;
+}
+#environmental .part-5 .part .image {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 0;
+}
+#environmental .part-5 .part:nth-child(1) .image {
+  background-image: url("../images/env-part-5-image-1.png");
+}
+#environmental .part-5 .part:nth-child(2) .image {
+  background-image: url("../images/env-part-5-image-2.png");
+}
+#environmental .part-5 .part .title {
+  margin: 19px 0 0 5px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16.67px;
+  color: #c490bf;
+  letter-spacing: 2px;
+  text-align: left;
+}
+#environmental .part-5 .part .item {
+  position: relative;
+  margin: 20px 0 24px 0;
+  width: 100%;
+  overflow: hidden;
+}
+#environmental .part-5 .part .item .heart {
+  position: relative;
+  float: left;
+  width: 20px;
+  height: 19px;
+  margin: 0 5px 0;
+  background-image: url("../images/heart-icon-2.png");
+}
+#environmental .part-5 .part .item .detail {
+  position: relative;
+  float: left;
+  width: 320px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14.44px;
+  color: #666464;
+  letter-spacing: 1px;
+  text-align: left;
+}
+#environmental .back-to-top {
+  position: relative;
+  width: 1280px;
+  height: 62px;
+  background-color: #e1d6e0;
+  cursor: pointer;
+}
+#environmental .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#environmental .back-to-top:active .icon {
+  background-position: right;
+}
+#environmental .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#environmental .back-to-top:active .icon {
+  background-position: right;
+}
+#vip-baby {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+#vip-baby .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/vip-baby-key-image.jpg");
+}
+#vip-baby .main-container {
+  position: relative;
+  width: 100%;
+}
+#vip-baby .main-container .part-select {
+  position: absolute;
+  width: 317px;
+  left: 50%;
+  margin-left: -158.5px;
+  top: 37px;
+  height: 45px;
+  z-index: 10;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url("../images/pink-arrow.png");
+  background-color: #ffffff;
+  background-position: 288px 15px;
+  background-repeat: no-repeat;
+  border: 2px solid #fad8df;
+  text-align: left;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #4c4c4c;
+  letter-spacing: 2px;
+  padding-left: 20px;
+}
+#vip-baby .main-container .part-select option {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #4c4c4c;
+  letter-spacing: 2px;
+}
+#vip-baby .main-container .part-1 {
+  position: relative;
+  width: 100%;
+  height: 810px;
+  background-image: url("../images/vip-baby-1-bg.jpg");
+}
+#vip-baby .main-container .part-1 .title {
+  position: absolute;
+  width: 320px;
+  left: 303px;
+  top: 267px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18.89px;
+  color: #f77d96;
+  letter-spacing: 2px;
+  text-align: center;
+}
+#vip-baby .main-container .part-1 .detail {
+  position: absolute;
+  width: 320px;
+  left: 307px;
+  top: 306px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.49px;
+  color: #4c4c4c;
+  letter-spacing: 2px;
+  line-height: 26px;
+}
+#vip-baby .main-container .part-2 {
+  position: relative;
+  width: 100%;
+  height: 810px;
+  background-image: url("../images/vip-baby-2-bg.jpg");
+}
+#vip-baby .main-container .part-2 .baby-image {
+  position: absolute;
+  left: 272px;
+  top: 285px;
+  width: 292px;
+  height: 444px;
+  background-image: url("../test/images/vip-baby-2-sample.jpg");
+  border-radius: 5px;
+}
+#vip-baby .main-container .part-2 .title {
+  position: absolute;
+  width: 250px;
+  left: 516px;
+  top: 163px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18.89px;
+  color: #4c4c4c;
+  letter-spacing: 3px;
+  text-align: center;
+}
+#vip-baby .main-container .part-2 .detail {
+  position: absolute;
+  width: 310px;
+  left: 662px;
+  top: 300px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 17.6px;
+  color: #4c4c4c;
+  letter-spacing: 3px;
+  line-height: 42px;
+  text-align: center;
+}
+#vip-baby .main-container .part-3 {
+  position: relative;
+  width: 100%;
+  height: 810px;
+  background-image: url("../images/vip-baby-3-bg.jpg");
+}
+#vip-baby .main-container .part-3 .baby-image-container {
+  position: absolute;
+  width: 395px;
+  height: 403px;
+  left: 258px;
+  top: 238px;
+}
+#vip-baby .main-container .part-3 .baby-image-container .image {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  background-image: url("../test/images/vip-baby-3-baby-sample.jpg");
+  left: 50px;
+  top: 60px;
+}
+#vip-baby .main-container .part-3 .baby-image-container .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/vip-baby-3-mask.png");
+}
+#vip-baby .main-container .part-3 .misc-1 {
+  position: absolute;
+  left: 535px;
+  top: 562px;
+  width: 166px;
+  height: 167px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/vip-baby-3-misc-1.png");
+}
+#vip-baby .main-container .part-3 .title {
+  position: absolute;
+  width: 250px;
+  left: 698px;
+  top: 257px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18.89px;
+  color: #4c4c4c;
+  letter-spacing: 3px;
+  text-align: center;
+}
+#vip-baby .main-container .part-3 .detail {
+  position: absolute;
+  width: 300px;
+  left: 681px;
+  top: 322px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 17.6px;
+  color: #4c4c4c;
+  letter-spacing: 3px;
+  line-height: 43px;
+}
+/***** end *****/
+@media (max-width: 640px) {
+  /* index */
+}
