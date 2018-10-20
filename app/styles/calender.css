@@ -1,0 +1,142 @@
+/** common mixins **/
+.my-calender {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.my-calender .cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  opacity: 0.88;
+}
+.my-calender .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 568px;
+  margin-left: -284px;
+  margin-top: -285px;
+  background-color: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
+}
+.my-calender .container .year-part {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: #a18b73;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.my-calender .container .year-part .text {
+  width: 100px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 10px auto 0;
+  clear: both;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.my-calender .container .year-part .arrow-left {
+  background-image: url("../images/white-arrow-1.png");
+  left: 10px;
+}
+.my-calender .container .year-part .arrow-left:active {
+  margin-left: -1px;
+}
+.my-calender .container .year-part .arrow-right {
+  background-image: url("../images/white-arrow-2.png");
+  right: 10px;
+}
+.my-calender .container .year-part .arrow-right:active {
+  margin-right: -1px;
+}
+.my-calender .container .year-part .arrow-left,
+.my-calender .container .year-part .arrow-right {
+  position: absolute;
+  width: 22px;
+  height: 28px;
+  top: 6px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.my-calender .container .day-part {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: #a18b73;
+}
+.my-calender .container .day-part .day-block {
+  position: relative;
+  float: left;
+  width: 80px;
+  height: 40px;
+}
+.my-calender .container .day-part .day-block .text {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 10px auto 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.my-calender .container .date-part {
+  position: relative;
+  width: 100%;
+  background-color: #a18b73;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+.my-calender .container .date-part .date-block {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  float: left;
+  margin-left: 1px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+.my-calender .container .date-part .date-block.disable-mode {
+  opacity: 0.8;
+}
+.my-calender .container .date-part .date-block.disable-mode:active {
+  margin-top: 1px;
+  margin-bottom: 0;
+}
+.my-calender .container .date-part .date-block .date-text {
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #a18b73;
+  letter-spacing: 2px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.my-calender .container .date-part .date-block:active {
+  margin-top: 2px;
+  margin-bottom: -1px;
+}

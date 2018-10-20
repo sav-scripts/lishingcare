@@ -106,6 +106,10 @@ module.exports = function(grunt)
             }
         },
         less: {
+            calender: {
+                src: 'app/styles/calender.less',
+                dest: 'app/styles/calender.css'
+            },
             dev_app: {
                 src: 'app/styles/main.less',
                 dest: 'app/styles/main.css'
@@ -132,7 +136,7 @@ module.exports = function(grunt)
         watch: {
             app: {
                 files: ['app/styles/*.less'],
-                tasks: ['less:dev_app'],
+                tasks: ['less:dev_app', 'less:calender'],
                 options:
                 {
                     atBegin:true

@@ -3,17 +3,22 @@
  */
 (function(){
 
-    var _fakeData = window._FAKE_DATA_,
+    var _fakeData,
         _cachedData = {};
 
-    var _apiExtension = "",
+    var _apiExtension = ".php",
         _apiPath = "./api/",
         _method = "POST",
         _dataType = "json";
 
     window.ApiProxy =
     {
-        callApi: function(apiName, params, fakeDataName, cb, method)
+        init: function(fakeData)
+        {
+            _fakeData = fakeData;
+        },
+
+        callApi: function(apiName, params, fakeDataName, cb, method, completeWithError)
         {
             var apiUrl = _apiPath + apiName + _apiExtension;
 
@@ -84,6 +89,11 @@
                 if(response.error)
                 {
                     console.error(response.error);
+
+                    if(completeWithError)
+                    {
+                        if(cb) cb.call(null, response);
+                    }
                 }
                 else
                 {

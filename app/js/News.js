@@ -49,7 +49,7 @@
                 {
                     _data = response;
 
-                    $doms.mainTitle.text(_data.main_title);
+                    //$doms.mainTitle.text(_data.main_title);
 
                     for(var i=0;i<response.data_list.length;i++)
                     {

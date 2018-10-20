@@ -14,7 +14,8 @@ window._FAKE_DATA_ =
     "login.send":
     {
         "name":"John",
-        "password":"12345"
+        "password":"12345",
+        "g_recaptcha_response": "xxxxxx"
     },
 
     "login":
@@ -26,7 +27,7 @@ window._FAKE_DATA_ =
     "login_status":
     {
         // 已登入的話傳回 true (string)
-        "status": 'true'
+        "status": 'false'
     },
 
     /*** API 登出 ***/
@@ -92,7 +93,7 @@ window._FAKE_DATA_ =
     {
         "error": '',
 
-        "main_title": "10月開幕優惠開跑，歡迎預約參觀",
+        //"main_title": "10月開幕優惠開跑，歡迎預約參觀",
 
         "data_list":
         [

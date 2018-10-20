@@ -8,7 +8,8 @@
         _hashQueue = null,
 
         _contentClassDic = null,
-        _currentContentClass = null;
+        _currentContentClass = null,
+        _$calenderSample;
 
     var self = window.MainPage =
     {
@@ -30,44 +31,54 @@
                 "/News": News,
                 "/Contact": Contact,
                 "/Care": Care,
+                "/Malt": Malt,
                 "/Environmental": Environmental,
-                "/VipBaby": VipBaby
+                "/VipBaby": VipBaby,
+                "/Login": Vip
             };
 
-            ScrollListener.init().bind(onScrolling).active();
 
 
 
-            ApiProxy.callApi("login_status", {}, false, function(response)
+
+            Vip.init(function()
             {
-                if(response.status == 'true')
-                {
-                    self.isLogin = true;
-                    Nav.toggleLogoutMode(true);
-                }
+                console.log('vip is init');
+
+                ScrollListener.init().bind(onScrolling).active();
+
+                Hash.init().bind(onHashChange).startListening();
+                onHashChange();
             });
 
+            /*
+            loadCalender();
+            function loadCalender()
+            {
+                var frameDom = document.createElement("div");
 
-            Hash.init().bind(onHashChange).startListening();
-            onHashChange();
+                $(frameDom).load("./templates/calender.html" + "?v=" + _version, function()
+                {
+                    var $sample = $(frameDom).find(".my-calender").detach();
+                    var calender = new Calender($sample.clone());
+                    calender.show();
+
+                });
+            }
+            */
         },
 
-        logout: function()
+        getIsHashLocking: function()
         {
-            if(_isHashLocking) return;
+            return _isHashLocking;
+        },
 
-            ApiProxy.callApi("logout", {}, false, function()
+        blockNoneVipContent: function()
+        {
+            if(_currentContentClass && _currentContentClass.isVipOnly)
             {
-                self.isLogin = false;
-
-                Nav.toggleLogoutMode(false);
-
-                if(_currentContentClass && _currentContentClass.isVipOnly)
-                {
-                    Hash.to("/Index");
-                }
-
-            });
+                Hash.to("/Index");
+            }
         },
 
         resetHeight: function(cb)
@@ -106,7 +117,9 @@
             return;
         }
 
-        var hashArray = Hash.analysis();
+
+        var hash = Hash.getHash(),
+            hashArray = Hash.analysis();
         if(hashArray.length === 0) hashArray = ['/Index'];
 
         //console.log(hashArray);
@@ -126,12 +139,12 @@
                 }
                 else
                 {
-                    oldContentOut(newContentIn);
+                    oldContentOut(checkVipContent);
                 }
             }
             else
             {
-                newContentIn();
+                checkVipContent();
             }
 
         }
@@ -160,9 +173,37 @@
             });
         }
 
+        function checkVipContent()
+        {
+            console.log('checkVipContent');
+            if(contentClass.isVipOnly)
+            {
+                Vip.getLoginStatus(function(isLogin)
+                {
+                    if(isLogin)
+                    {
+                        newContentIn();
+                    }
+                    else
+                    {
+                        _isHashLocking = false;
+                        Vip.setHashAfterLogin(hash);
+                        Hash.to('/Login');
+                    }
+                });
+            }
+            else
+            {
+                newContentIn();
+            }
+        }
+
 
         function newContentIn()
         {
+            console.log('newContentIn');
+
+
             contentClass.init(function()
             {
                 resetContainerHeight(function()

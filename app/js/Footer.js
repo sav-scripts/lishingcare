@@ -5,7 +5,9 @@
 (function(){
 
     var $doms = {},
-        _isMapOnlyMode = false;
+        _isMapOnlyMode = false,
+        _isHideMode = true;
+
 
     var self = window.Footer =
     {
@@ -13,7 +15,14 @@
         {
             $doms.container = $("#footer");
 
+            buildFacebookPage();
             buildGoogleMap();
+
+
+            if(Hash.getHash() !== "/Login")
+            {
+                self.toggleHideMode(false);
+            }
         },
 
         toggleMapOnlyMode: function(isMapOnlyMode)
@@ -22,10 +31,22 @@
             _isMapOnlyMode = isMapOnlyMode;
 
             $doms.container.toggleClass('map-only-mode', _isMapOnlyMode);
+        },
+
+        toggleHideMode: function(isHideMode)
+        {
+
+            if(_isHideMode === isHideMode) return;
+            _isHideMode = isHideMode;
+
+            $doms.container.toggleClass('hide-mode', _isHideMode);
         }
     };
 
-
+    function buildFacebookPage()
+    {
+        $doms.container.find(".facebook-page").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLihPaoLand%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
+    }
 
     function buildGoogleMap()
     {

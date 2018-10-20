@@ -12,7 +12,27 @@
 
     <div id="invisible-wrapper">
 
-        <div id="invisible-container" class="scene-container"></div>
+        <div id="invisible-container" class="scene-container">
+
+            <div id="login-ui">
+
+                <!--<div class="cover"></div>-->
+
+                <div class="container">
+
+                    <div class="title">會　員　登　入</div>
+                    <input title="" class="user-name-input" placeholder="輸入帳號">
+                    <input title="" class="password-input" placeholder="輸入密碼" type="password">
+
+                    <div class="captcha g-recaptcha" data-sitekey="6LeE3nUUAAAAACqrRPyLTSxdQjWZ5S46KhBXIaK-" data-callback="onCaptchaDone" data-size="normal"></div>
+
+                    <div class="btn-send">SEND</div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -20,11 +40,13 @@
 
         <!--<div class="layout-index"></div>-->
         <!--<div class="layout-news"></div>-->
+        <!--<div class="layout-about-us"></div>-->
+        <!--<div class="layout-malt"></div>-->
         <!--<div class="layout-contact"></div>-->
-        <!--<div class="layout-care"></div>-->
+        <div class="layout-care"></div>
         <!--<div class="layout-environmental"></div>-->
         <!--<div class="layout-vip-baby-1"></div>-->
-        <div class="layout-vip-baby-2"></div>
+        <!--<div class="layout-vip-baby-2"></div>-->
         <!--<div class="layout-vip-baby-3"></div>-->
 
     </div>
@@ -73,7 +95,7 @@
         </div>
 
 
-        <div id="footer">
+        <div id="footer" class="hide-mode">
 
             <div class="pink-bg"></div>
 
@@ -86,7 +108,7 @@
                 <a target="_blank" href="https://www.google.com.tw/maps/place/251%E6%96%B0%E5%8C%97%E5%B8%82%E6%B7%A1%E6%B0%B4%E5%8D%80%E6%B7%A1%E9%87%91%E8%B7%AF6%E8%99%9F/@25.1594371,121.4571995,19.46z/data=!4m5!3m4!1s0x3442afed7ac9b59d:0xae71800ff13829f4!8m2!3d25.1596106!4d121.4576637"><div class="field-address">新北市淡水區淡金路6號1樓</div></a>
 
                 <div class="facebook-page">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLihPaoLand%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <!--<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLihPaoLand%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>-->
                 </div>
 
             </div>
@@ -121,22 +143,17 @@
 
 
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
     <script src="https://code.jquery.com/jquery-1.x-git.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 
-    <script>
-        if(window.location.host == 'local.savorks.com')
-        {
-            document.write('<script src="js/lib/FAKE_DATA.js"><\/script>');
-        }
-    </script>
-
     <!-- build:js js/optimized.js -->
     <script src="js/Main.js"></script>
+    <script src="js/lib/Utility.0.0.15.js"></script>
     <script src="js/lib/jquery.waitforimages.min.js"></script>
     <script src="js/lib/ScrollListener.1.0.0.js"></script>
     <script src="js/lib/Hash.1.0.0.js"></script>
-    <script src="js/lib/Utility.0.0.15.js"></script>
     <script src="js/ApiProxy.js"></script>
     <script src="js/Nav.js"></script>
     <script src="js/MainPage.js"></script>
@@ -144,13 +161,23 @@
     <script src="js/Index.js"></script>
     <script src="js/AboutUs.js"></script>
     <script src="js/Care.js"></script>
+    <script src="js/Malt.js"></script>
     <script src="js/News.js"></script>
     <script src="js/Contact.js"></script>
     <script src="js/ImageSlider.js"></script>
     <script src="js/Environmental.js"></script>
-    <script src="js/VipBaby.js"></script>
     <script src="js/lib/MyLoader.js"></script>
+    <script src="js/Calender.js"></script>
+    <script src="js/Vip.js"></script>
+    <script src="js/VipBaby.js"></script>
     <!-- endbuild -->
+
+    <script type="text/javascript">
+        if(Utility.urlParams.usefakedata == '1')
+        {
+            document.write('<script src="js/lib/FAKE_DATA.js"><\/script>');
+        }
+    </script>
 
 </body>
 </html>

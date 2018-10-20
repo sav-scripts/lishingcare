@@ -47,6 +47,12 @@ body {
   height: 1735px;
   background-image: url("../images/layout/news.jpg");
 }
+#layout .layout-about-us {
+  position: relative;
+  width: 100%;
+  height: 1735px;
+  background-image: url("../images/layout/about-us.jpg");
+}
 #layout .layout-contact {
   position: relative;
   width: 100%;
@@ -56,8 +62,14 @@ body {
 #layout .layout-care {
   position: relative;
   width: 100%;
-  height: 3825px;
+  height: 2999px;
   background-image: url("../images/layout/care.jpg");
+}
+#layout .layout-malt {
+  position: relative;
+  width: 100%;
+  height: 2353px;
+  background-image: url("../images/layout/malt.jpg");
 }
 #layout .layout-environmental {
   position: relative;
@@ -121,6 +133,77 @@ body.mapping #scene-container .content-mask {
 }
 #invisible-container {
   visibility: hidden;
+}
+/* login */
+#login-ui {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+  overflow: hidden;
+}
+#login-ui .container {
+  position: relative;
+  width: 400px;
+  margin: 100px auto 100px;
+  background-color: white;
+  overflow: hidden;
+}
+#login-ui .container .title {
+  margin: 20px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #666464;
+  letter-spacing: 2px;
+  text-align: center;
+}
+#login-ui .container .user-name-input,
+#login-ui .container .password-input {
+  position: relative;
+  width: 302px;
+  margin: 20px 49px 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #666464;
+  letter-spacing: 2px;
+  text-align: center;
+  border: 1px solid #a18b73;
+  line-height: 34px;
+}
+#login-ui .container .captcha {
+  position: relative;
+  width: 300px;
+  height: 76px;
+  margin: 20px auto 0;
+}
+#login-ui .container .user-name {
+  margin-top: 50px;
+}
+#login-ui .container .password {
+  margin-bottom: 20px;
+}
+#login-ui .container .btn-send {
+  position: relative;
+  width: 70px;
+  background-color: #d4beaa;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0;
+  line-height: 28px;
+  height: 28px;
+  text-align: center;
+  margin: 20px auto 30px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#login-ui .container .btn-send:active {
+  margin: 21px auto -1px;
 }
 /* nav */
 #nav {
@@ -318,6 +401,9 @@ body.mapping #scene-container .content-mask {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s linear, visibility 0s linear 0.5s;
+}
+#footer.hide-mode {
+  height: 0;
 }
 #footer.pink-mode .pink-bg {
   opacity: 1;
@@ -1046,8 +1132,47 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
-  height: 600px;
-  background-color: green;
+  overflow: hidden;
+}
+#about-us .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/about-key-image.jpg");
+}
+#about-us .title-image {
+  position: relative;
+  width: 195px;
+  height: 45px;
+  margin: 25px auto 0;
+  background-image: url("../images/about-title.png");
+}
+#about-us .title-text {
+  position: relative;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15px;
+  color: #a08c6e;
+  margin: 16px auto 0;
+  text-align: center;
+  letter-spacing: 3px;
+}
+#about-us .left-part {
+  position: relative;
+  width: 704px;
+  height: 514px;
+  margin: 28px 0 60px 77px;
+  float: left;
+  background-image: url("../images/about-image-1.jpg");
+}
+#about-us .right-part {
+  position: relative;
+  float: left;
+  margin: 65px 0 0 40px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13.54px;
+  color: #666464;
+  letter-spacing: 0;
+  line-height: 25px;
 }
 /* news */
 #news {
@@ -1065,7 +1190,7 @@ body.mapping #scene-container .content-mask {
 #news > .title {
   position: relative;
   width: 100%;
-  height: 126px;
+  height: 100px;
   overflow: hidden;
   background-color: white;
 }
@@ -1212,6 +1337,116 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  /*
+    .part-3 {
+
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 526px;
+        overflow: hidden;
+
+        .left-part{
+            position: relative;
+            float: left;
+            width: 640px;
+            height: auto;
+            overflow: hidden;
+
+            .item{
+
+                float: right;
+                margin-right: -26px;
+            }
+        }
+
+        .right-part{
+            position: relative;
+            float: right;
+            width: 640px;
+            height: auto;
+
+
+            .item{
+
+                float: left;
+                margin-left: -26px;
+            }
+
+        }
+
+        .left-part, .right-part{
+
+            .item{
+
+                position: relative;
+                width: 100%;
+                margin-top: 41px;
+
+                .title-block{
+                    position: relative;
+
+                    margin: 0 auto 0;
+                    width: 557px;
+                    height: 50px;
+                    .image-bg("care-brown-bar-1.png");
+                    overflow: hidden;
+
+                    .text{
+                        position: relative;
+                        margin: 14px auto 0;
+
+                        .default-font(16.5px, white, 4px);
+                        text-align: center;
+                    }
+                }
+
+                .list{
+                    position: relative;
+
+                    margin-top: 36px;
+                    margin-left: 100px;
+
+                    .list-item{
+                        position: relative;
+
+                        .title{
+                            position: relative;
+                            .default-font(14.58px, @brown, .3px);
+                        }
+
+
+                        &.no-detail{
+                            .title{
+                                color: @dark-gray-brown;
+                            }
+                        }
+
+                        .detail{
+
+                            position: relative;
+                            margin-top: 10px;
+                            margin-left: -20px;
+                            width: 420px;
+                            .default-font(14.58px, @dark-gray-brown, .3px);
+                            line-height: 20px;
+
+                            li{
+                                margin-bottom: 10px;
+
+                                &:last-child{
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+*/
 }
 #care .key-images {
   position: relative;
@@ -1223,7 +1458,7 @@ body.mapping #scene-container .content-mask {
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 422px;
+  min-height: 418px;
   background-image: url("../images/care-title-bg.jpg");
   background-repeat: repeat-y;
   overflow: hidden;
@@ -1302,7 +1537,7 @@ body.mapping #scene-container .content-mask {
 }
 #care .part-2 .right-part .title {
   position: relative;
-  margin: 23px 0 0 36px;
+  margin: 28px 0 0 36px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 15px;
   color: #a18b73;
@@ -1349,43 +1584,16 @@ body.mapping #scene-container .content-mask {
   color: #666464;
   letter-spacing: 0.3px;
   line-height: 25px;
+  list-style-type: decimal;
 }
-#care .part-3 {
+#care .part-3 .item,
+#care .part-4 .item {
   position: relative;
   width: 100%;
-  height: auto;
-  min-height: 526px;
-  overflow: hidden;
+  margin-top: 60px;
 }
-#care .part-3 .left-part {
-  position: relative;
-  float: left;
-  width: 640px;
-  height: auto;
-  overflow: hidden;
-}
-#care .part-3 .left-part .item {
-  float: right;
-  margin-right: -26px;
-}
-#care .part-3 .right-part {
-  position: relative;
-  float: right;
-  width: 640px;
-  height: auto;
-}
-#care .part-3 .right-part .item {
-  float: left;
-  margin-left: -26px;
-}
-#care .part-3 .left-part .item,
-#care .part-3 .right-part .item {
-  position: relative;
-  width: 100%;
-  margin-top: 41px;
-}
-#care .part-3 .left-part .item .title-block,
-#care .part-3 .right-part .item .title-block {
+#care .part-3 .item .title-block,
+#care .part-4 .item .title-block {
   position: relative;
   margin: 0 auto 0;
   width: 557px;
@@ -1393,8 +1601,8 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/care-brown-bar-1.png");
   overflow: hidden;
 }
-#care .part-3 .left-part .item .title-block .text,
-#care .part-3 .right-part .item .title-block .text {
+#care .part-3 .item .title-block .text,
+#care .part-4 .item .title-block .text {
   position: relative;
   margin: 14px auto 0;
   font-family: '微軟正黑體', "Heiti TC", serif;
@@ -1403,137 +1611,94 @@ body.mapping #scene-container .content-mask {
   letter-spacing: 4px;
   text-align: center;
 }
-#care .part-3 .left-part .item .list,
-#care .part-3 .right-part .item .list {
+#care .part-3 .item .list,
+#care .part-4 .item .list {
   position: relative;
   margin-top: 36px;
   margin-left: 100px;
 }
-#care .part-3 .left-part .item .list .list-item,
-#care .part-3 .right-part .item .list .list-item {
+#care .part-3 .item .list .list-item,
+#care .part-4 .item .list .list-item {
   position: relative;
 }
-#care .part-3 .left-part .item .list .list-item .title,
-#care .part-3 .right-part .item .list .list-item .title {
+#care .part-3 .item .list .list-item .title,
+#care .part-4 .item .list .list-item .title {
   position: relative;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 14.58px;
   color: #a18b73;
   letter-spacing: 0.3px;
 }
-#care .part-3 .left-part .item .list .list-item.no-detail .title,
-#care .part-3 .right-part .item .list .list-item.no-detail .title {
+#care .part-3 .item .list .list-item.no-detail .title,
+#care .part-4 .item .list .list-item.no-detail .title {
   color: #666464;
 }
-#care .part-3 .left-part .item .list .list-item .detail,
-#care .part-3 .right-part .item .list .list-item .detail {
+#care .part-3 .item .list .list-item .detail,
+#care .part-4 .item .list .list-item .detail {
   position: relative;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-left: -20px;
-  width: 420px;
+  width: 430px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 14.58px;
   color: #666464;
   letter-spacing: 0.3px;
   line-height: 20px;
+  list-style-type: decimal;
 }
-#care .part-3 .left-part .item .list .list-item .detail li,
-#care .part-3 .right-part .item .list .list-item .detail li {
-  margin-bottom: 10px;
+#care .part-3 .item .list .list-item .detail li,
+#care .part-4 .item .list .list-item .detail li {
+  margin-bottom: 32px;
 }
-#care .part-3 .left-part .item .list .list-item .detail li:last-child,
-#care .part-3 .right-part .item .list .list-item .detail li:last-child {
+#care .part-3 .item .list .list-item .detail li:last-child,
+#care .part-4 .item .list .list-item .detail li:last-child {
   margin-bottom: 5px;
 }
-#care .malt-part {
+#care .part-3 {
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 1266px;
-  background-color: #f3f3f3;
   overflow: hidden;
 }
-#care .malt-part .title-image {
+#care .part-3 .left-part {
+  float: left;
+  width: 640px;
+  min-height: 1px;
+}
+#care .part-3 .right-part {
+  float: left;
+  width: 640px;
+  height: 406px;
+  background-image: url("../images/care-part-3-image.jpg");
+}
+#care .part-4 {
   position: relative;
-  margin: 30px auto 0;
-  width: 281px;
-  height: 66px;
-  background-image: url("../images/care-malt-title.png");
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
-#care .malt-part .title-text-1 {
-  position: relative;
-  margin: 7px auto 0;
-  font-family: '微軟正黑體', "Heiti TC", serif;
-  font-size: 15.6px;
-  color: #a18b73;
-  letter-spacing: 3px;
-  text-align: center;
+#care .part-4 .left-part {
+  float: left;
+  width: 640px;
+  height: 567px;
+  background-image: url("../images/care-part-4-image.jpg");
 }
-#care .malt-part .line {
-  position: relative;
-  width: 502px;
-  height: 1px;
-  margin: 15px auto 0;
-  background-color: #a18b73;
+#care .part-4 .right-part {
+  float: left;
+  width: 640px;
+  min-height: 1px;
 }
-#care .malt-part .title-text-2 {
-  position: relative;
-  margin: 15px auto 0;
-  font-family: '微軟正黑體', "Heiti TC", serif;
-  font-size: 12.85px;
-  color: #666464;
-  letter-spacing: 1px;
-  text-align: center;
+#care .part-4 .right-part .item {
+  margin-top: 33px;
 }
-#care .malt-part .step-1 {
-  position: relative;
-  margin: 30px auto 0;
-  width: 792px;
-  height: 312px;
-  background-image: url("../images/malt-step-1.png");
+#care .part-4 .right-part .item .list {
+  margin-top: 19px;
 }
-#care .malt-part .step-2 {
-  position: relative;
-  margin: 23px auto 0;
-  width: 794px;
-  height: 312px;
-  background-image: url("../images/malt-step-2.png");
+#care .part-4 .right-part .item .list .list-item .detail {
+  margin-top: 7px;
 }
-#care .malt-part .step-3 {
-  position: relative;
-  margin: 29px auto 0;
-  width: 785px;
-  height: 312px;
-  background-image: url("../images/malt-step-3.png");
-}
-#care .malt-part .step-1 .title,
-#care .malt-part .step-2 .title,
-#care .malt-part .step-3 .title {
-  position: absolute;
-  left: 50%;
-  width: 400px;
-  margin-left: -200px;
-  text-align: center;
-  top: 85px;
-  font-family: '微軟正黑體', "Heiti TC", serif;
-  font-size: 15.63px;
-  color: #a18b73;
-  letter-spacing: 1px;
-}
-#care .malt-part .step-1 .detail,
-#care .malt-part .step-2 .detail,
-#care .malt-part .step-3 .detail {
-  position: absolute;
-  left: 50%;
-  width: 400px;
-  margin-left: -193px;
-  text-align: center;
-  top: 128px;
-  font-family: '微軟正黑體', "Heiti TC", serif;
-  font-size: 12.82px;
-  color: #666464;
-  letter-spacing: 1px;
-  line-height: 22px;
+#care .part-4 .right-part .item .list .list-item .detail li {
+  margin-bottom: 4px;
 }
 #care .back-to-top {
   position: relative;
@@ -1568,6 +1733,154 @@ body.mapping #scene-container .content-mask {
   background-position: left;
 }
 #care .back-to-top:active .icon {
+  background-position: right;
+}
+/* malt */
+#malt {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+}
+#malt .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/malt-key-image.jpg");
+}
+#malt .malt-part {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 1261px;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+#malt .malt-part .title-image {
+  position: relative;
+  margin: 23px auto 0;
+  width: 281px;
+  height: 66px;
+  background-image: url("../images/care-malt-title.png");
+}
+#malt .malt-part .title-text-1 {
+  position: relative;
+  margin: 7px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.6px;
+  color: #a18b73;
+  letter-spacing: 3px;
+  text-align: center;
+}
+#malt .malt-part .line {
+  position: relative;
+  width: 502px;
+  height: 1px;
+  margin: 15px auto 0;
+  background-color: #a18b73;
+}
+#malt .malt-part .title-text-2 {
+  position: relative;
+  margin: 15px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 12.85px;
+  color: #666464;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#malt .malt-part .step-1 {
+  position: relative;
+  margin: 30px auto 0;
+  width: 792px;
+  height: 312px;
+  background-image: url("../images/malt-step-1.png");
+}
+#malt .malt-part .step-2 {
+  position: relative;
+  margin: 23px auto 0;
+  width: 794px;
+  height: 312px;
+  background-image: url("../images/malt-step-2.png");
+}
+#malt .malt-part .step-3 {
+  position: relative;
+  margin: 29px auto 0;
+  width: 785px;
+  height: 312px;
+  background-image: url("../images/malt-step-3.png");
+}
+#malt .malt-part .step-1 .title,
+#malt .malt-part .step-2 .title,
+#malt .malt-part .step-3 .title {
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  text-align: center;
+  top: 85px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 1px;
+}
+#malt .malt-part .step-1 .detail,
+#malt .malt-part .step-2 .detail,
+#malt .malt-part .step-3 .detail {
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  margin-left: -193px;
+  text-align: center;
+  top: 128px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 12.82px;
+  color: #666464;
+  letter-spacing: 1px;
+  line-height: 22px;
+}
+#malt .malt-part .foot-text {
+  position: relative;
+  margin: 15px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 12.85px;
+  color: #666464;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 19px;
+}
+#malt .back-to-top {
+  position: relative;
+  width: 1280px;
+  height: 62px;
+  background-color: #e1d6e0;
+  cursor: pointer;
+}
+#malt .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#malt .back-to-top:active .icon {
+  background-position: right;
+}
+#malt .back-to-top .icon {
+  position: absolute;
+  width: 40px;
+  height: 45px;
+  background-image: url("../images/back-to-top.png");
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -22.5px;
+  background-position: left;
+}
+#malt .back-to-top:active .icon {
   background-position: right;
 }
 /* environmental */
@@ -2141,6 +2454,147 @@ body.mapping #scene-container .content-mask {
   line-height: 43px;
 }
 /***** end *****/
+.my-calender {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.my-calender .cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  opacity: 0.88;
+}
+.my-calender .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 568px;
+  margin-left: -284px;
+  margin-top: -285px;
+  background-color: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
+}
+.my-calender .container .year-part {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: #a18b73;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.my-calender .container .year-part .text {
+  width: 100px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 10px auto 0;
+  clear: both;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.my-calender .container .year-part .arrow-left {
+  background-image: url("../images/white-arrow-1.png");
+  left: 10px;
+}
+.my-calender .container .year-part .arrow-left:active {
+  margin-left: -1px;
+}
+.my-calender .container .year-part .arrow-right {
+  background-image: url("../images/white-arrow-2.png");
+  right: 10px;
+}
+.my-calender .container .year-part .arrow-right:active {
+  margin-right: -1px;
+}
+.my-calender .container .year-part .arrow-left,
+.my-calender .container .year-part .arrow-right {
+  position: absolute;
+  width: 22px;
+  height: 28px;
+  top: 6px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.my-calender .container .day-part {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: #a18b73;
+}
+.my-calender .container .day-part .day-block {
+  position: relative;
+  float: left;
+  width: 80px;
+  height: 40px;
+}
+.my-calender .container .day-part .day-block .text {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 10px auto 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.my-calender .container .date-part {
+  position: relative;
+  width: 100%;
+  background-color: #a18b73;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+.my-calender .container .date-part .date-block {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  float: left;
+  margin-left: 1px;
+  margin-top: 1px;
+  cursor: pointer;
+}
+.my-calender .container .date-part .date-block.disable-mode {
+  opacity: 0.8;
+}
+.my-calender .container .date-part .date-block.disable-mode:active {
+  margin-top: 1px;
+  margin-bottom: 0;
+}
+.my-calender .container .date-part .date-block .date-text {
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #a18b73;
+  letter-spacing: 2px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.my-calender .container .date-part .date-block:active {
+  margin-top: 2px;
+  margin-bottom: -1px;
+}
 @media (max-width: 640px) {
   /* index */
 }

@@ -131,6 +131,13 @@ body{
         .image-bg('layout/news.jpg');
     }
 
+    .layout-about-us{
+        position: relative;
+        width: 100%;
+        height: 1735px;
+        .image-bg('layout/about-us.jpg');
+    }
+
     .layout-contact{
         position: relative;
         width: 100%;
@@ -141,8 +148,15 @@ body{
     .layout-care{
         position: relative;
         width: 100%;
-        height: 3825px;
+        height: 2999px;
         .image-bg('layout/care.jpg');
+    }
+
+    .layout-malt{
+        position: relative;
+        width: 100%;
+        height: 2353px;
+        .image-bg('layout/malt.jpg');
     }
 
     .layout-environmental{
@@ -229,6 +243,134 @@ body.mapping{
 }
 #invisible-container{
     visibility: hidden;
+}
+
+/* login */
+#login-ui{
+//    position: fixed;
+//    width: 100%;
+//    height: 100%;
+//    left: 0;
+//    top: 0;
+//
+//    z-index: @popup-depth;
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: @device-width-a;
+
+    overflow: hidden;
+
+//    .cover{
+//        position: fixed;
+//        width: 100%;
+//        height: 100%;
+//        left: 0;
+//        top: 0;
+//        background-color: white;
+//        opacity: .88;
+//    }
+
+    .container{
+        @w: 400px;
+        @h: 300px;
+//        position: absolute;
+        position: relative;
+//        left: 50%;
+//        top: 50%;
+
+        width: @w;
+//        height: @h;
+//        margin-left: -@w * .5;
+//        margin-top: -@h * .5;
+
+        margin: 100px auto 100px;
+
+
+//        border-radius: 50px;
+//        box-shadow: 0 0 40px 40px rgba(255,255,255,1);
+
+        background-color: white;
+
+        overflow: hidden;
+
+        @field-width: 302px;
+
+        .title{
+            margin: 20px auto 0;
+            .default-font(16px, @dark-gray-brown, 2px);
+
+            text-align: center;
+        }
+
+        .user-name-input, .password-input{
+            position: relative;
+            width: @field-width;
+            margin: 20px ((@w - @field-width) * .5) 0;
+//            margin: 20px auto 0;
+
+            .default-font(16px, @dark-gray-brown, 2px);
+
+            text-align: center;
+
+            border: 1px solid @brown;
+            line-height: 34px;
+        }
+
+        .user-name-input{
+
+        }
+
+        .password-input{
+
+        }
+
+        .captcha{
+            position: relative;
+            width: 300px;
+            height: 76px;
+            margin: 20px auto 0;
+
+//            transform:scale(280/304);
+//            transform-origin:0 0;
+
+        }
+
+        .user-name{
+            margin-top: 50px;
+        }
+
+        .password{
+
+            margin-bottom: 20px;
+        }
+
+        .btn-send{
+            position: relative;
+            width: 70px;
+
+            background-color:#d4beaa;
+//            border: 2px solid @brown;
+
+            border-radius: 3px;
+
+            cursor: pointer;
+
+            .default-font(14px, white, 0);
+            line-height: 28px;
+            height: 28px;
+            text-align: center;
+            margin: 20px auto 30px;
+
+            .unselectable();
+
+            &:active{
+                margin: 21px auto -1px;
+            }
+        }
+
+    }
 }
 
 /* nav */
@@ -522,6 +664,10 @@ body.mapping{
         opacity: 0;
         visibility: hidden;
         transition: opacity .5s linear, visibility .0s linear .5s;
+    }
+
+    &.hide-mode{
+        height: 0;
     }
 
     &.pink-mode{
@@ -1450,8 +1596,51 @@ body.mapping{
     margin-right: auto;
     width: @device-width-a;
 
-    height: 600px;
-    background-color: green;
+    overflow: hidden;
+
+    .key-images{
+        position: relative;
+        width: 100%;
+        height: 393px;
+        .image-bg("about-key-image.jpg");
+    }
+    .title-image{
+        position: relative;
+        width: 195px;
+        height: 45px;
+
+        margin: 25px auto 0;
+
+        .image-bg("about-title.png");
+    }
+
+    .title-text{
+        position: relative;
+        .default-font(15px, #a08c6e);
+        margin: 16px auto 0;
+        text-align: center;
+        letter-spacing: 3px;
+    }
+
+    .left-part{
+        position: relative;
+        width: 704px;
+        height: 514px;
+        margin: 28px 0 60px 77px;
+        float: left;
+
+        .image-bg('about-image-1.jpg');
+    }
+
+    .right-part{
+        position: relative;
+        float: left;
+        margin: 65px 0 0 40px;
+
+        .default-font(13.54px, @dark-gray-brown, 0);
+        line-height: 25px;
+
+    }
 }
 
 /* news */
@@ -1473,7 +1662,8 @@ body.mapping{
     > .title{
         position: relative;
         width: 100%;
-        height: 126px;
+//        height: 126px;
+        height: 100px;
         overflow: hidden;
         background-color: white;
 
@@ -1681,7 +1871,7 @@ body.mapping{
         position: relative;
         width: 100%;
         height: auto;
-        min-height: 422px;
+        min-height: 418px;
         .image-bg("care-title-bg.jpg");
         background-repeat: repeat-y;
         overflow: hidden;
@@ -1771,7 +1961,7 @@ body.mapping{
 
             .title{
                 position: relative;
-                margin: 23px 0 0 36px;
+                margin: 28px 0 0 36px;
 
                 .default-font(15px, @brown, 1px);
             }
@@ -1818,6 +2008,8 @@ body.mapping{
                         width: 350px;
                         .default-font(15px, @dark-gray-brown, .3px);
                         line-height: 25px;
+
+                        list-style-type: decimal;
                     }
                 }
             }
@@ -1825,7 +2017,149 @@ body.mapping{
     }
 
 
+    .part-3, .part-4{
 
+
+
+        .item{
+
+            position: relative;
+            width: 100%;
+            margin-top: 60px;
+
+            .title-block{
+                position: relative;
+
+                margin: 0 auto 0;
+                width: 557px;
+                height: 50px;
+                .image-bg("care-brown-bar-1.png");
+                overflow: hidden;
+
+                .text{
+                    position: relative;
+                    margin: 14px auto 0;
+
+                    .default-font(16.5px, white, 4px);
+                    text-align: center;
+                }
+            }
+
+            .list{
+                position: relative;
+
+                margin-top: 36px;
+                margin-left: 100px;
+
+                .list-item{
+                    position: relative;
+
+                    .title{
+                        position: relative;
+                        .default-font(14.58px, @brown, .3px);
+                    }
+
+
+                    &.no-detail{
+                        .title{
+                            color: @dark-gray-brown;
+                        }
+                    }
+
+                    .detail{
+
+                        position: relative;
+                        margin-top: 30px;
+                        margin-left: -20px;
+                        width: 440px;
+                        .default-font(14.58px, @dark-gray-brown, .3px);
+                        line-height: 20px;
+
+                        list-style-type: decimal;
+
+                        li{
+                            margin-bottom: 32px;
+
+                            &:last-child{
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .part-3{
+
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+
+        .left-part{
+            float: left;
+            width: 640px;
+            min-height: 1px;
+        }
+
+        .right-part{
+            float: left;
+            width: 640px;
+            height: 406px;
+            .image-bg("care-part-3-image.jpg");
+
+        }
+    }
+
+
+    .part-4{
+
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+
+        .left-part{
+            float: left;
+            width: 640px;
+            height: 567px;
+            .image-bg("care-part-4-image.jpg")
+        }
+
+        .right-part{
+            float: left;
+            width: 640px;
+            min-height: 1px;
+//            height: 406px;
+
+            .item{
+                margin-top: 33px;
+
+                .list{
+                    margin-top: 19px;
+
+                    .list-item{
+                        .title{
+
+                        }
+
+                        .detail{
+                            margin-top: 7px;
+
+                            li{
+                                margin-bottom: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    /*
     .part-3 {
 
         position: relative;
@@ -1934,6 +2268,32 @@ body.mapping{
         }
 
     }
+*/
+
+
+
+    .back-to-top{
+        .back-to-top(#e1d6e0);
+    }
+}
+
+/* malt */
+#malt{
+
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: @device-width-a;
+
+    //    background-color: green;
+
+    .key-images{
+        position: relative;
+        width: 100%;
+        height: 393px;
+        .image-bg("malt-key-image.jpg");
+    }
+
 
 
     .malt-part {
@@ -1941,13 +2301,13 @@ body.mapping{
         position: relative;
         width: 100%;
         height: auto;
-        min-height: 1266px;
+        min-height: 1261px;
         background-color: #f3f3f3;
         overflow: hidden;
 
         .title-image{
             position: relative;
-            margin: 30px auto 0;
+            margin: 23px auto 0;
             width: 281px;
             height: 66px;
             .image-bg("care-malt-title.png");
@@ -2029,13 +2389,21 @@ body.mapping{
 
             }
         }
+
+        .foot-text{
+            position: relative;
+            margin: 15px auto 0;
+            .default-font(12.85px, @dark-gray-brown, 2px);
+            text-align: center;
+            line-height: 19px;
+        }
     }
+
 
     .back-to-top{
         .back-to-top(#e1d6e0);
     }
 }
-
 
 /* environmental */
 #environmental{
@@ -2663,9 +3031,9 @@ body.mapping{
             }
         }
     }
-
 }
 
 
 /***** end *****/
+@import "calender.less";
 @import "main-mobile.less";

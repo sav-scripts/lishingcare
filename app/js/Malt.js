@@ -5,7 +5,7 @@
         _isInit = false,
         _isHiding = true;
 
-    var self = window.AboutUs =
+    var self = window.Malt =
     {
         $doms: undefined,
 
@@ -21,7 +21,7 @@
 
             var templates =
                 [
-                    {url: "templates/_about_us.html", startWeight: 0, weight: 100, dom: null}
+                    {url: "templates/_malt.html", startWeight: 0, weight: 100, dom: null}
                 ];
 
             MyLoader.loadTemplate(null, templates, function loadComplete()
@@ -36,7 +36,15 @@
             {
                 $("#invisible-container").append(templates[0].dom);
                 $doms.parent = $("#scene-container").find(".content-container");
-                $doms.container = $("#about-us");
+                $doms.container = $("#malt");
+
+
+                $doms.container.find(".back-to-top").on("click", function(event)
+                {
+                    event.preventDefault();
+
+                    ScrollListener.scrollTo(0);
+                });
 
                 $doms.container.detach();
             }

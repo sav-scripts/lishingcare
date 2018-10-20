@@ -107,6 +107,25 @@
                     end();
                 });
 
+                /* about us & malt */
+                (function(){
+
+                    $doms.container.find(".about-us .btn-more").on("click", function(event)
+                    {
+                        event.preventDefault();
+
+                        Hash.to("/AboutUs");
+                    });
+
+                    $doms.container.find(".malt .btn-more").on("click", function(event)
+                    {
+                        event.preventDefault();
+
+                        Hash.to("/Malt");
+                    });
+
+                }());
+
                 /* care */
                 (function(){
 

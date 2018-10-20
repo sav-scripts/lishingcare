@@ -33,8 +33,8 @@
             {
                 event.preventDefault();
 
-                Hash.to('/Index/AboutUs');
-
+                //Hash.to('/Index/AboutUs');
+                Hash.to('/AboutUs');
             });
 
             $doms.news = $buttonContainer.find(".button:nth-child(3)").on("click", function(event)
@@ -57,7 +57,8 @@
             {
                 event.preventDefault();
 
-                Hash.to('/Index/Malt');
+                //Hash.to('/Index/Malt');
+                Hash.to('/Malt');
 
             });
 
@@ -102,6 +103,11 @@
 
                 self.toggleVipMenu(false);
                 Hash.to('/VipBaby/ForParents');
+
+                //Vip.login(function()
+                //{
+                //    Hash.to('/VipBaby/ForParents');
+                //});
             });
 
             $doms.vipMenu.find(".button:nth-child(3)").on("click", function(event)
@@ -125,7 +131,7 @@
             {
                 event.preventDefault();
 
-                MainPage.logout();
+                Vip.logout();
             });
         },
 

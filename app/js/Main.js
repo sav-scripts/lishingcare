@@ -3,7 +3,8 @@
     "use strict";
     var self = window.Main =
     {
-        apiPath: "//apecmonitoradm.sme.gov.tw/api/",
+        //apiPath: "//apecmonitoradm.sme.gov.tw/api/",
+        apiPath: "//admin.lihshing-care.com/taipei/",
 
         localSettings:
         {
@@ -43,7 +44,7 @@
             if( window.location.host == "local.savorks.com")
             {
                 $.extend(self.settings, self.localSettings);
-                Main.settings.useFakeData = true;
+                //Main.settings.useFakeData = true;
             }
 
             if(Utility.urlParams.usefakedata == '1') Main.settings.useFakeData = true;
@@ -62,6 +63,7 @@
             self.settings.isiOS = Utility.isiOS();
             window._CLICK_ = (self.settings.isiOS)? "touchend": "click";
 
+            ApiProxy.init(window._FAKE_DATA_);
 
             MyLoader.init(window._version);
             Nav.init();

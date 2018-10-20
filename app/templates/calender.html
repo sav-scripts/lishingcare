@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-TW">
+    <meta charset="UTF-8">
+    <title>calender</title>
+
+    <style>
+        body{
+            background-color: gray;
+        }
+
+    </style>
+    <link rel="stylesheet" href="../styles/calender.css">
+</head>
+<body>
+
+
+    <div id="invisible" style="visibility:hidden">
+        <div class="my-calender">
+
+            <div class="cover"></div>
+
+            <div class="container">
+
+                <div class="year-part">
+                    <div class="arrow-left"></div>
+                    <div class="text">2018</div>
+                    <div class="arrow-right"></div>
+                </div>
+                <div class="day-part">
+
+                    <div class="day-block"><div class="text">Sun</div></div>
+                    <div class="day-block"><div class="text">Mon</div></div>
+                    <div class="day-block"><div class="text">Tue</div></div>
+                    <div class="day-block"><div class="text">Wed</div></div>
+                    <div class="day-block"><div class="text">Thu</div></div>
+                    <div class="day-block"><div class="text">Fri</div></div>
+                    <div class="day-block"><div class="text">Sat</div></div>
+
+                </div>
+                <div class="date-part">
+
+                    <div class="date-block"><div class="date-text">30</div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+                    <div class="date-block"><div class="date-text"></div></div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-1.x-git.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+<script src="../js/Calender.js"></script>
+
+<script type="text/javascript">
+
+    var $sample = $(".my-calender").detach();
+
+    var calender = new Calender($sample.clone());
+
+    calender.show();
+
+
+</script>
+
+
+
+</body>
+</html>

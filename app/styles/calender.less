@@ -1,0 +1,177 @@
+@import (once) "common-mixins.less";
+
+.my-calender{
+
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    .cover{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: #ffffff;
+
+        opacity: .88;
+    }
+
+    .container{
+
+//        @height: 400px;
+
+        @line-size: 1px;
+
+        @block-width:80px;
+        @block-height:80px;
+        @width: (@block-width * 7) + (@line-size * 8);
+
+        @bar-height: 40px;
+        @height: @bar-height + @bar-height + (@block-height * 6) + 10px;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        width: @width;
+//        height: @height;
+
+        margin-left: -@width * .5;
+        margin-top: -@height * .5;
+
+        background-color: rgba(255, 0, 0, .2);
+
+        box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
+
+        .year-part{
+            position: relative;
+            width: 100%;
+            height: @bar-height;
+            background-color: #a18b73;
+
+            overflow: hidden;
+
+            border-bottom: 1px solid rgba(255,255,255,.1);
+
+            .text{
+                width: 100px;
+                .default-font(14px, white, 2px);
+                text-align: center;
+                margin: 10px auto 0;
+                clear: both;
+
+                .unselectable();
+            }
+
+            @bleed: 10px;
+
+            .arrow-left{
+                .image-bg("white-arrow-1.png");
+
+
+                left: 10px;
+
+                &:active{
+                    margin-left: -1px;
+                }
+            }
+
+            .arrow-right{
+                .image-bg("white-arrow-2.png");
+                right: 10px;
+
+                &:active{
+                    margin-right: -1px;
+                }
+            }
+
+            .arrow-left, .arrow-right{
+
+                position: absolute;
+                width: 12px + @bleed;
+                height: 18px + @bleed;
+                top: 6px;
+
+                background-position: center;
+                background-repeat: no-repeat;
+
+                cursor: pointer;
+            }
+        }
+
+        .day-part{
+            position: relative;
+            width: 100%;
+            height: @bar-height;
+            background-color: #a18b73;
+
+            .day-block{
+                position: relative;
+                float: left;
+                width: @block-width;
+                height: 40px;
+
+                .text{
+                    .default-font(14px, white, 2px);
+                    text-align: center;
+                    margin: 10px auto 0;
+
+                    .unselectable();
+                }
+
+            }
+        }
+
+        .date-part{
+            position: relative;
+            width: 100%;
+            background-color: #a18b73;
+
+            padding-bottom: 5px;
+
+            overflow: hidden;
+
+            .date-block{
+                position: relative;
+                width: @block-width;
+                height: @block-height;
+                background-color: white;
+                float: left;
+
+                margin-left: @line-size;
+                margin-top: @line-size;
+
+                cursor: pointer;
+
+                &.disable-mode{
+                    opacity: .8;
+
+                    &:active{
+                        margin-top: @line-size;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .date-text{
+                    position: absolute;
+                    left: 7px;
+                    top: 5px;
+                    .default-font(14px, #a18b73, 2px);
+                    .unselectable();
+                }
+
+                &:active{
+                    margin-top: (@line-size+1px);
+                    margin-bottom: -1px;
+//                    height: @block-height - 1px;
+                }
+            }
+        }
+    }
+
+}
