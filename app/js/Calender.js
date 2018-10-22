@@ -5,12 +5,15 @@
 
     window.Calender = Calender;
 
-    function Calender($container, startDate)
+    function Calender($container, startDate, $parent, onDateClicked)
     {
         var self = this;
 
         //self._$container = $('<div class="sav-calender"></div>');
         self._$container = $container;
+        self._onDateClicked = onDateClicked;
+
+        self._$parent = $parent || $('body');
 
         $container.find(".arrow-left").on("click", function(event)
         {
@@ -46,7 +49,14 @@
 
         _$container: undefined,
 
+        _$parent: undefined,
+
         _date: undefined,
+
+        _onDateClicked: undefined,
+
+        _eventDataDic: {},
+        _eventDataList: [],
 
         toNextMonth: function()
         {
@@ -58,6 +68,18 @@
         {
             this._date.setMonth(this._date.getMonth() - 1);
             this.updateDate();
+        },
+
+        toEventByIndex: function(index)
+        {
+            var self = this;
+            var eventData = self._eventDataList[index];
+            if(eventData)
+            {
+                var date = new Date(eventData.year+'-'+eventData.month+'-'+eventData.date);
+
+                self.updateDate(date);
+            }
         },
 
         updateDate: function(date)
@@ -86,7 +108,22 @@
                 day,
                 row = 0,
                 childIndex,
-                $dateBlock;
+                year = date.getFullYear(),
+                month = date.getMonth() + 1,
+                d = self._eventDataDic,
+                monthEventData,
+                eventDataArray,
+                eventData,
+                $dateBlock,
+                $eventContainer,
+                $eventNode;
+
+            if(d[year] && d[year][month])
+            {
+                monthEventData = d[year][month];
+            }
+
+            //console.log("year = " + year + ", month = " + month);
 
             for(i=1; i<=numDates;i++)
             {
@@ -96,11 +133,86 @@
                 $dateBlock = $($dateBlocks[childIndex]);
                 $dateBlock.find(".date-text").text(i);
 
+                $dateBlock.find(".event-container").detach();
+
                 $dateBlock.toggleClass("disable-mode", false);
+
+                if(monthEventData)
+                {
+                    eventDataArray = monthEventData[i];
+
+                    if(eventDataArray)
+                    {
+                        bindClickFunc($dateBlock, eventDataArray);
+
+                        $eventContainer = $('<div class="event-container"></div>');
+                        $dateBlock.append($eventContainer);
+
+                        $dateBlock.eventDataArray = eventDataArray;
+                        //console.log(eventDataArray);
+                        for(var k=0;k<eventDataArray.length;k++)
+                        {
+                            eventData = eventDataArray[k];
+
+                            $eventNode = $('<div class="event-node"></div>');
+                            $eventContainer.append($eventNode);
+
+                            if(eventData.is_booked == 'true')
+                            {
+                                $eventNode.toggleClass('booked', true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        $dateBlock.eventDataArray = undefined;
+                        $dateBlock.unbind("click");
+                    }
+                }
+                else
+                {
+                    $dateBlock.eventDataArray = undefined;
+                    $dateBlock.unbind("click");
+                }
+
 
                 if(day === 6) row ++;
             }
 
+            function bindClickFunc($dateBlock, eventDataArray)
+            {
+
+                $dateBlock.on("click", function(event)
+                {
+                    event.preventDefault();
+
+                    if(self._onDateClicked)
+                    {
+                        self._onDateClicked.call(null, eventDataArray);
+                    }
+                });
+
+            }
+
+        },
+
+        addEvent: function(dataObj)
+        {
+            var self = this,
+                eventDataDic = self._eventDataDic;
+
+            var year = dataObj.year,
+                month = dataObj.month,
+                date = dataObj.date;
+
+            eventDataDic[year] = eventDataDic[year] || {};
+            eventDataDic[year][month] = eventDataDic[year][month] || {};
+            var eventDataArray = eventDataDic[year][month][date] = eventDataDic[year][month][date] || [];
+
+            eventDataArray.push(dataObj);
+            //eventData.rawData = dataObj;
+
+            self._eventDataList.push(dataObj);
         },
 
         show: function()
@@ -109,7 +221,7 @@
             if(!self._isHiding) return;
             self._isHiding = true;
 
-            $('body').append(self._$container);
+            self._$parent.append(self._$container);
         }
     };
 

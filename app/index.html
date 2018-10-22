@@ -10,6 +10,20 @@
 </head>
 <body onload="Main.init();">
 
+
+    <div id="loading">
+
+        <div id="loading-icon"></div>
+        <div id="loading-text">99</div>
+
+    </div>
+
+    <script src="js/lib/Loading.js"></script>
+    <script>
+        Loading.init();
+//        Loading.progress('LOADING').show();
+    </script>
+
     <div id="invisible-wrapper">
 
         <div id="invisible-container" class="scene-container">
@@ -43,11 +57,12 @@
         <!--<div class="layout-about-us"></div>-->
         <!--<div class="layout-malt"></div>-->
         <!--<div class="layout-contact"></div>-->
-        <div class="layout-care"></div>
+        <!--<div class="layout-care"></div>-->
         <!--<div class="layout-environmental"></div>-->
         <!--<div class="layout-vip-baby-1"></div>-->
         <!--<div class="layout-vip-baby-2"></div>-->
         <!--<div class="layout-vip-baby-3"></div>-->
+        <div class="layout-vip-course"></div>
 
     </div>
 
@@ -170,6 +185,8 @@
     <script src="js/Calender.js"></script>
     <script src="js/Vip.js"></script>
     <script src="js/VipBaby.js"></script>
+    <script src="js/VipCourse.js"></script>
+    <script src="js/CourseBooking.js"></script>
     <!-- endbuild -->
 
     <script type="text/javascript">

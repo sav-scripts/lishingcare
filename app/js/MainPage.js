@@ -5,6 +5,7 @@
 
     var $doms = {},
         _isHashLocking = false,
+        _sceneScrollLocking = false,
         _hashQueue = null,
 
         _contentClassDic = null,
@@ -34,6 +35,7 @@
                 "/Malt": Malt,
                 "/Environmental": Environmental,
                 "/VipBaby": VipBaby,
+                "/VipCourse": VipCourse,
                 "/Login": Vip
             };
 
@@ -43,13 +45,48 @@
 
             Vip.init(function()
             {
-                console.log('vip is init');
-
                 ScrollListener.init().bind(onScrolling).active();
 
-                Hash.init().bind(onHashChange).startListening();
-                onHashChange();
+                checkLoginStatus(function()
+                {
+                    Hash.init().bind(onHashChange).startListening();
+                    onHashChange();
+                });
             });
+
+            function checkLoginStatus(cb)
+            {
+
+                var hash = Hash.getHash(),
+                    hashArray = Hash.analysis();
+
+                var contentClass = _contentClassDic[hashArray[0]];
+
+                Vip.getLoginStatus(function(isLogin)
+                {
+                    if(contentClass)
+                    {
+                        if(isLogin)
+                        {
+                            if(contentClass === Vip)
+                            {
+                                Hash.to('/Index');
+                            }
+                        }
+                        else
+                        {
+                            if(contentClass.isVipOnly)
+                            {
+                                Vip.setHashAfterLogin(hash);
+                                Hash.to('/Login');
+                            }
+                        }
+                    }
+
+
+                    cb.call();
+                });
+            }
 
             /*
             loadCalender();
@@ -100,8 +137,33 @@
 
         },
 
+        setSceneScrollLock: function(b)
+        {
+            if(b !== undefined) _sceneScrollLocking = b;
+
+            if(_sceneScrollLocking)
+            {
+                $doms.sceneContainer.css
+                ({
+                    "height": Main.viewport.height,
+                    "overflow": 'hidden'
+                });
+            }
+            else
+            {
+                $doms.sceneContainer.css
+                ({
+                    "height": '',
+                    "overflow": ''
+                });
+            }
+
+        },
+
         resize: function()
         {
+            self.setSceneScrollLock();
+
             if(_currentContentClass && _currentContentClass.resize)
             {
                 _currentContentClass.resize();
@@ -175,9 +237,9 @@
 
         function checkVipContent()
         {
-            console.log('checkVipContent');
             if(contentClass.isVipOnly)
             {
+                //console.log('checkVipContent');
                 Vip.getLoginStatus(function(isLogin)
                 {
                     if(isLogin)
@@ -187,6 +249,10 @@
                     else
                     {
                         _isHashLocking = false;
+
+                        //console.log(window.history.length);
+                        //if(window.history) window.history.back();
+
                         Vip.setHashAfterLogin(hash);
                         Hash.to('/Login');
                     }
@@ -201,8 +267,7 @@
 
         function newContentIn()
         {
-            console.log('newContentIn');
-
+            //console.log('newContentIn');
 
             contentClass.init(function()
             {

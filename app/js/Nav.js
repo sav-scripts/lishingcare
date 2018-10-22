@@ -21,11 +21,15 @@
             var $buttonContainer = $doms.buttonContainer = $doms.container.find(".button-group");
 
 
+            //window.history.pushState({}, "test", '');
+            //console.log(window.history.state);
+
             $doms.logo = $doms.container.find(".logo").on("click", function(event)
             {
                 event.preventDefault();
 
-                Hash.to('/Index');
+                window.history.back();
+                //Hash.to('/Index');
 
             });
 
@@ -115,6 +119,7 @@
                 event.preventDefault();
 
                 self.toggleVipMenu(false);
+                Hash.to('/VipCourse');
 
             });
 

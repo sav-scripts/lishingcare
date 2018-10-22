@@ -31,9 +31,10 @@
 
             if(_fakeData && (Main.settings.useFakeData || fakeDataName))
             {
-                //console.log(fakeDataName);
                 if(Main.settings.useFakeData && fakeDataName === false) fakeDataName = apiName;
                 //if(fakeDataName === true) fakeDataName = apiName;
+
+                //console.log("using fake data: " + fakeDataName);
 
                 var response = _fakeData[fakeDataName];
 
@@ -43,10 +44,15 @@
                 }
                 else
                 {
-                    TweenMax.delayedCall(.1, function()
+                    setTimeout(function()
                     {
                         complete(response);
-                    });
+                    }, 100);
+
+                    //TweenMax.delayedCall(.1, function()
+                    //{
+                    //    complete(response);
+                    //});
                 }
 
 

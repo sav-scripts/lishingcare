@@ -98,12 +98,18 @@
         {
             if(self.getHash() === newHash) return;
 
+
+            //window.history.pushState({dd:"aa"}, "hash", newHash);
+            //return;
+
             if(skipListeningOnce) _ignoreNextHashChange = true;
             window.location.hash = "#" + newHash;
         },
 
         update: function()
         {
+            //console.log(window.history.state);
+
             if(_isListening)
             {
                 if(_ignoreNextHashChange)

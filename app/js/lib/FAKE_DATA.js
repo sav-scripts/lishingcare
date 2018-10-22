@@ -27,7 +27,7 @@ window._FAKE_DATA_ =
     "login_status":
     {
         // 已登入的話傳回 true (string)
-        "status": 'false'
+        "status": 'true'
     },
 
     /*** API 登出 ***/
@@ -368,5 +368,87 @@ window._FAKE_DATA_ =
             }
 
         ]
+    },
+
+    /*** 媽媽課程 ***/
+    "vip_course":
+    {
+        "error": '',
+
+        // 課程清單, 請依照先後排序 (最早的排第一)
+        "course_list":
+        [
+            {
+                // 課程 id, 唯一值
+                "id": "1",
+
+                "year": "2018",
+                "month": "11",
+                "date": "5",
+
+                // 課程時段, 純文字
+                "time": "14:30 ~ 15:30",
+                "name": "新生兒常見照護問題新生兒常見照護問題新生兒常見照護問題新生兒常見照護問題新生兒常見照護問題",
+
+                // 預約狀態, 字串, 已預約: "true", 未預約: "false"
+                "is_booked": "false"
+            },
+
+            {
+                "id": "2",
+                "year": "2018",
+                "month": "11",
+                "date": "5",
+                "time": "15:30 ~ 16:30",
+                "name": "新生兒常見照護問題 II",
+                "is_booked": "true"
+            },
+
+            {
+                "id": "3",
+                "year": "2018",
+                "month": "11",
+                "date": "8",
+                "time": "14:30 ~ 15:30",
+                "name": "媽媽教育",
+                "is_booked": "false"
+            },
+
+            {
+                "id": "4",
+                "year": "2018",
+                "month": "12",
+                "date": "8",
+                "time": "14:30 ~ 15:30",
+                "name": "媽媽教育",
+                "is_booked": "false"
+            },
+
+            {
+                "id": "5",
+                "year": "2019",
+                "month": "1",
+                "date": "8",
+                "time": "14:30 ~ 15:30",
+                "name": "媽媽教育",
+                "is_booked": "false"
+            }
+        ]
+    },
+
+
+    /*** 媽媽課程 改變預約 ***/
+    "vip_course_booking.send":
+    {
+        // 課程 id
+        "course_id": "1",
+
+        // 目標預約狀態, 字串, 已預約: "true", 未預約: "false"
+        "set_to_booked": "true"
+    },
+
+    "vip_course_booking":
+    {
+        "error": ''
     }
 };

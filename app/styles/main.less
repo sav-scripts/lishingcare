@@ -186,6 +186,13 @@ body{
         height: 1820px;
         .image-bg('layout/vip-baby-3.jpg');
     }
+
+    .layout-vip-course{
+        position: relative;
+        width: 100%;
+        height: 1820px;
+        .image-bg('layout/vip-course.jpg');
+    }
 }
 
 body.mapping{
@@ -243,6 +250,49 @@ body.mapping{
 }
 #invisible-container{
     visibility: hidden;
+}
+
+
+/** loading **/
+#loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    z-index: 2098;
+
+    //    #loading-icon{
+    //
+    //        position: absolute;
+    //        width: 123px;
+    //        height: 154px;
+    //
+    //        margin-left: -61px;
+    //        margin-top: -20px;
+    //
+    //        left:50%;
+    //        top:50%;
+    //
+    //        .image-bg("loading.gif");
+    //    }
+
+    #loading-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        .default-font(14px, #43ac8d);
+        font-weight: bold;
+
+        width: 400px;
+        height: 30px;
+        margin-left: -200px;
+        margin-top: -15px;
+        text-align: center;
+        //        visibility: hidden;
+    }
 }
 
 /* login */
@@ -3033,6 +3083,261 @@ body.mapping{
     }
 }
 
+/* vip course */
+#vip-course{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: @device-width-a;
+
+    .key-images{
+        position: relative;
+        width: 100%;
+        height: 393px;
+        .image-bg("vip-course-key-image.jpg");
+    }
+
+    .part-1{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        min-height: 800px;
+
+//        background-color: #f8f8f8;
+
+        .title-image{
+            position: relative;
+            width: 382px;
+            height: 66px;
+            .image-bg("vip-course-title.png");
+            margin: 26px auto 0;
+        }
+
+        .title-text{
+            position: relative;
+            margin: 3px auto 0;
+            .default-font(15.63px, @brown, 4px);
+            text-align: center;
+        }
+
+        .calender-container{
+            position: relative;
+            margin: 21px auto 0;
+        }
+
+        .annotation{
+            position: relative;
+            margin: 20px auto 40px;
+            .default-font(14px, @dark-gray-brown, 2px);
+            text-align: center;
+
+            .un-booked-node, .booked-node{
+                display: inline-block;
+                margin: 0 0 -2px 0;
+
+                width: 14px;
+                height: 14px;
+                .image-bg("calender-node.png");
+            }
+
+            .un-booked-node{
+                background-position: right top;
+            }
+
+            .booked-node{
+                background-position: right bottom;
+            }
+        }
+    }
+}
+
+#course-booking{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    z-index: @popup-depth;
+
+    .cover{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: #2e2525;;
+//        opacity: .88;
+    }
+
+    .container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: table;
+
+        .middle-wrapper{
+
+            display: table-cell;
+            vertical-align: middle;
+
+            .help-title{
+                position: relative;
+                margin: 60px auto 20px;
+                .default-font(16px, white, 2px);
+                text-align: center;
+            }
+
+            .buttons{
+                position: relative;
+                width: 400px;
+                text-align: center;
+
+                margin: 20px auto 60px;
+
+                .btn-confirm, .btn-cancel{
+                    display: inline-block;
+
+                    background-color: @brown;
+
+
+                    border-left: 2px solid #702f2f;
+                    border-right: 2px solid #702f2f;
+
+                    .default-font(14px, white, 1px);
+                    text-align: center;
+                    line-height: 30px;
+                    height: 30px;
+                    margin: 5px;
+                    padding: 0 8px;
+
+                    cursor: pointer;
+
+                    .unselectable();
+
+//                    &:active{
+//                        margin-top: 6px;
+//                    }
+
+                }
+            }
+
+            .item{
+                @item-width: 400px;
+                @book-status-width: 100px;
+                @head-width: 6px;
+                @text-width: @item-width - @book-status-width - @head-width - 20px;
+
+
+                @un-booked-color: #702f2f;
+                @booked-color: #af4949;
+
+                position: relative;
+                width: @item-width;
+                height: auto;
+                background-color: @brown;
+
+                overflow: hidden;
+
+                margin: 20px auto 20px;
+
+                cursor: pointer;
+
+                &:active{
+                    left: 1px;
+                }
+
+                @r: 10px;
+
+                border-radius: 0 @r @r 0;
+
+                .head{
+                    position: absolute;
+                    left: 0;
+                    width: @head-width;
+                    height: 100%;
+                    background-color: @un-booked-color;
+
+//                    border-right: 1px solid #c9b4a2;
+                }
+
+                .time, .name{
+                    position: relative;
+                    width: @text-width;
+                    .default-font(14px, white, 2px);
+                    margin: 10px auto 10px (10px + @head-width);
+
+                    overflow: hidden;
+
+                    .unselectable();
+
+                    .title{
+                        float: left;
+                        width: 40px;
+                    }
+                    .detail{
+                        float: left;
+                        width: @text-width - 40px;
+                    }
+                }
+
+                .book-status{
+                    position: absolute;
+                    right: 2px;
+                    top: 2px;
+                    background-color: @un-booked-color;
+//                    height: 100%;
+                    height: 24px;
+                    border-radius: 9px;
+                    width: @book-status-width;
+
+//                    border-left: 1px solid #c9b4a2;
+
+                    display: table;
+
+                    .middle{
+
+                        display: table-cell;
+                        vertical-align: middle;
+
+                        .status-text{
+                            .default-font(14px, #9f9f9f, 2px);
+                            margin: 0 auto;
+                            text-align: center;
+
+                            &::before{
+                                content:"尚未預約"
+                            }
+
+                        }
+                    }
+                }
+
+                &.booked{
+                    .head{
+//                        background-color:@booked-color;
+                    }
+                    .book-status{
+//                        background-color:@booked-color;
+                        .middle{
+                            .status-text{
+                                &::before{
+                                    content:"已預約"
+                                }
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
 
 /***** end *****/
 @import "calender.less";

@@ -3,8 +3,7 @@
  */
 (function(){
 
-    var _isUIOn = false,
-        _captchaToken,
+    var _captchaToken,
         _isLogin = false,
         _isInit = false,
         _isHiding = true,
@@ -40,6 +39,7 @@
                 console.log('got g-recaptcha-response: ' + response);
             };
 
+            /*
             ApiProxy.callApi("login_status", {}, false, function(response)
             {
                 if(response.status == 'true')
@@ -53,6 +53,13 @@
                 _isInit = true;
                 onReady.call();
             });
+            */
+
+
+            build();
+
+            _isInit = true;
+            onReady.call();
 
             function build()
             {
@@ -110,7 +117,7 @@
                                 }
                                 else
                                 {
-                                    console.error("got un login status after a successful login, this should't happen");
+                                    console.error("got false login status after a successful login, this should't happen");
                                 }
                             });
                         }
@@ -130,9 +137,10 @@
 
         getLoginStatus: function(cb)
         {
+            //console.log("Vip getLoginStatus called");
             ApiProxy.callApi("login_status", {}, false, function(response)
             {
-                console.log('login status: ' + response.status);
+                //console.log('login status: ' + response.status);
 
                 if(response.status == 'true')
                 {
