@@ -102,7 +102,7 @@
 
                     if(eventData.is_book_able != 'true')
                     {
-                        alert("這項課程預約人數已滿喔!");
+                        alert("這項課程的預約人數已滿喔!");
                         return;
                     }
 

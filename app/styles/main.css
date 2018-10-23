@@ -2683,7 +2683,8 @@ body.mapping #scene-container .content-mask {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #2e2525;
+  background-color: white;
+  opacity: 0.88;
 }
 #course-booking .container {
   position: absolute;
@@ -2740,7 +2741,7 @@ body.mapping #scene-container .content-mask {
   border: 2px solid white;
   background-color: #a18b73;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 #course-booking .container .middle-wrapper .item .point {
   position: absolute;
