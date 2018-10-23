@@ -49,12 +49,12 @@ window._FAKE_DATA_ =
             [
                 {
                     "pc": "./test/images/index-key-image-1.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/index-key-image-1.m.jpg"
                 },
 
                 {
                     "pc": "./test/images/index-key-image-2.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/index-key-image-2.m.jpg"
                 }
             ]
         },
@@ -373,6 +373,8 @@ window._FAKE_DATA_ =
     /*** 媽媽課程 ***/
     "vip_course":
     {
+        // 特殊錯誤訊息:
+        // "not_login" => 使用者已登出
         "error": '',
 
         // 課程清單, 請依照先後排序 (最早的排第一)
@@ -388,7 +390,18 @@ window._FAKE_DATA_ =
 
                 // 課程時段, 純文字
                 "time": "14:30 ~ 15:30",
-                "name": "新生兒常見照護問題新生兒常見照護問題新生兒常見照護問題新生兒常見照護問題新生兒常見照護問題",
+
+                // 課程名稱
+                "name": "新生兒常見照護問題",
+
+                // 老師
+                "teacher": "張三",
+
+                // 備註 (選擇性的, 可為空值)
+                "memo": "課程人數限定 30 人",
+
+                // 可預約狀態 true => 可預約(人數未滿或不限人數), no => 不可預約(人數已滿)
+                "is_book_able": "true",
 
                 // 預約狀態, 字串, 已預約: "true", 未預約: "false"
                 "is_booked": "false"
@@ -401,6 +414,9 @@ window._FAKE_DATA_ =
                 "date": "5",
                 "time": "15:30 ~ 16:30",
                 "name": "新生兒常見照護問題 II",
+                "teacher": "張三",
+                "memo": "",
+                "is_book_able": "false",
                 "is_booked": "true"
             },
 
@@ -411,6 +427,9 @@ window._FAKE_DATA_ =
                 "date": "8",
                 "time": "14:30 ~ 15:30",
                 "name": "媽媽教育",
+                "teacher": "張三",
+                "memo": "",
+                "is_book_able": "true",
                 "is_booked": "false"
             },
 
@@ -421,6 +440,9 @@ window._FAKE_DATA_ =
                 "date": "8",
                 "time": "14:30 ~ 15:30",
                 "name": "媽媽教育",
+                "teacher": "張三",
+                "memo": "",
+                "is_book_able": "true",
                 "is_booked": "false"
             },
 
@@ -431,6 +453,9 @@ window._FAKE_DATA_ =
                 "date": "8",
                 "time": "14:30 ~ 15:30",
                 "name": "媽媽教育",
+                "teacher": "張三",
+                "memo": "",
+                "is_book_able": "true",
                 "is_booked": "false"
             }
         ]
@@ -449,6 +474,9 @@ window._FAKE_DATA_ =
 
     "vip_course_booking":
     {
+        // 特殊錯誤訊息:
+        // "is_full" => 要求的課程在使用者操作間變成滿員, 導致無法預約
+        // "not_login" => 使用者已登出
         "error": ''
     },
 
@@ -466,6 +494,8 @@ window._FAKE_DATA_ =
 
     "reservation":
     {
+        // 特殊錯誤訊息:
+        // "not_login" => 使用者已登出
         "error": ''
     }
 

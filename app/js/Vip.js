@@ -80,6 +80,8 @@
                         return;
                     }
 
+                    Loading.progress('登入中...請稍候').show();
+
                     var params =
                     {
                         'name': $doms.userNameInput[0].value,
@@ -91,9 +93,12 @@
 
                     ApiProxy.callApi("login", params, false, function(response)
                     {
+                        Loading.hide();
+
                         if(response.error)
                         {
                             self.reset();
+                            alert(response.error);
                         }
                         else
                         {
@@ -161,6 +166,8 @@
         {
             _captchaToken = null;
             grecaptcha.reset();
+            $doms.userNameInput[0].value = '';
+            $doms.passwordInput[0].value = '';
         },
 
 

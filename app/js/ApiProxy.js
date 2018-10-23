@@ -3,8 +3,8 @@
  */
 (function(){
 
-    var _fakeData,
-        _cachedData = {};
+    var _fakeData;
+        //_cachedData = {};
 
     var _apiExtension = ".php",
         _apiPath = "./api/",
@@ -48,22 +48,15 @@
                     {
                         complete(response);
                     }, 100);
-
-                    //TweenMax.delayedCall(.1, function()
-                    //{
-                    //    complete(response);
-                    //});
                 }
-
-
             }
             else
             {
-                if(_cachedData[apiName])
-                {
-                    complete(_cachedData[apiName]);
-                    return;
-                }
+                //if(_cachedData[apiName])
+                //{
+                //    complete(_cachedData[apiName]);
+                //    return;
+                //}
 
                 //apiUrl = "http://admin.apac.jktarots.com:9454/api/banner?type=jsonp";
                 if(_dataType === "jsonp") apiUrl += "?type=jsonp";
@@ -76,7 +69,10 @@
                     crossDomain: true,
                     type: method,
                     data: params,
-                    dataType: _dataType
+                    dataType: _dataType,
+                    xhrFields: {
+                        withCredentials: true
+                    }
                 })
                 .done(complete)
                 .fail(function (event)
@@ -90,7 +86,7 @@
 
             function complete(response)
             {
-                if(!_cachedData[apiName]) _cachedData[apiName] = response;
+                //if(!_cachedData[apiName]) _cachedData[apiName] = response;
 
                 if(response.error)
                 {

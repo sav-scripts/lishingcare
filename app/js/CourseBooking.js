@@ -64,14 +64,48 @@
 
                 $doms.itemContainer.append($item);
 
-                $item.find(".time .detail").text(eventData.time);
-                $item.find(".name .detail").text(eventData.name);
+                $item.find(".time").text(eventData.time);
+                $item.find(".name").text(eventData.name);
+                $item.find(".teacher").text(eventData.teacher);
 
-                $item.toggleClass('booked', (eventData.is_booked == 'true'));
+                var $memo = $item.find(".memo");
 
-                $item.on("click", function(event)
+                if(eventData.memo)
+                {
+                    $memo.html(eventData.memo);
+                }
+                else
+                {
+                    $memo.detach();
+                }
+
+                var $itemBtn = $item.find(".item-btn");
+
+                if(eventData.is_book_able == 'true')
+                {
+                    if(eventData.is_booked == 'true')
+                    {
+                        $itemBtn.toggleClass("cancel-mode", true);
+                    }
+
+                }
+                else
+                {
+                    $itemBtn.toggleClass("full-mode", true);
+                }
+
+
+
+                $itemBtn.on("click", function(event)
                 {
                     event.preventDefault();
+
+                    if(eventData.is_book_able != 'true')
+                    {
+                        alert("這項課程預約人數已滿喔!");
+                        return;
+                    }
+
 
                     var targetBookStatus = eventData.is_booked == 'true'? 'false': 'true';
 
@@ -87,10 +121,27 @@
                     ApiProxy.callApi("vip_course_booking", params, false, function(response)
                     {
                         Loading.hide();
-                        eventData.is_booked = targetBookStatus;
-                        $item.toggleClass('booked', (eventData.is_booked == 'true'));
 
-                    });
+                        if(response.error === 'is_full')
+                        {
+                            eventData.is_book_able = false;
+                            $itemBtn.toggleClass("cancel-mode", false);
+                            $itemBtn.toggleClass("full-mode", true);
+                            //$item.toggleClass('booked', (eventData.is_booked == 'true'));
+                        }
+                        else if(response.error === "not_login")
+                        {
+                            Hash.to("/Login");
+                        }
+                        else if(!response.error)
+                        {
+                            eventData.is_booked = targetBookStatus;
+                            $itemBtn.toggleClass("full-mode", false);
+                            $itemBtn.toggleClass("cancel-mode", eventData.is_booked == 'true');
+                            //$item.toggleClass('booked', (eventData.is_booked == 'true'));
+                        }
+
+                    }, null, true);
                 });
 
 

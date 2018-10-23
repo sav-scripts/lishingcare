@@ -4,6 +4,735 @@
 
 @media (max-width: @device-width-b) {
 
+    /* layout */
+    #layout{
+
+        width: @device-width-b;
+        left: 0;
+        margin-left: 0;
+
+        .pc-layout{
+            display: none;
+        }
+
+        .mobile-layout{
+            display: block;
+        }
+
+    }
+
+    /* scene-container */
+    .scene-container{
+        width: @device-width-b;
+
+        .top-bleed{
+                height: 167px;
+        }
+    }
+
+
+    /* nav */
+    #nav{
+        width: @device-width-b;
+        height: 164px;
+
+        left: 0;
+        margin-left:0;
+
+    //    opacity: .4;
+
+        &.pin-mode{
+
+            height: 100px;
+
+            .logo{
+                top: 11px;
+            }
+
+
+
+            .menu-icon{
+                top: 12px;
+            }
+        }
+
+        .logo{
+            .abs-div(34, 46, 316, 68, 'logo.m.png');
+        }
+
+        .menu-icon{
+            position: absolute;
+            right: 31px;
+            top: 46px;
+            width: 80px;
+            height: 80px;
+            .image-bg('menu-icon.png');
+
+            cursor: pointer;
+            transition: top .2s linear;
+
+            &:active{
+                margin-top: 1px;
+            }
+
+        }
+
+        .button-group{
+            display: none;
+        }
+    }
+
+
     /* index */
+    #index {
+
+        .key-images{
+
+
+
+            height: 550px;
+
+            .reservation-icon{
+                right: 31px;
+                bottom: 14px;
+                width: 202px;
+                height: 202px;
+                .image-bg('index-reservation.m.png');
+            }
+        }
+
+        .brown-bar{
+            position: relative;
+            width: 100%;
+            height: 8px;
+            background-color: @brown;
+            //        background-color: red;
+        }
+
+
+
+        .about-us{
+//            height: auto;
+            height: 1648px;
+
+            .left-part{
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+
+                .title-image{
+                    position: relative;
+                    width: 356px;
+                    height: 71px;
+                    margin: 30px auto 0;
+                    .image-bg('index-about-us-title.m.png');
+                }
+
+                .title-text{
+                    margin: 24px auto 0;
+                    .default-font(29.17px, @brown, 4px);
+                }
+
+                .line{
+                    display: none;
+                }
+
+                .image-m{
+                    margin: 29px auto 0;
+                    .image-bg('index-about-us-image.jpg');
+                    width: 640px;
+                    height: 460px;
+                }
+
+                .contents{
+
+                    width: 556px;
+                    margin: 40px auto 0;
+                    .default-font(29.17px, @dark-gray-brown,0);
+                    line-height: 46px;
+                }
+
+                .bottom-text{
+                    width: 556px;
+                    margin: 40px auto 0;
+                    .default-font(29.17px, #a08c6e, 0);
+                    float: none;
+                }
+
+                .btn-more{
+
+                    .btn-more(3);
+
+                    margin: 50px auto 50px;
+                    float: none;
+
+                }
+            }
+
+            .right-part{
+                display: none;
+            }
+        }
+
+        .environmental{
+
+            @width: @device-width-a;
+            @height: 620px;
+
+            position: relative;
+            width: @width;
+            height: @height;
+
+            .image-bg('index-environmental-bg.jpg');
+
+            .top-part{
+
+                @w: 446px;
+
+                position: absolute;
+                left: 50%;
+                margin-left: -@w * .5;
+                top: 37px;
+
+
+
+                .title-image{
+                    position: relative;
+                    width: 312px;
+                    height: 53px;
+                    .image-bg('index-environmental-title.png');
+                    margin: 0 auto 0;
+                }
+
+                .title-text{
+                    position: relative;
+                    margin: 9px auto 0;
+
+                    .default-font(15.63px, @brown, 1px);
+                    text-align: center;
+                }
+
+                .line{
+                    position: relative;
+                    margin: 14px auto 0;
+                    background-color: @brown;
+                    width: 446px;
+                    height: 1px;
+                }
+
+                .detail{
+                    position: relative;
+                    width: 446px;
+                    .default-font(13px, @dark-gray-brown);
+                    line-height: 25px;
+                    margin-top: 16px;
+                    letter-spacing: 1px;
+                    text-align: center;
+                }
+            }
+
+            .sample-part{
+
+                position: absolute;
+                width: 100%;
+                top: 274px;
+                text-align: center;
+
+                .sample{
+                    @w: 377px;
+                    @h: 251px;
+
+                    position: relative;
+                    display: inline-block;
+
+                    width: @w;
+                    margin: 0 8px;
+
+                    cursor: pointer;
+
+                    &:active{
+                        .sample-bottom .text .triangle{
+
+                            background-position: 5px 4px;
+                        }
+                    }
+
+                    .image{
+                        position: relative;
+                        width: @w;
+                        height: @h;
+                        background-color: rgba(255, 0, 0, .4);
+                    }
+
+                    .sample-bottom{
+                        position: relative;
+                        width: @w;
+                        height: 35px;
+                        background-color: rgba(161, 139, 115, .25);
+
+                        .text{
+                            position: relative;
+                            width: 100%;
+                            .default-font(14px, @dark-gray-brown);
+                            //                        top: 8px;
+                            letter-spacing: 5px;
+                            text-align: center;
+                            line-height: 35px;
+
+                            .triangle{
+                                display: inline-block;
+                                width: 14px;
+                                height: 14px;
+                                .image-bg('triangle-1.png');
+                                background-position: 0 4px;
+                                background-repeat: no-repeat;
+                                margin-left: -5px;
+
+                            }
+                        }
+
+                    }
+                }
+
+
+
+                @text-1: '房型介紹';
+                @text-2: '公共區域';
+                @text-3: '嬰兒室';
+                @text-: text-;
+
+                .my-loop (@i) when (@i <= 3){
+
+                    .sample:nth-child(@{i}){
+
+                        .image{
+                            //                        .image-bg('index-environmental-sample-@{i}.jpg');
+                        }
+
+                        @t: ~'text-@{i}';
+                        @text: @@t;
+
+                        .sample-bottom{
+                            .text{
+
+                                &:before{
+                                    content: @text;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .my-loop(@i + 1);
+                }
+
+                .my-loop(1);
+
+            }
+        }
+        .malt{
+
+            @width: @device-width-a;
+            @height: 808px;
+
+            position: relative;
+            width: @width;
+            height: @height;
+
+            background-color: #f3f3f3;
+
+            .top-part{
+
+                @w: 1000px;
+
+                position: absolute;
+                left: 50%;
+                margin-left: -@w * .5;
+                top: 24px;
+                width: 1000px;
+
+
+
+                .title-image{
+                    position: relative;
+                    width: 281px;
+                    height: 67px;
+                    .image-bg('index-malt-title.png');
+                    margin: 0 auto 0;
+                }
+
+                .title-text{
+                    position: relative;
+                    margin: 6px auto 0;
+
+                    .default-font(15.63px, @brown, 1px);
+                    text-align: center;
+                }
+
+                .line{
+                    position: relative;
+                    margin: 14px auto 0;
+                    background-color: @brown;
+                    width: 446px;
+                    height: 1px;
+                }
+
+                .detail{
+                    position: relative;
+                    width: 100%;
+                    .default-font(13px, @dark-gray-brown);
+                    line-height: 25px;
+                    margin-top: 11px;
+                    letter-spacing: 1px;
+                    text-align: center;
+                }
+            }
+
+            .sample-part{
+
+                position: absolute;
+                width: 100%;
+                top: 170px;
+                text-align: center;
+
+                .sample{
+                    @w: 312px;
+
+                    position: relative;
+                    display: inline-block;
+
+                    width: @w;
+                    margin: 0 20px;
+
+                    //                cursor: pointer;
+
+
+                    .sample-top{
+                        position: absolute;
+                        width: @w;
+                        height: 312px;
+                        z-index: 2;
+
+                        .image-bg('index-malt-top.png');
+
+                        .title-image{
+
+                            @w: 244px;
+                            position: absolute;
+                            left: 50%;
+                            width: @w;
+                            height: 92px;
+                            margin-left: -@w * .5;
+                            top: 22px;
+                        }
+
+                        .title{
+
+                            position: absolute;
+                            width: 100%;
+                            .default-font(16px, #a08c6e);
+                            line-height: 25px;
+                            top: 80px;
+                            letter-spacing: 1px;
+                            text-align: center;
+                        }
+
+                        .contents{
+                            position: relative;
+                            width: 100%;
+                            .default-font(13px, @dark-gray-brown);
+                            line-height: 22px;
+                            margin-top: 120px;
+                            letter-spacing: 1px;
+                            text-align: center;
+
+                        }
+                    }
+
+
+                    .image{
+
+                        @size: 258px;
+
+                        position: absolute;
+                        width: @size;
+                        height: @size;
+                        .image-bg('index-malt-sample-1.jpg');
+
+                        left: 50%;
+                        margin-left: -@size * .5;
+                        top: 276px;
+
+                        @circle-size: @size * .5;
+
+                        clip-path: circle(@circle-size at center);
+
+                        z-index: 1;
+
+                    }
+                }
+
+                .my-loop (@i) when (@i <= 3){
+
+                    .sample:nth-child(@{i}){
+
+                        .image{
+                            .image-bg('index-malt-sample-@{i}.jpg');
+                        }
+
+                        .sample-top{
+
+                            .title-image{
+                                .image-bg('index-malt-title-@{i}.png');
+                            }
+                            .title{
+
+                            }
+                        }
+
+                    }
+
+                    .my-loop(@i + 1);
+                }
+
+                .my-loop(1);
+            }
+
+            .bottom-part{
+
+                position: absolute;
+                width: 100%;
+                bottom: 28px;
+
+                text-align: center;
+
+                text-indent: -67px;
+
+                .text{
+                    position: relative;
+                    width: 200px;
+                    display: inline-block;
+
+                    text-align: right;
+
+                    .default-font(14px, @dark-gray-brown);
+                }
+
+                .btn-more{
+                    .btn-more();
+                    display: inline-block;
+                    margin-left: 13px;
+                }
+
+            }
+        }
+
+        .care{
+
+            @width: @device-width-a;
+
+            @block-height: 420px;
+            @cover-width: 30px;
+
+            position: relative;
+            width: @width;
+
+            background-color: white;
+            .block{
+                position: relative;
+                width: @width;
+                height: @block-height;
+
+                .image{
+                    position: absolute;
+                    width: 670px;
+                    height: @block-height;
+                }
+
+                .cover{
+                    position: absolute;
+                    width: @cover-width;
+                    height: @block-height;
+                    left: 50%;
+                }
+
+                .detail{
+                    position: absolute;
+                    width: 640px;
+                    height: @block-height;
+
+
+                    display: table;
+
+                    //                background-color: white;
+
+                    .middle{
+
+                        display: table-cell;
+                        vertical-align: middle;
+
+                        & > div{
+
+                            position: relative;
+
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        .title-image{
+                            position: relative;
+                            width: 345px;
+                            height: 67px;
+                            margin: 0 auto 0;
+
+                            .image-bg('index-care-title.png');
+                        }
+
+                        .title-text{
+                            position: relative;
+                            margin: 6px auto 0;
+
+                            .default-font(15.63px, @brown, 1px);
+                            text-align: center;
+                        }
+
+                        .line{
+                            position: relative;
+                            margin: 14px auto 0;
+                            background-color: @brown;
+                            width: 446px;
+                            height: 1px;
+                        }
+
+                        .contents{
+
+                            margin-top: 40px;
+
+                            text-align: center;
+
+                            .brown-block{
+
+                                display: inline-block;
+
+                                vertical-align: top;
+
+                                @w: 114px;
+                                @h: 75px;
+
+                                width: @w;
+                                height: @h;
+
+                                .image-bg('index-care-brown-square.png');
+
+                                .default-font(13px, white);
+                                text-align: center;
+                                line-height: @h;
+                                letter-spacing: 2px;
+
+                                margin-left: 32px;
+
+
+                            }
+
+                            .texts{
+
+                                display: inline-block;
+
+                                vertical-align: top;
+
+                                .default-font(13px, @dark-gray-brown);
+                                text-align: left;
+                                line-height: 29px;
+
+                                margin-left: 13px;
+                                margin-top: -5px;
+                            }
+                        }
+
+                        .btn-more{
+                            .btn-more(2);
+
+                            margin-top: 25px;
+                            margin-bottom: 35px;
+                        }
+                    }
+
+
+                }
+
+                &.align-left{
+
+                    .image{
+                        right: 0;
+                    }
+
+                    .cover{
+                        .image-bg('index-care-cover-1.png');
+                        margin-left: -@cover-width;
+                    }
+
+                    .detail{
+                        left: 0;
+                    }
+                }
+
+                &.align-right{
+
+                    .image{
+                        left: 0;
+                    }
+
+                    .cover{
+                        .image-bg('index-care-cover-2.png');
+                    }
+
+                    .detail{
+                        right: 0;
+                    }
+                }
+
+
+            }
+
+
+
+            @text-1: '醫療團隊';
+            @text-2: '媽媽照護';
+            @text-3: '寶寶照護';
+            @text-4: '產後教育';
+
+            .my-loop (@i) when (@i <= 4){
+
+                .block:nth-child(@{i}){
+                    .image{
+                        .image-bg('index-care-image-@{i}.jpg');
+                    }
+
+                    .brown-block{
+                        &:after{
+
+                            @t: ~'text-@{i}';
+
+                            content:@@t;
+                        }
+                    }
+                }
+
+
+                .my-loop(@i + 1);
+            }
+
+            .my-loop(1);
+
+
+        }
+
+        .back-to-top{
+            .back-to-top();
+        }
+    }
+
+
 
 }

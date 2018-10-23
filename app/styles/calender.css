@@ -139,6 +139,9 @@
 .my-calender .date-part .date-block .event-container .event-node.booked {
   background-position: right bottom;
 }
+.my-calender .date-part .date-block .event-container .event-node.full-booked {
+  background-position: left bottom;
+}
 .my-calender .date-part .date-block:active {
   margin-top: 2px;
   margin-bottom: -1px;

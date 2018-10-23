@@ -49,6 +49,56 @@
                     memo: $doms.container.find(".field .memo")
                 };
 
+                var locale =
+                {
+                    "format": "YYYY-MM-DD",
+                        "separator": " - ",
+                        "applyLabel": "套用",
+                        "cancelLabel": "取消",
+                        "fromLabel": "From",
+                        "toLabel": "To",
+                        "customRangeLabel": "Custom",
+                        "weekLabel": "W",
+                        "daysOfWeek": [
+                        "Su",
+                        "Mo",
+                        "Tu",
+                        "We",
+                        "Th",
+                        "Fr",
+                        "Sa"
+                    ],
+                        "monthNames": [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December"
+                    ],
+                    "firstDay": 1
+                };
+
+                $doms.fields.date.daterangepicker
+                ({
+                    locale: locale,
+                    opens: "center",
+                    singleDatePicker: true
+                });
+
+                $doms.fields.birth_date.daterangepicker
+                ({
+                    //buttonClasses: 'dp-btn',
+                    locale: locale,
+                    opens: "center"
+                });
+
                 $doms.btnSend = $doms.container.find(".btn-send").on("click", function(event)
                 {
                     event.preventDefault();

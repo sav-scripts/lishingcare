@@ -202,9 +202,19 @@
                             $eventNode = $('<div class="event-node"></div>');
                             $eventContainer.append($eventNode);
 
-                            if(eventData.is_booked == 'true')
+                            $eventNode.toggleClass('booked', false);
+                            $eventNode.toggleClass('full-booked', false);
+
+                            if(eventData.is_book_able == 'true')
                             {
-                                $eventNode.toggleClass('booked', true);
+                                if(eventData.is_booked == 'true')
+                                {
+                                    $eventNode.toggleClass('booked', true);
+                                }
+                            }
+                            else
+                            {
+                                $eventNode.toggleClass('full-booked', true);
                             }
                         }
                     }
