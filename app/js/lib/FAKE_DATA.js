@@ -450,5 +450,23 @@ window._FAKE_DATA_ =
     "vip_course_booking":
     {
         "error": ''
+    },
+
+    /*** 預約參觀 ***/
+    "reservation.send":
+    {
+        "name": "聯絡人名稱",
+        "phone": "電話",
+        "date": "參觀日期",
+        "time": "參觀時段",
+        "birth_date": "預產期",
+        "email": "電子信箱",
+        "memo": "備註"
+    },
+
+    "reservation":
+    {
+        "error": ''
     }
+
 };

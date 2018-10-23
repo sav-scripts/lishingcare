@@ -103,6 +103,26 @@ body{
     margin-top: -1px;
 }
 
+.common-content(@kv-image: none;)
+{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: @device-width-a;
+
+    overflow: hidden;
+
+    .key-images{
+        position: relative;
+        width: 100%;
+        height: 393px;
+
+        & when not(@kv-image = none){
+            .image-bg(@kv-image);
+        }
+    }
+}
+
 /* layout */
 #layout{
     z-index: -1;
@@ -117,81 +137,9 @@ body{
 
     display: none;
 
-    .layout-index{
+    .layout{
         position: relative;
         width: 100%;
-        height: 5008px;
-        .image-bg('layout/index.jpg');
-    }
-
-    .layout-news{
-        position: relative;
-        width: 100%;
-        height: 1735px;
-        .image-bg('layout/news.jpg');
-    }
-
-    .layout-about-us{
-        position: relative;
-        width: 100%;
-        height: 1735px;
-        .image-bg('layout/about-us.jpg');
-    }
-
-    .layout-contact{
-        position: relative;
-        width: 100%;
-        height: 1196px;
-        .image-bg('layout/contact.jpg');
-    }
-
-    .layout-care{
-        position: relative;
-        width: 100%;
-        height: 2999px;
-        .image-bg('layout/care.jpg');
-    }
-
-    .layout-malt{
-        position: relative;
-        width: 100%;
-        height: 2353px;
-        .image-bg('layout/malt.jpg');
-    }
-
-    .layout-environmental{
-        position: relative;
-        width: 100%;
-        height: 4628px;
-        .image-bg('layout/environmental.jpg');
-    }
-
-    .layout-vip-baby-1{
-        position: relative;
-        width: 100%;
-        height: 1820px;
-        .image-bg('layout/vip-baby-1.jpg');
-    }
-
-    .layout-vip-baby-2{
-        position: relative;
-        width: 100%;
-        height: 1820px;
-        .image-bg('layout/vip-baby-2.jpg');
-    }
-
-    .layout-vip-baby-3{
-        position: relative;
-        width: 100%;
-        height: 1820px;
-        .image-bg('layout/vip-baby-3.jpg');
-    }
-
-    .layout-vip-course{
-        position: relative;
-        width: 100%;
-        height: 1820px;
-        .image-bg('layout/vip-course.jpg');
     }
 }
 
@@ -1641,19 +1589,8 @@ body.mapping{
 
 /* about-us */
 #about-us {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
+    .common-content("about-key-image.jpg");
 
-    overflow: hidden;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-        .image-bg("about-key-image.jpg");
-    }
     .title-image{
         position: relative;
         width: 195px;
@@ -1695,19 +1632,7 @@ body.mapping{
 
 /* news */
 #news {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
-
-//    background-color: green;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-        .image-bg("news-key-image.jpg");
-    }
+    .common-content("news-key-image.jpg");
 
     > .title{
         position: relative;
@@ -1884,38 +1809,12 @@ body.mapping{
 
 /* contact */
 #contact{
-
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
-
-    //    background-color: green;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-        .image-bg("contact-key-image.jpg");
-    }
+    .common-content("contact-key-image.jpg");
 }
 
 /* care */
 #care{
-
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
-
-    //    background-color: green;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-        .image-bg("care-key-image.jpg");
-    }
+    .common-content("care-key-image.jpg");
 
     .part-1{
         position: relative;
@@ -2327,22 +2226,145 @@ body.mapping{
     }
 }
 
+/* reservation */
+#reservation{
+    .common-content("reservation-key-image.jpg");
+
+    .part-1{
+
+
+        .title-image{
+            position: relative;
+            margin: 28px auto 0;
+            width: 243px;
+            height: 40px;
+            .image-bg("reservation-title.png");
+        }
+
+        .title-text{
+            position: relative;
+            margin: 16px auto 24px;
+
+            .default-font(15.5px, @brown);
+            text-align: center;
+            letter-spacing: 3px;
+        }
+    }
+
+    .part-2{
+        width: 100%;
+//        min-height: 678px;
+        background-color: #f1eeea;
+        overflow: hidden;
+
+        .desc{
+            margin: 16px auto 24px;
+
+            .default-font(14.58px, @dark-gray-brown, 1px);
+            text-align: center;
+            line-height: 26px;
+        }
+
+        .field{
+            @field-width: 402px;
+            @field-height: 31px;
+            @label-width: 160px;
+            @line-size: 1px;
+            @radius: 5px;
+            @padding-w: 10px;
+
+            margin: 14px auto;
+            width: @field-width;
+//            height: @field-height;
+
+            overflow: hidden;
+
+//            background-color: red;
+            .label{
+                float: left;
+                width: @label-width;
+                height: @field-height;
+                background-color: @brown;
+                border-radius: @radius 0 0 @radius;
+                .default-font(13.54px, white, 2px);
+                text-align: center;
+                line-height: @field-height;
+            }
+
+            .field-input{
+                float: left;
+                width: @field-width - @label-width - (@line-size * 2) - (@padding-w * 2);
+                height: @field-height - (@line-size * 2);
+                border: 1px solid @brown;
+                background-color: #ffffff;
+                padding: 0 @padding-w;
+                border-radius: 0 @radius @radius 0;
+                .default-font(13.54px, @dark-gray-brown);
+            }
+
+            .field-select{
+                float: left;
+                @w: @field-width - @label-width;
+                width: @w;
+                height: @field-height;
+                border: 1px solid @brown;
+                background-color: #ffffff;
+                padding: 0 @padding-w;
+                border-radius: 0 @radius @radius 0;
+                .default-font(13.54px, @dark-gray-brown);
+
+
+
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+
+                outline: none;
+
+                cursor: pointer;
+
+                .image-bg('brown-arrow.png');
+                background-position: (@w - 25px) 11px;
+                background-repeat: no-repeat;
+            }
+
+            &.big{
+                .label{
+                    width: @field-width;
+                    border-radius: @radius @radius 0 0;
+                }
+
+                .field-input{
+                    width: @field-width - (@line-size * 2) - (@padding-w * 2);
+                    height: 155px - 20px;
+                    border-radius: 0 0 @radius @radius;
+                    margin: 0 auto;
+                    padding: 10px @padding-w;
+                    resize: none;
+                }
+            }
+        }
+
+        .btn-send{
+            .image-bg("reservation-btn-send.png");
+            width: 155px;
+            height: 31px;
+            margin: 30px auto 25px;
+
+            cursor: pointer;
+
+            &:active{
+                margin: 31px auto 24px;
+            }
+        }
+    }
+
+}
+
 /* malt */
 #malt{
 
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
-
-    //    background-color: green;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-        .image-bg("malt-key-image.jpg");
-    }
+    .common-content("malt-key-image.jpg");
 
 
 
@@ -2457,17 +2479,7 @@ body.mapping{
 
 /* environmental */
 #environmental{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-//        .image-bg("env-key-image.jpg");
-    }
+    .common-content();
 
     .part-1{
         position: relative;
@@ -2883,19 +2895,7 @@ body.mapping{
 }
 
 #vip-baby{
-
-
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-        .image-bg("vip-baby-key-image.jpg");
-    }
+    .common-content("vip-baby-key-image.jpg");
 
     .main-container{
         position: relative;
@@ -3085,17 +3085,7 @@ body.mapping{
 
 /* vip course */
 #vip-course{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    width: @device-width-a;
-
-    .key-images{
-        position: relative;
-        width: 100%;
-        height: 393px;
-        .image-bg("vip-course-key-image.jpg");
-    }
+    .common-content("vip-course-key-image.jpg");
 
     .part-1{
         position: relative;

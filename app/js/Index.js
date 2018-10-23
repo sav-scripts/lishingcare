@@ -51,6 +51,13 @@
                     "/Contact": $doms.container.find(".page-bottom")
                 };
 
+                $doms.container.find(".reservation-icon").on("click", function(event)
+                {
+                    event.preventDefault();
+
+                    Hash.to("/Reservation");
+                });
+
                 $doms.container.find(".back-to-top").on("click", function(event)
                 {
                     event.preventDefault();

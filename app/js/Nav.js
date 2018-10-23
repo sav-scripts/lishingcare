@@ -28,8 +28,7 @@
             {
                 event.preventDefault();
 
-                window.history.back();
-                //Hash.to('/Index');
+                Hash.to('/Index');
 
             });
 

@@ -77,6 +77,8 @@
                     {
                         _data = response;
 
+                        //_data.course_list = [];
+
                         for(var i=0;i<_data.course_list.length;i++)
                         {
                             var obj = _data.course_list[i];

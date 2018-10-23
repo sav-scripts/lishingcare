@@ -58,16 +58,34 @@
         _eventDataDic: {},
         _eventDataList: [],
 
+        limitMonthSelectByEvents: true,
+
         toNextMonth: function()
         {
-            this._date.setMonth(this._date.getMonth() + 1);
-            this.updateDate();
+
+            if(this.testIfPrevMonthHaveEvent(this._eventDataList.length - 1, 1, false))
+            {
+                this._date.setMonth(this._date.getMonth() + 1);
+                this.updateDate();
+            }
+            else
+            {
+
+                alert("再往後的月份已經沒有課程安排了");
+            }
         },
 
         toPrevMonth: function()
         {
-            this._date.setMonth(this._date.getMonth() - 1);
-            this.updateDate();
+            if(this.testIfPrevMonthHaveEvent(0, -1, true))
+            {
+                this._date.setMonth(this._date.getMonth() - 1);
+                this.updateDate();
+            }
+            else
+            {
+                alert("再往前的月份已經沒有課程安排了");
+            }
         },
 
         toEventByIndex: function(index)
@@ -79,6 +97,33 @@
                 var date = new Date(eventData.year+'-'+eventData.month+'-'+eventData.date);
 
                 self.updateDate(date);
+            }
+        },
+
+        testIfPrevMonthHaveEvent: function(eventDataIndex, monthOffset, isCompareEarlier)
+        {
+            if(!this.limitMonthSelectByEvents) return true;
+            if(this._eventDataList.length === 0) return false;
+
+            var eventData = this._eventDataList[eventDataIndex];
+
+            var testDate = new Date(this._date.getFullYear() + "-" + (this._date.getMonth()+1) + "-1");
+            testDate.setMonth(testDate.getMonth() + monthOffset);
+
+            var eventDate = new Date(eventData.year + "-" + eventData.month + "-1");
+
+            //console.log(testDate);
+            //console.log(eventDate);
+
+            if(isCompareEarlier)
+            {
+                //console.log(testDate.getTime() >= eventDate.getTime());
+                return (testDate.getTime() >= eventDate.getTime());
+            }
+            else
+            {
+                //console.log(testDate.getTime() <= eventDate.getTime());
+                return (testDate.getTime() <= eventDate.getTime());
             }
         },
 

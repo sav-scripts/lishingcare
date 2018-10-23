@@ -35,71 +35,9 @@ body {
   opacity: 0.4;
   display: none;
 }
-#layout .layout-index {
+#layout .layout {
   position: relative;
   width: 100%;
-  height: 5008px;
-  background-image: url("../images/layout/index.jpg");
-}
-#layout .layout-news {
-  position: relative;
-  width: 100%;
-  height: 1735px;
-  background-image: url("../images/layout/news.jpg");
-}
-#layout .layout-about-us {
-  position: relative;
-  width: 100%;
-  height: 1735px;
-  background-image: url("../images/layout/about-us.jpg");
-}
-#layout .layout-contact {
-  position: relative;
-  width: 100%;
-  height: 1196px;
-  background-image: url("../images/layout/contact.jpg");
-}
-#layout .layout-care {
-  position: relative;
-  width: 100%;
-  height: 2999px;
-  background-image: url("../images/layout/care.jpg");
-}
-#layout .layout-malt {
-  position: relative;
-  width: 100%;
-  height: 2353px;
-  background-image: url("../images/layout/malt.jpg");
-}
-#layout .layout-environmental {
-  position: relative;
-  width: 100%;
-  height: 4628px;
-  background-image: url("../images/layout/environmental.jpg");
-}
-#layout .layout-vip-baby-1 {
-  position: relative;
-  width: 100%;
-  height: 1820px;
-  background-image: url("../images/layout/vip-baby-1.jpg");
-}
-#layout .layout-vip-baby-2 {
-  position: relative;
-  width: 100%;
-  height: 1820px;
-  background-image: url("../images/layout/vip-baby-2.jpg");
-}
-#layout .layout-vip-baby-3 {
-  position: relative;
-  width: 100%;
-  height: 1820px;
-  background-image: url("../images/layout/vip-baby-3.jpg");
-}
-#layout .layout-vip-course {
-  position: relative;
-  width: 100%;
-  height: 1820px;
-  background-image: url("../images/layout/vip-course.jpg");
 }
 body.mapping #layout {
   display: block;
@@ -1170,6 +1108,12 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/about-key-image.jpg");
 }
+#about-us .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/about-key-image.jpg");
+}
 #about-us .title-image {
   position: relative;
   width: 195px;
@@ -1210,6 +1154,13 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  overflow: hidden;
+}
+#news .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/news-key-image.jpg");
 }
 #news .key-images {
   position: relative;
@@ -1354,6 +1305,13 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  overflow: hidden;
+}
+#contact .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/contact-key-image.jpg");
 }
 #contact .key-images {
   position: relative;
@@ -1367,6 +1325,7 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  overflow: hidden;
   /*
     .part-3 {
 
@@ -1477,6 +1436,12 @@ body.mapping #scene-container .content-mask {
 
     }
 */
+}
+#care .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/care-key-image.jpg");
 }
 #care .key-images {
   position: relative;
@@ -1765,12 +1730,141 @@ body.mapping #scene-container .content-mask {
 #care .back-to-top:active .icon {
   background-position: right;
 }
+/* reservation */
+#reservation {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+  overflow: hidden;
+}
+#reservation .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/reservation-key-image.jpg");
+}
+#reservation .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/reservation-key-image.jpg");
+}
+#reservation .part-1 .title-image {
+  position: relative;
+  margin: 28px auto 0;
+  width: 243px;
+  height: 40px;
+  background-image: url("../images/reservation-title.png");
+}
+#reservation .part-1 .title-text {
+  position: relative;
+  margin: 16px auto 24px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.5px;
+  color: #a18b73;
+  text-align: center;
+  letter-spacing: 3px;
+}
+#reservation .part-2 {
+  width: 100%;
+  background-color: #f1eeea;
+  overflow: hidden;
+}
+#reservation .part-2 .desc {
+  margin: 16px auto 24px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14.58px;
+  color: #666464;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 26px;
+}
+#reservation .part-2 .field {
+  margin: 14px auto;
+  width: 402px;
+  overflow: hidden;
+}
+#reservation .part-2 .field .label {
+  float: left;
+  width: 160px;
+  height: 31px;
+  background-color: #a18b73;
+  border-radius: 5px 0 0 5px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13.54px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 31px;
+}
+#reservation .part-2 .field .field-input {
+  float: left;
+  width: 220px;
+  height: 29px;
+  border: 1px solid #a18b73;
+  background-color: #ffffff;
+  padding: 0 10px;
+  border-radius: 0 5px 5px 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13.54px;
+  color: #666464;
+}
+#reservation .part-2 .field .field-select {
+  float: left;
+  width: 242px;
+  height: 31px;
+  border: 1px solid #a18b73;
+  background-color: #ffffff;
+  padding: 0 10px;
+  border-radius: 0 5px 5px 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13.54px;
+  color: #666464;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url("../images/brown-arrow.png");
+  background-position: 217px 11px;
+  background-repeat: no-repeat;
+}
+#reservation .part-2 .field.big .label {
+  width: 402px;
+  border-radius: 5px 5px 0 0;
+}
+#reservation .part-2 .field.big .field-input {
+  width: 380px;
+  height: 135px;
+  border-radius: 0 0 5px 5px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  resize: none;
+}
+#reservation .part-2 .btn-send {
+  background-image: url("../images/reservation-btn-send.png");
+  width: 155px;
+  height: 31px;
+  margin: 30px auto 25px;
+  cursor: pointer;
+}
+#reservation .part-2 .btn-send:active {
+  margin: 31px auto 24px;
+}
 /* malt */
 #malt {
   position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  overflow: hidden;
+}
+#malt .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/malt-key-image.jpg");
 }
 #malt .key-images {
   position: relative;
@@ -1919,6 +2013,12 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  overflow: hidden;
+}
+#environmental .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
 }
 #environmental .key-images {
   position: relative;
@@ -2316,6 +2416,13 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  overflow: hidden;
+}
+#vip-baby .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/vip-baby-key-image.jpg");
 }
 #vip-baby .key-images {
   position: relative;
@@ -2489,6 +2596,13 @@ body.mapping #scene-container .content-mask {
   margin-left: auto;
   margin-right: auto;
   width: 1280px;
+  overflow: hidden;
+}
+#vip-course .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/vip-course-key-image.jpg");
 }
 #vip-course .key-images {
   position: relative;

@@ -33,6 +33,7 @@
                 "/Contact": Contact,
                 "/Care": Care,
                 "/Malt": Malt,
+                "/Reservation": Reservation,
                 "/Environmental": Environmental,
                 "/VipBaby": VipBaby,
                 "/VipCourse": VipCourse,
