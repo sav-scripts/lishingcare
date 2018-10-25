@@ -3926,21 +3926,6 @@ body.mapping #scene-container .content-mask {
   #environmental .part-2 .container .room.large .image {
     height: 370px;
   }
-  #environmental .part-2 .container .room:nth-child(1) .image {
-    background-image: url("../images/env-room-1.m.jpg");
-  }
-  #environmental .part-2 .container .room:nth-child(2) .image {
-    background-image: url("../images/env-room-2.m.jpg");
-  }
-  #environmental .part-2 .container .room:nth-child(3) .image {
-    background-image: url("../images/env-room-3.m.jpg");
-  }
-  #environmental .part-2 .container .room:nth-child(4) .image {
-    background-image: url("../images/env-room-4.m.jpg");
-  }
-  #environmental .part-2 .container .room:nth-child(5) .image {
-    background-image: url("../images/env-room-5.m.jpg");
-  }
   #environmental .part-2 .triangle {
     position: relative;
     width: 29px;
@@ -3985,7 +3970,7 @@ body.mapping #scene-container .content-mask {
     margin: 3px 0 0 2px;
   }
   #environmental .part-4 {
-    background-image: url("../images/env-part-4-bg..mjpg");
+    background-image: url("../images/env-part-4-bg.m.jpg");
   }
   #environmental .part-4 .title-image {
     margin: 39px auto 0;
@@ -4019,18 +4004,6 @@ body.mapping #scene-container .content-mask {
     font-size: 29.17px;
     color: white;
     letter-spacing: 4px;
-  }
-  #environmental .part-4 .container .room:nth-child(1) {
-    background-image: url("../images/env-part-4-image-1.m.jpg");
-  }
-  #environmental .part-4 .container .room:nth-child(2) {
-    background-image: url("../images/env-part-4-image-2.m.jpg");
-  }
-  #environmental .part-4 .container .room:nth-child(3) {
-    background-image: url("../images/env-part-4-image-3.m.jpg");
-  }
-  #environmental .part-4 .container .room:nth-child(4) {
-    background-image: url("../images/env-part-4-image-4.m.jpg");
   }
   #environmental .part-5 .title-image {
     margin: 30px auto 0;
