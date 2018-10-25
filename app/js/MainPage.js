@@ -169,6 +169,11 @@
             {
                 _currentContentClass.resize();
             }
+
+            if(_currentContentClass)
+            {
+                self.resetHeight();
+            }
         }
     };
 

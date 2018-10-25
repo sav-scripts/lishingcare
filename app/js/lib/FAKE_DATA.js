@@ -44,7 +44,7 @@ window._FAKE_DATA_ =
         // 輪播圖
         "banner":
         {
-            // 輪播圖, pc: 1280 x 706
+            // 輪播圖, pc: 1280 x 706, mobile: 640 x 550
             "images":
             [
                 {
@@ -68,20 +68,20 @@ window._FAKE_DATA_ =
             "其中39間房格局寬敞，搭配大面採光，淡水景致盡收眼底，<br>"+
             "房內盡享自然天光的照拂，由外而內身心靈徹底放鬆。",
 
-            // 首頁用縮圖, pc: 377 x 251
+            // 首頁用縮圖, pc: 377 x 251, mobile: 590 x 393
             "images":
             {
                 "rooms": {
                     "pc": "./test/images/index-environmental-sample-1.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/index-environmental-sample-1.m.jpg"
                 },
                 "public_area": {
                     "pc": "./test/images/index-environmental-sample-2.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/index-environmental-sample-2.m.jpg"
                 },
                 "baby_room": {
                     "pc": "./test/images/index-environmental-sample-3.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/index-environmental-sample-3.m.jpg"
                 }
             }
         }
@@ -136,17 +136,17 @@ window._FAKE_DATA_ =
         // 輪播圖
         "banner":
         {
-            // 輪播圖, pc: 1280 x 393
+            // 輪播圖, pc: 1280 x 393, mobile: 640 x 393
             "images":
             [
                 {
                     "pc": "./test/images/env-key-image-1.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/env-key-image-1.m.jpg"
                 },
 
                 {
                     "pc": "./test/images/env-key-image-2.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/env-key-image-2.m.jpg"
                 }
             ]
         },
@@ -163,7 +163,7 @@ window._FAKE_DATA_ =
                 "在房內盡享自然天光的照拂，<br/>"+
                 "由外而內身心靈徹底放鬆。",
 
-            // facilites 頂端描述圖片, pc: 640 x 444
+            // facilites 頂端描述圖片, pc: 640 x 444, mobile: 無
             "image":{
                 "pc": "./test/images/env-part-1-image.jpg",
                 "mobile": ""
@@ -179,18 +179,21 @@ window._FAKE_DATA_ =
                     "view": "海景 / 城市",
 
                     // 縮圖:
-                    //   小型房 pc: 376 x 250,
-                    //   大型房 pc: 776 x 400
+                    //   小型房 pc: 376 x 250, mobile: 558 x 370
+                    //   大型房 pc: 776 x 400, mobile: 558 x 370 (mobile 上 大型房和小型房圖片尺寸一樣)
                     "thumb":{
                         "pc": "./test/images/env-room-1.jpg",
-                        "mobile": ""
+                        "mobile": "./test/images/env-room-1.m.jpg"
                     },
 
-                    // 全尺寸圖片
-                    "full_image":{
-                        "pc": "./test/images/env-room-1.full.jpg",
-                        "mobile": ""
-                    }
+                    // 點開後大圖, 多張
+                    "full_image":
+                        [
+                            {
+                                "pc": "./test/images/env-room-1.full.jpg",
+                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                            }
+                        ]
                 },
 
                 {
@@ -201,13 +204,16 @@ window._FAKE_DATA_ =
 
                     "thumb":{
                         "pc": "./test/images/env-room-2.jpg",
-                        "mobile": ""
+                        "mobile": "./test/images/env-room-2.m.jpg"
                     },
 
-                    "full_image":{
-                        "pc": "./test/images/env-room-2.full.jpg",
-                        "mobile": ""
-                    }
+                    "full_image":
+                        [
+                            {
+                                "pc": "./test/images/env-room-1.full.jpg",
+                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                            }
+                        ]
                 },
 
                 {
@@ -218,13 +224,16 @@ window._FAKE_DATA_ =
 
                     "thumb":{
                         "pc": "./test/images/env-room-3.jpg",
-                        "mobile": ""
+                        "mobile": "./test/images/env-room-3.m.jpg"
                     },
 
-                    "full_image":{
-                        "pc": "./test/images/env-room-3.full.jpg",
-                        "mobile": ""
-                    }
+                    "full_image":
+                        [
+                            {
+                                "pc": "./test/images/env-room-1.full.jpg",
+                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                            }
+                        ]
                 },
 
                 {
@@ -235,13 +244,16 @@ window._FAKE_DATA_ =
 
                     "thumb":{
                         "pc": "./test/images/env-room-4.jpg",
-                        "mobile": ""
+                        "mobile": "./test/images/env-room-4.m.jpg"
                     },
 
-                    "full_image":{
-                        "pc": "./test/images/env-room-4.full.jpg",
-                        "mobile": ""
-                    }
+                    "full_image":
+                        [
+                            {
+                                "pc": "./test/images/env-room-1.full.jpg",
+                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                            }
+                        ]
                 },
 
                 {
@@ -252,13 +264,16 @@ window._FAKE_DATA_ =
 
                     "thumb":{
                         "pc": "./test/images/env-room-5.jpg",
-                        "mobile": ""
+                        "mobile": "./test/images/env-room-5.m.jpg"
                     },
 
-                    "full_image":{
-                        "pc": "./test/images/env-room-5.full.jpg",
-                        "mobile": ""
-                    }
+                    "full_image":
+                        [
+                            {
+                                "pc": "./test/images/env-room-1.full.jpg",
+                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                            }
+                        ]
                 }
 
             ],
@@ -314,15 +329,22 @@ window._FAKE_DATA_ =
             {
                 "title":"六星級產後會所",
 
+
+                // 縮圖: pc: 376 x 222, mobile: 538 x 320
                 "thumb":{
                     "pc": "./test/images/env-part-4-image-1.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/env-part-4-image-1.m.jpg"
                 },
 
-                "full_image":{
-                    "pc": "./test/images/env-part-4-image-1.full.jpg",
-                    "mobile": ""
-                }
+
+                // 點開後大圖, 多張
+                "full_image":
+                [
+                    {
+                        "pc": "./test/images/env-part-4-image-1.full.jpg",
+                        "mobile": ""
+                    }
+                ]
             },
 
             {
@@ -330,13 +352,16 @@ window._FAKE_DATA_ =
 
                 "thumb":{
                     "pc": "./test/images/env-part-4-image-2.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/env-part-4-image-2.m.jpg"
                 },
 
-                "full_image":{
-                    "pc": "./test/images/env-part-4-image-2.full.jpg",
-                    "mobile": ""
-                }
+                "full_image":
+                    [
+                        {
+                            "pc": "./test/images/env-part-4-image-1.full.jpg",
+                            "mobile": ""
+                        }
+                    ]
             },
 
             {
@@ -344,13 +369,16 @@ window._FAKE_DATA_ =
 
                 "thumb":{
                     "pc": "./test/images/env-part-4-image-3.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/env-part-4-image-3.m.jpg"
                 },
 
-                "full_image":{
-                    "pc": "./test/images/env-part-4-image-3.full.jpg",
-                    "mobile": ""
-                }
+                "full_image":
+                    [
+                        {
+                            "pc": "./test/images/env-part-4-image-1.full.jpg",
+                            "mobile": ""
+                        }
+                    ]
             },
 
             {
@@ -358,13 +386,16 @@ window._FAKE_DATA_ =
 
                 "thumb":{
                     "pc": "./test/images/env-part-4-image-4.jpg",
-                    "mobile": ""
+                    "mobile": "./test/images/env-part-4-image-4.m.jpg"
                 },
 
-                "full_image":{
-                    "pc": "./test/images/env-part-4-image-4.full.jpg",
-                    "mobile": ""
-                }
+                "full_image":
+                    [
+                        {
+                            "pc": "./test/images/env-part-4-image-1.full.jpg",
+                            "mobile": ""
+                        }
+                    ]
             }
 
         ]

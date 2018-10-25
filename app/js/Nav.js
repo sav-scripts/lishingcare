@@ -158,7 +158,7 @@
 
         getHeight: function()
         {
-            return 60;
+            return Main.viewport.index === 0? 100: 60;
         },
 
         resize: function()

@@ -19,6 +19,12 @@ body {
   left: 0;
   top: 0;
 }
+.sp-only {
+  display: none;
+}
+.pc-only {
+  display: initial;
+}
 .spacer {
   clear: both;
   height: 1px;
@@ -49,7 +55,7 @@ body.mapping #layout {
   display: block;
 }
 body.mapping #scene-container .content-mask {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 /* scene-container */
 .scene-container {
@@ -420,10 +426,11 @@ body.mapping #scene-container .content-mask {
   top: 68px;
   width: 348px;
   height: 138px;
-  background-image: url("../images/index-page-bottom-misc-1.png");
+  background-image: url("../images/footer-misc-1.png");
 }
 #footer .mode-1-content .field-tel,
-#footer .mode-1-content .field-address {
+#footer .mode-1-content .field-address,
+#footer .mode-1-content .field-facebook {
   position: absolute;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 16px;
@@ -438,6 +445,9 @@ body.mapping #scene-container .content-mask {
   left: 404px;
   top: 146px;
   letter-spacing: 1px;
+}
+#footer .mode-1-content .field-facebook {
+  display: none;
 }
 #footer .mode-1-content .facebook-page {
   position: absolute;
@@ -625,6 +635,9 @@ body.mapping #scene-container .content-mask {
   margin-top: 18px;
   letter-spacing: 1px;
 }
+#index .about-us .left-part .contents p {
+  margin: 10px auto;
+}
 #index .about-us .left-part .bottom-text {
   margin-top: 25px;
   font-family: '微軟正黑體', "Heiti TC", serif;
@@ -659,25 +672,20 @@ body.mapping #scene-container .content-mask {
   height: 460px;
 }
 #index .environmental {
+  overflow: hidden;
   position: relative;
-  width: 1280px;
+  width: 100%;
   height: 620px;
   background-image: url("../images/index-environmental-bg.jpg");
 }
-#index .environmental .top-part {
-  position: absolute;
-  left: 50%;
-  margin-left: -223px;
-  top: 37px;
-}
-#index .environmental .top-part .title-image {
+#index .environmental .title-image {
   position: relative;
   width: 312px;
   height: 53px;
   background-image: url("../images/index-environmental-title.png");
-  margin: 0 auto 0;
+  margin: 37px auto 0;
 }
-#index .environmental .top-part .title-text {
+#index .environmental .title-text {
   position: relative;
   margin: 9px auto 0;
   font-family: '微軟正黑體', "Heiti TC", serif;
@@ -686,28 +694,27 @@ body.mapping #scene-container .content-mask {
   letter-spacing: 1px;
   text-align: center;
 }
-#index .environmental .top-part .line {
+#index .environmental .line {
   position: relative;
   margin: 14px auto 0;
   background-color: #a18b73;
   width: 446px;
   height: 1px;
 }
-#index .environmental .top-part .detail {
+#index .environmental .detail {
   position: relative;
   width: 446px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 13px;
   color: #666464;
   line-height: 25px;
-  margin-top: 16px;
+  margin: 16px auto 0;
   letter-spacing: 1px;
   text-align: center;
 }
 #index .environmental .sample-part {
-  position: absolute;
   width: 100%;
-  top: 274px;
+  margin-top: 21px;
   text-align: center;
 }
 #index .environmental .sample-part .sample {
@@ -722,13 +729,13 @@ body.mapping #scene-container .content-mask {
 }
 #index .environmental .sample-part .sample .image {
   position: relative;
-  width: 377px;
+  width: 100%;
   height: 251px;
   background-color: rgba(255, 0, 0, 0.4);
 }
 #index .environmental .sample-part .sample .sample-bottom {
   position: relative;
-  width: 377px;
+  width: 100%;
   height: 35px;
   background-color: rgba(161, 139, 115, 0.25);
 }
@@ -762,16 +769,14 @@ body.mapping #scene-container .content-mask {
 }
 #index .malt {
   position: relative;
-  width: 1280px;
+  width: 100%;
   height: 808px;
   background-color: #f3f3f3;
+  overflow: hidden;
 }
 #index .malt .top-part {
-  position: absolute;
-  left: 50%;
-  margin-left: -500px;
-  top: 24px;
-  width: 1000px;
+  position: relative;
+  margin: 24px auto 0;
 }
 #index .malt .top-part .title-image {
   position: relative;
@@ -860,27 +865,25 @@ body.mapping #scene-container .content-mask {
   position: absolute;
   width: 258px;
   height: 258px;
-  background-image: url("../images/index-malt-sample-1.jpg");
   left: 50%;
   margin-left: -129px;
   top: 276px;
-  clip-path: circle(129px at center);
   z-index: 1;
 }
 #index .malt .sample-part .sample:nth-child(1) .image {
-  background-image: url("../images/index-malt-sample-1.jpg");
+  background-image: url("../images/index-malt-sample-1.png");
 }
 #index .malt .sample-part .sample:nth-child(1) .sample-top .title-image {
   background-image: url("../images/index-malt-title-1.png");
 }
 #index .malt .sample-part .sample:nth-child(2) .image {
-  background-image: url("../images/index-malt-sample-2.jpg");
+  background-image: url("../images/index-malt-sample-2.png");
 }
 #index .malt .sample-part .sample:nth-child(2) .sample-top .title-image {
   background-image: url("../images/index-malt-title-2.png");
 }
 #index .malt .sample-part .sample:nth-child(3) .image {
-  background-image: url("../images/index-malt-sample-3.jpg");
+  background-image: url("../images/index-malt-sample-3.png");
 }
 #index .malt .sample-part .sample:nth-child(3) .sample-top .title-image {
   background-image: url("../images/index-malt-title-3.png");
@@ -919,12 +922,12 @@ body.mapping #scene-container .content-mask {
 }
 #index .care {
   position: relative;
-  width: 1280px;
+  width: 100%;
   background-color: white;
 }
 #index .care .block {
   position: relative;
-  width: 1280px;
+  width: 100%;
   height: 420px;
 }
 #index .care .block .image {
@@ -1005,6 +1008,10 @@ body.mapping #scene-container .content-mask {
   margin-left: 13px;
   margin-top: -5px;
 }
+#index .care .block .detail .middle .contents .texts ul {
+  margin-left: -20px;
+  margin-top: 0;
+}
 #index .care .block .detail .middle .btn-more {
   position: relative;
   width: 126px;
@@ -1040,61 +1047,65 @@ body.mapping #scene-container .content-mask {
 #index .care .block.align-right .detail {
   right: 0;
 }
-#index .care .block:nth-child(1) .image {
+#index .care .block:nth-child(2) .image {
   background-image: url("../images/index-care-image-1.jpg");
 }
-#index .care .block:nth-child(1) .brown-block:after {
+#index .care .block:nth-child(2) .brown-block:after {
   content: '醫療團隊';
 }
-#index .care .block:nth-child(2) .image {
+#index .care .block:nth-child(3) .image {
   background-image: url("../images/index-care-image-2.jpg");
 }
-#index .care .block:nth-child(2) .brown-block:after {
+#index .care .block:nth-child(3) .brown-block:after {
   content: '媽媽照護';
 }
-#index .care .block:nth-child(3) .image {
+#index .care .block:nth-child(4) .image {
   background-image: url("../images/index-care-image-3.jpg");
 }
-#index .care .block:nth-child(3) .brown-block:after {
+#index .care .block:nth-child(4) .brown-block:after {
   content: '寶寶照護';
 }
-#index .care .block:nth-child(4) .image {
+#index .care .block:nth-child(5) .image {
   background-image: url("../images/index-care-image-4.jpg");
 }
-#index .care .block:nth-child(4) .brown-block:after {
+#index .care .block:nth-child(5) .brown-block:after {
   content: '產後教育';
 }
 #index .back-to-top {
   position: relative;
-  width: 1280px;
-  height: 62px;
+  width: 100%;
   background-color: #e1d6e0;
   cursor: pointer;
+  height: 62px;
 }
 #index .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#index .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #index .back-to-top:active .icon {
   background-position: right;
 }
 #index .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#index .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #index .back-to-top:active .icon {
   background-position: right;
@@ -1702,35 +1713,39 @@ body.mapping #scene-container .content-mask {
 }
 #care .back-to-top {
   position: relative;
-  width: 1280px;
-  height: 62px;
+  width: 100%;
   background-color: #e1d6e0;
   cursor: pointer;
+  height: 62px;
 }
 #care .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#care .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #care .back-to-top:active .icon {
   background-position: right;
 }
 #care .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#care .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #care .back-to-top:active .icon {
   background-position: right;
@@ -1979,35 +1994,39 @@ body.mapping #scene-container .content-mask {
 }
 #malt .back-to-top {
   position: relative;
-  width: 1280px;
-  height: 62px;
+  width: 100%;
   background-color: #e1d6e0;
   cursor: pointer;
+  height: 62px;
 }
 #malt .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#malt .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #malt .back-to-top:active .icon {
   background-position: right;
 }
 #malt .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#malt .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #malt .back-to-top:active .icon {
   background-position: right;
@@ -2198,8 +2217,7 @@ body.mapping #scene-container .content-mask {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-left: 274px;
-  margin-top: 28px;
+  margin: 28px 0 13px 274px;
 }
 #environmental .part-3 .container .item {
   position: relative;
@@ -2383,35 +2401,39 @@ body.mapping #scene-container .content-mask {
 }
 #environmental .back-to-top {
   position: relative;
-  width: 1280px;
-  height: 62px;
+  width: 100%;
   background-color: #e1d6e0;
   cursor: pointer;
+  height: 62px;
 }
 #environmental .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#environmental .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #environmental .back-to-top:active .icon {
   background-position: right;
 }
 #environmental .back-to-top .icon {
   position: absolute;
-  width: 40px;
-  height: 45px;
-  background-image: url("../images/back-to-top.png");
   left: 50%;
   top: 50%;
+  background-position: left;
+}
+#environmental .back-to-top .icon {
+  width: 40px;
+  height: 45px;
   margin-left: -20px;
   margin-top: -22.5px;
-  background-position: left;
+  background-image: url("../images/back-to-top.png");
 }
 #environmental .back-to-top:active .icon {
   background-position: right;
@@ -2938,6 +2960,12 @@ body.mapping #scene-container .content-mask {
   margin-bottom: -1px;
 }
 @media (max-width: 640px) {
+  .sp-only {
+    display: initial;
+  }
+  .pc-only {
+    display: none;
+  }
   /* layout */
   #layout {
     width: 640px;
@@ -3017,7 +3045,7 @@ body.mapping #scene-container .content-mask {
     background-color: #a18b73;
   }
   #index .about-us {
-    height: 1648px;
+    height: auto;
   }
   #index .about-us .left-part {
     position: relative;
@@ -3029,7 +3057,7 @@ body.mapping #scene-container .content-mask {
     position: relative;
     width: 356px;
     height: 71px;
-    margin: 30px auto 0;
+    margin: 43px auto 0;
     background-image: url("../images/index-about-us-title.m.png");
   }
   #index .about-us .left-part .title-text {
@@ -3043,19 +3071,22 @@ body.mapping #scene-container .content-mask {
     display: none;
   }
   #index .about-us .left-part .image-m {
-    margin: 29px auto 0;
+    margin: 54px auto 0;
     background-image: url("../images/index-about-us-image.jpg");
     width: 640px;
     height: 460px;
   }
   #index .about-us .left-part .contents {
     width: 556px;
-    margin: 40px auto 0;
+    margin: 59px auto 0;
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 29.17px;
     color: #666464;
     letter-spacing: 0;
     line-height: 46px;
+  }
+  #index .about-us .left-part .contents p {
+    margin: 45px auto;
   }
   #index .about-us .left-part .bottom-text {
     width: 556px;
@@ -3073,7 +3104,7 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/btn-more-3.png");
     background-position: top;
     cursor: pointer;
-    margin: 50px auto 50px;
+    margin: 63px auto 64px;
     float: none;
   }
   #index .about-us .left-part .btn-more:active {
@@ -3086,96 +3117,67 @@ body.mapping #scene-container .content-mask {
     display: none;
   }
   #index .environmental {
-    position: relative;
-    width: 1280px;
-    height: 620px;
-    background-image: url("../images/index-environmental-bg.jpg");
+    height: 2145px;
+    background-image: url("../images/index-environmental-bg.m.jpg");
   }
-  #index .environmental .top-part {
-    position: absolute;
-    left: 50%;
-    margin-left: -223px;
-    top: 37px;
+  #index .environmental .title-image {
+    width: 543px;
+    height: 72px;
+    background-image: url("../images/index-environmental-title.m.png");
+    margin: 40px auto 0;
   }
-  #index .environmental .top-part .title-image {
-    position: relative;
-    width: 312px;
-    height: 53px;
-    background-image: url("../images/index-environmental-title.png");
-    margin: 0 auto 0;
-  }
-  #index .environmental .top-part .title-text {
-    position: relative;
-    margin: 9px auto 0;
+  #index .environmental .title-text {
+    margin: 19px auto 0;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 15.63px;
+    font-size: 29.17px;
     color: #a18b73;
-    letter-spacing: 1px;
-    text-align: center;
+    letter-spacing: 6px;
   }
-  #index .environmental .top-part .line {
-    position: relative;
-    margin: 14px auto 0;
-    background-color: #a18b73;
-    width: 446px;
-    height: 1px;
+  #index .environmental .line {
+    display: none;
   }
-  #index .environmental .top-part .detail {
-    position: relative;
-    width: 446px;
+  #index .environmental .detail {
+    width: 540px;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 13px;
+    font-size: 29.17px;
     color: #666464;
-    line-height: 25px;
-    margin-top: 16px;
     letter-spacing: 1px;
-    text-align: center;
+    line-height: 55px;
+    margin: 32px auto 0;
   }
   #index .environmental .sample-part {
-    position: absolute;
-    width: 100%;
-    top: 274px;
-    text-align: center;
+    margin-top: 56px;
   }
   #index .environmental .sample-part .sample {
-    position: relative;
-    display: inline-block;
-    width: 377px;
-    margin: 0 8px;
-    cursor: pointer;
+    width: 590px;
+    margin: 0 auto 37px;
   }
   #index .environmental .sample-part .sample:active .sample-bottom .text .triangle {
-    background-position: 5px 4px;
+    background-position: 10px 0;
   }
   #index .environmental .sample-part .sample .image {
-    position: relative;
-    width: 377px;
-    height: 251px;
+    height: 393px;
     background-color: rgba(255, 0, 0, 0.4);
   }
   #index .environmental .sample-part .sample .sample-bottom {
-    position: relative;
-    width: 377px;
-    height: 35px;
+    height: 55px;
     background-color: rgba(161, 139, 115, 0.25);
   }
   #index .environmental .sample-part .sample .sample-bottom .text {
     position: relative;
     width: 100%;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 14px;
+    font-size: 27.83px;
     color: #666464;
     letter-spacing: 5px;
     text-align: center;
-    line-height: 35px;
+    line-height: 55px;
   }
   #index .environmental .sample-part .sample .sample-bottom .text .triangle {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background-image: url("../images/triangle-1.png");
-    background-position: 0 4px;
-    background-repeat: no-repeat;
+    width: 30px;
+    height: 22px;
+    background-image: url("../images/triangle-3.png");
+    background-position: 0 0;
     margin-left: -5px;
   }
   #index .environmental .sample-part .sample:nth-child(1) .sample-bottom .text:before {
@@ -3188,155 +3190,143 @@ body.mapping #scene-container .content-mask {
     content: '嬰兒室';
   }
   #index .malt {
-    position: relative;
-    width: 1280px;
-    height: 808px;
-    background-color: #f3f3f3;
+    height: 1871px;
   }
   #index .malt .top-part {
-    position: absolute;
-    left: 50%;
-    margin-left: -500px;
-    top: 24px;
-    width: 1000px;
+    margin: 59px auto 0;
   }
   #index .malt .top-part .title-image {
-    position: relative;
-    width: 281px;
-    height: 67px;
-    background-image: url("../images/index-malt-title.png");
+    width: 500px;
+    height: 101px;
+    background-image: url("../images/index-malt-title.m.png");
     margin: 0 auto 0;
   }
   #index .malt .top-part .title-text {
-    position: relative;
-    margin: 6px auto 0;
+    margin: 16px auto 0;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 15.63px;
+    font-size: 29.17px;
     color: #a18b73;
-    letter-spacing: 1px;
-    text-align: center;
+    letter-spacing: 4px;
   }
   #index .malt .top-part .line {
-    position: relative;
-    margin: 14px auto 0;
-    background-color: #a18b73;
-    width: 446px;
-    height: 1px;
+    display: none;
   }
   #index .malt .top-part .detail {
-    position: relative;
-    width: 100%;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 13px;
+    font-size: 29.17px;
     color: #666464;
-    line-height: 25px;
-    margin-top: 11px;
     letter-spacing: 1px;
-    text-align: center;
+    line-height: 50px;
+    margin-top: 17px;
   }
   #index .malt .sample-part {
-    position: absolute;
-    width: 100%;
-    top: 170px;
+    top: 398px;
     text-align: center;
+    width: 1920px;
   }
   #index .malt .sample-part .sample {
-    position: relative;
-    display: inline-block;
-    width: 312px;
-    margin: 0 20px;
+    display: block;
+    float: left;
+    width: 625px;
+    height: 1000px;
+    margin: 0 7.5px;
   }
   #index .malt .sample-part .sample .sample-top {
-    position: absolute;
-    width: 312px;
-    height: 312px;
-    z-index: 2;
-    background-image: url("../images/index-malt-top.png");
+    width: 625px;
+    height: 625px;
+    background-image: url("../images/index-malt-top.m.png");
   }
   #index .malt .sample-part .sample .sample-top .title-image {
-    position: absolute;
     left: 50%;
-    width: 244px;
-    height: 92px;
-    margin-left: -122px;
-    top: 22px;
+    width: 487px;
+    height: 188px;
+    margin-left: -243.5px;
+    top: 49px;
   }
   #index .malt .sample-part .sample .sample-top .title {
-    position: absolute;
-    width: 100%;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 16px;
+    font-size: 31.25px;
     color: #a08c6e;
+    letter-spacing: 6px;
     line-height: 25px;
-    top: 80px;
-    letter-spacing: 1px;
-    text-align: center;
+    top: 180px;
   }
   #index .malt .sample-part .sample .sample-top .contents {
     position: relative;
     width: 100%;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 13px;
+    font-size: 25.71px;
     color: #666464;
-    line-height: 22px;
-    margin-top: 120px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    line-height: 50px;
+    margin-top: 254px;
     text-align: center;
   }
   #index .malt .sample-part .sample .image {
     position: absolute;
-    width: 258px;
-    height: 258px;
-    background-image: url("../images/index-malt-sample-1.jpg");
+    width: 514px;
+    height: 514px;
     left: 50%;
-    margin-left: -129px;
-    top: 276px;
-    clip-path: circle(129px at center);
+    margin-left: -257px;
+    top: 542px;
+    clip-path: circle(257px at center);
     z-index: 1;
   }
   #index .malt .sample-part .sample:nth-child(1) .image {
-    background-image: url("../images/index-malt-sample-1.jpg");
+    background-image: url("../images/index-malt-sample-1.m.png");
   }
   #index .malt .sample-part .sample:nth-child(1) .sample-top .title-image {
-    background-image: url("../images/index-malt-title-1.png");
+    background-image: url("../images/index-malt-title-1.m.png");
   }
   #index .malt .sample-part .sample:nth-child(2) .image {
-    background-image: url("../images/index-malt-sample-2.jpg");
+    background-image: url("../images/index-malt-sample-2.m.png");
   }
   #index .malt .sample-part .sample:nth-child(2) .sample-top .title-image {
-    background-image: url("../images/index-malt-title-2.png");
+    background-image: url("../images/index-malt-title-2.m.png");
   }
   #index .malt .sample-part .sample:nth-child(3) .image {
-    background-image: url("../images/index-malt-sample-3.jpg");
+    background-image: url("../images/index-malt-sample-3.m.png");
   }
   #index .malt .sample-part .sample:nth-child(3) .sample-top .title-image {
-    background-image: url("../images/index-malt-title-3.png");
+    background-image: url("../images/index-malt-title-3.m.png");
+  }
+  #index .malt .drag-hint {
+    position: absolute;
+    left: 218px;
+    top: 1492px;
+    width: 204px;
+    height: 126px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/index-malt.drag-hint.png");
   }
   #index .malt .bottom-part {
     position: absolute;
     width: 100%;
-    bottom: 28px;
+    bottom: 62px;
     text-align: center;
-    text-indent: -67px;
+    text-indent: 0;
   }
   #index .malt .bottom-part .text {
-    position: relative;
-    width: 200px;
-    display: inline-block;
-    text-align: right;
+    width: 600px;
+    display: block;
+    text-align: center;
+    line-height: 46px;
+    margin: 0 auto 16px;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 14px;
+    font-size: 29.17px;
     color: #666464;
+    letter-spacing: 1px;
   }
   #index .malt .bottom-part .btn-more {
     position: relative;
-    width: 123px;
-    height: 26px;
-    background-image: url("../images/btn-more.png");
+    width: 312px;
+    height: 52px;
+    background-image: url("../images/btn-more-4.png");
     background-position: top;
     cursor: pointer;
-    display: inline-block;
-    margin-left: 13px;
+    display: block;
+    margin: 5px auto 0;
   }
   #index .malt .bottom-part .btn-more:active {
     background-position: bottom;
@@ -3346,29 +3336,45 @@ body.mapping #scene-container .content-mask {
   }
   #index .care {
     position: relative;
-    width: 1280px;
+    width: 100%;
     background-color: white;
+  }
+  #index .care .top-part .title-image {
+    position: relative;
+    width: 558px;
+    height: 89px;
+    margin: 50px auto 0;
+    background-image: url("../images/index-care-title.m.png");
+  }
+  #index .care .top-part .title-text {
+    position: relative;
+    margin: 6px auto 34px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 1px;
+    text-align: center;
   }
   #index .care .block {
     position: relative;
-    width: 1280px;
-    height: 420px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
   }
   #index .care .block .image {
-    position: absolute;
-    width: 670px;
-    height: 420px;
+    position: relative;
+    width: 640px;
+    height: 482px;
+    left: 0;
+    top: 0;
   }
   #index .care .block .cover {
-    position: absolute;
-    width: 30px;
-    height: 420px;
-    left: 50%;
+    display: none;
   }
   #index .care .block .detail {
-    position: absolute;
+    position: relative;
     width: 640px;
-    height: 420px;
+    height: auto;
     display: table;
   }
   #index .care .block .detail .middle {
@@ -3380,67 +3386,46 @@ body.mapping #scene-container .content-mask {
     margin-left: auto;
     margin-right: auto;
   }
-  #index .care .block .detail .middle .title-image {
-    position: relative;
-    width: 345px;
-    height: 67px;
-    margin: 0 auto 0;
-    background-image: url("../images/index-care-title.png");
-  }
-  #index .care .block .detail .middle .title-text {
-    position: relative;
-    margin: 6px auto 0;
-    font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 15.63px;
-    color: #a18b73;
-    letter-spacing: 1px;
-    text-align: center;
-  }
-  #index .care .block .detail .middle .line {
-    position: relative;
-    margin: 14px auto 0;
-    background-color: #a18b73;
-    width: 446px;
-    height: 1px;
-  }
   #index .care .block .detail .middle .contents {
-    margin-top: 40px;
+    margin-top: 0;
     text-align: center;
   }
   #index .care .block .detail .middle .contents .brown-block {
-    display: inline-block;
+    display: block;
     vertical-align: top;
-    width: 114px;
-    height: 75px;
-    background-image: url("../images/index-care-brown-square.png");
+    width: 561px;
+    height: 78px;
+    background-image: url("../images/index-care-brown-square.m.png");
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 13px;
+    font-size: 33.33px;
     color: white;
     text-align: center;
-    line-height: 75px;
-    letter-spacing: 2px;
-    margin-left: 32px;
+    line-height: 78px;
+    letter-spacing: 4px;
+    margin: 24px auto 0;
   }
   #index .care .block .detail .middle .contents .texts {
-    display: inline-block;
+    display: block;
     vertical-align: top;
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 13px;
+    font-size: 29.17px;
     color: #666464;
-    text-align: left;
-    line-height: 29px;
-    margin-left: 13px;
-    margin-top: -5px;
+    letter-spacing: 0;
+    line-height: 58px;
+    width: 540px;
+    margin: 15px auto 0;
+  }
+  #index .care .block .detail .middle .contents .texts ul {
+    margin: 0 0 -20px 0;
   }
   #index .care .block .detail .middle .btn-more {
     position: relative;
-    width: 126px;
-    height: 25px;
-    background-image: url("../images/btn-more-2.png");
+    width: 293px;
+    height: 50px;
+    background-image: url("../images/btn-more-5.png");
     background-position: top;
     cursor: pointer;
-    margin-top: 25px;
-    margin-bottom: 35px;
+    margin: 34px auto 34px;
   }
   #index .care .block .detail .middle .btn-more:active {
     background-position: bottom;
@@ -3449,81 +3434,709 @@ body.mapping #scene-container .content-mask {
     background-position: bottom;
   }
   #index .care .block.align-left .image {
-    right: 0;
-  }
-  #index .care .block.align-left .cover {
-    background-image: url("../images/index-care-cover-1.png");
-    margin-left: -30px;
+    left: 0;
+    right: auto;
   }
   #index .care .block.align-left .detail {
     left: 0;
+    right: auto;
   }
   #index .care .block.align-right .image {
     left: 0;
-  }
-  #index .care .block.align-right .cover {
-    background-image: url("../images/index-care-cover-2.png");
+    right: auto;
   }
   #index .care .block.align-right .detail {
-    right: 0;
-  }
-  #index .care .block:nth-child(1) .image {
-    background-image: url("../images/index-care-image-1.jpg");
-  }
-  #index .care .block:nth-child(1) .brown-block:after {
-    content: '醫療團隊';
+    left: 0;
+    right: auto;
   }
   #index .care .block:nth-child(2) .image {
-    background-image: url("../images/index-care-image-2.jpg");
+    background-image: url("../images/index-care-image-1.m.png");
   }
   #index .care .block:nth-child(2) .brown-block:after {
-    content: '媽媽照護';
+    content: '醫療團隊';
   }
   #index .care .block:nth-child(3) .image {
-    background-image: url("../images/index-care-image-3.jpg");
+    background-image: url("../images/index-care-image-2.m.png");
   }
   #index .care .block:nth-child(3) .brown-block:after {
-    content: '寶寶照護';
+    content: '媽媽照護';
   }
   #index .care .block:nth-child(4) .image {
-    background-image: url("../images/index-care-image-4.jpg");
+    background-image: url("../images/index-care-image-3.m.png");
   }
   #index .care .block:nth-child(4) .brown-block:after {
+    content: '寶寶照護';
+  }
+  #index .care .block:nth-child(5) .image {
+    background-image: url("../images/index-care-image-4.m.png");
+  }
+  #index .care .block:nth-child(5) .brown-block:after {
     content: '產後教育';
   }
   #index .back-to-top {
     position: relative;
-    width: 1280px;
-    height: 62px;
+    width: 100%;
     background-color: #e1d6e0;
     cursor: pointer;
+    height: 123px;
   }
   #index .back-to-top .icon {
     position: absolute;
-    width: 40px;
-    height: 45px;
-    background-image: url("../images/back-to-top.png");
     left: 50%;
     top: 50%;
-    margin-left: -20px;
-    margin-top: -22.5px;
     background-position: left;
+  }
+  #index .back-to-top .icon {
+    width: 63px;
+    height: 79px;
+    margin-left: -31.5px;
+    margin-top: -39.5px;
+    background-image: url("../images/back-to-top.m.png");
   }
   #index .back-to-top:active .icon {
     background-position: right;
   }
   #index .back-to-top .icon {
     position: absolute;
-    width: 40px;
-    height: 45px;
-    background-image: url("../images/back-to-top.png");
     left: 50%;
     top: 50%;
-    margin-left: -20px;
-    margin-top: -22.5px;
     background-position: left;
   }
+  #index .back-to-top .icon {
+    width: 63px;
+    height: 79px;
+    margin-left: -31.5px;
+    margin-top: -39.5px;
+    background-image: url("../images/back-to-top.m.png");
+  }
   #index .back-to-top:active .icon {
+    background-position: right;
+  }
+  /* page bottom*/
+  #footer {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    transition: height 0.4s ease-out;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+  }
+  #footer .pink-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffebef;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s linear, visibility 0s linear 0.5s;
+  }
+  #footer.hide-mode {
+    height: 0;
+  }
+  #footer.pink-mode .pink-bg {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s linear, visibility 0s linear;
+  }
+  #footer #map {
+    display: none;
+  }
+  #footer.map-only-mode {
+    height: 702px;
+  }
+  #footer.map-only-mode .mode-1-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-out, visibility 0.4s linear;
+  }
+  #footer.map-only-mode .mode-2-content {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease-out, visibility 0s linear;
+  }
+  #footer.map-only-mode #map {
+    left: 34px;
+    top: 281px;
+    width: 572px;
+    height: 380px;
+    display: block;
+  }
+  #footer .mode-1-content .logo {
+    display: none;
+  }
+  #footer .mode-1-content .misc-image {
+    position: absolute;
+    left: 56px;
+    top: 41px;
+    width: 147px;
+    height: 178px;
+    background-image: url("../images/footer-misc-1.m.png");
+  }
+  #footer .mode-1-content .field-tel,
+  #footer .mode-1-content .field-address,
+  #footer .mode-1-content .field-facebook {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25.57px;
+    color: #666464;
+  }
+  #footer .mode-1-content .field-tel {
+    left: 98px;
+    top: 86px;
+    letter-spacing: 2px;
+  }
+  #footer .mode-1-content .field-address {
+    left: 98px;
+    top: 136px;
+    letter-spacing: 1px;
+  }
+  #footer .mode-1-content .field-facebook {
+    display: block;
+    left: 98px;
+    top: 186px;
+    letter-spacing: 2px;
+  }
+  #footer .mode-1-content .btn-map,
+  #footer .mode-1-content .btn-facebook {
+    position: absolute;
+    cursor: pointer;
+    left: 470px;
+    width: 120px;
+    height: 30px;
+  }
+  #footer .mode-1-content .btn-map:active,
+  #footer .mode-1-content .btn-facebook:active {
+    margin-top: 1px;
+  }
+  #footer .mode-1-content .btn-map {
+    top: 140px;
+    background-image: url("../images/footer-btn-map.png");
+  }
+  #footer .mode-1-content .btn-facebook {
+    top: 191px;
+    background-image: url("../images/footer-btn-facebook.png");
+  }
+  #footer .mode-1-content .facebook-page {
+    display: none;
+  }
+  #footer .mode-2-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-out, visibility 0.4s linear;
+  }
+  #footer .mode-2-content .top-part {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+  }
+  #footer .mode-2-content .top-part .title-text,
+  #footer .mode-2-content .top-part .tel,
+  #footer .mode-2-content .top-part .address {
+    margin: 12px auto;
+  }
+  #footer .mode-2-content .top-part .title-text {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+  }
+  #footer .mode-2-content .top-part .tel {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25.7px;
+    color: #666464;
+  }
+  #footer .mode-2-content .top-part .tel .tel-icon {
+    width: 33px;
+    height: 33px;
+    background-image: url("../images/tel-icon.m.png");
+    margin-right: 9px;
+    margin-bottom: -2px;
+  }
+  #footer .mode-2-content .top-part .address {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25.7px;
+    color: #666464;
+  }
+  #footer .mode-2-content .top-part .address .address-icon {
+    width: 24px;
+    height: 36px;
+    background-image: url("../images/address-icon.m.png");
+    margin-right: 8px;
+    margin-bottom: -3px;
+  }
+  #footer .mode-2-content .bottom-part {
+    left: 30px;
+    top: 277px;
+    width: 578px;
+    height: 386px;
+  }
+  .copy-right {
+    height: 66px;
+    overflow: hidden;
+  }
+  .copy-right .text {
+    font-size: 16.83px;
+    text-align: center;
+    line-height: 66px;
+  }
+  /* contact */
+  #contact .key-images {
+    background-image: url("../images/contact-key-image.m.jpg");
+  }
+  /* about-us */
+  #about-us {
+    height: auto;
+  }
+  #about-us .key-images {
+    background-image: url("../images/about-key-image.m.jpg");
+  }
+  #about-us .part-1 {
+    overflow: hidden;
+  }
+  #about-us .title-image {
+    margin: 36px auto 0;
+  }
+  #about-us .title-text {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a08c6e;
+    letter-spacing: 1px;
+    margin: 14px auto 0;
+  }
+  #about-us .left-part {
+    position: relative;
+    width: 587px;
+    height: 428px;
+    margin: 47px auto 0;
+    float: none;
+    background-image: url("../images/about-image-1.m.jpg");
+  }
+  #about-us .right-part {
+    position: relative;
+    float: none;
+    margin: 30px 0 40px 40px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 3px;
+    line-height: 46px;
+  }
+  #about-us .right-part br.sp-only {
+    display: block;
+  }
+  /* reservation */
+  #reservation .key-images {
+    background-image: url("../images/reservation-key-image.m.jpg");
+  }
+  #reservation .part-1 .title-image {
+    margin: 41px auto 0;
+  }
+  #reservation .part-1 .title-text {
+    margin: 10px auto 22px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 4px;
+  }
+  #reservation .part-2 {
+    width: 100%;
+    background-color: #f1eeea;
+    overflow: hidden;
+  }
+  #reservation .part-2 .desc {
+    margin: 37px auto 32px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 0;
+    line-height: 46px;
+  }
+  #reservation .part-2 .field {
+    margin: 21px auto;
+    width: 573px;
+    overflow: hidden;
+  }
+  #reservation .part-2 .field .label {
+    float: left;
+    width: 228px;
+    height: 44px;
+    background-color: #a18b73;
+    border-radius: 5px 0 0 5px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25px;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 44px;
+  }
+  #reservation .part-2 .field .field-input {
+    float: left;
+    width: 323px;
+    height: 42px;
+    border: 1px solid #a18b73;
+    background-color: #ffffff;
+    padding: 0 10px;
+    border-radius: 0 5px 5px 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25px;
+    color: #666464;
+  }
+  #reservation .part-2 .field .field-select {
+    float: left;
+    width: 345px;
+    height: 44px;
+    border: 1px solid #a18b73;
+    background-color: #ffffff;
+    padding: 0 10px;
+    border-radius: 0 5px 5px 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25px;
+    color: #666464;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url("../images/brown-arrow.png");
+    background-position: 320px 11px;
+    background-repeat: no-repeat;
+  }
+  #reservation .part-2 .field.big .label {
+    width: 573px;
+    border-radius: 5px 5px 0 0;
+  }
+  #reservation .part-2 .field.big .field-input {
+    width: 551px;
+    height: 185px;
+    border-radius: 0 0 5px 5px;
+    margin: 0 auto;
+    padding: 10px 10px;
+    resize: none;
+  }
+  #reservation .part-2 .btn-send {
+    background-image: url("../images/reservation-btn-send.m.png");
+    width: 283px;
+    height: 56px;
+    margin: 29px auto 40px;
+  }
+  #reservation .part-2 .btn-send:active {
+    margin: 30px auto 39px;
+  }
+  /* environmental */
+  #environmental .part-1 .title-image {
+    margin: 28px auto 0;
+  }
+  #environmental .part-1 .title-text {
+    margin: 9px auto 17px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 4px;
+  }
+  #environmental .part-1 .left-part {
+    display: none;
+  }
+  #environmental .part-1 .right-part {
+    float: none;
+    width: 640px;
+    height: auto;
+    background-image: url("../images/env-part-1-bg.m.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  #environmental .part-1 .right-part .title {
+    position: relative;
+    margin: 19px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 8px;
+  }
+  #environmental .part-1 .right-part .line {
+    margin: 16px auto 0;
+  }
+  #environmental .part-1 .right-part .detail {
+    width: 540px;
+    margin: 15px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 1px;
+    line-height: 46px;
+  }
+  #environmental .part-2 .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 34px auto 23px;
+  }
+  #environmental .part-2 .container .room {
+    float: none;
+    margin: 0 auto 30px;
+  }
+  #environmental .part-2 .container .room:last-child {
+    margin-bottom: 0;
+  }
+  #environmental .part-2 .container .room .image {
+    position: relative;
+    width: 100%;
+  }
+  #environmental .part-2 .container .room .detail {
+    height: 102px;
+  }
+  #environmental .part-2 .container .room .detail .line {
+    height: 60px;
+    top: 23px;
+    margin-left: 7px;
+  }
+  #environmental .part-2 .container .room .detail .left-part {
+    position: absolute;
+    left: 50%;
+    margin-left: -201px;
+    top: 39px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 18.96px;
+    color: #666464;
+    letter-spacing: 4px;
+    width: 160px;
+    text-align: center;
+  }
+  #environmental .part-2 .container .room .detail .right-part {
+    position: absolute;
+    left: 50%;
+    margin-left: 60px;
+    top: 25px;
+  }
+  #environmental .part-2 .container .room .detail .right-part .row {
+    position: relative;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 18.96px;
+    color: #666464;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  #environmental .part-2 .container .room.small,
+  #environmental .part-2 .container .room.large {
+    width: 558px;
+  }
+  #environmental .part-2 .container .room.small .image,
+  #environmental .part-2 .container .room.large .image {
+    height: 370px;
+  }
+  #environmental .part-2 .container .room:nth-child(1) .image {
+    background-image: url("../images/env-room-1.m.jpg");
+  }
+  #environmental .part-2 .container .room:nth-child(2) .image {
+    background-image: url("../images/env-room-2.m.jpg");
+  }
+  #environmental .part-2 .container .room:nth-child(3) .image {
+    background-image: url("../images/env-room-3.m.jpg");
+  }
+  #environmental .part-2 .container .room:nth-child(4) .image {
+    background-image: url("../images/env-room-4.m.jpg");
+  }
+  #environmental .part-2 .container .room:nth-child(5) .image {
+    background-image: url("../images/env-room-5.m.jpg");
+  }
+  #environmental .part-2 .triangle {
+    position: relative;
+    width: 29px;
+    height: 29px;
+    background-image: url("../images/triangle-2.png");
+    margin: 0 auto;
+  }
+  #environmental .part-3 {
+    background-color: #f2f0ec;
+  }
+  #environmental .part-3 .container {
+    width: 100%;
+    overflow: hidden;
+    margin: 35px 0 0 103px;
+  }
+  #environmental .part-3 .container .item {
+    position: relative;
+    float: left;
+    width: 450px;
+    margin-bottom: 34px;
+  }
+  #environmental .part-3 .container .item .title {
+    position: relative;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 26.92px;
+    color: #a18b73;
+    letter-spacing: 1px;
+  }
+  #environmental .part-3 .container .item .title .heart {
+    display: inline-block;
+    width: 39px;
+    height: 34px;
+    background-image: url("../images/heart-icon-3.png");
+    margin: 0 10px -5px 0;
+  }
+  #environmental .part-3 .container .item .detail {
+    position: relative;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 26.92px;
+    color: #666464;
+    letter-spacing: 1px;
+    margin: 3px 0 0 2px;
+  }
+  #environmental .part-4 {
+    background-image: url("../images/env-part-4-bg..mjpg");
+  }
+  #environmental .part-4 .title-image {
+    margin: 39px auto 0;
+  }
+  #environmental .part-4 .title-text {
+    margin: 12px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 3px;
+  }
+  #environmental .part-4 .container {
+    width: 640px;
+    margin: 19px auto 29px;
+  }
+  #environmental .part-4 .container .room {
+    float: none;
+    margin: 0 auto 15px;
+    width: 538px;
+  }
+  #environmental .part-4 .container .room .image {
+    width: 538px;
+    height: 320px;
+  }
+  #environmental .part-4 .container .room .detail {
+    height: 42px;
+  }
+  #environmental .part-4 .container .room .detail .text {
+    margin: 0 auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: white;
+    letter-spacing: 4px;
+  }
+  #environmental .part-4 .container .room:nth-child(1) {
+    background-image: url("../images/env-part-4-image-1.m.jpg");
+  }
+  #environmental .part-4 .container .room:nth-child(2) {
+    background-image: url("../images/env-part-4-image-2.m.jpg");
+  }
+  #environmental .part-4 .container .room:nth-child(3) {
+    background-image: url("../images/env-part-4-image-3.m.jpg");
+  }
+  #environmental .part-4 .container .room:nth-child(4) {
+    background-image: url("../images/env-part-4-image-4.m.jpg");
+  }
+  #environmental .part-5 .title-image {
+    margin: 30px auto 0;
+  }
+  #environmental .part-5 .title-text {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #c490bf;
+    letter-spacing: 4px;
+    margin: 0 auto 0;
+  }
+  #environmental .part-5 .container {
+    margin: 18px 0 13px;
+    text-align: center;
+  }
+  #environmental .part-5 .part {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    vertical-align: top;
+    width: 600px;
+    margin: 0 auto 20px;
+  }
+  #environmental .part-5 .part .image {
+    width: 480px;
+    height: 480px;
+    margin: 0 auto 0;
+    background-color: transparent;
+  }
+  #environmental .part-5 .part .image .cover {
+    display: none;
+  }
+  #environmental .part-5 .part:nth-child(1) .image {
+    background-image: url("../images/env-part-5-image-1.m.png");
+  }
+  #environmental .part-5 .part:nth-child(2) .image {
+    background-image: url("../images/env-part-5-image-2.m.png");
+  }
+  #environmental .part-5 .part .title {
+    margin: 30px 0 0 5px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25.56px;
+    color: #c490bf;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  #environmental .part-5 .part .item {
+    position: relative;
+    margin: 20px 0 33px 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  #environmental .part-5 .part .item .heart {
+    width: 30px;
+    height: 29px;
+    margin: 0 13px 0 13px;
+    background-image: url("../images/heart-icon-4.png");
+  }
+  #environmental .part-5 .part .item .detail {
+    width: 520px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 22.23px;
+    color: #666464;
+    letter-spacing: 1px;
+    line-height: 34px;
+  }
+  #environmental .part-5 .part .item:last-child {
+    margin-bottom: 30px;
+  }
+  #environmental .back-to-top {
+    position: relative;
+    width: 100%;
+    background-color: #e1d6e0;
+    cursor: pointer;
+    height: 123px;
+  }
+  #environmental .back-to-top .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: left;
+  }
+  #environmental .back-to-top .icon {
+    width: 63px;
+    height: 79px;
+    margin-left: -31.5px;
+    margin-top: -39.5px;
+    background-image: url("../images/back-to-top.m.png");
+  }
+  #environmental .back-to-top:active .icon {
+    background-position: right;
+  }
+  #environmental .back-to-top .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: left;
+  }
+  #environmental .back-to-top .icon {
+    width: 63px;
+    height: 79px;
+    margin-left: -31.5px;
+    margin-top: -39.5px;
+    background-image: url("../images/back-to-top.m.png");
+  }
+  #environmental .back-to-top:active .icon {
     background-position: right;
   }
 }

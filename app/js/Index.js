@@ -83,33 +83,7 @@
                     }());
 
                     /* enviornmental */
-                    (function(){
-
-                         var data = _data.environmental;
-
-                         var $container = $doms.container.find(".environmental");
-
-                         $container.find(".top-part .detail").html(data.description);
-
-                         setupSample(1, "rooms", "/Environmental/Rooms");
-                         setupSample(2, "public_area", "/Environmental/PublicArea");
-                         setupSample(3, "baby_room", "/Environmental/BabyRoom");
-
-                         function setupSample(index, keyword, hash)
-                         {
-                             var $sample = $container.find(".sample:nth-child("+index+")");
-
-                             $sample.find(".image").css("background-image", "url("+data.images[keyword].pc+")");
-
-                             $sample.on("click", function(event)
-                             {
-                             event.preventDefault();
-
-                             //Hash.to("/Environmental/Rooms");
-                             Hash.to(hash);
-                             });
-                         }
-                     }());
+                    updateEnvironmental();
 
                     end();
                 });
@@ -130,6 +104,8 @@
 
                         Hash.to("/Malt");
                     });
+
+                    updateMalt();
 
                 }());
 
@@ -255,9 +231,95 @@
                 if(_keyImageSlider)
                 {
                     _keyImageSlider.replaceImages(vp.imageType);
+
+                    updateEnvironmental();
+                    updateMalt();
                 }
             }
         }
     };
+
+    function updateMalt()
+    {
+        var $samplePart = $doms.container.find(".malt .sample-part");
+
+        if(Main.viewport.index === 0)
+        {
+            $samplePart.pep
+            ({
+                shouldPreventDefault: false,
+                useCSSTranslation: false,
+                axis: 'x',
+                shouldEase: false,
+                start: function()
+                {
+                    TweenMax.killTweensOf($samplePart);
+                },
+                stop: function()
+                {
+                    //console.log(e);
+                    var gridSize = 640,
+                        newLeft = parseInt($samplePart.css("left")),
+                        targetGridIndex = Math.round(newLeft / gridSize);
+
+                    //console.log(targetGridIndex);
+
+                    targetGridIndex = Math.min(targetGridIndex, 0);
+                    targetGridIndex = Math.max(targetGridIndex, -2);
+
+                    var targetLeft = gridSize * targetGridIndex;
+
+                    //TweenMax.killTweensOf($samplePart);
+                    TweenMax.to($samplePart,.3,{left: targetLeft, ease:Power3.easeOut});
+
+
+                }
+            });
+        }
+        else
+        {
+            TweenMax.killTweensOf($samplePart);
+            $.pep.unbind($samplePart);
+            $samplePart.css
+            ({
+                left: '',
+                top: ''
+            })
+        }
+
+
+
+    }
+
+    function updateEnvironmental()
+    {
+
+        var imageType = Main.viewport.imageType;
+
+        var data = _data.environmental;
+
+        var $container = $doms.container.find(".environmental");
+
+        $container.find(".detail").html(data.description);
+
+        setupSample(1, "rooms", "/Environmental/Rooms");
+        setupSample(2, "public_area", "/Environmental/PublicArea");
+        setupSample(3, "baby_room", "/Environmental/BabyRoom");
+
+        function setupSample(index, keyword, hash)
+        {
+            var $sample = $container.find(".sample:nth-child("+index+")");
+
+            $sample.find(".image").css("background-image", "url("+data.images[keyword][imageType]+")");
+
+            $sample.on("click", function(event)
+            {
+                event.preventDefault();
+
+                //Hash.to("/Environmental/Rooms");
+                Hash.to(hash);
+            });
+        }
+    }
 
 }());

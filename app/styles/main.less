@@ -58,6 +58,18 @@ body{
         .image-bg('btn-more-3.png');
     }
 
+    .size() when (@type = 4){
+        width: 312px;
+        height: 52px;
+        .image-bg('btn-more-4.png');
+    }
+
+    .size() when (@type = 5){
+        width: 293px;
+        height: 50px;
+        .image-bg('btn-more-5.png');
+    }
+
     .size();
 
     background-position: top;
@@ -71,36 +83,74 @@ body{
 }
 
 
-.back-to-top(@background-color: #e1d6e0;){
+.back-to-top(@background-color: #e1d6e0; @type: 1;){
     position: relative;
-    width: @device-width-a;
-    height: 62px;
+    width: 100%;
     background-color: @background-color;
 
     cursor: pointer;
 
     .icon{
         position: absolute;
-        @w: 40px;
-        @h: 45px;
 
-        width: @w;
-        height: @h;
 
-        .image-bg('back-to-top.png');
 
         left: 50%;
         top: 50%;
-        margin-left: -@w * .5;
-        margin-top: -@h * .5;
 
         background-position: left;
 
+
+
     }
+
+    .set-type() when (@type = 1)
+    {
+        height: 62px;
+        .icon{
+            @w: 40px;
+            @h: 45px;
+
+            width: @w;
+            height: @h;
+            margin-left: -@w * .5;
+            margin-top: -@h * .5;
+
+            .image-bg('back-to-top.png');
+        }
+    }
+
+    .set-type() when (@type = 2)
+    {
+        height: 123px;
+        .icon{
+            @w: 63px;
+            @h: 79px;
+
+            width: @w;
+            height: @h;
+            margin-left: -@w * .5;
+            margin-top: -@h * .5;
+
+            .image-bg('back-to-top.m.png');
+        }
+
+
+    }
+
+    .set-type();
 
     &:active .icon{
         background-position: right;
     }
+}
+
+.sp-only{
+    display: none;
+}
+
+.pc-only{
+    display: initial;
 }
 
 .spacer{
@@ -125,7 +175,7 @@ body{
         height: 393px;
 
         & when not(@kv-image = none){
-            .image-bg(@kv-image);
+            .image-bg("@{kv-image}.jpg");
         }
     }
 }
@@ -167,7 +217,7 @@ body.mapping{
     #scene-container{
 //        opacity: .4;
         .content-mask{
-            opacity: .4;
+            opacity: .6;
         }
     }
 }
@@ -741,10 +791,10 @@ body.mapping{
             top: 68px;
             width: 348px;
             height: 138px;
-            .image-bg('index-page-bottom-misc-1.png');
+            .image-bg('footer-misc-1.png');
         }
 
-        .field-tel, .field-address{
+        .field-tel, .field-address, .field-facebook{
             position: absolute;
             .default-font(16px, @dark-gray-brown);
 
@@ -760,6 +810,10 @@ body.mapping{
             left: 404px;
             top: 146px;
             letter-spacing: 1px;
+        }
+
+        .field-facebook{
+            display: none;
         }
 
         .facebook-page{
@@ -1003,6 +1057,10 @@ body.mapping{
                 line-height: 25px;
                 margin-top: 18px;
                 letter-spacing: 1px;
+
+                p{
+                    margin: 10px auto;
+                }
             }
 
             .bottom-text{
@@ -1035,8 +1093,10 @@ body.mapping{
 
     .environmental{
 
-        @width: @device-width-a;
+        @width: 100%;
         @height: 620px;
+
+        overflow: hidden;
 
         position: relative;
         width: @width;
@@ -1044,67 +1104,53 @@ body.mapping{
 
         .image-bg('index-environmental-bg.jpg');
 
-        .top-part{
 
-            @w: 446px;
+        .title-image{
+            position: relative;
+            width: 312px;
+            height: 53px;
+            .image-bg('index-environmental-title.png');
+            margin: 37px auto 0;
+        }
 
-            position: absolute;
-            left: 50%;
-            margin-left: -@w * .5;
-            top: 37px;
+        .title-text{
+            position: relative;
+            margin: 9px auto 0;
 
+            .default-font(15.63px, @brown, 1px);
+            text-align: center;
+        }
 
+        .line{
+            position: relative;
+            margin: 14px auto 0;
+            background-color: @brown;
+            width: 446px;
+            height: 1px;
+        }
 
-            .title-image{
-                position: relative;
-                width: 312px;
-                height: 53px;
-                .image-bg('index-environmental-title.png');
-                margin: 0 auto 0;
-            }
-
-            .title-text{
-                position: relative;
-                margin: 9px auto 0;
-
-                .default-font(15.63px, @brown, 1px);
-                text-align: center;
-            }
-
-            .line{
-                position: relative;
-                margin: 14px auto 0;
-                background-color: @brown;
+        .detail{
+            position: relative;
                 width: 446px;
-                height: 1px;
-            }
-
-            .detail{
-                position: relative;
-                width: 446px;
-                .default-font(13px, @dark-gray-brown);
-                line-height: 25px;
-                margin-top: 16px;
-                letter-spacing: 1px;
-                text-align: center;
-            }
+            .default-font(13px, @dark-gray-brown, 1px);
+            line-height: 25px;
+            margin: 16px auto 0;
+            letter-spacing: 1px;
+            text-align: center;
         }
 
         .sample-part{
 
-            position: absolute;
             width: 100%;
-            top: 274px;
+            margin-top: 21px;
             text-align: center;
 
             .sample{
-                @w: 377px;
-                @h: 251px;
 
                 position: relative;
                 display: inline-block;
 
-                width: @w;
+                width: 377px;
                 margin: 0 8px;
 
                 cursor: pointer;
@@ -1118,14 +1164,14 @@ body.mapping{
 
                 .image{
                     position: relative;
-                    width: @w;
-                    height: @h;
+                    width: 100%;
+                    height: 251px;
                     background-color: rgba(255, 0, 0, .4);
                 }
 
                 .sample-bottom{
                     position: relative;
-                    width: @w;
+                    width: 100%;
                     height: 35px;
                     background-color: rgba(161, 139, 115, .25);
 
@@ -1189,27 +1235,22 @@ body.mapping{
 
         }
     }
+
     .malt{
 
-        @width: @device-width-a;
-        @height: 808px;
-
         position: relative;
-        width: @width;
-        height: @height;
+        width: 100%;
+        height: 808px;
 
         background-color: #f3f3f3;
 
+        overflow: hidden;
+
         .top-part{
 
-            @w: 1000px;
+            position: relative;
 
-            position: absolute;
-            left: 50%;
-            margin-left: -@w * .5;
-            top: 24px;
-            width: 1000px;
-
+            margin: 24px auto 0;
 
 
             .title-image{
@@ -1316,7 +1357,7 @@ body.mapping{
                     position: absolute;
                     width: @size;
                     height: @size;
-                    .image-bg('index-malt-sample-1.jpg');
+//                    .image-bg('index-malt-sample-1.jpg');
 
                     left: 50%;
                     margin-left: -@size * .5;
@@ -1324,7 +1365,7 @@ body.mapping{
 
                     @circle-size: @size * .5;
 
-                    clip-path: circle(@circle-size at center);
+//                    clip-path: circle(@circle-size at center);
 
                     z-index: 1;
 
@@ -1336,7 +1377,7 @@ body.mapping{
                 .sample:nth-child(@{i}){
 
                     .image{
-                        .image-bg('index-malt-sample-@{i}.jpg');
+                        .image-bg('index-malt-sample-@{i}.png');
                     }
 
                     .sample-top{
@@ -1388,7 +1429,7 @@ body.mapping{
 
     .care{
 
-        @width: @device-width-a;
+        @width: 100%;
 
         @block-height: 420px;
         @cover-width: 30px;
@@ -1505,6 +1546,11 @@ body.mapping{
 
                             margin-left: 13px;
                             margin-top: -5px;
+
+                            ul{
+                                margin-left: -20px;
+                                margin-top: 0;
+                            }
                         }
                     }
 
@@ -1562,7 +1608,10 @@ body.mapping{
 
         .my-loop (@i) when (@i <= 4){
 
-            .block:nth-child(@{i}){
+            @k: @i + 1;
+
+            .block:nth-child(@{k}){
+
                 .image{
                     .image-bg('index-care-image-@{i}.jpg');
                 }
@@ -1596,7 +1645,7 @@ body.mapping{
 
 /* about-us */
 #about-us {
-    .common-content("about-key-image.jpg");
+    .common-content("about-key-image");
 
     .title-image{
         position: relative;
@@ -1634,12 +1683,14 @@ body.mapping{
         .default-font(13.54px, @dark-gray-brown, 0);
         line-height: 25px;
 
+
+
     }
 }
 
 /* news */
 #news {
-    .common-content("news-key-image.jpg");
+    .common-content("news-key-image");
 
     > .title{
         position: relative;
@@ -1816,12 +1867,12 @@ body.mapping{
 
 /* contact */
 #contact{
-    .common-content("contact-key-image.jpg");
+    .common-content("contact-key-image");
 }
 
 /* care */
 #care{
-    .common-content("care-key-image.jpg");
+    .common-content("care-key-image");
 
     .part-1{
         position: relative;
@@ -2235,7 +2286,7 @@ body.mapping{
 
 /* reservation */
 #reservation{
-    .common-content("reservation-key-image.jpg");
+    .common-content("reservation-key-image");
 
     .part-1{
 
@@ -2371,7 +2422,7 @@ body.mapping{
 /* malt */
 #malt{
 
-    .common-content("malt-key-image.jpg");
+    .common-content("malt-key-image");
 
 
 
@@ -2688,8 +2739,7 @@ body.mapping{
 
             overflow: hidden;
 
-            margin-left: 274px;
-            margin-top: 28px;
+            margin: 28px 0 13px 274px;
 
             .item{
                 position: relative;
@@ -2902,7 +2952,7 @@ body.mapping{
 }
 
 #vip-baby{
-    .common-content("vip-baby-key-image.jpg");
+    .common-content("vip-baby-key-image");
 
     .main-container{
         position: relative;
@@ -3092,7 +3142,7 @@ body.mapping{
 
 /* vip course */
 #vip-course{
-    .common-content("vip-course-key-image.jpg");
+    .common-content("vip-course-key-image");
 
     .part-1{
         position: relative;

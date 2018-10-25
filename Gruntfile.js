@@ -19,7 +19,7 @@ module.exports = function(grunt)
         useminPrepare: {
 
             app: {
-                src: 'app/index.html',
+                src: 'app/index.php',
                 options:
                 {
                     dest: 'dist/app/'
@@ -50,7 +50,7 @@ module.exports = function(grunt)
                         cwd: 'app',
                         src: [
                             "templates/**",
-                            'index.html',
+                            'index.php',
                             'test/**',
                             'js/lib/**'
                         ],
@@ -99,7 +99,7 @@ module.exports = function(grunt)
         },
         usemin: {
 
-            html: ['dist/app/*.html', 'dist/enterance/*.html'],
+            html: ['dist/app/*.php', 'dist/enterance/*.html'],
             css: ['dist/app/styles/*.css', 'dist/enterance/styles/*.css'],
             options: {
                 assetsDirs: ['dist/app', 'dist/app/styles', 'dist/enterance', 'dist/enterance/styles']

@@ -74,54 +74,8 @@
                     /* facilites */
                     (function ()
                     {
-                        var data = _data.facilites,
-                            $container = $doms.container.find(".part-1");
+                        updateFacilites();
 
-                        $container.find(".right-part .title").html(data.title);
-                        $container.find(".right-part .detail").html(data.detail);
-                        $container.find(".left-part").css("background-image", "url("+data.image.pc+")");
-
-
-                        var i,
-                            $roomContainer = $doms.container.find(".part-2 .container"),
-                            $roomSample = $($roomContainer.find(".room")[0]),
-                            $featureContainer = $doms.container.find(".part-3 .container"),
-                            $featureSample = $($featureContainer.find(".item")[0]);
-
-                        $roomSample.toggleClass("small", false).toggleClass("large", false);
-
-                        $roomContainer.empty();
-                        $featureContainer.empty();
-
-                        for(i=0;i<data.rooms.length;i++){ buildRoom(i); }
-                        for(i=0;i<data.features.length;i++){ buildFeature(i); }
-
-                        $featureContainer.append('<div class="spacer"></div>');
-
-                        function buildRoom(index)
-                        {
-                            var roomData = data.rooms[index],
-                                $room = $roomSample.clone();
-
-                            $room.toggleClass(roomData.type, true);
-                            $room.find(".left-part").text(roomData.name);
-                            $room.find(".right-part .row:nth-child(1)").text(roomData.size);
-                            $room.find(".right-part .row:nth-child(2)").text(roomData.view);
-                            $room.find(".image").css("background-image", "url("+roomData.thumb.pc+")");
-
-                            $roomContainer.append($room);
-                        }
-
-                        function buildFeature(index)
-                        {
-                            var featureData = data.features[index],
-                                $feature = $featureSample.clone();
-
-                            $feature.find(".title-text").text(featureData.title);
-                            $feature.find(".detail").html(featureData.detail);
-
-                            $featureContainer.append($feature);
-                        }
 
                     }());
 
@@ -129,27 +83,7 @@
                     /* public area */
                     (function(){
 
-                        var dataList = _data.public_area,
-                            i,
-                            $container = $doms.container.find(".part-4 .container"),
-                            $sample = $($container.find(".room")[0]);
-
-                        $container.empty();
-
-                        for(i=0;i<dataList.length;i++){ buildArea(i); }
-
-                        $container.append('<div class="spacer"></div>');
-
-                        function buildArea(index)
-                        {
-                            var areaData = dataList[index],
-                                $area = $sample.clone();
-
-                            $area.find(".detail .text").html(areaData.title);
-                            $area.find(".image").css("background-image", "url("+areaData.thumb.pc+")");
-
-                            $container.append($area);
-                        }
+                        updatePublicArea();
 
 
                     }());
@@ -249,8 +183,90 @@
                 if(_keyImageSlider)
                 {
                     _keyImageSlider.replaceImages(vp.imageType);
+
+                    updateFacilites();
+                    updatePublicArea();
                 }
             }
         }
     };
+
+    function updatePublicArea()
+    {
+        var dataList = _data.public_area,
+            imageType = Main.viewport.imageType,
+            i,
+            $container = $doms.container.find(".part-4 .container"),
+            $sample = $($container.find(".room")[0]);
+
+        $container.empty();
+
+        for(i=0;i<dataList.length;i++){ buildArea(i); }
+
+        $container.append('<div class="spacer"></div>');
+
+        function buildArea(index)
+        {
+            var areaData = dataList[index],
+                $area = $sample.clone();
+
+            $area.find(".detail .text").html(areaData.title);
+            $area.find(".image").css("background-image", "url("+areaData.thumb[imageType]+")");
+
+            $container.append($area);
+        }
+    }
+
+    function updateFacilites()
+    {
+        var data = _data.facilites,
+            imageType = Main.viewport.imageType,
+            $container = $doms.container.find(".part-1");
+
+        $container.find(".right-part .title").html(data.title);
+        $container.find(".right-part .detail").html(data.detail);
+        $container.find(".left-part").css("background-image", "url("+data.image.pc+")");
+
+
+        var i,
+            $roomContainer = $doms.container.find(".part-2 .container"),
+            $roomSample = $($roomContainer.find(".room")[0]),
+            $featureContainer = $doms.container.find(".part-3 .container"),
+            $featureSample = $($featureContainer.find(".item")[0]);
+
+        $roomSample.toggleClass("small", false).toggleClass("large", false);
+
+        $roomContainer.empty();
+        $featureContainer.empty();
+
+        for(i=0;i<data.rooms.length;i++){ buildRoom(i); }
+        for(i=0;i<data.features.length;i++){ buildFeature(i); }
+
+        $featureContainer.append('<div class="spacer"></div>');
+
+        function buildRoom(index)
+        {
+            var roomData = data.rooms[index],
+                $room = $roomSample.clone();
+
+            $room.toggleClass(roomData.type, true);
+            $room.find(".left-part").text(roomData.name);
+            $room.find(".right-part .row:nth-child(1) .detail").text(roomData.size);
+            $room.find(".right-part .row:nth-child(2) .detail").text(roomData.view);
+            $room.find(".image").css("background-image", "url("+roomData.thumb[imageType]+")");
+
+            $roomContainer.append($room);
+        }
+
+        function buildFeature(index)
+        {
+            var featureData = data.features[index],
+                $feature = $featureSample.clone();
+
+            $feature.find(".title-text").text(featureData.title);
+            $feature.find(".detail").html(featureData.detail);
+
+            $featureContainer.append($feature);
+        }
+    }
 }());
