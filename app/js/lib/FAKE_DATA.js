@@ -190,8 +190,13 @@ window._FAKE_DATA_ =
                     "full_image":
                         [
                             {
-                                "pc": "./test/images/env-room-1.full.jpg",
-                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                                "pc": "./test/images/full-sample-1.jpg",
+                                "mobile": "./test/images/full-sample-1.m.jpg"
+                            },
+
+                            {
+                                "pc": "./test/images/full-sample-2.jpg",
+                                "mobile": "./test/images/full-sample-2.m.jpg"
                             }
                         ]
                 },
@@ -210,8 +215,13 @@ window._FAKE_DATA_ =
                     "full_image":
                         [
                             {
-                                "pc": "./test/images/env-room-1.full.jpg",
-                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                                "pc": "./test/images/full-sample-1.jpg",
+                                "mobile": "./test/images/full-sample-1.m.jpg"
+                            },
+
+                            {
+                                "pc": "./test/images/full-sample-2.jpg",
+                                "mobile": "./test/images/full-sample-2.m.jpg"
                             }
                         ]
                 },
@@ -230,8 +240,23 @@ window._FAKE_DATA_ =
                     "full_image":
                         [
                             {
-                                "pc": "./test/images/env-room-1.full.jpg",
-                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                                "pc": "./test/images/full-sample-1.jpg",
+                                "mobile": "./test/images/full-sample-1.m.jpg"
+                            },
+
+                            {
+                                "pc": "./test/images/full-sample-2.jpg",
+                                "mobile": "./test/images/full-sample-2.m.jpg"
+                            },
+
+                            {
+                                "pc": "./test/images/full-sample-1.jpg",
+                                "mobile": "./test/images/full-sample-1.m.jpg"
+                            },
+
+                            {
+                                "pc": "./test/images/full-sample-2.jpg",
+                                "mobile": "./test/images/full-sample-2.m.jpg"
                             }
                         ]
                 },
@@ -250,8 +275,13 @@ window._FAKE_DATA_ =
                     "full_image":
                         [
                             {
-                                "pc": "./test/images/env-room-1.full.jpg",
-                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                                "pc": "./test/images/full-sample-1.jpg",
+                                "mobile": "./test/images/full-sample-1.m.jpg"
+                            },
+
+                            {
+                                "pc": "./test/images/full-sample-2.jpg",
+                                "mobile": "./test/images/full-sample-2.m.jpg"
                             }
                         ]
                 },
@@ -270,8 +300,8 @@ window._FAKE_DATA_ =
                     "full_image":
                         [
                             {
-                                "pc": "./test/images/env-room-1.full.jpg",
-                                "mobile": "./test/images/env-room-1.full.m.jpg"
+                                "pc": "./test/images/full-sample-1.jpg",
+                                "mobile": "./test/images/full-sample-1.m.jpg"
                             }
                         ]
                 }
@@ -339,12 +369,12 @@ window._FAKE_DATA_ =
 
                 // 點開後大圖, 多張
                 "full_image":
-                [
-                    {
-                        "pc": "./test/images/env-part-4-image-1.full.jpg",
-                        "mobile": ""
-                    }
-                ]
+                    [
+                        {
+                            "pc": "./test/images/full-sample-1.jpg",
+                            "mobile": "./test/images/full-sample-1.m.jpg"
+                        }
+                    ]
             },
 
             {
@@ -358,8 +388,8 @@ window._FAKE_DATA_ =
                 "full_image":
                     [
                         {
-                            "pc": "./test/images/env-part-4-image-1.full.jpg",
-                            "mobile": ""
+                            "pc": "./test/images/full-sample-1.jpg",
+                            "mobile": "./test/images/full-sample-1.m.jpg"
                         }
                     ]
             },
@@ -375,8 +405,8 @@ window._FAKE_DATA_ =
                 "full_image":
                     [
                         {
-                            "pc": "./test/images/env-part-4-image-1.full.jpg",
-                            "mobile": ""
+                            "pc": "./test/images/full-sample-1.jpg",
+                            "mobile": "./test/images/full-sample-1.m.jpg"
                         }
                     ]
             },
@@ -392,8 +422,8 @@ window._FAKE_DATA_ =
                 "full_image":
                     [
                         {
-                            "pc": "./test/images/env-part-4-image-1.full.jpg",
-                            "mobile": ""
+                            "pc": "./test/images/full-sample-1.jpg",
+                            "mobile": "./test/images/full-sample-1.m.jpg"
                         }
                     ]
             }

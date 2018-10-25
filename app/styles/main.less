@@ -445,20 +445,21 @@ body.mapping{
 //    margin-left: auto;
 //    margin-right: auto;
     background-color: white;
-
-    position: fixed;
     z-index: 100;
-    left: 50%;
-    margin-left: -@device-width-a * .5;
-    top: 0;
+
+    position: absolute;
+//    position: fixed;
+//    left: 50%;
+//    margin-left: -@device-width-a * .5;
+//    top: 0;
 
     transition: height .2s linear;
 
 
-//    @media (max-width: 1280px) {
-//        left: 0;
-//        margin-left: 0;
-//    }
+    @media (max-width: 1280px) {
+        left: auto;
+        margin-left: 0;
+    }
 
 
     &.pin-mode{
@@ -2627,6 +2628,8 @@ body.mapping{
 
                 margin: 0 (@room-gap-x * .5) 30px;
 
+                cursor: pointer;
+
                 &:last-child{
                     margin-bottom: 0;
                 }
@@ -2705,7 +2708,7 @@ body.mapping{
 
                 .room:nth-child(@{i}){
                     .image{
-                        .image-bg("env-room-@{i}.jpg");
+//                        .image-bg("env-room-@{i}.jpg");
                     }
                 }
 
@@ -2812,6 +2815,8 @@ body.mapping{
                 float: left;
                 margin: 0 (@room-gap-x * .5) 15px;
 
+                cursor: pointer;
+
                 .image{
                     position: relative;
                     width: 376px;
@@ -2837,7 +2842,7 @@ body.mapping{
 
             .my-loop (@i) when (@i <= 4){
                 .room:nth-child(@{i}){
-                    .image-bg("env-part-4-image-@{i}.jpg");
+//                    .image-bg("env-part-4-image-@{i}.jpg");
                 }
 
                 .my-loop(@i + 1);
@@ -3354,6 +3359,138 @@ body.mapping{
 
     }
 
+}
+
+#image-viewer{
+    position: fixed;
+    width: 100%;
+//    min-width: @device-width-a;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    z-index: @popup-depth;
+
+    overflow: hidden;
+
+    .cover{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    .container{
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: table;
+
+        .middle-wrapper {
+
+            display: table-cell;
+            vertical-align: middle;
+
+            .image-container{
+                width: 650px;
+                height: 500px;
+                margin: 10px auto 10px;
+                border: 1px solid @brown;
+
+                overflow: hidden;
+
+                img{
+                    margin: 1px;
+                }
+            }
+
+            .ui{
+
+                overflow: hidden;
+
+                .bottom-ui{
+
+    //                width: 640px;
+    //                height: 100px;
+                    margin: 10px auto 10px;
+    //                border: 1px solid @brown;
+
+                    text-align: center;
+
+
+                    .btn-prev, .btn-next{
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        margin: 0 20px;
+
+                        vertical-align: top;
+
+                        cursor: pointer;
+
+                        &.disable-mode{
+                            opacity: .2;
+                            cursor: default;
+                        }
+
+                    }
+
+                    .btn-prev{
+                        .image-bg("arrow-prev.png");
+                        background-size: cover;
+                    }
+
+                    .btn-next{
+
+                        .image-bg("arrow-next.png");
+                        background-size: cover;
+                    }
+
+                    .progress{
+
+                        display: inline-block;
+
+                        vertical-align: top;
+
+                        width: 120px;
+                        height: 30px;
+    //                    border: 1px solid @brown;
+
+                        margin: 16px 20px 0;
+
+                        text-align: center;
+
+                        .default-font(16px, @brown, 2px);
+
+                        cursor: pointer;
+                    }
+                }
+
+                .btn-close{
+
+
+                    width: 80px;
+                    height: 26px;
+                    margin: 10px auto 10px;
+                    border: 1px solid @brown;
+
+                    cursor: pointer;
+
+                    line-height: 26px;
+                    .default-font(14px, @brown, 1px);
+                    text-align: center;
+
+                    .unselectable();
+
+                    &:active{
+                        margin: 11px auto 9px;
+                    }
+
+                }
+            }
+        }
+    }
 }
 
 /***** end *****/

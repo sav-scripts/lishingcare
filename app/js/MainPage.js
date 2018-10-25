@@ -8,6 +8,7 @@
         _sceneScrollLocking = false,
         _hashQueue = null,
 
+        _lockingScrollTop = 0,
         _contentClassDic = null,
         _currentContentClass = null,
         _$calenderSample;
@@ -18,7 +19,6 @@
 
         init: function()
         {
-            Footer.init();
 
             $doms.sceneContainer = $("#scene-container");
             $doms.contentContainer = $doms.sceneContainer.find(".content-container");
@@ -42,6 +42,8 @@
 
 
 
+            Footer.init();
+            ImageViewer.init();
 
 
             Vip.init(function()
@@ -144,10 +146,13 @@
 
             if(_sceneScrollLocking)
             {
+                _lockingScrollTop = $(window).scrollTop();
+
                 $doms.sceneContainer.css
                 ({
                     "height": Main.viewport.height,
-                    "overflow": 'hidden'
+                    "overflow": 'hidden',
+                    "top": -_lockingScrollTop
                 });
             }
             else
@@ -155,8 +160,11 @@
                 $doms.sceneContainer.css
                 ({
                     "height": '',
-                    "overflow": ''
+                    "overflow": '',
+                    "top": ''
                 });
+
+                window.scrollTo($(window).scrollLeft(), _lockingScrollTop);
             }
 
         },
@@ -164,6 +172,8 @@
         resize: function()
         {
             self.setSceneScrollLock();
+
+            ImageViewer.resize();
 
             if(_currentContentClass && _currentContentClass.resize)
             {
@@ -196,6 +206,9 @@
 
         if(contentClass)
         {
+            ImageViewer.hide();
+            CourseBooking.hide();
+
             _isHashLocking = true;
 
             if(_currentContentClass)

@@ -157,7 +157,7 @@
 
             $("body").append($doms.container);
 
-            //MainPage.setSceneScrollLock(true);
+            MainPage.setSceneScrollLock(true);
 
             var tl = new TimelineMax;
             tl.set($doms.container, {autoAlpha: 0});
@@ -175,7 +175,7 @@
             if (_isHiding) return;
             _isHiding = true;
 
-            //MainPage.setSceneScrollLock(false);
+            MainPage.setSceneScrollLock(false);
 
             var tl = new TimelineMax;
             tl.to($doms.container, .4, {autoAlpha: 0});

@@ -188,12 +188,15 @@ body.mapping #scene-container .content-mask {
   width: 1280px;
   height: 98px;
   background-color: white;
-  position: fixed;
   z-index: 100;
-  left: 50%;
-  margin-left: -640px;
-  top: 0;
+  position: absolute;
   transition: height 0.2s linear;
+}
+@media (max-width: 1280px) {
+  #nav {
+    left: auto;
+    margin-left: 0;
+  }
 }
 #nav.pin-mode {
   height: 60px;
@@ -2124,6 +2127,7 @@ body.mapping #scene-container .content-mask {
   position: relative;
   float: left;
   margin: 0 12px 30px;
+  cursor: pointer;
 }
 #environmental .part-2 .container .room:last-child {
   margin-bottom: 0;
@@ -2184,21 +2188,6 @@ body.mapping #scene-container .content-mask {
 }
 #environmental .part-2 .container .room.large .image {
   height: 400px;
-}
-#environmental .part-2 .container .room:nth-child(1) .image {
-  background-image: url("../images/env-room-1.jpg");
-}
-#environmental .part-2 .container .room:nth-child(2) .image {
-  background-image: url("../images/env-room-2.jpg");
-}
-#environmental .part-2 .container .room:nth-child(3) .image {
-  background-image: url("../images/env-room-3.jpg");
-}
-#environmental .part-2 .container .room:nth-child(4) .image {
-  background-image: url("../images/env-room-4.jpg");
-}
-#environmental .part-2 .container .room:nth-child(5) .image {
-  background-image: url("../images/env-room-5.jpg");
 }
 #environmental .part-2 .triangle {
   position: relative;
@@ -2280,6 +2269,7 @@ body.mapping #scene-container .content-mask {
   position: relative;
   float: left;
   margin: 0 12px 15px;
+  cursor: pointer;
 }
 #environmental .part-4 .container .room .image {
   position: relative;
@@ -2300,18 +2290,6 @@ body.mapping #scene-container .content-mask {
   color: white;
   letter-spacing: 4px;
   text-align: center;
-}
-#environmental .part-4 .container .room:nth-child(1) {
-  background-image: url("../images/env-part-4-image-1.jpg");
-}
-#environmental .part-4 .container .room:nth-child(2) {
-  background-image: url("../images/env-part-4-image-2.jpg");
-}
-#environmental .part-4 .container .room:nth-child(3) {
-  background-image: url("../images/env-part-4-image-3.jpg");
-}
-#environmental .part-4 .container .room:nth-child(4) {
-  background-image: url("../images/env-part-4-image-4.jpg");
 }
 #environmental .part-5 {
   position: relative;
@@ -2810,6 +2788,104 @@ body.mapping #scene-container .content-mask {
 }
 #course-booking .container .middle-wrapper .item .item-btn:active {
   margin: 16px auto 24px;
+}
+#image-viewer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+  overflow: hidden;
+}
+#image-viewer .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+#image-viewer .container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+#image-viewer .container .middle-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+#image-viewer .container .middle-wrapper .image-container {
+  width: 650px;
+  height: 500px;
+  margin: 10px auto 10px;
+  border: 1px solid #a18b73;
+  overflow: hidden;
+}
+#image-viewer .container .middle-wrapper .image-container img {
+  margin: 1px;
+}
+#image-viewer .container .middle-wrapper .ui {
+  overflow: hidden;
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui {
+  margin: 10px auto 10px;
+  text-align: center;
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-prev,
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-next {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
+  vertical-align: top;
+  cursor: pointer;
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-prev.disable-mode,
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-next.disable-mode {
+  opacity: 0.2;
+  cursor: default;
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-prev {
+  background-image: url("../images/arrow-prev.png");
+  background-size: cover;
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-next {
+  background-image: url("../images/arrow-next.png");
+  background-size: cover;
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .progress {
+  display: inline-block;
+  vertical-align: top;
+  width: 120px;
+  height: 30px;
+  margin: 16px 20px 0;
+  text-align: center;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #a18b73;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+#image-viewer .container .middle-wrapper .ui .btn-close {
+  width: 80px;
+  height: 26px;
+  margin: 10px auto 10px;
+  border: 1px solid #a18b73;
+  cursor: pointer;
+  line-height: 26px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #a18b73;
+  letter-spacing: 1px;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#image-viewer .container .middle-wrapper .ui .btn-close:active {
+  margin: 11px auto 9px;
 }
 /***** end *****/
 .my-calender {

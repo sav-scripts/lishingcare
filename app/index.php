@@ -35,36 +35,65 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 <body onload="Main.init();">
 
 
-<div id="loading">
+    <div id="loading">
 
-    <div id="loading-icon"></div>
-    <div id="loading-text">99</div>
+        <div id="loading-icon"></div>
+        <div id="loading-text">99</div>
 
-</div>
+    </div>
 
-<script src="js/lib/Loading.js"></script>
-<script>
-    Loading.init();
-    //        Loading.progress('LOADING').show();
-</script>
+    <script src="js/lib/Loading.js"></script>
+    <script>
+        Loading.init();
+        //        Loading.progress('LOADING').show();
+    </script>
 
-<div id="invisible-wrapper">
+    <div id="invisible-wrapper">
 
-    <div id="invisible-container" class="scene-container">
+        <div id="invisible-container" class="scene-container">
 
-        <div id="login-ui">
+            <div id="image-viewer">
 
-            <!--<div class="cover"></div>-->
+                <div class="cover"></div>
+                <div class="container">
+                    <div class="middle-wrapper">
 
-            <div class="container">
+                        <div class="image-container"></div>
 
-                <div class="title">會　員　登　入</div>
-                <input title="" class="user-name-input" placeholder="輸入帳號">
-                <input title="" class="password-input" placeholder="輸入密碼" type="password">
+                        <div class="ui">
+                            <div class="bottom-ui">
+                                <div class="btn-prev"></div>
+                                <div class="progress">
+                                    <span class="current-index">1</span> / <span class="total-number">10</span>
+                                </div>
+                                <div class="btn-next"></div>
 
-                <div class="captcha g-recaptcha" data-sitekey="6LeE3nUUAAAAACqrRPyLTSxdQjWZ5S46KhBXIaK-" data-callback="onCaptchaDone" data-size="normal"></div>
+                            </div>
 
-                <div class="btn-send">確定送出</div>
+                            <div class="btn-close">RETURN</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="login-ui">
+
+                <!--<div class="cover"></div>-->
+
+                <div class="container">
+
+                    <div class="title">會　員　登　入</div>
+                    <input title="" class="user-name-input" placeholder="輸入帳號">
+                    <input title="" class="password-input" placeholder="輸入密碼" type="password">
+
+                    <div class="captcha g-recaptcha" data-sitekey="6LeE3nUUAAAAACqrRPyLTSxdQjWZ5S46KhBXIaK-" data-callback="onCaptchaDone" data-size="normal"></div>
+
+                    <div class="btn-send">確定送出</div>
+
+                </div>
 
             </div>
 
@@ -72,183 +101,185 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
     </div>
 
-</div>
+    <div id="layout">
 
-<div id="layout">
-
-    <div class="pc-layout">
-<!--        <img class="layout" src="images/layout/index.jpg">-->
-        <!--<img class="layout" src="images/layout/news.jpg">-->
-        <!--<img class="layout" src="images/layout/about-us.jpg">-->
-        <!--<img class="layout" src="images/layout/malt.jpg">-->
-        <!--<img class="layout" src="images/layout/contact.jpg">-->
-        <!--<img class="layout" src="images/layout/care.jpg">-->
-        <img class="layout" src="images/layout/environmental.jpg">
-        <!--<img class="layout" src="images/layout/vip-baby-1.jpg">-->
-        <!--<img class="layout" src="images/layout/vip-baby-2.jpg">-->
-        <!--<img class="layout" src="images/layout/vip-baby-3.jpg">-->
-        <!--<img class="layout" src="images/layout/vip-course.jpg">-->
-<!--        <img class="layout" src="images/layout/reservation.jpg">-->
-    </div>
-
-    <div class="mobile-layout">
-<!--        <img class="layout" src="images/layout/index.m.jpg">-->
-        <!--<img class="layout" src="images/layout/news.m.jpg">-->
-<!--        <img class="layout" src="images/layout/about-us.m.jpg">-->
-        <!--<img class="layout" src="images/layout/malt.m.jpg">-->
-<!--        <img class="layout" src="images/layout/contact.m.jpg">-->
-        <!--<img class="layout" src="images/layout/care.m.jpg">-->
-        <img class="layout" src="images/layout/environmental.m.jpg">
-        <!--<img class="layout" src="images/layout/vip-baby-1.m.jpg">-->
-        <!--<img class="layout" src="images/layout/vip-baby-2.m.jpg">-->
-        <!--<img class="layout" src="images/layout/vip-baby-3.m.jpg">-->
-        <!--<img class="layout" src="images/layout/vip-course.m.jpg">-->
-<!--        <img class="layout" src="images/layout/reservation.m.jpg">-->
-
-    </div>
-</div>
-
-<div id="scene-container" class="scene-container">
-
-
-    <div id="nav">
-
-        <div class="logo"></div>
-
-        <div class="menu-icon"></div>
-
-        <div class="button-group">
-
-            <div class="button"></div><div class="gap"></div>
-            <div class="button"></div><div class="gap"></div>
-            <div class="button"></div><div class="gap"></div>
-            <div class="button"></div><div class="gap"></div>
-            <div class="button"></div><div class="gap"></div>
-            <div class="button"></div><div class="gap"></div>
-            <div class="button"></div>
-
-            <div class="btn-logout"></div>
-
+        <div class="pc-layout">
+    <!--        <img class="layout" src="images/layout/index.jpg">-->
+            <!--<img class="layout" src="images/layout/news.jpg">-->
+            <!--<img class="layout" src="images/layout/about-us.jpg">-->
+            <!--<img class="layout" src="images/layout/malt.jpg">-->
+            <!--<img class="layout" src="images/layout/contact.jpg">-->
+            <!--<img class="layout" src="images/layout/care.jpg">-->
+            <img class="layout" src="images/layout/environmental.jpg">
+            <!--<img class="layout" src="images/layout/vip-baby-1.jpg">-->
+            <!--<img class="layout" src="images/layout/vip-baby-2.jpg">-->
+            <!--<img class="layout" src="images/layout/vip-baby-3.jpg">-->
+            <!--<img class="layout" src="images/layout/vip-course.jpg">-->
+    <!--        <img class="layout" src="images/layout/reservation.jpg">-->
         </div>
 
-        <div class="vip-menu-cover"></div>
-
-        <div class="vip-menu">
-
-            <div class="button">寶寶記錄</div><div class="gap"></div>
-            <div class="button">媽媽課程</div><div class="gap"></div>
-            <div class="button">即時影像</div>
+        <div class="mobile-layout">
+    <!--        <img class="layout" src="images/layout/index.m.jpg">-->
+            <!--<img class="layout" src="images/layout/news.m.jpg">-->
+    <!--        <img class="layout" src="images/layout/about-us.m.jpg">-->
+            <!--<img class="layout" src="images/layout/malt.m.jpg">-->
+    <!--        <img class="layout" src="images/layout/contact.m.jpg">-->
+            <!--<img class="layout" src="images/layout/care.m.jpg">-->
+            <img class="layout" src="images/layout/environmental.m.jpg">
+            <!--<img class="layout" src="images/layout/vip-baby-1.m.jpg">-->
+            <!--<img class="layout" src="images/layout/vip-baby-2.m.jpg">-->
+            <!--<img class="layout" src="images/layout/vip-baby-3.m.jpg">-->
+            <!--<img class="layout" src="images/layout/vip-course.m.jpg">-->
+    <!--        <img class="layout" src="images/layout/reservation.m.jpg">-->
 
         </div>
-
-        <div class="brown-bar"></div>
-
     </div>
 
-    <div class="top-bleed"></div>
-
-    <div class="content-mask">
-
-        <div class="content-container"></div>
-
-    </div>
+    <div id="scene-container" class="scene-container">
 
 
-    <div id="footer" class="hide-mode">
-
-        <div class="pink-bg"></div>
-
-        <div class="mode-1-content">
+        <div id="nav">
 
             <div class="logo"></div>
-            <div class="misc-image"></div>
 
-            <a href="tel:<?=$tel;?>"><div class="field-tel"><?=$telText?></div></a>
-            <a target="_blank" href="<?=$googleMap?>"><div class="field-address">新北市淡水區淡金路6號1樓</div></a>
-            <a target="_blank" href="<?=$facebookPageLink?>"><div class="field-facebook">麗馨產後護理之家</div></a>
+            <div class="menu-icon"></div>
 
-            <a target="_blank" href="<?=$googleMap?>"><div class="btn-map"></div></a>
-            <a target="_blank" href="<?=$facebookPageLink?>"><div class="btn-facebook"></div></a>
+            <div class="button-group">
 
-            <div class="facebook-page">
-                <!--<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLihPaoLand%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>-->
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div><div class="gap"></div>
+                <div class="button"></div>
+
+                <div class="btn-logout"></div>
+
             </div>
+
+            <div class="vip-menu-cover"></div>
+
+            <div class="vip-menu">
+
+                <div class="button">寶寶記錄</div><div class="gap"></div>
+                <div class="button">媽媽課程</div><div class="gap"></div>
+                <div class="button">即時影像</div>
+
+            </div>
+
+            <div class="brown-bar"></div>
 
         </div>
 
-        <div class="mode-2-content">
-            <div class="top-part">
-                <div class="title-image"></div>
-                <div class="title-text">台北麗格館</div>
-                <a href="tel:<?=$tel;?>"><div class="tel"><span class="tel-icon"></span><?=$telText;?></div></a>
-                <a target="_blank" href="<?=$googleMap?>"><div class="address"><span class="address-icon"></span>新北市淡水區淡金路6號1樓</div></a>
-            </div>
-            <div class="bottom-part">
+        <div class="top-bleed"></div>
 
-            </div>
+        <div class="content-mask">
+
+            <div class="content-container"></div>
+
         </div>
 
-        <div id="map" class="map"></div>
+
+        <div id="footer" class="hide-mode">
+
+            <div class="pink-bg"></div>
+
+            <div class="mode-1-content">
+
+                <div class="logo"></div>
+                <div class="misc-image"></div>
+
+                <a href="tel:<?=$tel;?>"><div class="field-tel"><?=$telText?></div></a>
+                <a target="_blank" href="<?=$googleMap?>"><div class="field-address">新北市淡水區淡金路6號1樓</div></a>
+                <a target="_blank" href="<?=$facebookPageLink?>"><div class="field-facebook">麗馨產後護理之家</div></a>
+
+                <a target="_blank" href="<?=$googleMap?>"><div class="btn-map"></div></a>
+                <a target="_blank" href="<?=$facebookPageLink?>"><div class="btn-facebook"></div></a>
+
+                <div class="facebook-page">
+                    <!--<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLihPaoLand%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>-->
+                </div>
+
+            </div>
+
+            <div class="mode-2-content">
+                <div class="top-part">
+                    <div class="title-image"></div>
+                    <div class="title-text">台北麗格館</div>
+                    <a href="tel:<?=$tel;?>"><div class="tel"><span class="tel-icon"></span><?=$telText;?></div></a>
+                    <a target="_blank" href="<?=$googleMap?>"><div class="address"><span class="address-icon"></span>新北市淡水區淡金路6號1樓</div></a>
+                </div>
+                <div class="bottom-part">
+
+                </div>
+            </div>
+
+            <div id="map" class="map"></div>
+
+        </div>
+
+        <div class="copy-right">
+
+            <div class="text">CopyRight (c) 2018　LIHSIN POSTPARTUM CAREー All Rights Reserved.</div>
+        </div>
+
+
 
     </div>
 
-    <div class="copy-right">
-
-        <div class="text">CopyRight (c) 2018　LIHSIN POSTPARTUM CAREー All Rights Reserved.</div>
-    </div>
-
-
-
-</div>
-
-<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUz28xZ05DiXZuaR3JqXREm69h_EwjyEY&callback=initMap"></script>-->
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUz28xZ05DiXZuaR3JqXREm69h_EwjyEY&callback=initMap"></script>-->
 
 
 
 
-<script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
-<script src="https://code.jquery.com/jquery-1.x-git.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.x-git.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"  property=""/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"  property=""/>
 
-<!-- build:js js/optimized.js -->
-<script src="js/lib/jquery.pep.js"></script>
-<script src="js/Main.js"></script>
-<script src="js/lib/Utility.0.0.15.js"></script>
-<script src="js/lib/jquery.waitforimages.min.js"></script>
-<script src="js/lib/ScrollListener.1.0.0.js"></script>
-<script src="js/lib/Hash.1.0.0.js"></script>
-<script src="js/ApiProxy.js"></script>
-<script src="js/Nav.js"></script>
-<script src="js/MainPage.js"></script>
-<script src="js/Footer.js"></script>
-<script src="js/Index.js"></script>
-<script src="js/AboutUs.js"></script>
-<script src="js/Care.js"></script>
-<script src="js/Malt.js"></script>
-<script src="js/News.js"></script>
-<script src="js/Reservation.js"></script>
-<script src="js/Contact.js"></script>
-<script src="js/ImageSlider.js"></script>
-<script src="js/Environmental.js"></script>
-<script src="js/lib/MyLoader.js"></script>
-<script src="js/Calender.js"></script>
-<script src="js/Vip.js"></script>
-<script src="js/VipBaby.js"></script>
-<script src="js/VipCourse.js"></script>
-<script src="js/CourseBooking.js"></script>
-<!-- endbuild -->
+    <script src="js/lib/jquery-scrolltofixed-min.js"></script>
 
-<script type="text/javascript">
-    if(Utility.urlParams.usefakedata == '1')
-    {
-        document.write('<script src="js/lib/FAKE_DATA.js"><\/script>');
-    }
-</script>
+    <!-- build:js js/optimized.js -->
+    <script src="js/lib/jquery.pep.js"></script>
+    <script src="js/Main.js"></script>
+    <script src="js/lib/Utility.0.0.15.js"></script>
+    <script src="js/lib/jquery.waitforimages.min.js"></script>
+    <script src="js/lib/ScrollListener.1.0.0.js"></script>
+    <script src="js/lib/Helper.1.0.4.js"></script>
+    <script src="js/lib/Hash.1.0.0.js"></script>
+    <script src="js/ApiProxy.js"></script>
+    <script src="js/Nav.js"></script>
+    <script src="js/MainPage.js"></script>
+    <script src="js/Footer.js"></script>
+    <script src="js/Index.js"></script>
+    <script src="js/AboutUs.js"></script>
+    <script src="js/Care.js"></script>
+    <script src="js/Malt.js"></script>
+    <script src="js/News.js"></script>
+    <script src="js/Reservation.js"></script>
+    <script src="js/Contact.js"></script>
+    <script src="js/ImageSlider.js"></script>
+    <script src="js/Environmental.js"></script>
+    <script src="js/lib/MyLoader.js"></script>
+    <script src="js/Calender.js"></script>
+    <script src="js/Vip.js"></script>
+    <script src="js/VipBaby.js"></script>
+    <script src="js/VipCourse.js"></script>
+    <script src="js/CourseBooking.js"></script>
+    <script src="js/ImageViewer.js"></script>
+    <!-- endbuild -->
+
+    <script type="text/javascript">
+        if(Utility.urlParams.usefakedata == '1')
+        {
+            document.write('<script src="js/lib/FAKE_DATA.js"><\/script>');
+        }
+    </script>
 
 </body>
 </html>

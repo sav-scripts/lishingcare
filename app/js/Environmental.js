@@ -210,6 +210,13 @@
             var areaData = dataList[index],
                 $area = $sample.clone();
 
+
+            $area.on('click', function(event)
+            {
+                event.preventDefault();
+                ImageViewer.updateData(areaData.full_image).show();
+            });
+
             $area.find(".detail .text").html(areaData.title);
             $area.find(".image").css("background-image", "url("+areaData.thumb[imageType]+")");
 
@@ -248,6 +255,12 @@
         {
             var roomData = data.rooms[index],
                 $room = $roomSample.clone();
+
+            $room.on('click', function(event)
+            {
+                event.preventDefault();
+                ImageViewer.updateData(roomData.full_image).show();
+            });
 
             $room.toggleClass(roomData.type, true);
             $room.find(".left-part").text(roomData.name);

@@ -13,13 +13,21 @@
         {
             $doms.container = $("#nav");
 
-            window.addEventListener("scroll", function()
-            {
-                self.resize();
-            });
+            //window.addEventListener("scroll", function()
+            //{
+            //    self.resize();
+            //});
+
+            $doms.container.scrollToFixed();
 
             var $buttonContainer = $doms.buttonContainer = $doms.container.find(".button-group");
 
+
+            $doms.container.css
+            ({
+                "left": "",
+                "margin-left": ""
+            });
 
             //window.history.pushState({}, "test", '');
             //console.log(window.history.state);
@@ -163,6 +171,7 @@
 
         resize: function()
         {
+            /*
             var documentScrollLeft = $(document).scrollLeft();
             if(Main.viewport.width < 1280)
             {
@@ -180,6 +189,8 @@
                     "margin-left": ""
                 });
             }
+            */
+
         }
     };
 
