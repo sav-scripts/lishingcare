@@ -1,198 +1,221 @@
 @import (once) "common-mixins.less";
 
-.my-calender{
 
-    position: relative;
 
-    @line-size: 1px;
+.make-calender();
 
+.make-calender(
     @block-width: 110px;
     @block-height:84px;
-    @width: (@block-width * 7) + (@line-size * 8);
+    @node-container-left: 3px;
+    @node-container-top: 26px;
+    @node-container-width: 104px;
+    @node-container-height: 58px;
+){
 
-    @bar-height: 40px;
-    @height: @bar-height + @bar-height + (@block-height * 6) + 10px;
-
-//        position: absolute;
-//        left: 50%;
-//        top: 50%;
-
-    width: @width;
-//        height: @height;
-
-//        margin-left: -@width * .5;
-//        margin-top: -@height * .5;
-
-    background-color: rgba(255, 0, 0, .2);
-
-    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
-
-    .year-part{
+    .my-calender
+    {
         position: relative;
-        width: 100%;
-        height: @bar-height;
-        background-color: #a18b73;
 
-        overflow: hidden;
+        @line-size: 1px;
 
-        border-bottom: 1px solid rgba(255,255,255,.1);
+        @width: (@block-width * 7) + (@line-size * 8);
 
-        .text{
-            width: 100px;
-            .default-font(14px, white, 2px);
-            text-align: center;
-            margin: 10px auto 0;
-            clear: both;
+        @bar-height: 40px;
+        @height: @bar-height + @bar-height + (@block-height * 6) + 10px;
 
-            .unselectable();
-        }
+        //        position: absolute;
+        //        left: 50%;
+        //        top: 50%;
 
-        @bleed: 10px;
+        width: @width;
+        //        height: @height;
 
-        .arrow-left{
-            .image-bg("white-arrow-1.png");
+        //        margin-left: -@width * .5;
+        //        margin-top: -@height * .5;
 
+        background-color: rgba(255, 0, 0, .2);
 
-            left: 10px;
+        box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
 
-            &:active{
-                margin-left: -1px;
-            }
-        }
-
-        .arrow-right{
-            .image-bg("white-arrow-2.png");
-            right: 10px;
-
-            &:active{
-                margin-right: -1px;
-            }
-        }
-
-        .arrow-left, .arrow-right{
-
-            position: absolute;
-            width: 12px + @bleed;
-            height: 18px + @bleed;
-            top: 6px;
-
-            background-position: center;
-            background-repeat: no-repeat;
-
-            cursor: pointer;
-        }
-    }
-
-    .day-part{
-        position: relative;
-        width: 100%;
-        height: @bar-height;
-        background-color: #a18b73;
-
-        .day-block{
+        .year-part{
             position: relative;
-            float: left;
-            width: @block-width;
-            height: 40px;
+            width: 100%;
+            height: @bar-height;
+            background-color: #a18b73;
 
-            margin-left: @line-size;
+            overflow: hidden;
+
+            border-bottom: 1px solid rgba(255,255,255,.1);
 
             .text{
+                width: 100px;
                 .default-font(14px, white, 2px);
                 text-align: center;
                 margin: 10px auto 0;
+                clear: both;
 
                 .unselectable();
             }
 
-            &:last-child{
-                margin-left: 0;
-            }
+            @bleed: 10px;
 
-        }
-    }
+            .arrow-left{
+                .image-bg("white-arrow-1.png");
 
-    .date-part{
-        position: relative;
-        width: 100%;
-        background-color: #a18b73;
 
-        padding-bottom: 5px;
-
-        overflow: hidden;
-
-        .date-block{
-            position: relative;
-            width: @block-width;
-            height: @block-height;
-            background-color: white;
-            float: left;
-
-            margin-left: @line-size;
-            margin-top: @line-size;
-
-            cursor: pointer;
-
-            &.disable-mode{
-                opacity: .9;
+                left: 10px;
 
                 &:active{
-                    margin-top: @line-size;
-                    margin-bottom: 0;
+                    margin-left: -1px;
                 }
             }
 
-            .date-text{
-                position: absolute;
-                left: 13px;
-                top: 7px;
-                .default-font(14px, #a18b73, 2px);
-                .unselectable();
-            }
+            .arrow-right{
+                .image-bg("white-arrow-2.png");
+                right: 10px;
 
-            .event-container{
-                @offset-y: 26px;
-                @size: 14px;
-                @margin: 6px;
-                @num-cols: 4;
-
-                @width: (@size + (@margin * 2)) * @num-cols;
-
-                position: absolute;
-                width: @width;
-                height: @block-height - @offset-y;
-                top: @offset-y;
-                left: (@block-width - @width) * .5;
-//                background-color: rgba(255, 0, 0, .1);
-
-                .event-node{
-                    position: relative;
-                    margin: @margin;
-                    width: @size;
-                    height: @size;
-//                    background-color: red;
-                    border-radius: (@size * .5);
-                    .image-bg('calender-node.png');
-                    background-position: right top;
-
-                    float: left;
-
-                    &.booked{
-                        background-position: right bottom;
-                    }
-
-                    &.full-booked{
-                        background-position: left bottom;
-                    }
+                &:active{
+                    margin-right: -1px;
                 }
             }
 
-            &:active{
-                margin-top: (@line-size+1px);
-                margin-bottom: -1px;
-//                    height: @block-height - 1px;
+            .arrow-left, .arrow-right{
+
+                position: absolute;
+                width: 12px + @bleed;
+                height: 18px + @bleed;
+                top: 6px;
+
+                background-position: center;
+                background-repeat: no-repeat;
+
+                cursor: pointer;
+            }
+        }
+
+        .day-part{
+            position: relative;
+            width: 100%;
+            height: @bar-height;
+            background-color: #a18b73;
+
+            .day-block{
+                position: relative;
+                float: left;
+                width: @block-width;
+                height: 40px;
+
+                margin-left: @line-size;
+
+                .text{
+                    .default-font(14px, white, 2px);
+                    text-align: center;
+                    margin: 10px auto 0;
+
+                    .unselectable();
+                }
+
+                &:last-child{
+                    margin-left: 0;
+                }
+
+            }
+        }
+
+        .date-part{
+            position: relative;
+            width: 100%;
+            background-color: #a18b73;
+
+            padding-bottom: 5px;
+
+            overflow: hidden;
+
+            .date-block{
+                position: relative;
+                width: @block-width;
+                height: @block-height;
+                background-color: white;
+                float: left;
+
+                margin-left: @line-size;
+                margin-top: @line-size;
+
+                cursor: pointer;
+
+                &.disable-mode{
+                    opacity: .9;
+
+                    &:active{
+                        margin-top: @line-size;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .date-text{
+                    position: absolute;
+                    left: 13px;
+                    top: 7px;
+                    .default-font(14px, #a18b73, 2px);
+                    .unselectable();
+                }
+
+                .event-container{
+                    @offset-y: 26px;
+                    @size: 14px;
+                    @margin: 6px;
+                    @num-cols: 4;
+
+                    @width: (@size + (@margin * 2)) * @num-cols;
+
+                    position: absolute;
+                    left: @node-container-left;
+                    top: @node-container-top;
+                    width: @node-container-width;
+                    height: @node-container-height;
+
+                    .event-node{
+                        position: relative;
+                        margin: @margin;
+                        width: @size;
+                        height: @size;
+                        //                    background-color: red;
+                        border-radius: (@size * .5);
+                        .image-bg('calender-node.png');
+                        background-position: right top;
+
+                        float: left;
+
+                        &.booked{
+                            background-position: right bottom;
+                        }
+
+                        &.full-booked{
+                            background-position: left bottom;
+                        }
+                    }
+                }
+
+                &:active{
+                    margin-top: (@line-size+1px);
+                    margin-bottom: -1px;
+                    //                    height: @block-height - 1px;
+                }
             }
         }
     }
 
+}
+
+@media (max-width: 640px) {
+    .make-calender
+    (
+        82px,
+        70px,
+        3px,
+        26px,
+        78px,
+        43px
+    );
 }

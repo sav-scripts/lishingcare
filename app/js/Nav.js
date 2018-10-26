@@ -4,6 +4,8 @@
 (function(){
 
     var $doms = {},
+        //_isScrollFixed = false,
+        _isMobileMenuOpen = false,
         _logoutModeOn = false,
         _vipMenuOn = false;
 
@@ -13,29 +15,37 @@
         {
             $doms.container = $("#nav");
 
-            //window.addEventListener("scroll", function()
-            //{
-            //    self.resize();
-            //});
+            window.addEventListener("scroll", function()
+            {
+                self.resize();
+            });
 
-            $doms.container.scrollToFixed();
+
 
             var $buttonContainer = $doms.buttonContainer = $doms.container.find(".button-group");
 
 
-            $doms.container.css
-            ({
-                "left": "",
-                "margin-left": ""
-            });
+            //$doms.container.css
+            //({
+            //    "left": "",
+            //    "margin-left": ""
+            //});
 
             //window.history.pushState({}, "test", '');
             //console.log(window.history.state);
+
+            $doms.menuIcon = $doms.container.find(".menu-icon").on("click", function(event)
+            {
+                event.preventDefault();
+
+                self.switchMobileOpenMode();
+            });
 
             $doms.logo = $doms.container.find(".logo").on("click", function(event)
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 Hash.to('/Index');
 
             });
@@ -44,6 +54,7 @@
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 //Hash.to('/Index/AboutUs');
                 Hash.to('/AboutUs');
             });
@@ -52,6 +63,7 @@
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 Hash.to('/News');
 
             });
@@ -60,6 +72,7 @@
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 Hash.to('/Environmental');
 
             });
@@ -68,6 +81,8 @@
             {
                 event.preventDefault();
 
+
+                self.switchMobileOpenMode(false);
                 //Hash.to('/Index/Malt');
                 Hash.to('/Malt');
 
@@ -77,6 +92,7 @@
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 Hash.to('/Care');
 
             });
@@ -85,6 +101,7 @@
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 Hash.to('/Contact');
                 //self.toggleLogoutMode(!_logoutModeOn);
 
@@ -108,10 +125,11 @@
                 self.toggleVipMenu(false);
             });
 
-            $doms.vipMenu.find(".button:nth-child(1)").on("click", function(event)
+            $doms.vipMenu.find(".button.baby").on("click", function(event)
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 self.toggleVipMenu(false);
                 Hash.to('/VipBaby/ForParents');
 
@@ -121,19 +139,21 @@
                 //});
             });
 
-            $doms.vipMenu.find(".button:nth-child(3)").on("click", function(event)
+            $doms.vipMenu.find(".button.course").on("click", function(event)
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 self.toggleVipMenu(false);
                 Hash.to('/VipCourse');
 
             });
 
-            $doms.vipMenu.find(".button:nth-child(5)").on("click", function(event)
+            $doms.vipMenu.find(".button.live").on("click", function(event)
             {
                 event.preventDefault();
 
+                self.switchMobileOpenMode(false);
                 self.toggleVipMenu(false);
 
             });
@@ -143,8 +163,23 @@
             {
                 event.preventDefault();
 
-                Vip.logout();
+                Vip.logout(function()
+                {
+                    self.switchMobileOpenMode(false);
+                });
             });
+        },
+
+        switchMobileOpenMode: function(b)
+        {
+            if(b === undefined) b = !_isMobileMenuOpen;
+            if(_isMobileMenuOpen === b) return;
+
+            _isMobileMenuOpen = b;
+
+            MainPage.setSceneScrollLock(_isMobileMenuOpen);
+
+            $doms.container.toggleClass("open-mode", _isMobileMenuOpen);
         },
 
         toggleLogoutMode: function(b)
@@ -171,7 +206,29 @@
 
         resize: function()
         {
-            /*
+            //if(!_isScrollFixed)
+            //{
+            //    _isScrollFixed = true;
+            //    $doms.container.scrollToFixed
+            //    ({
+            //        preFixed: function()
+            //        {
+            //
+            //            $doms.container.css
+            //            ({
+            //                "left": "",
+            //                "margin-left": ""
+            //            });
+            //        }
+            //    });
+            //}
+            //console.log("on resize");
+
+            if(Main.viewport.changed)
+            {
+                $doms.vipMenu.toggleClass("mobile-mode", Main.viewport.index === 0);
+            }
+
             var documentScrollLeft = $(document).scrollLeft();
             if(Main.viewport.width < 1280)
             {
@@ -189,7 +246,7 @@
                     "margin-left": ""
                 });
             }
-            */
+
 
         }
     };

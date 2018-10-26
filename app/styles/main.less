@@ -322,9 +322,13 @@ body.mapping{
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: @device-width-a;
+    width: 100%;
 
     overflow: hidden;
+
+    min-height: 500px;
+
+    display: table;
 
 //    .cover{
 //        position: fixed;
@@ -339,21 +343,14 @@ body.mapping{
     .container{
         @w: 400px;
         @h: 300px;
-//        position: absolute;
+
         position: relative;
-//        left: 50%;
-//        top: 50%;
 
-        width: @w;
-//        height: @h;
-//        margin-left: -@w * .5;
-//        margin-top: -@h * .5;
+//        width: @w;
+//        margin: 100px auto 100px;
 
-        margin: 100px auto 100px;
-
-
-//        border-radius: 50px;
-//        box-shadow: 0 0 40px 40px rgba(255,255,255,1);
+        display: table-cell;
+        vertical-align: middle;
 
         background-color: white;
 
@@ -368,10 +365,15 @@ body.mapping{
             text-align: center;
         }
 
+        .row{
+            margin: 20px auto;
+            text-align: center;
+        }
+
         .user-name-input, .password-input{
             position: relative;
             width: @field-width;
-            margin: 20px ((@w - @field-width) * .5) 0;
+//            margin: 20px ((@w - @field-width) * .5) 0;
 //            margin: 20px auto 0;
 
             .default-font(16px, @dark-gray-brown, 2px);
@@ -394,8 +396,8 @@ body.mapping{
             position: relative;
             width: 300px;
             height: 76px;
-            margin: 20px auto 0;
-
+//            margin: 20px auto 0;
+            display: inline-block;
 //            transform:scale(280/304);
 //            transform-origin:0 0;
 
@@ -444,14 +446,14 @@ body.mapping{
     height: 98px;
 //    margin-left: auto;
 //    margin-right: auto;
-    background-color: white;
+//    background-color: white;
     z-index: 100;
 
-    position: absolute;
-//    position: fixed;
-//    left: 50%;
-//    margin-left: -@device-width-a * .5;
-//    top: 0;
+//    position: absolute;
+    position: fixed;
+    left: 50%;
+    margin-left: -@device-width-a * .5;
+    top: 0;
 
     transition: height .2s linear;
 
@@ -466,9 +468,24 @@ body.mapping{
 
         height: 60px;
 
+        .bg{
+            height: 60px;
+        }
+
         .logo{
             top: 9px;
         }
+    }
+
+    .bg{
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        height: 98px;
+        left: 0;
+        top: 0;
+
+        transition: height .2s linear;
     }
 
     .logo{
@@ -602,6 +619,8 @@ body.mapping{
         position: fixed;
         width: 100%;
         height: 100%;
+        left: 0;
+        top:0;
         display: none;
         z-index: @cover-depth;
 
@@ -611,6 +630,7 @@ body.mapping{
     }
 
     .vip-menu{
+
         position: absolute;
         right: 10px;
         top: 40px;
@@ -1693,36 +1713,11 @@ body.mapping{
 #news {
     .common-content("news-key-image");
 
-    > .title{
-        position: relative;
-        width: 100%;
-//        height: 126px;
-        height: 100px;
-        overflow: hidden;
-        background-color: white;
-
-        .title-image{
-
-            @w: 113px;
-            @h: 42px;
-            position: relative;
-//            left: 50%;
-            width: @w;
-//            margin-left: -@w * .5;
-            height: @h;
-
-            margin: 27px auto 0;
-
-            .image-bg("news-title.png");
-        }
-
-        .title-text{
-            position: relative;
-            .default-font(15px, #a08c6e);
-            margin: 16px auto 0;
-            text-align: center;
-            letter-spacing: 3px;
-        }
+    .title-image{
+        width: 113px;
+        height: 42px;
+        margin: 27px auto 27px;
+        .image-bg("news-title.png");
     }
 
     .news-container{
@@ -1748,7 +1743,7 @@ body.mapping{
             }
 
             @block-width: 802px;
-            @block-height: 512px;
+//            @block-height: 512px;
 
             width: @block-width;
 //            height: @block-height;
@@ -1837,7 +1832,7 @@ body.mapping{
                 line-height: 24px;
             }
 
-            .image-1, .image-2{
+            .image{
 
                 position: relative;
                 width: 350px;
@@ -3012,7 +3007,7 @@ body.mapping{
             .image-bg('vip-baby-1-bg.jpg');
 
 
-            .title{
+            .title-text{
                 position: absolute;
                 width: 320px;
                 left: 303px;
@@ -3050,11 +3045,11 @@ body.mapping{
                 width: 292px;
                 height: 444px;
 
-                .image-bg-test("vip-baby-2-sample.jpg");
+//                .image-bg-test("vip-baby-2-sample.jpg");
                 border-radius: 5px;
             }
 
-            .title{
+            .title-text{
 
                 position: absolute;
                 width: 250px;
@@ -3103,7 +3098,7 @@ body.mapping{
                     width: 290px;
                     height: 290px;
 //                    background-color: red;
-                    .image-bg-test("vip-baby-3-baby-sample.jpg");
+//                    .image-bg-test("vip-baby-3-baby-sample.jpg");
                     left: 50px;
                     top: 60px;
                 }
@@ -3117,10 +3112,10 @@ body.mapping{
             }
 
             .misc-1{
-                .abs-div(535, 562, 166, 167, "vip-baby-3-misc-1.png");
+                .abs-div(515, 567, 166, 167, "vip-baby-3-misc-1.png");
             }
 
-            .title{
+            .title-text{
                 position: absolute;
                 width: 250px;
                 left: 698px;

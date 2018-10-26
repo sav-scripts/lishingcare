@@ -86,10 +86,17 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
                 <div class="container">
 
                     <div class="title">會　員　登　入</div>
-                    <input title="" class="user-name-input" placeholder="輸入帳號">
-                    <input title="" class="password-input" placeholder="輸入密碼" type="password">
+                    <div class="row">
+                        <input title="" class="user-name-input" placeholder="輸入帳號">
+                    </div>
+                    <div class="row">
+                        <input title="" class="password-input" placeholder="輸入密碼" type="password">
+                    </div>
 
-                    <div class="captcha g-recaptcha" data-sitekey="6LeE3nUUAAAAACqrRPyLTSxdQjWZ5S46KhBXIaK-" data-callback="onCaptchaDone" data-size="normal"></div>
+                    <div class="row">
+                        <div class="captcha g-recaptcha" data-sitekey="6LeE3nUUAAAAACqrRPyLTSxdQjWZ5S46KhBXIaK-" data-callback="onCaptchaDone" data-size="normal"></div>
+                    </div>
+
 
                     <div class="btn-send">確定送出</div>
 
@@ -105,30 +112,30 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
         <div class="pc-layout">
     <!--        <img class="layout" src="images/layout/index.jpg">-->
-            <!--<img class="layout" src="images/layout/news.jpg">-->
+<!--            <img class="layout" src="images/layout/news.jpg">-->
             <!--<img class="layout" src="images/layout/about-us.jpg">-->
             <!--<img class="layout" src="images/layout/malt.jpg">-->
             <!--<img class="layout" src="images/layout/contact.jpg">-->
             <!--<img class="layout" src="images/layout/care.jpg">-->
-            <img class="layout" src="images/layout/environmental.jpg">
-            <!--<img class="layout" src="images/layout/vip-baby-1.jpg">-->
-            <!--<img class="layout" src="images/layout/vip-baby-2.jpg">-->
-            <!--<img class="layout" src="images/layout/vip-baby-3.jpg">-->
+<!--            <img class="layout" src="images/layout/environmental.jpg">-->
+<!--            <img class="layout" src="images/layout/vip-baby-1.jpg">-->
+<!--            <img class="layout" src="images/layout/vip-baby-2.jpg">-->
+            <img class="layout" src="images/layout/vip-baby-3.jpg">
             <!--<img class="layout" src="images/layout/vip-course.jpg">-->
     <!--        <img class="layout" src="images/layout/reservation.jpg">-->
         </div>
 
         <div class="mobile-layout">
     <!--        <img class="layout" src="images/layout/index.m.jpg">-->
-            <!--<img class="layout" src="images/layout/news.m.jpg">-->
+<!--            <img class="layout" src="images/layout/news.m.jpg">-->
     <!--        <img class="layout" src="images/layout/about-us.m.jpg">-->
             <!--<img class="layout" src="images/layout/malt.m.jpg">-->
     <!--        <img class="layout" src="images/layout/contact.m.jpg">-->
             <!--<img class="layout" src="images/layout/care.m.jpg">-->
-            <img class="layout" src="images/layout/environmental.m.jpg">
-            <!--<img class="layout" src="images/layout/vip-baby-1.m.jpg">-->
-            <!--<img class="layout" src="images/layout/vip-baby-2.m.jpg">-->
-            <!--<img class="layout" src="images/layout/vip-baby-3.m.jpg">-->
+<!--            <img class="layout" src="images/layout/environmental.m.jpg">-->
+<!--            <img class="layout" src="images/layout/vip-baby-1.m.jpg">-->
+<!--            <img class="layout" src="images/layout/vip-baby-2.m.jpg">-->
+            <img class="layout" src="images/layout/vip-baby-3.m.jpg">
             <!--<img class="layout" src="images/layout/vip-course.m.jpg">-->
     <!--        <img class="layout" src="images/layout/reservation.m.jpg">-->
 
@@ -140,33 +147,47 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
         <div id="nav">
 
-            <div class="logo"></div>
-
-            <div class="menu-icon"></div>
-
-            <div class="button-group">
-
-                <div class="button"></div><div class="gap"></div>
-                <div class="button"></div><div class="gap"></div>
-                <div class="button"></div><div class="gap"></div>
-                <div class="button"></div><div class="gap"></div>
-                <div class="button"></div><div class="gap"></div>
-                <div class="button"></div><div class="gap"></div>
-                <div class="button"></div>
-
-                <div class="btn-logout"></div>
-
-            </div>
+            <div class="bg"></div>
 
             <div class="vip-menu-cover"></div>
 
-            <div class="vip-menu">
+            <div class="table-container">
+                <div class="middle-wrapper">
+                    <div class="button-group">
 
-                <div class="button">寶寶記錄</div><div class="gap"></div>
-                <div class="button">媽媽課程</div><div class="gap"></div>
-                <div class="button">即時影像</div>
+                        <div class="button"></div><div class="gap"></div>
+                        <div class="button"></div><div class="gap"></div>
+                        <div class="button"></div><div class="gap"></div>
+                        <div class="button"></div><div class="gap"></div>
+                        <div class="button"></div><div class="gap"></div>
+                        <div class="button"></div><div class="gap"></div>
+                        <div class="button pc-only"></div>
 
+                        <div class="btn-logout"></div>
+
+                    </div>
+
+
+
+
+                    <div class="vip-menu">
+                        <div class="title"></div>
+                        <div class="button baby">寶寶記錄</div><div class="gap"></div>
+                        <div class="button course">媽媽課程</div><div class="gap"></div>
+                        <div class="button live">即時影像</div>
+
+                        <div class="btn-logout"></div>
+
+                    </div>
+
+                </div>
             </div>
+
+
+
+
+            <div class="logo"></div>
+            <div class="menu-icon"></div>
 
             <div class="brown-bar"></div>
 
@@ -242,7 +263,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"  property=""/>
 
-    <script src="js/lib/jquery-scrolltofixed-min.js"></script>
+<!--    <script src="js/lib/jquery-scrolltofixed-min.js"></script>-->
 
     <!-- build:js js/optimized.js -->
     <script src="js/lib/jquery.pep.js"></script>

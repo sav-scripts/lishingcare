@@ -197,6 +197,7 @@
             ch = h + 2;
 
         var vp = Main.viewport,
+            //wBleed = vp.index === 0? 1: 20,
             wBleed = 20,
             hBleed = 20,
             uiHeight = $doms.ui.height();
@@ -209,6 +210,8 @@
         ch = parseInt(ch * bound.ratio);
         w = cw - 2;
         h = ch - 2;
+
+        //$doms.currentIndex.text(window.innerWidth);
 
         TweenMax.to($doms.imageContainer,.3,{width: cw, height: ch, ease:Power1.easeInOut});
         TweenMax.to(_currentImage,.3,{width: w, height: h, ease:Power1.easeInOut});

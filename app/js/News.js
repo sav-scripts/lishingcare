@@ -51,16 +51,15 @@
 
                     //$doms.mainTitle.text(_data.main_title);
 
-                    for(var i=0;i<response.data_list.length;i++)
-                    {
-                        var obj = _data.data_list[i];
-                        createNews(i, obj);
-                    }
+                    for(var i=0;i<_data.data_list.length;i++){ createNews(i); }
+
+                    updateNewsImages();
                     //_keyImageSlider = new ImageSlider(imageList, $container, "image");
 
-                    function createNews(index, dataObj)
+                    function createNews(index)
                     {
-                        var $news = $doms.newsSample.clone();
+                        var dataObj = _data.data_list[index],
+                            $news = $doms.newsSample.clone();
 
                         $news.find(".year").text(dataObj.year);
                         $news.find(".month").text(dataObj.month);
@@ -69,8 +68,7 @@
                         $news.find(".title").text(dataObj.title);
                         $news.find(".detail").html(dataObj.detail);
 
-                        $news.find(".image-1").css("background-image", "url("+dataObj.images[0].pc+")");
-                        $news.find(".image-2").css("background-image", "url("+dataObj.images[1].pc+")");
+                        dataObj.$news = $news;
 
                         $doms.newsContainer.append($news);
                     }
@@ -135,4 +133,20 @@
 
         }
     };
+
+    function updateNewsImages()
+    {
+        var imageType = Main.viewport.imageType,
+            dataObj,
+            $news;
+
+        for(var i=0;i<_data.data_list.length;i++)
+        {
+            dataObj = _data.data_list[i];
+            $news = dataObj.$news;
+
+            $news.find(".image-1").css("background-image", "url("+dataObj.images[0][imageType]+")");
+            $news.find(".image-2").css("background-image", "url("+dataObj.images[1][imageType]+")");
+        }
+    }
 }());

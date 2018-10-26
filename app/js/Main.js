@@ -80,8 +80,11 @@
         var vp = self.viewport,
             oldIndex = vp.index;
 
-        vp.width = $(window).width();
-        vp.height = $(window).height();
+        //vp.width = $(window).width();
+        //vp.height = $(window).height();
+
+        vp.width = window.innerWidth;
+        vp.height = window.innerHeight;
         vp.index = vp.width <= vp.ranges[0]? 0: 1;
 
         vp.changed = oldIndex !== vp.index;

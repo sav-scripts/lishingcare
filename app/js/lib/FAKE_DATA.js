@@ -111,20 +111,46 @@ window._FAKE_DATA_ =
                     "享新會員優惠。<br/>"+
                     "請洽預約專線 02-8626-9555",
 
-                // 圖片, 固定兩張, pc: 350 x 264
+                // 圖片, 固定兩張, pc: 350 x 264, mobile: 502 x 380
                 "images":
                 [
                     {
                         "pc": "./test/images/news-image-1.jpg",
-                        "mobile": ""
+                        "mobile": "./test/images/news-image-1.m.jpg"
                     },
 
                     {
                         "pc": "./test/images/news-image-2.jpg",
-                        "mobile": ""
+                        "mobile": "./test/images/news-image-2.m.jpg"
                     }
                 ]
-}
+            },
+            {
+                "year": "2018",
+                "month": "10",
+                "day": "30",
+
+                "title":"慶開幕2",
+
+                "detail":
+                "麗格產後護理之家即將在淡水開幕！<br/>"+
+                "享新會員優惠。<br/>"+
+                "請洽預約專線 02-8626-9555",
+
+                // 圖片, 固定兩張, pc: 350 x 264, mobile: 502 x 380
+                "images":
+                    [
+                        {
+                            "pc": "./test/images/news-image-1.jpg",
+                            "mobile": "./test/images/news-image-1.m.jpg"
+                        },
+
+                        {
+                            "pc": "./test/images/news-image-2.jpg",
+                            "mobile": "./test/images/news-image-2.m.jpg"
+                        }
+                    ]
+            }
         ]
     },
 
@@ -558,6 +584,74 @@ window._FAKE_DATA_ =
         // 特殊錯誤訊息:
         // "not_login" => 使用者已登出
         "error": ''
+    },
+
+
+    /*** 寶寶紀錄 ***/
+    "vip_baby":
+    {
+        // 特殊錯誤訊息:
+        // "not_login" => 使用者已登出
+        "error": '',
+
+        // 獻給父母
+        "for_parents":
+        {
+            "title": "獻給我最愛的爸爸、媽媽",
+            "detail":
+                "首先… 感謝爸比＆媽咪讓我降臨在這個"+
+                "世界上。 幼小的我，肯定會在半夜時哇"+
+                "哇大哭而驚擾你們的美夢 ; 抑或是搗蛋"+
+                "地大小便。<br/><br/>"+
+
+                "然而，未能用言語表達的我，對於爸比"+
+                "＆媽咪的辛勞，以及悉心呵護的神情，"+
+                "貫注於我的愛，我完全感受其中，我深"+
+                "愛你們。<br/><br/>"+
+
+                "感謝爸比＆媽咪不辭辛勞地照顧我，為"+
+                "我的新生帶來滿滿的愛與歡樂，讓我感"+
+                "受這世界的美好。"
+
+        },
+
+        // 關於我
+        "about_me":
+        {
+            "title": "張三豐",
+            "name": "張三豐",
+            "gender": "男",
+            "birthday": "1999 / 99 / 99",
+            "constellation": "射手座",
+            "zodiac": "虎",
+            "blood": "O 型",
+            "height": "170cm",
+            "weight": "60kg",
+            "head": "很大",
+
+            // 寶寶照片, pc: 292 x 244, mobile: 509 x 590
+            "photo":
+            {
+                "pc": "./test/images/vip-baby-2-sample.jpg",
+                "mobile": "./test/images/vip-baby-2-sample.m.jpg"
+            }
+
+        },
+
+        // 成長紀錄
+        "recoard":
+        {
+            "title": "我的第一張照片",
+            "detail":"今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。",
+
+            // 寶寶照片, pc: 290 x 290, mobile: 394 x 394
+            "photo":
+            {
+                "pc": "./test/images/vip-baby-3-baby-sample.jpg",
+                "mobile": "./test/images/vip-baby-3-baby-sample.m.jpg"
+            }
+
+        }
     }
 
 };

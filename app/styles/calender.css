@@ -121,10 +121,10 @@
 }
 .my-calender .date-part .date-block .event-container {
   position: absolute;
+  left: 3px;
+  top: 26px;
   width: 104px;
   height: 58px;
-  top: 26px;
-  left: 3px;
 }
 .my-calender .date-part .date-block .event-container .event-node {
   position: relative;
@@ -145,4 +145,153 @@
 .my-calender .date-part .date-block:active {
   margin-top: 2px;
   margin-bottom: -1px;
+}
+@media (max-width: 640px) {
+  .my-calender {
+    position: relative;
+    width: 582px;
+    background-color: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
+  }
+  .my-calender .year-part {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #a18b73;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .my-calender .year-part .text {
+    width: 100px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 10px auto 0;
+    clear: both;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .my-calender .year-part .arrow-left {
+    background-image: url("../images/white-arrow-1.png");
+    left: 10px;
+  }
+  .my-calender .year-part .arrow-left:active {
+    margin-left: -1px;
+  }
+  .my-calender .year-part .arrow-right {
+    background-image: url("../images/white-arrow-2.png");
+    right: 10px;
+  }
+  .my-calender .year-part .arrow-right:active {
+    margin-right: -1px;
+  }
+  .my-calender .year-part .arrow-left,
+  .my-calender .year-part .arrow-right {
+    position: absolute;
+    width: 22px;
+    height: 28px;
+    top: 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .my-calender .day-part {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #a18b73;
+  }
+  .my-calender .day-part .day-block {
+    position: relative;
+    float: left;
+    width: 82px;
+    height: 40px;
+    margin-left: 1px;
+  }
+  .my-calender .day-part .day-block .text {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 10px auto 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .my-calender .day-part .day-block:last-child {
+    margin-left: 0;
+  }
+  .my-calender .date-part {
+    position: relative;
+    width: 100%;
+    background-color: #a18b73;
+    padding-bottom: 5px;
+    overflow: hidden;
+  }
+  .my-calender .date-part .date-block {
+    position: relative;
+    width: 82px;
+    height: 70px;
+    background-color: white;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    cursor: pointer;
+  }
+  .my-calender .date-part .date-block.disable-mode {
+    opacity: 0.9;
+  }
+  .my-calender .date-part .date-block.disable-mode:active {
+    margin-top: 1px;
+    margin-bottom: 0;
+  }
+  .my-calender .date-part .date-block .date-text {
+    position: absolute;
+    left: 13px;
+    top: 7px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: #a18b73;
+    letter-spacing: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .my-calender .date-part .date-block .event-container {
+    position: absolute;
+    left: 3px;
+    top: 26px;
+    width: 78px;
+    height: 43px;
+  }
+  .my-calender .date-part .date-block .event-container .event-node {
+    position: relative;
+    margin: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-image: url("../images/calender-node.png");
+    background-position: right top;
+    float: left;
+  }
+  .my-calender .date-part .date-block .event-container .event-node.booked {
+    background-position: right bottom;
+  }
+  .my-calender .date-part .date-block .event-container .event-node.full-booked {
+    background-position: left bottom;
+  }
+  .my-calender .date-part .date-block:active {
+    margin-top: 2px;
+    margin-bottom: -1px;
+  }
 }

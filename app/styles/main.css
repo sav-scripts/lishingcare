@@ -117,13 +117,15 @@ body.mapping #scene-container .content-mask {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 1280px;
+  width: 100%;
   overflow: hidden;
+  min-height: 500px;
+  display: table;
 }
 #login-ui .container {
   position: relative;
-  width: 400px;
-  margin: 100px auto 100px;
+  display: table-cell;
+  vertical-align: middle;
   background-color: white;
   overflow: hidden;
 }
@@ -135,11 +137,14 @@ body.mapping #scene-container .content-mask {
   letter-spacing: 2px;
   text-align: center;
 }
+#login-ui .container .row {
+  margin: 20px auto;
+  text-align: center;
+}
 #login-ui .container .user-name-input,
 #login-ui .container .password-input {
   position: relative;
   width: 302px;
-  margin: 20px 49px 0;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 16px;
   color: #666464;
@@ -152,7 +157,7 @@ body.mapping #scene-container .content-mask {
   position: relative;
   width: 300px;
   height: 76px;
-  margin: 20px auto 0;
+  display: inline-block;
 }
 #login-ui .container .user-name {
   margin-top: 50px;
@@ -187,9 +192,11 @@ body.mapping #scene-container .content-mask {
 #nav {
   width: 1280px;
   height: 98px;
-  background-color: white;
   z-index: 100;
-  position: absolute;
+  position: fixed;
+  left: 50%;
+  margin-left: -640px;
+  top: 0;
   transition: height 0.2s linear;
 }
 @media (max-width: 1280px) {
@@ -201,8 +208,20 @@ body.mapping #scene-container .content-mask {
 #nav.pin-mode {
   height: 60px;
 }
+#nav.pin-mode .bg {
+  height: 60px;
+}
 #nav.pin-mode .logo {
   top: 9px;
+}
+#nav .bg {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 98px;
+  left: 0;
+  top: 0;
+  transition: height 0.2s linear;
 }
 #nav .logo {
   position: absolute;
@@ -288,6 +307,8 @@ body.mapping #scene-container .content-mask {
   position: fixed;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
   display: none;
   z-index: 1000;
 }
@@ -1187,28 +1208,11 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/news-key-image.jpg");
 }
-#news > .title {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-  background-color: white;
-}
-#news > .title .title-image {
-  position: relative;
+#news .title-image {
   width: 113px;
   height: 42px;
-  margin: 27px auto 0;
+  margin: 27px auto 27px;
   background-image: url("../images/news-title.png");
-}
-#news > .title .title-text {
-  position: relative;
-  font-family: '微軟正黑體', "Heiti TC", serif;
-  font-size: 15px;
-  color: #a08c6e;
-  margin: 16px auto 0;
-  text-align: center;
-  letter-spacing: 3px;
 }
 #news .news-container {
   position: relative;
@@ -1302,8 +1306,7 @@ body.mapping #scene-container .content-mask {
   letter-spacing: 1px;
   line-height: 24px;
 }
-#news .news-container .news-block .image-1,
-#news .news-container .news-block .image-2 {
+#news .news-container .news-block .image {
   position: relative;
   width: 350px;
   height: 264px;
@@ -2476,7 +2479,7 @@ body.mapping #scene-container .content-mask {
   height: 810px;
   background-image: url("../images/vip-baby-1-bg.jpg");
 }
-#vip-baby .main-container .part-1 .title {
+#vip-baby .main-container .part-1 .title-text {
   position: absolute;
   width: 320px;
   left: 303px;
@@ -2510,10 +2513,9 @@ body.mapping #scene-container .content-mask {
   top: 285px;
   width: 292px;
   height: 444px;
-  background-image: url("../test/images/vip-baby-2-sample.jpg");
   border-radius: 5px;
 }
-#vip-baby .main-container .part-2 .title {
+#vip-baby .main-container .part-2 .title-text {
   position: absolute;
   width: 250px;
   left: 516px;
@@ -2553,7 +2555,6 @@ body.mapping #scene-container .content-mask {
   position: absolute;
   width: 290px;
   height: 290px;
-  background-image: url("../test/images/vip-baby-3-baby-sample.jpg");
   left: 50px;
   top: 60px;
 }
@@ -2565,15 +2566,15 @@ body.mapping #scene-container .content-mask {
 }
 #vip-baby .main-container .part-3 .misc-1 {
   position: absolute;
-  left: 535px;
-  top: 562px;
+  left: 515px;
+  top: 567px;
   width: 166px;
   height: 167px;
   margin-left: 0px;
   margin-top: 0px;
   background-image: url("../images/vip-baby-3-misc-1.png");
 }
-#vip-baby .main-container .part-3 .title {
+#vip-baby .main-container .part-3 .title-text {
   position: absolute;
   width: 250px;
   left: 698px;
@@ -3010,10 +3011,10 @@ body.mapping #scene-container .content-mask {
 }
 .my-calender .date-part .date-block .event-container {
   position: absolute;
+  left: 3px;
+  top: 26px;
   width: 104px;
   height: 58px;
-  top: 26px;
-  left: 3px;
 }
 .my-calender .date-part .date-block .event-container .event-node {
   position: relative;
@@ -3034,6 +3035,155 @@ body.mapping #scene-container .content-mask {
 .my-calender .date-part .date-block:active {
   margin-top: 2px;
   margin-bottom: -1px;
+}
+@media (max-width: 640px) {
+  .my-calender {
+    position: relative;
+    width: 582px;
+    background-color: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
+  }
+  .my-calender .year-part {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #a18b73;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .my-calender .year-part .text {
+    width: 100px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 10px auto 0;
+    clear: both;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .my-calender .year-part .arrow-left {
+    background-image: url("../images/white-arrow-1.png");
+    left: 10px;
+  }
+  .my-calender .year-part .arrow-left:active {
+    margin-left: -1px;
+  }
+  .my-calender .year-part .arrow-right {
+    background-image: url("../images/white-arrow-2.png");
+    right: 10px;
+  }
+  .my-calender .year-part .arrow-right:active {
+    margin-right: -1px;
+  }
+  .my-calender .year-part .arrow-left,
+  .my-calender .year-part .arrow-right {
+    position: absolute;
+    width: 22px;
+    height: 28px;
+    top: 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .my-calender .day-part {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #a18b73;
+  }
+  .my-calender .day-part .day-block {
+    position: relative;
+    float: left;
+    width: 82px;
+    height: 40px;
+    margin-left: 1px;
+  }
+  .my-calender .day-part .day-block .text {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 10px auto 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .my-calender .day-part .day-block:last-child {
+    margin-left: 0;
+  }
+  .my-calender .date-part {
+    position: relative;
+    width: 100%;
+    background-color: #a18b73;
+    padding-bottom: 5px;
+    overflow: hidden;
+  }
+  .my-calender .date-part .date-block {
+    position: relative;
+    width: 82px;
+    height: 70px;
+    background-color: white;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    cursor: pointer;
+  }
+  .my-calender .date-part .date-block.disable-mode {
+    opacity: 0.9;
+  }
+  .my-calender .date-part .date-block.disable-mode:active {
+    margin-top: 1px;
+    margin-bottom: 0;
+  }
+  .my-calender .date-part .date-block .date-text {
+    position: absolute;
+    left: 13px;
+    top: 7px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: #a18b73;
+    letter-spacing: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .my-calender .date-part .date-block .event-container {
+    position: absolute;
+    left: 3px;
+    top: 26px;
+    width: 78px;
+    height: 43px;
+  }
+  .my-calender .date-part .date-block .event-container .event-node {
+    position: relative;
+    margin: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-image: url("../images/calender-node.png");
+    background-position: right top;
+    float: left;
+  }
+  .my-calender .date-part .date-block .event-container .event-node.booked {
+    background-position: right bottom;
+  }
+  .my-calender .date-part .date-block .event-container .event-node.full-booked {
+    background-position: left bottom;
+  }
+  .my-calender .date-part .date-block:active {
+    margin-top: 2px;
+    margin-bottom: -1px;
+  }
 }
 @media (max-width: 640px) {
   .sp-only {
@@ -3068,7 +3218,14 @@ body.mapping #scene-container .content-mask {
     left: 0;
     margin-left: 0;
   }
+  #nav .bg {
+    position: fixed;
+    height: 164px;
+  }
   #nav.pin-mode {
+    height: 100px;
+  }
+  #nav.pin-mode .bg {
     height: 100px;
   }
   #nav.pin-mode .logo {
@@ -3100,8 +3257,120 @@ body.mapping #scene-container .content-mask {
   #nav .menu-icon:active {
     margin-top: 1px;
   }
+  #nav .table-container {
+    position: absolute;
+    display: table;
+    width: 100%;
+    height: calc(100% - 130px);
+    top: 130px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
+  }
+  #nav .table-container .middle-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
   #nav .button-group {
+    position: relative;
+    right: auto;
+    left: auto;
+    top: auto;
+    width: 100%;
+  }
+  #nav .button-group .button {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 32.5px;
+    color: #666464;
+    letter-spacing: 8px;
+    text-indent: 8px;
+    text-align: center;
+    float: none;
+    margin: 10px auto 10px;
+  }
+  #nav .button-group .button:active {
+    background-color: #f9e6cb;
+    margin-top: 10px;
+  }
+  #nav .button-group .gap {
+    visibility: hidden;
+  }
+  #nav .button-group > .btn-logout {
     display: none;
+  }
+  #nav .vip-menu.mobile-mode {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 20px auto;
+    width: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+    border-color: #ded5ca;
+  }
+  #nav .vip-menu.mobile-mode .vip-menu-cover {
+    display: none;
+  }
+  #nav .vip-menu.mobile-mode .title {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 18px;
+    color: white;
+    letter-spacing: 4px;
+    text-indent: 4px;
+    text-align: center;
+    width: 100%;
+    background-color: #ded5ca;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 12px;
+  }
+  #nav .vip-menu.mobile-mode .title::before {
+    content: "會員專屬";
+  }
+  #nav .vip-menu.mobile-mode .button {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 20px;
+    color: #666464;
+    letter-spacing: 6px;
+    text-indent: 6px;
+    margin: 10px auto 10px;
+  }
+  #nav .vip-menu.mobile-mode .btn-logout {
+    position: relative;
+    margin: 15px auto 14px;
+    width: 110px;
+    height: 32px;
+    display: none;
+    background-image: url("../images/btn-logout.m.png");
+    cursor: pointer;
+  }
+  #nav .vip-menu.mobile-mode .btn-logout:active {
+    margin: 16px auto 13px;
+  }
+  #nav.open-mode {
+    height: 100%;
+    overflow: auto;
+  }
+  #nav.open-mode .bg {
+    height: 100%;
+  }
+  #nav.open-mode .table-container {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease-out, 0.2s, visibility 0s linear 0.2s;
+  }
+  #nav.open-mode .vip-menu {
+    visibility: visible;
+    opacity: 1;
+  }
+  #nav.open-mode .brown-bar {
+    height: 0;
+  }
+  #nav.with-logout-btn .button-group {
+    width: 100%;
+  }
+  #nav.with-logout-btn .vip-menu .btn-logout {
+    display: block;
   }
   /* index */
   #index .key-images {
@@ -3803,6 +4072,94 @@ body.mapping #scene-container .content-mask {
   #about-us .right-part br.sp-only {
     display: block;
   }
+  /* news */
+  #news .key-images {
+    background-image: url("../images/news-key-image.m.jpg");
+  }
+  #news .title-image {
+    width: 165px;
+    height: 61px;
+    margin: 34px auto 34px;
+    background-image: url("../images/news-title.m.png");
+  }
+  #news .news-container {
+    background-image: url("../images/news-bg.m.jpg");
+  }
+  #news .news-container .news-block {
+    margin: 45px auto 0;
+    width: 563px;
+  }
+  #news .news-container .news-block:nth-last-child(1) {
+    margin-bottom: 42px;
+  }
+  #news .news-container .news-block .top-bar {
+    height: 74px;
+  }
+  #news .news-container .news-block .date-bar {
+    left: 33px;
+    width: 133px;
+    height: 165px;
+  }
+  #news .news-container .news-block .date-bar .year {
+    top: 25px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 21.68px;
+    color: white;
+  }
+  #news .news-container .news-block .date-bar .month,
+  #news .news-container .news-block .date-bar .day {
+    position: absolute;
+    width: 80px;
+    margin-left: -40px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 36px;
+    color: white;
+  }
+  #news .news-container .news-block .date-bar .month {
+    left: 38px;
+    top: 61px;
+  }
+  #news .news-container .news-block .date-bar .slash {
+    position: absolute;
+    left: 32px;
+    top: 75px;
+    width: 53px;
+    height: 60px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/news-slash.m.png");
+  }
+  #news .news-container .news-block .date-bar .day {
+    left: 82px;
+    top: 92px;
+  }
+  #news .news-container .news-block > .title {
+    position: relative;
+    margin-left: 236px;
+    margin-top: 19px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 1px;
+  }
+  #news .news-container .news-block > .detail {
+    margin: 128px auto 30px;
+    width: 524px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 1px;
+    line-height: 46px;
+  }
+  #news .news-container .news-block .image {
+    width: 502px;
+    height: 380px;
+    margin: 0 auto 20px;
+    float: none;
+  }
+  #news .news-container .news-block .image:last-child {
+    margin-bottom: 26px;
+  }
   /* reservation */
   #reservation .key-images {
     background-image: url("../images/reservation-key-image.m.jpg");
@@ -4187,5 +4544,219 @@ body.mapping #scene-container .content-mask {
   }
   #environmental .back-to-top:active .icon {
     background-position: right;
+  }
+  #vip-baby .key-images {
+    background-image: url("../images/vip-baby-key-image.m.jpg");
+  }
+  #vip-baby .main-container {
+    overflow: hidden;
+  }
+  #vip-baby .main-container .part-select {
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+    top: 100px;
+    height: 70px;
+    background-image: url("../images/pink-arrow.m.png");
+    background-color: #ffffff;
+    background-position: 453px 25px;
+    background-repeat: no-repeat;
+    border: 4px solid #fad8df;
+    text-align: left;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25.23px;
+    color: #4c4c4c;
+    letter-spacing: 2px;
+    padding-left: 20px;
+  }
+  #vip-baby .main-container .part-select option {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 25.23px;
+    color: #4c4c4c;
+    letter-spacing: 2px;
+  }
+  #vip-baby .main-container .part-1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-image: none;
+    min-height: 400px;
+    overflow: hidden;
+  }
+  #vip-baby .main-container .part-1 .deco-1 {
+    width: 640px;
+    height: 79px;
+    background-image: url("../images/vip-baby-1-deco-1.m.png");
+    margin: -11px auto 0;
+  }
+  #vip-baby .main-container .part-1 .deco-2 {
+    width: 565px;
+    height: 157px;
+    background-image: url("../images/vip-baby-1-deco-2.m.png");
+    margin: 144px 0 0 52px;
+  }
+  #vip-baby .main-container .part-1 .title-text {
+    width: 100%;
+    left: auto;
+    top: auto;
+    margin: -32px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #f77d96;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  #vip-baby .main-container .part-1 .deco-3 {
+    width: 611px;
+    height: 624px;
+    background-image: url("../images/vip-baby-1-deco-3.m.png");
+    margin: 43px 0 20px 25px;
+  }
+  #vip-baby .main-container .part-1 .detail {
+    position: relative;
+    width: 536px;
+    left: auto;
+    top: auto;
+    margin: 40px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #4c4c4c;
+    letter-spacing: 2px;
+    line-height: 46px;
+  }
+  #vip-baby .main-container .part-2 {
+    height: 1690px;
+    background-image: url("../images/vip-baby-2-bg.m.jpg");
+  }
+  #vip-baby .main-container .part-2 .baby-image {
+    left: 61px;
+    top: 369px;
+    width: 509px;
+    height: 590px;
+    border-radius: 10px;
+  }
+  #vip-baby .main-container .part-2 .title-text {
+    position: absolute;
+    width: 450px;
+    left: 90px;
+    top: 233px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #4c4c4c;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+  #vip-baby .main-container .part-2 .detail {
+    width: 386px;
+    left: 170px;
+    top: 968px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #4c4c4c;
+    letter-spacing: 3px;
+    line-height: 60.2px;
+    text-align: center;
+  }
+  #vip-baby .main-container .part-3 {
+    height: 1713px;
+    background-image: url("../images/vip-baby-3-bg.m.jpg");
+  }
+  #vip-baby .main-container .part-3 .baby-image-container {
+    position: absolute;
+    width: 536px;
+    height: 547px;
+    left: 52px;
+    top: 236px;
+  }
+  #vip-baby .main-container .part-3 .baby-image-container .image {
+    position: absolute;
+    width: 394px;
+    height: 394px;
+    left: 67px;
+    top: 81px;
+  }
+  #vip-baby .main-container .part-3 .baby-image-container .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/vip-baby-3-mask.m.png");
+  }
+  #vip-baby .main-container .part-3 .deco-1 {
+    position: absolute;
+    left: 22px;
+    top: 722px;
+    width: 546px;
+    height: 178px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-image: url("../images/vip-baby-3-deco-1.m.png");
+  }
+  #vip-baby .main-container .part-3 .misc-1 {
+    display: none;
+  }
+  #vip-baby .main-container .part-3 .title-text {
+    width: 350px;
+    left: 153px;
+    top: 830px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #4c4c4c;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+  #vip-baby .main-container .part-3 .detail {
+    width: 495px;
+    left: 77px;
+    top: 908px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #4c4c4c;
+    letter-spacing: 6px;
+    line-height: 71px;
+  }
+  /* vip course */
+  #vip-course .key-images {
+    background-image: url("../images/vip-course-key-image.m.jpg");
+  }
+  #vip-course .part-1 {
+    min-height: 750px;
+  }
+  #vip-course .part-1 .title-text {
+    margin: 3px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 4px;
+  }
+  #vip-course .part-1 .calender-container {
+    position: relative;
+    margin: 21px auto 0;
+  }
+  #vip-course .part-1 .annotation {
+    position: relative;
+    margin: 20px auto 40px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: #666464;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  #vip-course .part-1 .annotation .un-booked-node,
+  #vip-course .part-1 .annotation .booked-node,
+  #vip-course .part-1 .annotation .full-booked-node {
+    display: inline-block;
+    margin: 0 0 -2px 0;
+    width: 14px;
+    height: 14px;
+    background-image: url("../images/calender-node.png");
+  }
+  #vip-course .part-1 .annotation .un-booked-node {
+    background-position: right top;
+  }
+  #vip-course .part-1 .annotation .booked-node {
+    background-position: right bottom;
+  }
+  #vip-course .part-1 .annotation .full-booked-node {
+    background-position: left bottom;
   }
 }

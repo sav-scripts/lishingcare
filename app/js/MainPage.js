@@ -23,7 +23,9 @@
             $doms.sceneContainer = $("#scene-container");
             $doms.contentContainer = $doms.sceneContainer.find(".content-container");
             $doms.contentMask = $doms.sceneContainer.find(".content-mask");
+            $doms.footer = $("#footer");
             $doms.nav = $("#nav");
+            $doms.copyRight = $(".copy-right");
 
             _contentClassDic =
             {
@@ -169,9 +171,33 @@
 
         },
 
+        setContentMaskMinHeight: function(removeIt, withFooter)
+        {
+            if(removeIt)
+            {
+                $doms.contentMask.css("min-height", '');
+            }
+            else
+            {
+                var vp = Main.viewport,
+                    navHeight = vp.index === 0? 167: 98;
+
+                var bleed = navHeight + $doms.copyRight.height();
+                if(withFooter)
+                {
+                    bleed += $doms.footer.height();
+                }
+                //console.log(bleed);
+                var minHeight = vp.height - bleed;
+                $doms.contentMask.css("min-height", minHeight);
+
+                return minHeight;
+            }
+        },
+
         resize: function()
         {
-            self.setSceneScrollLock();
+            //self.setSceneScrollLock();
 
             ImageViewer.resize();
 
@@ -210,6 +236,8 @@
             CourseBooking.hide();
 
             _isHashLocking = true;
+
+            Nav.switchMobileOpenMode(false);
 
             if(_currentContentClass)
             {

@@ -4,6 +4,7 @@
     var $doms,
         _isInit = false,
         _isHiding = true,
+        _data,
         _currentContentHash = undefined;
 
     var self = window.VipBaby =
@@ -29,13 +30,15 @@
 
             MyLoader.loadTemplate(null, templates, function loadComplete()
             {
-                build(templates);
-                _isInit = true;
-                onReady.apply(null);
+                build(templates, function()
+                {
+                    _isInit = true;
+                    onReady.apply(null);
+                });
 
             }, 0);
 
-            function build(templates)
+            function build(templates, cb)
             {
                 $("#invisible-container").append(templates[0].dom);
                 $doms.parent = $("#scene-container").find(".content-container");
@@ -57,7 +60,68 @@
 
                 $doms.container.find(".content-part").css("display", "none");
 
-                $doms.container.detach();
+                ApiProxy.callApi("vip_baby", {}, false, function(response)
+                {
+                    _data = response;
+
+                    /* for parents */
+                    (function(){
+
+                        var $container = $doms.contents["/ForParents"],
+                            data = _data.for_parents;
+                        $container.find(".title-text").text(data.title);
+                        $container.find(".detail").html(data.detail);
+
+                    }());
+
+                    /* about me */
+                    (function(){
+
+                        var $container = $doms.contents["/AboutMe"],
+                            data = _data.about_me;
+                        $container.find(".title-text").text(data.title);
+
+                        var detail =
+                            data.name + "<br/>" +
+                            data.gender + "<br/>" +
+                            data.birthday + "<br/>" +
+                            data.constellation + "<br/>" +
+                            data.zodiac + "<br/>" +
+                            data.blood + "<br/>" +
+                            data.height + "<br/>" +
+                            data.weight + "<br/>" +
+                            data.head + "<br/>";
+
+                            $container.find(".detail").html(detail);
+
+                    }());
+
+                    /* recoard */
+                    (function(){
+
+                        var $container = $doms.contents["/Recoard"],
+                            data = _data.recoard;
+                        $container.find(".title-text").text(data.title);
+                        $container.find(".detail").html(data.detail);
+
+                    }());
+
+                    updatePhotos();
+
+                    end();
+                });
+
+
+
+                /* end */
+                function end()
+                {
+                    $doms.container.waitForImages(function()
+                    {
+                        $doms.container.detach();
+                        cb.call();
+                    });
+                }
             }
         },
 
@@ -143,6 +207,31 @@
                 if (cb) cb.call();
             });
 
+        },
+
+        resize: function()
+        {
+            if(Main.viewport.changed)
+            {
+                updatePhotos();
+            }
         }
     };
+
+
+
+    function updatePhotos()
+    {
+        var imageType = Main.viewport.imageType,
+            $container = $doms.contents["/AboutMe"],
+            data = _data.about_me;
+
+        $container.find('.baby-image').css("background-image", "url("+data.photo[imageType]+")");
+
+        $container = $doms.contents["/Recoard"];
+        data = _data.recoard;
+
+        $container.find('.baby-image-container .image').css("background-image", "url("+data.photo[imageType]+")");
+    }
+
 }());

@@ -171,7 +171,7 @@
         },
 
 
-        logout: function()
+        logout: function(onSuccess)
         {
             if(MainPage.getIsHashLocking()) return;
 
@@ -194,6 +194,8 @@
 
                 MainPage.blockNoneVipContent();
 
+                if(onSuccess) onSuccess.call();
+
             });
         },
 
@@ -205,6 +207,10 @@
                 return;
             }
 
+            _isHiding = false;
+
+            self.resize();
+
             Footer.toggleHideMode(true);
 
             $doms.parent.append($doms.container);
@@ -214,7 +220,6 @@
             tl.to($doms.container, .4, {autoAlpha: 1});
             tl.add(function ()
             {
-                _isHiding = false;
                 if (cb) cb.call();
             });
         },
@@ -234,12 +239,28 @@
                 Footer.toggleHideMode(false);
 
                 _isHiding = true;
+
+                MainPage.setContentMaskMinHeight(true);
+                $doms.container.css("height", '');
+
+
                 $doms.container.detach();
                 if (cb) cb.call();
             });
 
+        },
+
+        resize: function()
+        {
+            if(!_isHiding)
+            {
+                var minHeight = MainPage.setContentMaskMinHeight();
+                if(minHeight)
+                {
+                    $doms.container.css("height", minHeight);
+                }
+            }
         }
     };
-
 
 }());
