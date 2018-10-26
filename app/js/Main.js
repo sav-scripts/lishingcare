@@ -54,6 +54,7 @@
                 $('body').toggleClass('mapping', true);
             }
 
+            if(Utility.urlParams.logger === '1') Logger.init(true).show().open();
 
             ApiProxy.setApiPath(self.apiPath);
 

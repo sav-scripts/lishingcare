@@ -63,8 +63,7 @@
                         _calender = new Calender($sample.clone(), null, $doms.calenderContainer, onDateClicked);
                         _calender.show();
 
-                        var calenderWidth = $doms.calenderContainer.find(".my-calender").width();
-                        $doms.calenderContainer.width(calenderWidth);
+                        updateCalenderSize();
 
                         loadCourseData();
                     });
@@ -146,6 +145,21 @@
                 if (cb) cb.call();
             });
 
+        },
+
+        resize: function()
+        {
+            if(Main.viewport.changed)
+            {
+                updateCalenderSize();
+            }
         }
     };
+
+    function updateCalenderSize()
+    {
+        var calenderWidth = $doms.calenderContainer.find(".my-calender").width();
+        $doms.calenderContainer.width(calenderWidth);
+
+    }
 }());

@@ -94,7 +94,9 @@
             var eventData = self._eventDataList[index];
             if(eventData)
             {
-                var date = new Date(eventData.year+'-'+eventData.month+'-'+eventData.date);
+                //var string = eventData.year+'-'+eventData.month+'-'+eventData.date + "T00:00:00";
+                //var date = new Date(string);
+                var date = new Date(eventData.year, eventData.month-1, eventData.date, 0, 0, 0);
 
                 self.updateDate(date);
             }
@@ -145,6 +147,11 @@
                 now = new Date(date.getTime());
 
             $dateBlocks.toggleClass("disable-mode", true);
+
+            //console.log(date);
+
+            var yearText = date.getFullYear() + " . " + (date.getMonth()+1);
+            //console.log(yearText);
 
             $container.find(".year-part .text").text(date.getFullYear() + " . " + (date.getMonth()+1));
             $dateBlocks.find(".date-text").empty();

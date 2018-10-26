@@ -263,9 +263,12 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"  property=""/>
 
+
+
 <!--    <script src="js/lib/jquery-scrolltofixed-min.js"></script>-->
 
     <!-- build:js js/optimized.js -->
+    <script src="js/lib/Logger.js"></script>
     <script src="js/lib/jquery.pep.js"></script>
     <script src="js/Main.js"></script>
     <script src="js/lib/Utility.0.0.15.js"></script>
