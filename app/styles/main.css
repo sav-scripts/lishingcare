@@ -11,6 +11,7 @@ body {
   background: #eeeeee;
   padding: 0;
   margin: 0;
+  min-height: 1706px;
 }
 .banner-image {
   position: absolute;
@@ -174,7 +175,7 @@ body.mapping #scene-container .content-mask {
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 14px;
   color: white;
-  letter-spacing: 0;
+  letter-spacing: 0px;
   line-height: 28px;
   height: 28px;
   text-align: center;
@@ -213,6 +214,15 @@ body.mapping #scene-container .content-mask {
 }
 #nav.pin-mode .logo {
   top: 9px;
+}
+#nav .white-bleed {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 200px;
+  left: 0;
+  top: -200px;
+  transition: height 0.2s linear;
 }
 #nav .bg {
   position: absolute;
@@ -1185,7 +1195,7 @@ body.mapping #scene-container .content-mask {
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 13.54px;
   color: #666464;
-  letter-spacing: 0;
+  letter-spacing: 0px;
   line-height: 25px;
 }
 /* news */
@@ -1348,116 +1358,6 @@ body.mapping #scene-container .content-mask {
   margin-right: auto;
   width: 100%;
   overflow: hidden;
-  /*
-    .part-3 {
-
-        position: relative;
-        width: 100%;
-        height: auto;
-        min-height: 526px;
-        overflow: hidden;
-
-        .left-part{
-            position: relative;
-            float: left;
-            width: 640px;
-            height: auto;
-            overflow: hidden;
-
-            .item{
-
-                float: right;
-                margin-right: -26px;
-            }
-        }
-
-        .right-part{
-            position: relative;
-            float: right;
-            width: 640px;
-            height: auto;
-
-
-            .item{
-
-                float: left;
-                margin-left: -26px;
-            }
-
-        }
-
-        .left-part, .right-part{
-
-            .item{
-
-                position: relative;
-                width: 100%;
-                margin-top: 41px;
-
-                .title-block{
-                    position: relative;
-
-                    margin: 0 auto 0;
-                    width: 557px;
-                    height: 50px;
-                    .image-bg("care-brown-bar-1.png");
-                    overflow: hidden;
-
-                    .text{
-                        position: relative;
-                        margin: 14px auto 0;
-
-                        .default-font(16.5px, white, 4px);
-                        text-align: center;
-                    }
-                }
-
-                .list{
-                    position: relative;
-
-                    margin-top: 36px;
-                    margin-left: 100px;
-
-                    .list-item{
-                        position: relative;
-
-                        .title{
-                            position: relative;
-                            .default-font(14.58px, @brown, .3px);
-                        }
-
-
-                        &.no-detail{
-                            .title{
-                                color: @dark-gray-brown;
-                            }
-                        }
-
-                        .detail{
-
-                            position: relative;
-                            margin-top: 10px;
-                            margin-left: -20px;
-                            width: 420px;
-                            .default-font(14.58px, @dark-gray-brown, .3px);
-                            line-height: 20px;
-
-                            li{
-                                margin-bottom: 10px;
-
-                                &:last-child{
-                                    margin-bottom: 5px;
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-
-    }
-*/
 }
 #care .key-images {
   position: relative;
@@ -1555,6 +1455,8 @@ body.mapping #scene-container .content-mask {
 #care .part-2 .right-part .title {
   position: relative;
   margin: 28px 0 0 36px;
+  list-style-position: inside;
+  padding-left: 0;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 15px;
   color: #a18b73;
@@ -1631,8 +1533,9 @@ body.mapping #scene-container .content-mask {
 #care .part-3 .item .list,
 #care .part-4 .item .list {
   position: relative;
-  margin-top: 36px;
-  margin-left: 100px;
+  margin-top: 20px;
+  margin-left: 80px;
+  overflow: hidden;
 }
 #care .part-3 .item .list .list-item,
 #care .part-4 .item .list .list-item {
@@ -1645,6 +1548,7 @@ body.mapping #scene-container .content-mask {
   font-size: 14.58px;
   color: #a18b73;
   letter-spacing: 0.3px;
+  margin: 0;
 }
 #care .part-3 .item .list .list-item.no-detail .title,
 #care .part-4 .item .list .list-item.no-detail .title {
@@ -1654,8 +1558,7 @@ body.mapping #scene-container .content-mask {
 #care .part-4 .item .list .list-item .detail {
   position: relative;
   margin-top: 30px;
-  margin-left: -20px;
-  width: 440px;
+  width: 430px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 14.58px;
   color: #666464;
@@ -1677,16 +1580,16 @@ body.mapping #scene-container .content-mask {
   height: auto;
   overflow: hidden;
 }
-#care .part-3 .left-part {
-  float: left;
-  width: 640px;
-  min-height: 1px;
-}
-#care .part-3 .right-part {
-  float: left;
+#care .part-3 .section-1 {
+  float: right;
   width: 640px;
   height: 406px;
   background-image: url("../images/care-part-3-image.jpg");
+}
+#care .part-3 .section-2 {
+  float: left;
+  width: 640px;
+  min-height: 1px;
 }
 #care .part-4 {
   position: relative;
@@ -1694,27 +1597,24 @@ body.mapping #scene-container .content-mask {
   height: auto;
   overflow: hidden;
 }
-#care .part-4 .left-part {
+#care .part-4 .section-1 {
   float: left;
   width: 640px;
   height: 567px;
   background-image: url("../images/care-part-4-image.jpg");
 }
-#care .part-4 .right-part {
-  float: left;
+#care .part-4 .section-2 {
+  float: right;
   width: 640px;
   min-height: 1px;
 }
-#care .part-4 .right-part .item {
-  margin-top: 33px;
+#care .part-4 .section-2 .item {
+  margin-top: 30px;
 }
-#care .part-4 .right-part .item .list {
-  margin-top: 19px;
-}
-#care .part-4 .right-part .item .list .list-item .detail {
+#care .part-4 .section-2 .item .list .list-item .detail {
   margin-top: 7px;
 }
-#care .part-4 .right-part .item .list .list-item .detail li {
+#care .part-4 .section-2 .item .list .list-item .detail li {
   margin-bottom: 4px;
 }
 #care .back-to-top {
@@ -1902,7 +1802,6 @@ body.mapping #scene-container .content-mask {
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 1261px;
   background-color: #f3f3f3;
   overflow: hidden;
 }
@@ -1990,7 +1889,7 @@ body.mapping #scene-container .content-mask {
 }
 #malt .malt-part .foot-text {
   position: relative;
-  margin: 15px auto 0;
+  margin: 20px auto 20px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 12.85px;
   color: #666464;
@@ -2824,6 +2723,11 @@ body.mapping #scene-container .content-mask {
 }
 #image-viewer .container .middle-wrapper .image-container img {
   margin: 1px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #image-viewer .container .middle-wrapper .ui {
   overflow: hidden;
@@ -3186,6 +3090,9 @@ body.mapping #scene-container .content-mask {
   }
 }
 @media (max-width: 640px) {
+  body {
+    min-height: 854px;
+  }
   .sp-only {
     display: initial;
   }
@@ -3427,7 +3334,7 @@ body.mapping #scene-container .content-mask {
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 29.17px;
     color: #666464;
-    letter-spacing: 0;
+    letter-spacing: 0px;
     line-height: 46px;
   }
   #index .about-us .left-part .contents p {
@@ -3439,7 +3346,7 @@ body.mapping #scene-container .content-mask {
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 29.17px;
     color: #a08c6e;
-    letter-spacing: 0;
+    letter-spacing: 0px;
     float: none;
   }
   #index .about-us .left-part .btn-more {
@@ -3755,7 +3662,7 @@ body.mapping #scene-container .content-mask {
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 29.17px;
     color: #666464;
-    letter-spacing: 0;
+    letter-spacing: 0px;
     line-height: 58px;
     width: 540px;
     margin: 15px auto 0;
@@ -4184,7 +4091,7 @@ body.mapping #scene-container .content-mask {
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 29.17px;
     color: #666464;
-    letter-spacing: 0;
+    letter-spacing: 0px;
     line-height: 46px;
   }
   #reservation .part-2 .field {
@@ -4257,6 +4164,335 @@ body.mapping #scene-container .content-mask {
   }
   #reservation .part-2 .btn-send:active {
     margin: 30px auto 39px;
+  }
+  /* malt */
+  #malt .key-images {
+    background-image: url("../images/malt-key-image.m.jpg");
+  }
+  #malt .malt-part .title-image {
+    margin: 34px auto 0;
+  }
+  #malt .malt-part .title-text-1 {
+    margin: 13px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 1.8px;
+  }
+  #malt .malt-part .line {
+    margin: 18px auto 0;
+  }
+  #malt .malt-part .title-text-2 {
+    margin: 15px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 1.8px;
+    text-align: center;
+    line-height: 46px;
+  }
+  #malt .malt-part .step-1 {
+    background-image: url("../images/malt-step-1.m.png");
+  }
+  #malt .malt-part .step-2 {
+    background-image: url("../images/malt-step-2.m.png");
+  }
+  #malt .malt-part .step-3 {
+    background-image: url("../images/malt-step-3.m.png");
+  }
+  #malt .malt-part .step-1,
+  #malt .malt-part .step-2,
+  #malt .malt-part .step-3 {
+    margin: 67px auto 0;
+    width: 573px;
+    height: 750px;
+  }
+  #malt .malt-part .step-1 .title,
+  #malt .malt-part .step-2 .title,
+  #malt .malt-part .step-3 .title {
+    width: 460px;
+    margin-left: -230px;
+    text-align: center;
+    top: 152px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.09px;
+    color: #a18b73;
+    letter-spacing: 1px;
+  }
+  #malt .malt-part .step-1 .detail,
+  #malt .malt-part .step-2 .detail,
+  #malt .malt-part .step-3 .detail {
+    position: absolute;
+    left: 50%;
+    width: 460px;
+    margin-left: -223px;
+    text-align: center;
+    top: 233px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 23.93px;
+    color: #666464;
+    letter-spacing: 1px;
+    line-height: 38px;
+  }
+  #malt .malt-part .foot-text {
+    margin: 30px auto 40px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 2px;
+    line-height: 39px;
+  }
+  #malt .back-to-top {
+    position: relative;
+    width: 100%;
+    background-color: #e1d6e0;
+    cursor: pointer;
+    height: 62px;
+  }
+  #malt .back-to-top .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: left;
+  }
+  #malt .back-to-top .icon {
+    width: 40px;
+    height: 45px;
+    margin-left: -20px;
+    margin-top: -22.5px;
+    background-image: url("../images/back-to-top.png");
+  }
+  #malt .back-to-top:active .icon {
+    background-position: right;
+  }
+  #malt .back-to-top .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: left;
+  }
+  #malt .back-to-top .icon {
+    width: 40px;
+    height: 45px;
+    margin-left: -20px;
+    margin-top: -22.5px;
+    background-image: url("../images/back-to-top.png");
+  }
+  #malt .back-to-top:active .icon {
+    background-position: right;
+  }
+  /* care */
+  #care .key-images {
+    background-image: url("../images/care-key-image.m.jpg");
+  }
+  #care .part-1 {
+    min-height: 629px;
+    background-image: url("../images/care-title-bg.m.jpg");
+  }
+  #care .part-1 .title-image {
+    margin: 34px auto 0;
+  }
+  #care .part-1 .title-text {
+    margin: 8px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 4px;
+  }
+  #care .part-1 .title-block {
+    margin: 46px auto 0;
+  }
+  #care .part-1 .title-block .text {
+    margin: 6px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: white;
+    letter-spacing: 5px;
+  }
+  #care .part-1 .detail {
+    position: relative;
+    margin-top: 18px;
+    margin-bottom: 34px;
+    left: 50%;
+    margin-left: -260px;
+    width: 480px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 0px;
+    line-height: 47px;
+  }
+  #care .part-1 .detail li {
+    margin-bottom: 36px;
+  }
+  #care .part-2 .left-part {
+    position: relative;
+    width: 640px;
+    height: 517px;
+    background-image: url("../images/care-image-1.m.jpg");
+  }
+  #care .part-2 .right-part {
+    float: none;
+  }
+  #care .part-2 .right-part .title {
+    margin: 28px auto 20px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 1px;
+    width: 400px;
+    line-height: 45px;
+  }
+  #care .part-2 .right-part .list {
+    margin: 0 auto 0;
+  }
+  #care .part-2 .right-part .list .list-item {
+    margin-bottom: 32px;
+  }
+  #care .part-2 .right-part .list .list-item:last-child {
+    margin-bottom: 10px;
+  }
+  #care .part-2 .right-part .list .list-item .title-block {
+    float: none;
+    clear: none;
+    margin: 0 auto;
+    width: 557px;
+    height: 50px;
+    background-image: url("../images/care-brown-bar-1.png");
+  }
+  #care .part-2 .right-part .list .list-item .title-block .text {
+    margin: 6px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: white;
+    letter-spacing: 6px;
+  }
+  #care .part-2 .right-part .list .list-item .detail {
+    float: none;
+    margin: 20px auto 0;
+    width: 480px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 0.3px;
+    line-height: 47px;
+  }
+  #care .part-3 .item,
+  #care .part-4 .item {
+    margin-top: 39px;
+  }
+  #care .part-3 .item .title-block,
+  #care .part-4 .item .title-block {
+    margin: 0 auto 0;
+  }
+  #care .part-3 .item .title-block .text,
+  #care .part-4 .item .title-block .text {
+    margin: 6px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: white;
+    letter-spacing: 6px;
+  }
+  #care .part-3 .item .list,
+  #care .part-4 .item .list {
+    margin-top: 30px;
+    margin-left: 40px;
+    width: 560px;
+  }
+  #care .part-3 .item .list .list-item .title,
+  #care .part-4 .item .list .list-item .title {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 0.3px;
+    margin: 0;
+    line-height: 46px;
+  }
+  #care .part-3 .item .list .list-item .detail,
+  #care .part-4 .item .list .list-item .detail {
+    width: 520px;
+    margin-top: 30px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #666464;
+    letter-spacing: 0.3px;
+    line-height: 46px;
+  }
+  #care .part-3 .item .list .list-item .detail li,
+  #care .part-4 .item .list .list-item .detail li {
+    margin-bottom: 10px;
+  }
+  #care .part-3 .item .list .list-item .detail li:last-child,
+  #care .part-4 .item .list .list-item .detail li:last-child {
+    margin-bottom: 5px;
+  }
+  #care .part-3 .section-1 {
+    float: none;
+    height: 414px;
+    background-image: url("../images/care-part-3-image.m.jpg");
+  }
+  #care .part-3 .section-2 {
+    float: none;
+  }
+  #care .part-4 .section-1 {
+    float: none;
+    width: 640px;
+    height: 414px;
+    background-image: url("../images/care-part-4-image.m.jpg");
+  }
+  #care .part-4 .section-2 {
+    float: none;
+    width: 640px;
+    min-height: 1px;
+    margin-bottom: 30px;
+  }
+  #care .part-4 .section-2 .item {
+    margin-top: 30px;
+  }
+  #care .part-4 .section-2 .item .list .list-item .detail {
+    margin-top: 7px;
+  }
+  #care .part-4 .section-2 .item .list .list-item .detail li {
+    margin-bottom: 4px;
+  }
+  #care .back-to-top {
+    position: relative;
+    width: 100%;
+    background-color: #e1d6e0;
+    cursor: pointer;
+    height: 123px;
+  }
+  #care .back-to-top .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: left;
+  }
+  #care .back-to-top .icon {
+    width: 63px;
+    height: 79px;
+    margin-left: -31.5px;
+    margin-top: -39.5px;
+    background-image: url("../images/back-to-top.m.png");
+  }
+  #care .back-to-top:active .icon {
+    background-position: right;
+  }
+  #care .back-to-top .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-position: left;
+  }
+  #care .back-to-top .icon {
+    width: 63px;
+    height: 79px;
+    margin-left: -31.5px;
+    margin-top: -39.5px;
+    background-image: url("../images/back-to-top.m.png");
+  }
+  #care .back-to-top:active .icon {
+    background-position: right;
   }
   /* environmental */
   #environmental .part-1 .title-image {

@@ -76,6 +76,8 @@
 
             self.toIndex(0);
 
+            //bindDragAction();
+
             return self;
         },
 
@@ -245,6 +247,13 @@
             var $image = $(_currentImage);
             $image.attr("width", "100%");
             $image.attr("height", "100%");
+            //image.draggable = false;
+            $image.attr("draggable", false);
+
+            $image.on("mousedown", function(event)
+            {
+                event.preventDefault();
+            });
 
             var tl = new TimelineMax;
             tl.set(_currentImage, {autoAlpha: 0});
@@ -280,6 +289,51 @@
         };
 
         image.src = newImageSrc;
+    }
+
+    function bindDragAction()
+    {
+        if(_numImages > 0)
+        {
+            $doms.imageContainer.pep
+            ({
+                shouldPreventDefault: false,
+                useCSSTranslation: false,
+                axis: 'x',
+                shouldEase: true,
+                start: function()
+                {
+                    //TweenMax.killTweensOf($samplePart);
+                },
+                stop: function()
+                {
+                    //var gridSize = 640,
+                    //    newLeft = parseInt($samplePart.css("left")),
+                    //    targetGridIndex = Math.round(newLeft / gridSize);
+                    //
+                    ////console.log(targetGridIndex);
+                    //
+                    //targetGridIndex = Math.min(targetGridIndex, 0);
+                    //targetGridIndex = Math.max(targetGridIndex, -2);
+                    //
+                    //var targetLeft = gridSize * targetGridIndex;
+                    //
+                    //TweenMax.to($samplePart,.3,{left: targetLeft, ease:Power3.easeOut});
+
+
+                }
+            });
+        }
+        else
+        {
+
+            $.pep.unbind($doms.imageContainer);
+            $doms.imageContainer.css
+            ({
+                left: '',
+                top: ''
+            })
+        }
     }
 
 }());

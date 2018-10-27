@@ -114,13 +114,13 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <!--        <img class="layout" src="images/layout/index.jpg">-->
 <!--            <img class="layout" src="images/layout/news.jpg">-->
             <!--<img class="layout" src="images/layout/about-us.jpg">-->
-            <!--<img class="layout" src="images/layout/malt.jpg">-->
+            <img class="layout" src="images/layout/malt.jpg">
             <!--<img class="layout" src="images/layout/contact.jpg">-->
-            <!--<img class="layout" src="images/layout/care.jpg">-->
+<!--            <img class="layout" src="images/layout/care.jpg">-->
 <!--            <img class="layout" src="images/layout/environmental.jpg">-->
 <!--            <img class="layout" src="images/layout/vip-baby-1.jpg">-->
 <!--            <img class="layout" src="images/layout/vip-baby-2.jpg">-->
-            <img class="layout" src="images/layout/vip-baby-3.jpg">
+<!--            <img class="layout" src="images/layout/vip-baby-3.jpg">-->
             <!--<img class="layout" src="images/layout/vip-course.jpg">-->
     <!--        <img class="layout" src="images/layout/reservation.jpg">-->
         </div>
@@ -129,13 +129,13 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <!--        <img class="layout" src="images/layout/index.m.jpg">-->
 <!--            <img class="layout" src="images/layout/news.m.jpg">-->
     <!--        <img class="layout" src="images/layout/about-us.m.jpg">-->
-            <!--<img class="layout" src="images/layout/malt.m.jpg">-->
+            <img class="layout" src="images/layout/malt.m.jpg">
     <!--        <img class="layout" src="images/layout/contact.m.jpg">-->
-            <!--<img class="layout" src="images/layout/care.m.jpg">-->
+<!--            <img class="layout" src="images/layout/care.m.jpg">-->
 <!--            <img class="layout" src="images/layout/environmental.m.jpg">-->
 <!--            <img class="layout" src="images/layout/vip-baby-1.m.jpg">-->
 <!--            <img class="layout" src="images/layout/vip-baby-2.m.jpg">-->
-            <img class="layout" src="images/layout/vip-baby-3.m.jpg">
+<!--            <img class="layout" src="images/layout/vip-baby-3.m.jpg">-->
             <!--<img class="layout" src="images/layout/vip-course.m.jpg">-->
     <!--        <img class="layout" src="images/layout/reservation.m.jpg">-->
 
@@ -147,6 +147,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
         <div id="nav">
 
+            <div class="white-bleed"></div>
             <div class="bg"></div>
 
             <div class="vip-menu-cover"></div>

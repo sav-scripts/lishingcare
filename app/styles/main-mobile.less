@@ -14,7 +14,9 @@
 
 @media (max-width: @device-width-b) {
 
-
+    body{
+        min-height: 854px;
+    }
 
     .sp-only{
         display: initial;
@@ -1375,6 +1377,315 @@
 
     }
 
+    /* malt */
+    #malt{
+        .common-content-m("malt-key-image");
+
+
+
+        .malt-part {
+
+            .title-image{
+                margin: 34px auto 0;
+            }
+
+            .title-text-1{
+                margin: 13px auto 0;
+                .default-font(@mobile-text-size-1, @brown, 1.8px);
+            }
+
+            .line{
+                margin: 18px auto 0;
+            }
+
+            .title-text-2{
+                margin: 15px auto 0;
+                .default-font(@mobile-text-size-1, @dark-gray-brown, 1.8px);
+                text-align: center;
+
+                line-height: 46px;
+            }
+
+            .step-1{
+                .image-bg("malt-step-1.m.png");
+            }
+
+            .step-2{
+                .image-bg("malt-step-2.m.png");
+            }
+
+            .step-3{
+                .image-bg("malt-step-3.m.png");
+            }
+
+            .step-1, .step-2, .step-3{
+
+
+                margin: 67px auto 0;
+                width: 573px;
+                height: 750px;
+
+
+                .title{
+                    @w: 460px;
+
+                    width: @w;
+                    margin-left: -@w * .5;
+                    text-align: center;
+                    top: 152px;
+
+                    .default-font(29.09px, @brown, 1px);
+
+                }
+                .detail{
+                    @w: 460px;
+
+                    position: absolute;
+                    left: 50%;
+                    width: @w;
+                    margin-left: -@w * .5 + 7px;
+                    text-align: center;
+                    top: 233px;
+
+                    .default-font(23.93px, @dark-gray-brown, 1px);
+                    line-height: 38px;
+
+                }
+            }
+
+            .foot-text{
+                margin: 30px auto 40px;
+                .default-font(@mobile-text-size-1, @dark-gray-brown, 2px);
+                line-height: 39px;
+            }
+        }
+
+
+        .back-to-top{
+            .back-to-top(#e1d6e0);
+        }
+    }
+
+    /* care */
+    #care{
+        .common-content-m("care-key-image");
+
+        .part-1{
+//            min-height: 635px;
+            min-height: 629px;
+            .image-bg("care-title-bg.m.jpg");
+
+            .title-image{
+                margin: 34px auto 0;
+            }
+
+            .title-text{
+                margin: 8px auto 0;
+                .default-font(@mobile-text-size-1, @brown, 4px);
+            }
+
+            .title-block{
+                margin: 46px auto 0;
+                .text{
+                    margin: 6px auto 0;
+                    .default-font(@mobile-text-size-1, white, 5);
+                }
+            }
+
+            .detail{
+
+                position: relative;
+                margin-top: 18px;
+                margin-bottom: 34px;
+                left: 50%;
+                margin-left: -260px;
+                width: 480px;
+
+                .default-font(@mobile-text-size-1, @dark-gray-brown, 0);
+                line-height: 47px;
+
+                li{
+                    margin-bottom: 36px;
+                }
+            }
+        }
+
+        .part-2{
+//            min-height: 517px;
+//            height: 1619px;
+
+            .left-part{
+
+                position: relative;
+                width: 640px;
+                height: 517px;
+
+                .image-bg("care-image-1.m.jpg");
+
+            }
+
+            .right-part{
+                float: none;
+
+                .title{
+                    margin: 28px auto 20px;
+                    .default-font(@mobile-text-size-1, @brown, 1px);
+                    width: 400px;
+                    line-height: 45px;
+                }
+
+                .list{
+                    margin: 0 auto 0;
+
+                    .list-item{
+                        margin-bottom: 32px;
+
+                        &:last-child{
+
+                            margin-bottom: 10px;
+                        }
+
+                        .title-block{
+                            float: none;
+                            clear: none;
+
+                            margin: 0 auto;
+
+//                            width: 105px;
+//                            height: 75px;
+//                            .image-bg("care-brown-bar-2.png");
+
+                            width: 557px;
+                            height: 50px;
+                            .image-bg("care-brown-bar-1.png");
+
+                            .text{
+                                margin: 6px auto 0;
+                                .default-font(@mobile-text-size-1, white, 6px);
+                            }
+                        }
+                        .detail{
+                            float: none;
+                            margin: 20px auto 0;
+                            width: 480px;
+                            .default-font(@mobile-text-size-1, @dark-gray-brown, .3px);
+                            line-height: 47px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        .part-3, .part-4{
+
+
+
+            .item{
+                margin-top: 39px;
+
+                .title-block{
+                    margin: 0 auto 0;
+
+                    .text{
+                        margin: 6px auto 0;
+                        .default-font(@mobile-text-size-1, white, 6px);
+                    }
+                }
+
+                .list{
+
+                    margin-top: 30px;
+                    margin-left: 40px;
+                    width: 560px;
+
+                    .list-item{
+
+                        .title{
+                            .default-font(@mobile-text-size-1, @brown, .3px);
+                            margin: 0;
+                            line-height: 46px;
+                        }
+
+                        .detail{
+                            width: 520px;
+                            margin-top: 30px;
+                            .default-font(@mobile-text-size-1, @dark-gray-brown, .3px);
+
+                            line-height: 46px;
+
+                            li{
+                                margin-bottom: 10px;
+
+                                &:last-child{
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .part-3{
+
+            .section-1{
+                float: none;
+                height: 414px;
+                .image-bg("care-part-3-image.m.jpg");
+
+            }
+
+            .section-2{
+                float: none;
+            }
+        }
+
+        .part-4{
+
+            .section-1{
+                float: none;
+                width: 640px;
+                height: 414px;
+                .image-bg("care-part-4-image.m.jpg")
+            }
+
+            .section-2{
+                float: none;
+                width: 640px;
+                min-height: 1px;
+
+                margin-bottom: 30px;
+                .item{
+                    margin-top: 30px;
+
+                    .list{
+
+                        .list-item{
+                            .title{
+
+                            }
+
+                            .detail{
+                                margin-top: 7px;
+
+                                li{
+                                    margin-bottom: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .back-to-top{
+            .back-to-top(#e1d6e0, 2);
+        }
+    }
 
     /* environmental */
     #environmental{

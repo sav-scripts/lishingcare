@@ -150,6 +150,8 @@
             {
                 _lockingScrollTop = $(window).scrollTop();
 
+                $('body').css("min-height", "auto");
+
                 $doms.sceneContainer.css
                 ({
                     "height": Main.viewport.height,
@@ -159,6 +161,8 @@
             }
             else
             {
+                $('body').css("min-height", "");
+
                 $doms.sceneContainer.css
                 ({
                     "height": '',

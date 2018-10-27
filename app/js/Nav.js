@@ -194,6 +194,8 @@
         {
             if(_vipMenuOn === b) return;
 
+            $doms.vipMenu.toggleClass("mobile-mode", Main.viewport.index === 0);
+
             _vipMenuOn = b;
             $doms.vipMenu.toggleClass("activated", _vipMenuOn);
             $doms.vipMenuCover.toggleClass("activated", _vipMenuOn);

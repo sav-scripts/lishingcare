@@ -84,6 +84,25 @@
         //vp.width = $(window).width();
         //vp.height = $(window).height();
 
+        //console.log($(window).width() / window.innerWidth);
+
+        //console.log("innerWidth: " + window.innerWidth + ", innerHeight: " + window.innerHeight);
+        //console.log("screenWidth: " + window.screen.width + ", screenHeight: " + window.screen.height);
+        //
+        //var minHeight = window.innerWidth * window.screen.height / window.screen.width;
+        //console.log("min height: " + minHeight);
+        //$("#scene-container").css("min-height", minHeight);
+
+        //if($(window).width() / window.innerWidth === 1)
+        //{
+        //    $("#scene-container").css("min-height", window.innerHeight);
+        //    //console.log(window.innerHeight);
+        //}
+        //else
+        //{
+        //    $("#scene-container").css("min-height", '');
+        //}
+
         vp.width = window.innerWidth;
         vp.height = window.innerHeight;
         vp.index = vp.width <= vp.ranges[0]? 0: 1;

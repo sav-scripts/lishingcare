@@ -22,6 +22,8 @@ body{
     background: @background-color;
     padding: 0;
     margin: 0;
+
+    min-height: 1706px;
 }
 
 .image-bg-test(@src;){
@@ -475,6 +477,17 @@ body.mapping{
         .logo{
             top: 9px;
         }
+    }
+
+    .white-bleed{
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        height: 200px;
+        left: 0;
+        top: -200px;
+
+        transition: height .2s linear;
     }
 
     .bg{
@@ -1965,6 +1978,8 @@ body.mapping{
             .title{
                 position: relative;
                 margin: 28px 0 0 36px;
+                list-style-position: inside;
+                padding-left: 0;
 
                 .default-font(15px, @brown, 1px);
             }
@@ -2051,8 +2066,10 @@ body.mapping{
             .list{
                 position: relative;
 
-                margin-top: 36px;
-                margin-left: 100px;
+                margin-top: 20px;
+                margin-left: 80px;
+
+                overflow: hidden;
 
                 .list-item{
                     position: relative;
@@ -2060,6 +2077,9 @@ body.mapping{
                     .title{
                         position: relative;
                         .default-font(14.58px, @brown, .3px);
+                        margin: 0;
+//                        list-style-position: inside;
+//                        padding-left: 0;
                     }
 
 
@@ -2073,8 +2093,7 @@ body.mapping{
 
                         position: relative;
                         margin-top: 30px;
-                        margin-left: -20px;
-                        width: 440px;
+                        width: 430px;
                         .default-font(14.58px, @dark-gray-brown, .3px);
                         line-height: 20px;
 
@@ -2101,21 +2120,21 @@ body.mapping{
         height: auto;
         overflow: hidden;
 
-        .left-part{
-            float: left;
-            width: 640px;
-            min-height: 1px;
-        }
 
-        .right-part{
-            float: left;
+        .section-1{
+            float: right;
             width: 640px;
             height: 406px;
             .image-bg("care-part-3-image.jpg");
 
         }
-    }
 
+        .section-2{
+            float: left;
+            width: 640px;
+            min-height: 1px;
+        }
+    }
 
     .part-4{
 
@@ -2124,24 +2143,23 @@ body.mapping{
         height: auto;
         overflow: hidden;
 
-        .left-part{
+        .section-1{
             float: left;
             width: 640px;
             height: 567px;
             .image-bg("care-part-4-image.jpg")
         }
 
-        .right-part{
-            float: left;
+        .section-2{
+            float: right;
             width: 640px;
             min-height: 1px;
 //            height: 406px;
 
             .item{
-                margin-top: 33px;
+                margin-top: 30px;
 
                 .list{
-                    margin-top: 19px;
 
                     .list-item{
                         .title{
@@ -2162,116 +2180,6 @@ body.mapping{
         }
     }
 
-    /*
-    .part-3 {
-
-        position: relative;
-        width: 100%;
-        height: auto;
-        min-height: 526px;
-        overflow: hidden;
-
-        .left-part{
-            position: relative;
-            float: left;
-            width: 640px;
-            height: auto;
-            overflow: hidden;
-
-            .item{
-
-                float: right;
-                margin-right: -26px;
-            }
-        }
-
-        .right-part{
-            position: relative;
-            float: right;
-            width: 640px;
-            height: auto;
-
-
-            .item{
-
-                float: left;
-                margin-left: -26px;
-            }
-
-        }
-
-        .left-part, .right-part{
-
-            .item{
-
-                position: relative;
-                width: 100%;
-                margin-top: 41px;
-
-                .title-block{
-                    position: relative;
-
-                    margin: 0 auto 0;
-                    width: 557px;
-                    height: 50px;
-                    .image-bg("care-brown-bar-1.png");
-                    overflow: hidden;
-
-                    .text{
-                        position: relative;
-                        margin: 14px auto 0;
-
-                        .default-font(16.5px, white, 4px);
-                        text-align: center;
-                    }
-                }
-
-                .list{
-                    position: relative;
-
-                    margin-top: 36px;
-                    margin-left: 100px;
-
-                    .list-item{
-                        position: relative;
-
-                        .title{
-                            position: relative;
-                            .default-font(14.58px, @brown, .3px);
-                        }
-
-
-                        &.no-detail{
-                            .title{
-                                color: @dark-gray-brown;
-                            }
-                        }
-
-                        .detail{
-
-                            position: relative;
-                            margin-top: 10px;
-                            margin-left: -20px;
-                            width: 420px;
-                            .default-font(14.58px, @dark-gray-brown, .3px);
-                            line-height: 20px;
-
-                            li{
-                                margin-bottom: 10px;
-
-                                &:last-child{
-                                    margin-bottom: 5px;
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-
-    }
-*/
 
 
 
@@ -2427,7 +2335,7 @@ body.mapping{
         position: relative;
         width: 100%;
         height: auto;
-        min-height: 1261px;
+//        min-height: 1261px;
         background-color: #f3f3f3;
         overflow: hidden;
 
@@ -2518,7 +2426,7 @@ body.mapping{
 
         .foot-text{
             position: relative;
-            margin: 15px auto 0;
+            margin: 20px auto 20px;
             .default-font(12.85px, @dark-gray-brown, 2px);
             text-align: center;
             line-height: 19px;
@@ -3397,6 +3305,7 @@ body.mapping{
 
                 img{
                     margin: 1px;
+                    .unselectable();
                 }
             }
 
