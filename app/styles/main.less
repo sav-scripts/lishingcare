@@ -418,7 +418,8 @@ body.mapping{
             position: relative;
             width: 70px;
 
-            background-color:#d4beaa;
+//            background-color:#d4beaa;
+            background-color:@pink;
 //            border: 2px solid @brown;
 
             border-radius: 3px;
@@ -434,7 +435,7 @@ body.mapping{
             .unselectable();
 
             &:active{
-                margin: 21px auto -1px;
+                margin: 21px auto 29px;
             }
         }
 
@@ -685,6 +686,11 @@ body.mapping{
             &:active{
                 padding-top: 4px;
                 padding-bottom: 2px;
+            }
+
+            &.unavailable{
+                cursor: default;
+                opacity: .2;
             }
         }
 

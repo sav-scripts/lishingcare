@@ -175,7 +175,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
                         <div class="title"></div>
                         <div class="button baby">寶寶記錄</div><div class="gap"></div>
                         <div class="button course">媽媽課程</div><div class="gap"></div>
-                        <div class="button live">即時影像</div>
+                        <div class="button live unavailable">即時影像</div>
 
                         <div class="btn-logout"></div>
 

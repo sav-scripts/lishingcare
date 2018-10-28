@@ -81,6 +81,9 @@
                         for(var i=0;i<_data.course_list.length;i++)
                         {
                             var obj = _data.course_list[i];
+                            obj.year = parseInt(obj.year);
+                            obj.month = parseInt(obj.month);
+                            obj.day = parseInt(obj.day);
                             _calender.addEvent(obj);
                         }
 

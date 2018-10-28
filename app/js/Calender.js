@@ -98,6 +98,9 @@
                 //var date = new Date(string);
                 var date = new Date(eventData.year, eventData.month-1, eventData.date, 0, 0, 0);
 
+                console.log(eventData);
+                console.log(date);
+
                 self.updateDate(date);
             }
         },

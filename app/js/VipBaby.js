@@ -48,7 +48,7 @@
                 {
                     "/ForParents": $doms.container.find(".part-1"),
                     "/AboutMe": $doms.container.find(".part-2"),
-                    "/Recoard": $doms.container.find(".part-3")
+                    "/Record": $doms.container.find(".part-3")
                 };
 
                 $doms.partSelect = $doms.container.find(".part-select").change(function()
@@ -65,14 +65,14 @@
                     _data = response;
 
                     /* for parents */
-                    (function(){
-
-                        var $container = $doms.contents["/ForParents"],
-                            data = _data.for_parents;
-                        $container.find(".title-text").text(data.title);
-                        $container.find(".detail").html(data.detail);
-
-                    }());
+                    //(function(){
+                    //
+                    //    var $container = $doms.contents["/ForParents"],
+                    //        data = _data.for_parents;
+                    //    $container.find(".title-text").text(data.title);
+                    //    $container.find(".detail").html(data.detail);
+                    //
+                    //}());
 
                     /* about me */
                     (function(){
@@ -96,11 +96,11 @@
 
                     }());
 
-                    /* recoard */
+                    /* Record */
                     (function(){
 
-                        var $container = $doms.contents["/Recoard"],
-                            data = _data.recoard;
+                        var $container = $doms.contents["/Record"],
+                            data = _data.record;
                         $container.find(".title-text").text(data.title);
                         $container.find(".detail").html(data.detail);
 
@@ -228,8 +228,8 @@
 
         $container.find('.baby-image').css("background-image", "url("+data.photo[imageType]+")");
 
-        $container = $doms.contents["/Recoard"];
-        data = _data.recoard;
+        $container = $doms.contents["/Record"];
+        data = _data.record;
 
         $container.find('.baby-image-container .image').css("background-image", "url("+data.photo[imageType]+")");
     }
