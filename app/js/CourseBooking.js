@@ -140,6 +140,9 @@
                             $itemBtn.toggleClass("cancel-mode", eventData.is_booked == 'true');
                             //$item.toggleClass('booked', (eventData.is_booked == 'true'));
                         }
+                        else{
+                            alert(response.error);
+                        }
 
                     }, null, true);
                 });

@@ -2,7 +2,7 @@
   "name": "lishsingcare",
   "description": "lishsingcare",
   "version": "0.0.0",
-  "devDependencies":{
+  "devDependencies": {
     "grunt": "~0.4.2",
     "matchdep": "",
     "grunt-contrib-jshint": "",
@@ -21,6 +21,11 @@
     "grunt-newer": ""
   },
   "dependencies": {
-    "imagemin-mozjpeg": "^6.0.0"
+    "chalk": "^2.4.1",
+    "cors": "^2.8.4",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^6.0.0",
+    "node-media-server": "^1.4.6",
+    "node-rtsp-stream": "0.0.3"
   }
 }

@@ -27,7 +27,8 @@ window._FAKE_DATA_ =
     "login_status":
     {
         // 已登入的話傳回 true (string)
-        "status": 'true'
+        "status": 'true',
+        "pop_questionnaire": "true"
     },
 
     /*** API 登出 ***/
@@ -618,7 +619,7 @@ window._FAKE_DATA_ =
         // 關於我
         "about_me":
         {
-            "title": "張三豐",
+            //"title": "張三豐",
             "name": "張三豐",
             "gender": "男",
             "birthday": "1999 / 99 / 99",

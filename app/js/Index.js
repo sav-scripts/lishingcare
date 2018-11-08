@@ -310,15 +310,27 @@
         {
             var $sample = $container.find(".sample:nth-child("+index+")");
 
-            $sample.find(".image").css("background-image", "url("+data.images[keyword][imageType]+")");
 
-            $sample.on("click", function(event)
+            if(data.images[keyword])
             {
-                event.preventDefault();
+                $sample.unbind("click");
 
-                //Hash.to("/Environmental/Rooms");
-                Hash.to(hash);
-            });
+                $sample.find(".image").css("background-image", "url("+data.images[keyword][imageType]+")");
+
+                $sample.on("click", function(event)
+                {
+                    event.preventDefault();
+
+                    //Hash.to("/Environmental/Rooms");
+                    Hash.to(hash);
+                });
+            }
+            else
+            {
+                $sample.css("display", "none");
+            }
+
+
         }
     }
 

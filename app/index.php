@@ -1,13 +1,13 @@
 <?php
 
-$siteName = '';
-$serviceEmail = 'd32438@tier.org.tw';
-$gaCode = 'UA-47951656-19';
-$copyRight = 'Copyright 2017 APEC SME Monitor. All Rights Reserved';
-$metaTitle = '';
-$metaKeyword = '';
-$metaDescription = '';
-$metaUrl = '';
+$site_name = '麗格產後護理之家';
+$meta_title = '麗格產後護理之家';
+$meta_description = '';
+$meta_keyword = '';
+$meta_url = '';
+$service_email = '';
+$ga_id = '';
+$copyright = 'CopyRight (c) 2018　LIHSIN POSTPARTUM CAREー All Rights Reserved.';
 
 $tel = '0286269555';
 $telText = '02-8626-9555';
@@ -18,14 +18,21 @@ $googleMap = "https://www.google.com.tw/maps/place/251%E6%96%B0%E5%8C%97%E5%B8%8
 $test_hosts = array("local.savorks.com");
 if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 {
-    @include "meta.php";
+    @include dirname(__FILE__)."/api/information_tp.php";
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <title>麗格產後護理之家</title>
+    <title><?=$site_name?></title>
+
+    <meta property="og:title" content="<?=$meta_title?>" />
+    <meta property="og:keyword" content="<?=$meta_keyword?>" />
+    <meta property="og:type" content="health" />
+    <meta property="og:url" content="<?=$meta_url?>" />
+    <meta property="og:description" content="<?=$meta_description?>" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
 
@@ -243,7 +250,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
         <div class="copy-right">
 
-            <div class="text">CopyRight (c) 2018　LIHSIN POSTPARTUM CAREー All Rights Reserved.</div>
+            <div class="text"><?=$copyright?></div>
         </div>
 
 

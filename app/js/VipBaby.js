@@ -79,7 +79,7 @@
 
                         var $container = $doms.contents["/AboutMe"],
                             data = _data.about_me;
-                        $container.find(".title-text").text(data.title);
+                        //$container.find(".title-text").text(data.title);
 
                         var detail =
                             data.name + "<br/>" +
