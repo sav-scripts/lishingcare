@@ -18,17 +18,17 @@ window._FAKE_DATA_ =
         "g_recaptcha_response": "xxxxxx"
     },
 
-    "login":
+    "login.response":
     {
-        "error": ''
+        "error": '',
+        "pop_questionnaire": "true"
     },
 
     /*** API 檢查登入狀態 ***/
     "login_status":
     {
         // 已登入的話傳回 true (string)
-        "status": 'true',
-        "pop_questionnaire": "true"
+        "status": 'true'
     },
 
     /*** API 登出 ***/
@@ -653,6 +653,34 @@ window._FAKE_DATA_ =
             }
 
         }
+    },
+
+    // 主站內呼叫, 取得使用者寶寶的監視器 web socket 網址, 和該會員的唯一識別碼, 供公開分享視訊網址呼叫
+    "vip_camera":
+    {
+        "error": "",
+
+        // web socket 網址
+        "ws_url": "ws://x.x.x.x/xxx",
+
+        // 會員的唯一識別碼, 供 get_vip_camera api 送出使用
+        "vip_token":"adsfaxcvwr123wsdfe"
+    },
+
+    // 公開分享視訊網址呼叫
+    "trade_vip_camera_token.send":
+    {
+        // 會員的唯一識別碼, 根據此碼傳回對應的 web socket url
+        "vip_token": "adsfaxcvwr123wsdfe"
+    },
+
+    "trade_vip_camera_token.response":
+    {
+        // 錯誤訊息, 如果該會員已退房, 視訊網址過期, 傳回: "outdated"
+        "error": "",
+
+        "ws_url": "ws://x.x.x.x/xxx"
     }
+
 
 };
