@@ -30,7 +30,7 @@ window._FAKE_DATA_ =
         // 已登入的話傳回 true (string)
         "status": 'true',
 
-        // 會員的唯一識別碼, 一個可以做為網址參數的字串, 供 get_vip_camera api 送出使用
+        // 會員的唯一識別碼, 一個可以做為網址參數的字串, 供 trade_vip_camera_token api 送出使用
         "vip_token":"adsfaxcvwr123wsdfe"
     },
 
