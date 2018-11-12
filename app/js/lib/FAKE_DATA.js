@@ -663,7 +663,7 @@ window._FAKE_DATA_ =
         // web socket 網址
         "ws_url": "ws://x.x.x.x/xxx",
 
-        // 會員的唯一識別碼, 供 get_vip_camera api 送出使用
+        // 會員的唯一識別碼, 一個可以做為網址參數的字串, 供 get_vip_camera api 送出使用
         "vip_token":"adsfaxcvwr123wsdfe"
     },
 
