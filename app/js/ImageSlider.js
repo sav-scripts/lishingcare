@@ -143,6 +143,11 @@
                 obj.$image.css('background-image', 'url('+imageSrc+')');
 
             }
+        },
+
+        destroy: function()
+        {
+            this.stop();
         }
 
     };

@@ -184,6 +184,7 @@ window._FAKE_DATA_ =
         // 設施
         "facilites":
         {
+            /*
             "title": "像度假‧也像回家",
             "detail":
                 "麗格緊鄰淡水河畔，擁有39間客房，<br/>"+
@@ -198,8 +199,180 @@ window._FAKE_DATA_ =
                 "pc": "./test/images/env-part-1-image.jpg",
                 "mobile": ""
             },
+            */
+
+            "rooms":
+            [
+                {
+                    // 唯一 id, 使用可接在網址 hash 的文字格式
+                    "id": "001",
+
+                    // 縮圖, pc: 250 x 745, mobile: 600 x 292
+                    "thumb":{
+                        "pc": "./test/images/env-part-2-image-1.jpg",
+                        "mobile": "./test/images/env-part-2-image-1.m.jpg"
+                    },
+
+                    "name_ch": "精緻房",
+                    "name_en": "Superior Room",
+
+                    // 內頁輪播圖, pc: 1280 x 730, mobile: 640 x 390
+                    "images":
+                        [
+                            {
+                                "pc": "./test/images/env-room-sample-1.jpg",
+                                "mobile": "./test/images/env-room-sample-1.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-2.jpg",
+                                "mobile": "./test/images/env-room-sample-2.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-3.jpg",
+                                "mobile": "./test/images/env-room-sample-3.m.jpg"
+                            }
+                        ],
+
+                    // 特色說明
+                    "features":
+                        "<li>精品級飯店設計，一進房灑落的暖黃光，為空間營造放鬆氛圍。</li>"+
+                        "<li>獨立筒雙人床、坐躺兩用的貴妃椅，讓產後媽媽和新手爸爸，可以充分享受休息時光。</li>",
+
+                    // 設備介紹
+                    "equipments":
+                        "<li>全室採用門禁感應管理系統</li>"+
+                        "<li>全自動免治馬桶</li>"+
+                        "<li>超五星雙人加大獨立統床墊</li>"+
+                        "<li>免費提供電動吸乳器、獨立奶瓶消毒鍋</li>"+
+                        "<li>全熱交換器、緊急呼叫鈴系統</li>"+
+                        "<li>全室寬頻無線上網</li>"+
+                        "<li>浴室附高級沐浴盥洗組、暖風設備</li>"+
+                        "<li>24小時寶寶及時影像觀看系統</li>"
+                },
+                {
+                    "id": "002",
+                    "thumb":{
+                        "pc": "./test/images/env-part-2-image-2.jpg",
+                        "mobile": "./test/images/env-part-2-image-2.m.jpg"
+                    },
+
+                    "name_ch": "典雅房",
+                    "name_en": "Elegant Room",
+
+                    "images":
+                        [
+                            {
+                                "pc": "./test/images/env-room-sample-1.jpg",
+                                "mobile": "./test/images/env-room-sample-1.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-2.jpg",
+                                "mobile": "./test/images/env-room-sample-2.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-3.jpg",
+                                "mobile": "./test/images/env-room-sample-3.m.jpg"
+                            }
+                        ],
+                    "features":
+                    "<li>獨立筒雙人床、坐躺兩用的貴妃椅，讓產後媽媽和新手爸爸，可以充分享受休息時光。</li>",
+                    "equipments":
+                    "<li>24小時寶寶及時影像觀看系統</li>"
+                },
+                {
+                    "id": "003",
+                    "thumb":{
+                        "pc": "./test/images/env-part-2-image-3.jpg",
+                        "mobile": "./test/images/env-part-2-image-3.m.jpg"
+                    },
+
+                    "name_ch": "豪華房",
+                    "name_en": "Deluxe Room",
+
+                    "images":
+                        [
+                            {
+                                "pc": "./test/images/env-room-sample-1.jpg",
+                                "mobile": "./test/images/env-room-sample-1.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-2.jpg",
+                                "mobile": "./test/images/env-room-sample-2.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-3.jpg",
+                                "mobile": "./test/images/env-room-sample-3.m.jpg"
+                            }
+                        ],
+                    "features":
+                        "<li>獨立筒雙人床、坐躺兩用的貴妃椅，讓產後媽媽和新手爸爸，可以充分享受休息時光。</li>",
+                    "equipments":
+                        "<li>24小時寶寶及時影像觀看系統</li>"
+                },
+                {
+                    "id": "004",
+                    "thumb":{
+                        "pc": "./test/images/env-part-2-image-4.jpg",
+                        "mobile": "./test/images/env-part-2-image-4.m.jpg"
+                    },
+
+                    "name_ch": "貴賓房",
+                    "name_en": "VIP Room",
+
+                    "images":
+                        [
+                            {
+                                "pc": "./test/images/env-room-sample-1.jpg",
+                                "mobile": "./test/images/env-room-sample-1.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-2.jpg",
+                                "mobile": "./test/images/env-room-sample-2.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-3.jpg",
+                                "mobile": "./test/images/env-room-sample-3.m.jpg"
+                            }
+                        ],
+                    "features":
+                        "<li>獨立筒雙人床、坐躺兩用的貴妃椅，讓產後媽媽和新手爸爸，可以充分享受休息時光。</li>",
+                    "equipments":
+                        "<li>24小時寶寶及時影像觀看系統</li>"
+                },
+                {
+                    "id": "005",
+                    "thumb":{
+                        "pc": "./test/images/env-part-2-image-5.jpg",
+                        "mobile": "./test/images/env-part-2-image-5.m.jpg"
+                    },
+
+                    "name_ch": "尊爵房",
+                    "name_en": "Monarch Room",
+
+                    "images":
+                        [
+                            {
+                                "pc": "./test/images/env-room-sample-1.jpg",
+                                "mobile": "./test/images/env-room-sample-1.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-2.jpg",
+                                "mobile": "./test/images/env-room-sample-2.m.jpg"
+                            },
+                            {
+                                "pc": "./test/images/env-room-sample-3.jpg",
+                                "mobile": "./test/images/env-room-sample-3.m.jpg"
+                            }
+                        ],
+                    "features":
+                        "<li>獨立筒雙人床、坐躺兩用的貴妃椅，讓產後媽媽和新手爸爸，可以充分享受休息時光。</li>",
+                    "equipments":
+                        "<li>24小時寶寶及時影像觀看系統</li>"
+                }
+            ],
 
             // 房型設定, 分小型房 small 和大型房 large 兩種
+            /*
             "rooms":
             [
                 {
@@ -337,6 +510,7 @@ window._FAKE_DATA_ =
                 }
 
             ],
+            */
 
             // 設施特色
             "features":

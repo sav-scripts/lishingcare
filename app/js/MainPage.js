@@ -344,6 +344,10 @@
             if(hashArray.length === 1)
             {
                 ScrollListener.scrollTo(0);
+                if(contentClass.toContent)
+                {
+                    contentClass.toContent('');
+                }
             }
             else if(hashArray.length === 2)
             {

@@ -1190,7 +1190,10 @@ body.mapping{
                 position: relative;
                 display: inline-block;
 
-                width: 377px;
+                @image-width: 377px;
+                @image-height: 251px;
+
+                width: @image-width;
                 margin: 0 8px;
 
                 cursor: pointer;
@@ -1204,9 +1207,31 @@ body.mapping{
 
                 .image{
                     position: relative;
-                    width: 100%;
-                    height: 251px;
+                    width: @image-width;
+                    height: @image-height;
                     background-color: rgba(255, 0, 0, .4);
+                    background-size: 100% 100%;
+
+                    transition: background-size .3s ease-out, background-position .3s ease-out;
+                }
+
+                &:hover{
+                    .image{
+                        background-size: 106% 106%;
+                        background-position: (-@image-width * .03) (-@image-height * .03);
+
+                    }
+
+                }
+
+                .deco{
+                    @bleed: 10px;
+                    position: absolute;
+                    width: @image-width - (@bleed * 2) - 2px;
+                    height: @image-height - (@bleed * 2) - 2px;
+                    left: @bleed;
+                    top: @bleed;
+                    border: 1px solid rgba(255,255,255,.5);
                 }
 
                 .sample-bottom{
@@ -1525,12 +1550,16 @@ body.mapping{
                         height: 67px;
                         margin: 0 auto 0;
 
+                        display: block;
+
                         .image-bg('index-care-title.png');
                     }
 
                     .title-text{
                         position: relative;
                         margin: 6px auto 0;
+
+                        display: block;
 
                         .default-font(15.63px, @brown, 1px);
                         text-align: center;
@@ -1542,6 +1571,8 @@ body.mapping{
                         background-color: @brown;
                         width: 446px;
                         height: 1px;
+
+                        display: block;
                     }
 
                     .contents{
@@ -2459,421 +2490,667 @@ body.mapping{
 
 /* environmental */
 #environmental{
-    .common-content();
 
-    .part-1{
-        position: relative;
-        width: 100%;
-//        min-height: 1000px;
-        overflow: hidden;
-
-        .title-image{
-            position: relative;
-            width: 491px;
-            height: 52px;
-            .image-bg("env-title.png");
-            margin: 28px auto 0;
+    &.sub-mode{
+        .env-sub{
+            display: block;
         }
 
-        .title-text{
-            position: relative;
-            margin: 9px auto 17px;
-            .default-font(15.6px, @brown, 4px);
-            text-align: center;
+        .env-main{
+            display: none;
         }
-
-
-
-        .left-part{
-            position: relative;
-            float: left;
-            width: 640px;
-            height: 444px;
-//            .image-bg("env-part-1-image.jpg");
-        }
-
-        .right-part{
-
-            position: relative;
-            float: right;
-            width: 640px;
-            height: 444px;
-            .image-bg("env-part-1-bg.png");
-
-            .title{
-                position: relative;
-                margin: 113px auto 0;
-                .default-font(16.56px, @brown, 4px);
-                text-align: center;
-            }
-
-            .line{
-                position: relative;
-                width: 364px;
-                height: 1px;
-                background-color: @brown;
-                margin: 19px auto 0;
-            }
-
-            .detail{
-                position: relative;
-                margin: 13px auto 0;
-                .default-font(14.58px, @dark-gray-brown, 1px);
-                text-align: center;
-                line-height: 29px;
-
-            }
-        }
-
     }
 
-    .part-2{
+    .env-sub{
         position: relative;
         width: 100%;
-        overflow: hidden;
-//        min-height: 2000px;
+//        height: 2000px;
+//        background-color: #005cc5;
+        background-color: #ffffff;
 
-        .container{
-            position: relative;
-            overflow: hidden;
+        display: none;
 
-            @room-gap-x: 24px;
-
-            width: 776px + @room-gap-x;
-            margin: 55px auto 23px;
-
-            .room{
-
-                position: relative;
-                float: left;
-
-                margin: 0 (@room-gap-x * .5) 30px;
-
-                cursor: pointer;
-
-                &:last-child{
-                    margin-bottom: 0;
-                }
-
-                .image{
-                    position: relative;
-                    width: 100%;
-                }
-
-                .detail{
-                    position: relative;
-                    width: 100%;
-                    height: 70px;
-                    background-color: #e9e5df;
-
-                    .line{
-                        position: absolute;
-                        width: 1px;
-                        height: 40px;
-                        background-color: @dark-gray-brown;
-                        left: 50%;
-                        top: 18px;
-                        margin-left: 8px;
-                    }
-
-                    .left-part{
-
-                        position: absolute;
-                        left: 50%;
-                        margin-left: -169px;
-                        top: 29px;
-                        .default-font(14px, @dark-gray-brown, .5px);
-
-                        width: 160px;
-                        text-align: center;
-
-                    }
-
-                    .right-part{
-                        position: absolute;
-                        left: 50%;
-                        margin-left: 42px;
-                        top: 16px;
-                        .row{
-                            position: relative;
-                            .default-font(12.85px, @dark-gray-brown, .5px);
-                            margin-bottom: 4px;
-                        }
-                    }
-                }
-            }
-
-            .room.small{
-                width: 376px;
-
-                .image{
-                    height: 250px;
-                }
-
-                .detail{
-                }
-            }
-
-            .room.large{
-                width: 776px;
-
-                .image{
-                    height: 400px;
-                }
-
-                .detail{
-                }
-            }
-
-            .my-mixin (@i) when (@i <= 5){
-
-                .room:nth-child(@{i}){
-                    .image{
-//                        .image-bg("env-room-@{i}.jpg");
-                    }
-                }
-
-                .my-mixin(@i + 1);
-            }
-
-            .my-mixin(1);
-        }
-
-        .triangle{
-            position: relative;
-            width: 29px;
-            height: 29px;
-            .image-bg("triangle-2.png");
-            margin: 0 auto;
-        }
-
-    }
-
-    .part-3{
-        position: relative;
-        width: 100%;
-//        min-height: 276px;
         overflow: hidden;
 
-        background-color: #f2f0ec;
-
-        .container{
+        .sub-key-images{
             position: relative;
             width: 100%;
-
-            overflow: hidden;
-
-            margin: 28px 0 13px 274px;
-
-            .item{
-                position: relative;
-                float: left;
-                width: 450px;
-
-                margin-bottom: 17px;
-
-                .title{
-                    position: relative;
-                    .default-font(14px, @brown, 1px);
-
-                    .heart{
-                        display: inline-block;
-                        width: 20px;
-                        height: 18px;
-                        .image-bg("heart-icon.png");
-                        margin: 0 7px -3px 0;
-                    }
-                }
-
-                .detail{
-                    position: relative;
-                    .default-font(14px, @dark-gray-brown, 1px);
-
-                    margin: 3px 0 0 2px;
-
-                }
-            }
-        }
-    }
-
-    .part-4{
-        position: relative;
-        width: 100%;
-
-        .image-bg("env-part-4-bg.jpg");
-        background-repeat: repeat-y;
-        overflow: hidden;
-
-//        min-height: 1000px;
-
-        .title-image{
-            position: relative;
-            margin: 29px auto 0;
-            width: 255px;
-            height: 45px;
-            .image-bg("env-part-4-title.png");
+            height: 730px;
         }
 
         .title-text{
-            position: relative;
-            margin: 14px auto 0;
-            .default-font(15.63px, @brown, 3px);
+            .default-font(32.23px, @brown, 4px);
             text-align: center;
-        }
-
-        .container{
-            position: relative;
-            overflow: hidden;
-
-            @room-gap-x: 24px;
-
-            width: 776px + @room-gap-x;
-            margin: 17px auto 35px;
-
-            .room{
-
-                position: relative;
-                float: left;
-                margin: 0 (@room-gap-x * .5) 15px;
-
-                cursor: pointer;
-
-                .image{
-                    position: relative;
-                    width: 376px;
-                    height: 222px;
-
-
-                }
-                .detail{
-                    position: relative;
-                    height: 30px;
-                    background-color: #a9947c;
-
-                    overflow: hidden;
-
-                    .text{
-                        position: relative;
-                        margin: 6px auto 0;
-                        .default-font(12.85px, white, 4px);
-                        text-align: center;
-                    }
-                }
-            }
-
-            .my-loop (@i) when (@i <= 4){
-                .room:nth-child(@{i}){
-//                    .image-bg("env-part-4-image-@{i}.jpg");
-                }
-
-                .my-loop(@i + 1);
-            }
-            .my-loop(1);
-        }
-
-    }
-
-    .part-5{
-        position: relative;
-        width: 100%;
-
-        overflow: hidden;
-
-        .title-image{
-            position: relative;
-            width: 260px;
-            height: 66px;
-            .image-bg("env-part-5-title.png");
             margin: 30px auto 0;
         }
 
-        .title-text{
-            position: relative;
-            .default-font(15.63px, @pink, 4px);
-            text-align: center;
-            margin: -7px auto 0;
+        .line{
+            margin: 30px auto 0;
+            background-color: @brown;
+            width: 332px;
+            height: 1px;
+
         }
 
-        .container{
-            position: relative;
-            width: 100%;
-            margin: 20px 0 13px;
-            text-align: center;
-        }
-        .part{
-            position: relative;
-            display: inline-block;
-
+        .detail{
             overflow: hidden;
 
-            vertical-align: top;
+            margin: 0 auto 0;
+            width: 100%;
+            min-height: 488px;
+            .image-bg('env-sub-page-bg.jpg');
+            background-repeat: repeat-y;
 
-            @part-width: 350px;
-
-            width: @part-width;
-//            height: 600px;
-//            background-color: rgba(255, 0, 0, .5);
-
-            margin: 0 30px 0;
-
-            .image{
-                position: relative;
-                width: 300px;
-                height: 300px;
-                margin: 0 auto 0;
-                background-color: green;
-
-                .cover{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    .image-bg("env-baby-room-cover.png");
-                }
-            }
-
-            &:nth-child(1) .image{
-                .image-bg("env-part-5-image-1.jpg");
-            }
-
-            &:nth-child(2) .image{
-                .image-bg("env-part-5-image-2.jpg");
-            }
-
-            .title{
-                margin: 19px 0 0 5px;
-                .default-font(16.67px, @pink, 2px);
-                text-align: left;
-            }
-
-            .item{
-                position: relative;
-                margin: 20px 0 24px 0;
-                width: 100%;
+            .features, .equipments{
                 overflow: hidden;
 
-                .heart{
-                    position: relative;
-                    float: left;
-                    width: 20px;
-                    height: 19px;
-                    margin: 0 5px 0;
-                    .image-bg("heart-icon-2.png");
+                width: 100%;
+                display: table;
+                margin: 40px auto;
+
+                .left-part{
+                    display: table-cell;
+                    vertical-align: middle;
+//                    float: left;
+
+                    width: 280px;
+                    .text{
+                        .default-font(24.24px, @brown, 4px);
+                        width: 100%;
+                        text-align: center;
+
+                    }
                 }
 
-                .detail{
-                    position: relative;
-                    float: left;
-                    width: @part-width - 10px - 20px;
-                    .default-font(14.44px, @dark-gray-brown, 1px);
-                    text-align: left;
+                .middle-part{
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 1px;
+                    .middle-line{
 
+                        height: 111px;
+                        width: 1px;
+                        background-color: @brown;
+                    }
+                }
+
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                li {
+                    padding-left: 30px;
+                    text-indent: -.7em;
+                }
+
+                li::before {
+                    content: "• ";
+                    color: @brown; /* or whatever color you prefer */
+                }
+
+                .right-part{
+                    display: table-cell;
+                    vertical-align: middle;
+
+                    width: 800px;
+
+                   li{
+                       .default-font(16.46px, @dark-gray-brown, 2px);
+                       margin: 5px 0;
+                       min-width: 400px;
+                       float: left;
+                   }
+                }
+            }
+
+            .middle-line{
+                width: 100%;
+                height: 1px;
+                background-color: @brown;
+            }
+
+            .btn-back{
+                width: 185px;
+                height: 43px;
+                margin: 40px auto 40px;
+                border: 1px solid @brown;
+
+                text-align: center;
+
+                .default-font(19px; @brown; 1px);
+                line-height: 43px;
+
+                cursor: pointer;
+
+                &:active{
+                    margin: 41px auto 39px;
                 }
             }
         }
     }
 
-    .back-to-top{
-        .back-to-top(#e1d6e0);
+    .env-main {
+
+        .common-content();
+
+        .part-1 {
+            position: relative;
+            width: 100%;
+            //        min-height: 1000px;
+            overflow: hidden;
+
+            .title-image {
+                position: relative;
+                width: 491px;
+                height: 52px;
+                .image-bg("env-title.png");
+                margin: 28px auto 0;
+            }
+
+            .title-text {
+                position: relative;
+                margin: 9px auto 17px;
+                .default-font(15.6px, @brown, 4px);
+                text-align: center;
+            }
+
+            .left-part {
+                position: relative;
+                float: left;
+                width: 640px;
+                height: 444px;
+                //            .image-bg("env-part-1-image.jpg");
+            }
+
+            .right-part {
+
+                position: relative;
+                float: right;
+                width: 640px;
+                height: 444px;
+                .image-bg("env-part-1-bg.png");
+
+                .title {
+                    position: relative;
+                    margin: 113px auto 0;
+                    .default-font(16.56px, @brown, 4px);
+                    text-align: center;
+                }
+
+                .line {
+                    position: relative;
+                    width: 364px;
+                    height: 1px;
+                    background-color: @brown;
+                    margin: 19px auto 0;
+                }
+
+                .detail {
+                    position: relative;
+                    margin: 13px auto 0;
+                    .default-font(14.58px, @dark-gray-brown, 1px);
+                    text-align: center;
+                    line-height: 29px;
+
+                }
+            }
+
+        }
+
+        .part-2 {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            //        min-height: 2000px;
+
+            .container {
+
+                position: relative;
+                overflow: hidden;
+
+                @block-width: 250px;
+                @block-height: 475px;
+
+                @block-gap-x: 1px;
+
+                //            width: 776px + @room-gap-x;
+                //            margin: 55px auto 23px;
+                width: 100%;
+
+                text-align: center;
+
+                margin-bottom: 20px;
+
+                .room {
+                    display: inline-block;
+                    width: @block-width;
+                    height: @block-height;
+                    position: relative;
+                    margin: 0 @block-gap-x 20px;
+                    //                .image-bg-test('env-part-2-image-1.jpg');
+
+                    background-size: 100% 100%;
+                    transition: background-size .3s ease-out, background-position .3s ease-out;
+
+                    cursor: pointer;
+
+                    .deco {
+                        @bleed: 10px;
+                        position: absolute;
+                        width: @block-width - (@bleed * 2) - 2px;
+                        height: @block-height - (@bleed * 2) - 2px;
+                        border: 1px solid rgba(255, 255, 255, .4);
+                        left: @bleed;
+                        top: @bleed;
+                    }
+
+                    .detail {
+                        position: absolute;
+                        bottom: 55px;
+                        width: 100%;
+
+                        transition: bottom .4s ease-out;
+
+                        .name-ch {
+                            .default-font(15.22px, white, 4px);
+                            position: absolute;
+                            bottom: 7px;
+                            text-align: center;
+                            width: 100%;
+                        }
+
+                        .name-en {
+                            .default-font(11.76px, white, 0);
+                            position: absolute;
+                            top: 8px;
+                            text-align: center;
+                            width: 100%;
+
+                        }
+
+                        .line {
+                            position: absolute;
+                            width: 20px;
+                            height: 1px;
+                            background-color: #ffffff;
+                            left: 50%;
+                            margin-left: -10px;
+
+                        }
+
+                    }
+
+                    .cover {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #726654;
+                        opacity: 0;
+                        transition: opacity .4s ease-out;
+                    }
+
+                    &:hover {
+
+                        background-size: 106% 106%;
+                        background-position: (-@block-width * .03) (-@block-height * .03);
+
+                        .cover {
+                            opacity: .35;
+                        }
+
+                        .detail {
+                            bottom: 50%;
+                        }
+                    }
+                }
+
+            }
+
+            /*
+            .container{
+                position: relative;
+                overflow: hidden;
+
+                @room-gap-x: 24px;
+
+                width: 776px + @room-gap-x;
+                margin: 55px auto 23px;
+
+                .room{
+
+                    position: relative;
+                    float: left;
+
+                    margin: 0 (@room-gap-x * .5) 30px;
+
+                    cursor: pointer;
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+
+                    .image{
+                        position: relative;
+                        width: 100%;
+                    }
+
+                    .detail{
+                        position: relative;
+                        width: 100%;
+                        height: 70px;
+                        background-color: #e9e5df;
+
+                        .line{
+                            position: absolute;
+                            width: 1px;
+                            height: 40px;
+                            background-color: @dark-gray-brown;
+                            left: 50%;
+                            top: 18px;
+                            margin-left: 8px;
+                        }
+
+                        .left-part{
+
+                            position: absolute;
+                            left: 50%;
+                            margin-left: -169px;
+                            top: 29px;
+                            .default-font(14px, @dark-gray-brown, .5px);
+
+                            width: 160px;
+                            text-align: center;
+
+                        }
+
+                        .right-part{
+                            position: absolute;
+                            left: 50%;
+                            margin-left: 42px;
+                            top: 16px;
+                            .row{
+                                position: relative;
+                                .default-font(12.85px, @dark-gray-brown, .5px);
+                                margin-bottom: 4px;
+                            }
+                        }
+                    }
+                }
+
+                .room.small{
+                    width: 376px;
+
+                    .image{
+                        height: 250px;
+                    }
+
+                    .detail{
+                    }
+                }
+
+                .room.large{
+                    width: 776px;
+
+                    .image{
+                        height: 400px;
+                    }
+
+                    .detail{
+                    }
+                }
+
+                .my-mixin (@i) when (@i <= 5){
+
+                    .room:nth-child(@{i}){
+                        .image{
+    //                        .image-bg("env-room-@{i}.jpg");
+                        }
+                    }
+
+                    .my-mixin(@i + 1);
+                }
+
+                .my-mixin(1);
+            }
+            */
+            .triangle {
+                position: relative;
+                width: 29px;
+                height: 29px;
+                .image-bg("triangle-2.png");
+                margin: 0 auto;
+            }
+
+        }
+
+        .part-3 {
+            position: relative;
+            width: 100%;
+            //        min-height: 276px;
+            overflow: hidden;
+
+            background-color: #f2f0ec;
+
+            .container {
+                position: relative;
+                width: 100%;
+
+                overflow: hidden;
+
+                margin: 28px 0 13px 274px;
+
+                .item {
+                    position: relative;
+                    float: left;
+                    width: 450px;
+
+                    margin-bottom: 17px;
+
+                    .title {
+                        position: relative;
+                        .default-font(14px, @brown, 1px);
+
+                        .heart {
+                            display: inline-block;
+                            width: 20px;
+                            height: 18px;
+                            .image-bg("heart-icon.png");
+                            margin: 0 7px -3px 0;
+                        }
+                    }
+
+                    .detail {
+                        position: relative;
+                        .default-font(14px, @dark-gray-brown, 1px);
+
+                        margin: 3px 0 0 2px;
+
+                    }
+                }
+            }
+        }
+
+        .part-4 {
+            position: relative;
+            width: 100%;
+
+            .image-bg("env-part-4-bg.jpg");
+            background-repeat: repeat-y;
+            overflow: hidden;
+
+            //        min-height: 1000px;
+
+            .title-image {
+                position: relative;
+                margin: 29px auto 0;
+                width: 255px;
+                height: 45px;
+                .image-bg("env-part-4-title.png");
+            }
+
+            .title-text {
+                position: relative;
+                margin: 14px auto 0;
+                .default-font(15.63px, @brown, 3px);
+                text-align: center;
+            }
+
+            .container {
+                position: relative;
+                overflow: hidden;
+
+                @room-gap-x: 24px;
+
+                width: 776px + @room-gap-x;
+                margin: 17px auto 35px;
+
+                .room {
+
+                    position: relative;
+                    float: left;
+                    margin: 0 (@room-gap-x * .5) 15px;
+
+                    cursor: pointer;
+
+                    .image {
+                        position: relative;
+                        width: 376px;
+                        height: 222px;
+
+                    }
+                    .detail {
+                        position: relative;
+                        height: 30px;
+                        background-color: #a9947c;
+
+                        overflow: hidden;
+
+                        .text {
+                            position: relative;
+                            margin: 6px auto 0;
+                            .default-font(12.85px, white, 4px);
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .my-loop (@i) when (@i <= 4) {
+                    .room:nth-child(@{i}) {
+                        //                    .image-bg("env-part-4-image-@{i}.jpg");
+                    }
+
+                    .my-loop(@i + 1);
+                }
+                .my-loop(1);
+            }
+
+        }
+
+        .part-5 {
+            position: relative;
+            width: 100%;
+
+            overflow: hidden;
+
+            .title-image {
+                position: relative;
+                width: 260px;
+                height: 66px;
+                .image-bg("env-part-5-title.png");
+                margin: 30px auto 0;
+            }
+
+            .title-text {
+                position: relative;
+                .default-font(15.63px, @pink, 4px);
+                text-align: center;
+                margin: -7px auto 0;
+            }
+
+            .container {
+                position: relative;
+                width: 100%;
+                margin: 20px 0 13px;
+                text-align: center;
+            }
+            .part {
+                position: relative;
+                display: inline-block;
+
+                overflow: hidden;
+
+                vertical-align: top;
+
+                @part-width: 350px;
+
+                width: @part-width;
+                //            height: 600px;
+                //            background-color: rgba(255, 0, 0, .5);
+
+                margin: 0 30px 0;
+
+                .image {
+                    position: relative;
+                    width: 300px;
+                    height: 300px;
+                    margin: 0 auto 0;
+                    background-color: green;
+
+                    .cover {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        .image-bg("env-baby-room-cover.png");
+                    }
+                }
+
+                &:nth-child(1) .image {
+                    .image-bg("env-part-5-image-1.jpg");
+                }
+
+                &:nth-child(2) .image {
+                    .image-bg("env-part-5-image-2.jpg");
+                }
+
+                .title {
+                    margin: 19px 0 0 5px;
+                    .default-font(16.67px, @pink, 2px);
+                    text-align: left;
+                }
+
+                .item {
+                    position: relative;
+                    margin: 20px 0 24px 0;
+                    width: 100%;
+                    overflow: hidden;
+
+                    .heart {
+                        position: relative;
+                        float: left;
+                        width: 20px;
+                        height: 19px;
+                        margin: 0 5px 0;
+                        .image-bg("heart-icon-2.png");
+                    }
+
+                    .detail {
+                        position: relative;
+                        float: left;
+                        width: @part-width - 10px - 20px;
+                        .default-font(14.44px, @dark-gray-brown, 1px);
+                        text-align: left;
+
+                    }
+                }
+            }
+        }
+
+        .back-to-top {
+            .back-to-top(#e1d6e0);
+        }
     }
 }
 

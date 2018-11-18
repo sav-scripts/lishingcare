@@ -297,6 +297,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <script src="js/Contact.js"></script>
     <script src="js/ImageSlider.js"></script>
     <script src="js/Environmental.js"></script>
+    <script src="js/Environmental.SubPage.js"></script>
     <script src="js/lib/MyLoader.js"></script>
     <script src="js/Calender.js"></script>
     <script src="js/Vip.js"></script>
