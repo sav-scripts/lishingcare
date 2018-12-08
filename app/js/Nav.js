@@ -155,6 +155,7 @@
 
                 self.switchMobileOpenMode(false);
                 self.toggleVipMenu(false);
+                Hash.to('/VipLive');
 
             });
 

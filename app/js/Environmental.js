@@ -10,6 +10,7 @@
 
         _data,
         _roomDic,
+        _publicAreaDic,
         _keyImageSlider;
 
     var self = window.Environmental =
@@ -73,7 +74,7 @@
 
                         $container.empty();
 
-                        _keyImageSlider = new ImageSlider(imageList, $container, "image");
+                        _keyImageSlider = new ImageSlider(imageList, $container);
                         _keyImageSlider.replaceImages(Main.viewport.imageType);
 
                     }());
@@ -256,7 +257,7 @@
             tl.add(function()
             {
                 self.SubPage.changeContent(hash);
-                ScrollListener.scrollTo(0)
+                ScrollListener.scrollTo(0);
 
                 self.SubPage.show();
 
@@ -282,9 +283,22 @@
             $container = $doms.container.find(".part-4 .container"),
             $sample = $($container.find(".room")[0]);
 
-        $container.empty();
 
-        for(i=0;i<dataList.length;i++){ buildArea(i); }
+        if(_publicAreaDic)
+        {
+            for(i=0;i<dataList.length;i++){ updateAreaImage(i); }
+        }
+        else
+        {
+            _publicAreaDic = {};
+            $container.empty();
+
+
+            $container.toggleClass("num-" + dataList.length);
+
+            for(i=0;i<dataList.length;i++){ buildArea(i); }
+        }
+
 
         $container.append('<div class="spacer"></div>');
 
@@ -293,6 +307,12 @@
             var areaData = dataList[index],
                 $area = $sample.clone();
 
+            var hash = "/" + index,
+                obj = _publicAreaDic[hash] = {};
+
+            obj.rawData = areaData;
+            obj.$area = $area;
+
 
             $area.on('click', function(event)
             {
@@ -300,10 +320,24 @@
                 ImageViewer.updateData(areaData.full_image).show();
             });
 
-            $area.find(".detail .text").html(areaData.title);
-            $area.find(".image").css("background-image", "url("+areaData.thumb[imageType]+")");
+            $area.find(".name-ch").html(areaData.title);
+
+            updateAreaImage(index);
 
             $container.append($area);
+        }
+
+
+
+        function updateAreaImage(index)
+        {
+            var hash = "/" + index,
+                obj = _publicAreaDic[hash];
+
+
+            obj.$area.css("background-image", "url("+obj.rawData.thumb[imageType]+")");
+
+            //_roomDic[id].$room.css("background-image", "url("+roomData.thumb[imageType]+")");
         }
     }
 
@@ -311,6 +345,8 @@
     {
         var data = _data.facilites,
             imageType = Main.viewport.imageType;
+
+
 
         //var $container = $doms.container.find(".part-1");
         //$container.find(".right-part .title").html(data.title);
@@ -332,6 +368,13 @@
         }
         else
         {
+            //data.rooms.pop();
+            //data.rooms.pop();
+            //data.rooms.pop();
+            //data.rooms.pop();
+
+            $roomContainer.toggleClass("num-" + data.rooms.length);
+
             _roomDic = {};
 
             $roomContainer.empty();

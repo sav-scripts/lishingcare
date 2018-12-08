@@ -28,7 +28,8 @@ window._FAKE_DATA_ =
     "login_status":
     {
         // 已登入的話傳回 true (string)
-        "status": 'true',
+        //"status": 'true',
+        "status": 'false',
 
         // 會員的唯一識別碼, 一個可以做為網址參數的字串, 供 trade_vip_camera_token api 送出使用
         "vip_token":"adsfaxcvwr123wsdfe"
@@ -207,7 +208,9 @@ window._FAKE_DATA_ =
                     // 唯一 id, 使用可接在網址 hash 的文字格式
                     "id": "001",
 
-                    // 縮圖, pc: 250 x 745, mobile: 600 x 292
+                    // 縮圖
+                    // pc: 高 475, 寬依據所有房型數量改變, 建議寬度:　1種=>寬1200, 2種=>寬600, 3種=>寬400, 4種=>寬300, 5種=>寬250
+                    // mobile: 600 x 292
                     "thumb":{
                         "pc": "./test/images/env-part-2-image-1.jpg",
                         "mobile": "./test/images/env-part-2-image-1.m.jpg"
@@ -564,7 +567,10 @@ window._FAKE_DATA_ =
                 "title":"六星級產後會所",
 
 
-                // 縮圖: pc: 376 x 222, mobile: 538 x 320
+
+                // 縮圖
+                // pc: 高 475, 寬依據所有房型數量改變, 建議寬度:　1種=>寬1200, 2種=>寬600, 3種=>寬400, 4種=>寬300, 5種=>寬250
+                // mobile: 600 x 292
                 "thumb":{
                     "pc": "./test/images/env-part-4-image-1.jpg",
                     "mobile": "./test/images/env-part-4-image-1.m.jpg"
@@ -839,12 +845,14 @@ window._FAKE_DATA_ =
         "vip_token": "adsfaxcvwr123wsdfe"
     },
 
-    "trade_vip_camera_token.response":
+    "trade_vip_camera_token":
     {
         // 錯誤訊息, 如果該會員已退房, 視訊網址過期, 傳回: "outdated"
         "error": "",
 
-        "ws_url": "ws://x.x.x.x/xxx"
+        "ws_url": "ws://54.64.234.197:8080/taichung_ch1",
+        "baby_name": "寶寶",
+        "mon_name": "媽媽"
     }
 
 

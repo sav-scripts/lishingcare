@@ -19,7 +19,9 @@
             debug: false,
 
             isiOS: false,
-            isLineBrowser: false
+            isLineBrowser: false,
+
+            liveToken: undefined
         },
 
         viewport:
@@ -65,6 +67,19 @@
             window._CLICK_ = (self.settings.isiOS)? "touchend": "click";
 
             ApiProxy.init(window._FAKE_DATA_);
+
+
+
+            if(Utility.urlParams['live'])
+            {
+                self.settings.liveToken = Utility.urlParams['live'];
+
+                //VipLive.validTokenExist(self.settings.liveToken, function(isExist)
+                //{
+                //
+                //});
+            }
+
 
             MyLoader.init(window._version);
             Nav.init();

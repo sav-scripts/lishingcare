@@ -77,7 +77,7 @@
 
                         $container.empty();
 
-                        _keyImageSlider = new ImageSlider(imageList, $container, "image");
+                        _keyImageSlider = new ImageSlider(imageList, $container);
                         _keyImageSlider.replaceImages(Main.viewport.imageType);
 
                     }());
@@ -189,6 +189,9 @@
             }
 
             $doms.parent.append($doms.container);
+
+
+            Footer.toggleHideMode(false);
 
             var tl = new TimelineMax;
             tl.set($doms.container, {autoAlpha: 0});

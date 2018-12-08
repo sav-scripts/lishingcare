@@ -768,7 +768,7 @@ body.mapping #scene-container .content-mask {
   height: 251px;
   background-color: rgba(255, 0, 0, 0.4);
   background-size: 100% 100%;
-  transition: background-size 0.3s ease-out, background-position 0.3s ease-out;
+  transition: background-size 0.7s ease-out, background-position 0.7s ease-out;
 }
 #index .environmental .sample-part .sample:hover .image {
   background-size: 106% 106%;
@@ -2190,8 +2190,8 @@ body.mapping #scene-container .content-mask {
   height: 475px;
   position: relative;
   margin: 0 1px 20px;
-  background-size: 100% 100%;
-  transition: background-size 0.3s ease-out, background-position 0.3s ease-out;
+  background-size: auto 100%;
+  transition: background-size 0.7s ease-out, background-position 0.7s ease-out;
   cursor: pointer;
 }
 #environmental .env-main .part-2 .container .room .deco {
@@ -2206,7 +2206,7 @@ body.mapping #scene-container .content-mask {
   position: absolute;
   bottom: 55px;
   width: 100%;
-  transition: bottom 0.4s ease-out;
+  transition: bottom 0.8s ease-out;
 }
 #environmental .env-main .part-2 .container .room .detail .name-ch {
   font-family: '微軟正黑體', "Heiti TC", serif;
@@ -2245,7 +2245,7 @@ body.mapping #scene-container .content-mask {
   transition: opacity 0.4s ease-out;
 }
 #environmental .env-main .part-2 .container .room:hover {
-  background-size: 106% 106%;
+  background-size: auto 106%;
   background-position: -7.5px -14.25px;
 }
 #environmental .env-main .part-2 .container .room:hover .cover {
@@ -2253,6 +2253,30 @@ body.mapping #scene-container .content-mask {
 }
 #environmental .env-main .part-2 .container .room:hover .detail {
   bottom: 50%;
+}
+#environmental .env-main .part-2 .container.num-1 .room {
+  width: 1200px;
+}
+#environmental .env-main .part-2 .container.num-1 .room .deco {
+  width: 1178px;
+}
+#environmental .env-main .part-2 .container.num-2 .room {
+  width: 600px;
+}
+#environmental .env-main .part-2 .container.num-2 .room .deco {
+  width: 578px;
+}
+#environmental .env-main .part-2 .container.num-3 .room {
+  width: 400px;
+}
+#environmental .env-main .part-2 .container.num-3 .room .deco {
+  width: 378px;
+}
+#environmental .env-main .part-2 .container.num-4 .room {
+  width: 300px;
+}
+#environmental .env-main .part-2 .container.num-4 .room .deco {
+  width: 278px;
 }
 #environmental .env-main .part-2 .triangle {
   position: relative;
@@ -2307,6 +2331,56 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/env-part-4-bg.jpg");
   background-repeat: repeat-y;
   overflow: hidden;
+  /*
+            .container {
+                position: relative;
+                overflow: hidden;
+
+                @room-gap-x: 24px;
+
+                width: 776px + @room-gap-x;
+                margin: 17px auto 35px;
+
+                .room {
+
+                    position: relative;
+                    float: left;
+                    margin: 0 (@room-gap-x * .5) 15px;
+
+                    cursor: pointer;
+
+                    .image {
+                        position: relative;
+                        width: 376px;
+                        height: 222px;
+
+                    }
+                    .detail {
+                        position: relative;
+                        height: 30px;
+                        background-color: #a9947c;
+
+                        overflow: hidden;
+
+                        .text {
+                            position: relative;
+                            margin: 6px auto 0;
+                            .default-font(12.85px, white, 4px);
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .my-loop (@i) when (@i <= 4) {
+                    .room:nth-child(@{i}) {
+                        //                    .image-bg("env-part-4-image-@{i}.jpg");
+                    }
+
+                    .my-loop(@i + 1);
+                }
+                .my-loop(1);
+            }
+            */
 }
 #environmental .env-main .part-4 .title-image {
   position: relative;
@@ -2317,7 +2391,7 @@ body.mapping #scene-container .content-mask {
 }
 #environmental .env-main .part-4 .title-text {
   position: relative;
-  margin: 14px auto 0;
+  margin: 14px auto 20px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 15.63px;
   color: #a18b73;
@@ -2327,34 +2401,85 @@ body.mapping #scene-container .content-mask {
 #environmental .env-main .part-4 .container {
   position: relative;
   overflow: hidden;
-  width: 800px;
-  margin: 17px auto 35px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 #environmental .env-main .part-4 .container .room {
+  display: inline-block;
+  width: 250px;
+  height: 475px;
   position: relative;
-  float: left;
-  margin: 0 12px 15px;
+  margin: 0 1px 20px;
+  background-size: auto 100%;
+  transition: background-size 0.7s ease-out, background-position 0.7s ease-out;
   cursor: pointer;
 }
-#environmental .env-main .part-4 .container .room .image {
-  position: relative;
-  width: 376px;
-  height: 222px;
+#environmental .env-main .part-4 .container .room .deco {
+  position: absolute;
+  width: 228px;
+  height: 453px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  left: 10px;
+  top: 10px;
 }
 #environmental .env-main .part-4 .container .room .detail {
-  position: relative;
-  height: 30px;
-  background-color: #a9947c;
-  overflow: hidden;
+  position: absolute;
+  bottom: 55px;
+  width: 100%;
+  transition: bottom 0.8s ease-out;
 }
-#environmental .env-main .part-4 .container .room .detail .text {
-  position: relative;
-  margin: 6px auto 0;
+#environmental .env-main .part-4 .container .room .detail .name-ch {
   font-family: '微軟正黑體', "Heiti TC", serif;
-  font-size: 12.85px;
+  font-size: 15.22px;
   color: white;
   letter-spacing: 4px;
+  position: absolute;
+  bottom: -10px;
   text-align: center;
+  width: 100%;
+}
+#environmental .env-main .part-4 .container .room .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #726654;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+#environmental .env-main .part-4 .container .room:hover {
+  background-size: auto 106%;
+  background-position: -7.5px -14.25px;
+}
+#environmental .env-main .part-4 .container .room:hover .cover {
+  opacity: 0.35;
+}
+#environmental .env-main .part-4 .container .room:hover .detail {
+  bottom: 50%;
+}
+#environmental .env-main .part-4 .container.num-1 .room {
+  width: 1200px;
+}
+#environmental .env-main .part-4 .container.num-1 .room .deco {
+  width: 1178px;
+}
+#environmental .env-main .part-4 .container.num-2 .room {
+  width: 600px;
+}
+#environmental .env-main .part-4 .container.num-2 .room .deco {
+  width: 578px;
+}
+#environmental .env-main .part-4 .container.num-3 .room {
+  width: 400px;
+}
+#environmental .env-main .part-4 .container.num-3 .room .deco {
+  width: 378px;
+}
+#environmental .env-main .part-4 .container.num-4 .room {
+  width: 300px;
+}
+#environmental .env-main .part-4 .container.num-4 .room .deco {
+  width: 278px;
 }
 #environmental .env-main .part-5 {
   position: relative;
@@ -2713,6 +2838,128 @@ body.mapping #scene-container .content-mask {
 #vip-course .part-1 .annotation .full-booked-node {
   background-position: left bottom;
 }
+/* vip live */
+#vip-live,
+#open-live {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  overflow: hidden;
+}
+#vip-live .key-images,
+#open-live .key-images {
+  position: relative;
+  width: 100%;
+  height: 393px;
+  background-image: url("../images/vip-live-key-image.jpg");
+}
+#vip-live .main-container,
+#open-live .main-container {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  overflow: hidden;
+}
+#vip-live .main-container .title-image,
+#open-live .main-container .title-image {
+  position: relative;
+  width: 340px;
+  height: 46px;
+  background-image: url("../images/vip-live-title.png");
+  margin: 26px auto 0;
+}
+#vip-live .main-container .title-text,
+#open-live .main-container .title-text {
+  position: relative;
+  margin: 20px auto 0;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 4px;
+  text-align: center;
+}
+#vip-live .main-container .video-container,
+#open-live .main-container .video-container {
+  width: 724px;
+  height: 500px;
+  margin: 30px auto 0;
+  border: 1px solid #a18b73;
+}
+#vip-live .main-container .video-container .video-canvas,
+#open-live .main-container .video-container .video-canvas {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 704px;
+  height: 480px;
+  background-color: #f0f0f0;
+}
+#vip-live .main-container .vip-detail,
+#open-live .main-container .vip-detail {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15.63px;
+  color: #a18b73;
+  letter-spacing: 1px;
+  margin: 30px auto 0;
+  width: 600px;
+  text-align: center;
+}
+#vip-live .main-container .bottom-text,
+#open-live .main-container .bottom-text {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13.54px;
+  color: #666464;
+  letter-spacing: 1px;
+  margin: 20px auto 0;
+  width: 600px;
+  text-align: center;
+}
+#vip-live .main-container .bottom-right-part,
+#open-live .main-container .bottom-right-part {
+  position: absolute;
+  right: 50%;
+  margin-right: -363px;
+  bottom: 100px;
+  width: 169px;
+  /*
+            .qr-code-container{
+                width: 169px;
+                height: 96px;
+                background-color: #e9e3de;
+                border-radius: 20px;
+
+                margin: 10px auto 0;
+
+                overflow: hidden;
+
+                .qr-code-block{
+                    width: 88px;
+                    height: 88px;
+                    background-color: white;
+
+                    margin: 4px auto 0;
+
+                    overflow: hidden;
+
+                    .qr-code{
+                        position: absolute;
+                        width: 80px;
+                        height: 80px;
+                        background-color: #000000;
+                        margin: 4px 4px;
+                    }
+                }
+            }
+            */
+}
+#vip-live .main-container .bottom-right-part .btn-share,
+#open-live .main-container .bottom-right-part .btn-share {
+  background-image: url("../images/vip-live-btn-share.png");
+  width: 166px;
+  height: 28px;
+  margin: 0 0 0 1px;
+  cursor: pointer;
+}
 #course-booking {
   position: fixed;
   left: 0;
@@ -2936,6 +3183,40 @@ body.mapping #scene-container .content-mask {
 }
 #image-viewer .container .middle-wrapper .ui .btn-close:active {
   margin: 11px auto 9px;
+}
+.image-slider-controller {
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
+  text-align: center;
+  z-index: 10;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.image-slider-controller .dot {
+  display: inline-block;
+  margin: 0 7px 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.image-slider-controller .dot .icon {
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  background-color: white;
+}
+.image-slider-controller .dot.selected .icon {
+  margin-left: 1px;
+  margin-top: 1px;
+  width: 18px;
+  height: 18px;
+  background-color: #aa9980;
 }
 /***** end *****/
 .my-calender {
@@ -4827,7 +5108,7 @@ body.mapping #scene-container .content-mask {
     position: relative;
     margin: 0 0 1px;
     background-size: 100% 100%;
-    transition: background-size 0.3s ease-out, background-position 0.3s ease-out;
+    transition: none;
     cursor: pointer;
     line-height: normal;
   }
@@ -4867,6 +5148,18 @@ body.mapping #scene-container .content-mask {
   #environmental .env-main .part-2 .container .room:hover {
     background-size: 100%;
     background-position: 0 0;
+  }
+  #environmental .env-main .part-2 .container.num-1 .room {
+    width: 600px;
+  }
+  #environmental .env-main .part-2 .container.num-2 .room {
+    width: 600px;
+  }
+  #environmental .env-main .part-2 .container.num-3 .room {
+    width: 600px;
+  }
+  #environmental .env-main .part-2 .container.num-4 .room {
+    width: 600px;
   }
   #environmental .env-main .part-2 .triangle {
     position: relative;
@@ -4913,6 +5206,47 @@ body.mapping #scene-container .content-mask {
   }
   #environmental .env-main .part-4 {
     background-image: url("../images/env-part-4-bg.m.jpg");
+    /*
+                .container {
+
+                    @room-gap-x: 24px;
+
+                    //                width: 776px + @room-gap-x;
+                    width: 640px;
+                    margin: 19px auto 29px;
+
+                    .room {
+
+                        float: none;
+                        margin: 0 auto 15px;
+
+                        width: 538px;
+
+                        .image {
+                            width: 538px;
+                            height: 320px;
+
+                        }
+                        .detail {
+                            height: 42px;
+
+                            .text {
+                                margin: 0 auto 0;
+                                .default-font(@mobile-text-size-1, white, 4px);
+                            }
+                        }
+                    }
+
+                    .my-loop (@i) when (@i <= 4) {
+                        .room:nth-child(@{i}) {
+                            //                        .image-bg("env-part-4-image-@{i}.m.jpg");
+                        }
+
+                        .my-loop(@i + 1);
+                    }
+                    .my-loop(1);
+                }
+                */
   }
   #environmental .env-main .part-4 .title-image {
     margin: 39px auto 0;
@@ -4925,27 +5259,59 @@ body.mapping #scene-container .content-mask {
     letter-spacing: 3px;
   }
   #environmental .env-main .part-4 .container {
-    width: 640px;
-    margin: 19px auto 29px;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+    margin-bottom: 20px;
   }
   #environmental .env-main .part-4 .container .room {
-    float: none;
-    margin: 0 auto 15px;
-    width: 538px;
+    display: inline-block;
+    width: 600px;
+    height: 292px;
+    position: relative;
+    margin: 0 0 1px;
+    background-size: 100%;
+    transition: none;
+    cursor: pointer;
+    line-height: normal;
   }
-  #environmental .env-main .part-4 .container .room .image {
-    width: 538px;
-    height: 320px;
+  #environmental .env-main .part-4 .container .room .deco {
+    display: none;
   }
   #environmental .env-main .part-4 .container .room .detail {
-    height: 42px;
+    bottom: 50%;
+    transition: none;
   }
-  #environmental .env-main .part-4 .container .room .detail .text {
-    margin: 0 auto 0;
+  #environmental .env-main .part-4 .container .room .detail .name-ch {
     font-family: '微軟正黑體', "Heiti TC", serif;
-    font-size: 29.17px;
+    font-size: 39.89px;
     color: white;
     letter-spacing: 4px;
+    bottom: -26px;
+  }
+  #environmental .env-main .part-4 .container .room .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #726654;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+  }
+  #environmental .env-main .part-4 .container .room:hover {
+    background-size: 100%;
+    background-position: 0 0;
+  }
+  #environmental .env-main .part-4 .container.num-1 .room {
+    width: 600px;
+  }
+  #environmental .env-main .part-4 .container.num-2 .room {
+    width: 600px;
+  }
+  #environmental .env-main .part-4 .container.num-3 .room {
+    width: 600px;
+  }
+  #environmental .env-main .part-4 .container.num-4 .room {
+    width: 600px;
   }
   #environmental .env-main .part-5 .title-image {
     margin: 30px auto 0;
@@ -5260,5 +5626,107 @@ body.mapping #scene-container .content-mask {
   }
   #vip-course .part-1 .annotation .full-booked-node {
     background-position: left bottom;
+  }
+  /* vip live */
+  #vip-live .key-images,
+  #open-live .key-images {
+    background-image: url("../images/vip-live-key-image.m.jpg");
+  }
+  #vip-live .main-container,
+  #open-live .main-container {
+    min-height: 840px;
+  }
+  #vip-live .main-container .title-image,
+  #open-live .main-container .title-image {
+    position: relative;
+    width: 494px;
+    height: 66px;
+    background-image: url("../images/vip-live-title.m.png");
+    margin: 26px auto 0;
+  }
+  #vip-live .main-container .title-text,
+  #open-live .main-container .title-text {
+    position: relative;
+    margin: 20px auto 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 29.17px;
+    color: #a18b73;
+    letter-spacing: 4px;
+    text-align: center;
+  }
+  #vip-live .main-container .video-container,
+  #open-live .main-container .video-container {
+    width: 594px;
+    height: 411px;
+    margin: 30px auto 0;
+    border: 1px solid #a18b73;
+  }
+  #vip-live .main-container .video-container .video-canvas,
+  #open-live .main-container .video-container .video-canvas {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 574px;
+    height: 391px;
+    background-color: #f0f0f0;
+  }
+  #vip-live .main-container .vip-detail,
+  #open-live .main-container .vip-detail {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 28.22px;
+    color: #a18b73;
+    letter-spacing: 1px;
+    margin: 30px auto 0;
+    width: 640px;
+    text-align: center;
+  }
+  #vip-live .main-container .bottom-text,
+  #open-live .main-container .bottom-text {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 24.46px;
+    color: #666464;
+    letter-spacing: 1px;
+    margin: 20px auto 0;
+    width: 640px;
+    text-align: center;
+  }
+  #vip-live .main-container .bottom-right-part,
+  #open-live .main-container .bottom-right-part {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 20px auto 0;
+    width: 294px;
+  }
+  #vip-live .main-container .bottom-right-part .btn-share,
+  #open-live .main-container .bottom-right-part .btn-share {
+    background-image: url("../images/vip-live-btn-share.m.png");
+    width: 294px;
+    height: 50px;
+    margin: 0;
+  }
+  .image-slider-controller {
+    bottom: 40px;
+  }
+  .image-slider-controller .dot {
+    display: inline-block;
+    margin: 0 11px 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .image-slider-controller .dot .icon {
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 20px;
+    background-color: white;
+  }
+  .image-slider-controller .dot.selected .icon {
+    margin-left: 1px;
+    margin-top: 1px;
+    width: 22px;
+    height: 22px;
+    background-color: #aa9980;
   }
 }

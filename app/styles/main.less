@@ -1212,7 +1212,7 @@ body.mapping{
                     background-color: rgba(255, 0, 0, .4);
                     background-size: 100% 100%;
 
-                    transition: background-size .3s ease-out, background-position .3s ease-out;
+                    transition: background-size .7s ease-out, background-position .7s ease-out;
                 }
 
                 &:hover{
@@ -2706,6 +2706,8 @@ body.mapping{
             overflow: hidden;
             //        min-height: 2000px;
 
+
+
             .container {
 
                 position: relative;
@@ -2732,8 +2734,9 @@ body.mapping{
                     margin: 0 @block-gap-x 20px;
                     //                .image-bg-test('env-part-2-image-1.jpg');
 
-                    background-size: 100% 100%;
-                    transition: background-size .3s ease-out, background-position .3s ease-out;
+                    background-size: auto 100%;
+
+                    transition: background-size .7s ease-out, background-position .7s ease-out;
 
                     cursor: pointer;
 
@@ -2752,7 +2755,7 @@ body.mapping{
                         bottom: 55px;
                         width: 100%;
 
-                        transition: bottom .4s ease-out;
+                        transition: bottom .8s ease-out;
 
                         .name-ch {
                             .default-font(15.22px, white, 4px);
@@ -2794,7 +2797,7 @@ body.mapping{
 
                     &:hover {
 
-                        background-size: 106% 106%;
+                        background-size: auto 106%;
                         background-position: (-@block-width * .03) (-@block-height * .03);
 
                         .cover {
@@ -2807,7 +2810,28 @@ body.mapping{
                     }
                 }
 
+
+                .set-num-for(@index; @block-width;){
+
+                    &.num-@{index}{
+                        @bleed: 10px;
+
+                        .room{
+                            width: @block-width;
+
+                            .deco {
+                                width: @block-width - (@bleed * 2) - 2px;
+                            }
+                        }
+                    }
+                }
+
+                .set-num-for(1; 1200px);
+                .set-num-for(2; 600px);
+                .set-num-for(3; 400px);
+                .set-num-for(4; 300px);
             }
+
 
             /*
             .container{
@@ -2993,11 +3017,118 @@ body.mapping{
 
             .title-text {
                 position: relative;
-                margin: 14px auto 0;
+                margin: 14px auto 20px;
                 .default-font(15.63px, @brown, 3px);
                 text-align: center;
             }
 
+            .container {
+
+                position: relative;
+                overflow: hidden;
+
+                @block-width: 250px;
+                @block-height: 475px;
+
+                @block-gap-x: 1px;
+
+                //            width: 776px + @room-gap-x;
+                //            margin: 55px auto 23px;
+                width: 100%;
+
+                text-align: center;
+
+                margin-bottom: 20px;
+
+                .room {
+                    display: inline-block;
+                    width: @block-width;
+                    height: @block-height;
+                    position: relative;
+                    margin: 0 @block-gap-x 20px;
+                    //                .image-bg-test('env-part-2-image-1.jpg');
+
+                    background-size: auto 100%;
+
+                    transition: background-size .7s ease-out, background-position .7s ease-out;
+
+                    cursor: pointer;
+
+                    .deco {
+                        @bleed: 10px;
+                        position: absolute;
+                        width: @block-width - (@bleed * 2) - 2px;
+                        height: @block-height - (@bleed * 2) - 2px;
+                        border: 1px solid rgba(255, 255, 255, .4);
+                        left: @bleed;
+                        top: @bleed;
+                    }
+
+                    .detail {
+                        position: absolute;
+                        bottom: 55px;
+                        width: 100%;
+
+                        transition: bottom .8s ease-out;
+
+                        .name-ch {
+                            .default-font(15.22px, white, 4px);
+                            position: absolute;
+                            bottom: -10px;
+                            text-align: center;
+                            width: 100%;
+                        }
+
+                    }
+
+                    .cover {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #726654;
+                        opacity: 0;
+                        transition: opacity .4s ease-out;
+                    }
+
+                    &:hover {
+
+                        background-size: auto 106%;
+                        background-position: (-@block-width * .03) (-@block-height * .03);
+
+                        .cover {
+                            opacity: .35;
+                        }
+
+                        .detail {
+                            bottom: 50%;
+                        }
+                    }
+                }
+
+
+                .set-num-for(@index; @block-width;){
+
+                    &.num-@{index}{
+                        @bleed: 10px;
+
+                        .room{
+                            width: @block-width;
+
+                            .deco {
+                                width: @block-width - (@bleed * 2) - 2px;
+                            }
+                        }
+                    }
+                }
+
+                .set-num-for(1; 1200px);
+                .set-num-for(2; 600px);
+                .set-num-for(3; 400px);
+                .set-num-for(4; 300px);
+            }
+
+
+            /*
             .container {
                 position: relative;
                 overflow: hidden;
@@ -3046,7 +3177,7 @@ body.mapping{
                 }
                 .my-loop(1);
             }
-
+            */
         }
 
         .part-5 {
@@ -3409,6 +3540,122 @@ body.mapping{
     }
 }
 
+
+
+/* vip live */
+#vip-live, #open-live {
+    .common-content("vip-live-key-image");
+
+    .main-container{
+
+        position: relative;
+        width: 100%;
+        min-height: 800px;
+
+        overflow: hidden;
+
+
+        @bleed: 10px;
+        @video-width: 704px;
+        @video-height: 480px;
+
+
+        .title-image{
+            position: relative;
+            width: 340px;
+            height: 46px;
+            .image-bg("vip-live-title.png");
+            margin: 26px auto 0;
+        }
+
+        .title-text{
+            position: relative;
+            margin: 20px auto 0;
+            .default-font(15.63px, @brown, 4px);
+            text-align: center;
+        }
+
+        .video-container{
+
+            width: @video-width + (@bleed * 2);
+            height: @video-height + (@bleed * 2);
+
+            margin: 30px auto 0;
+            border: 1px solid @brown;
+
+            .video-canvas{
+                margin-left: @bleed;
+                margin-top: @bleed;
+                width: @video-width;
+                height: @video-height;
+                background-color: #f0f0f0;
+            }
+        }
+
+        .vip-detail{
+            .default-font(15.63px, @brown, 1px);
+            margin: 30px auto 0;
+            width: 600px;
+            text-align: center;
+        }
+
+        .bottom-text{
+            .default-font(13.54px, @dark-gray-brown, 1px);
+            margin: 20px auto 0;
+            width: 600px;
+            text-align: center;
+        }
+
+        .bottom-right-part{
+            position: absolute;
+            right: 50%;
+            margin-right: -((@video-width * .5) + @bleed + 1px);
+
+            bottom: 100px;
+
+            width: 169px;
+
+            .btn-share{
+                .image-bg("vip-live-btn-share.png");
+                width: 166px;
+                height: 28px;
+                margin: 0 0 0 1px;
+                cursor: pointer;
+            }
+            /*
+            .qr-code-container{
+                width: 169px;
+                height: 96px;
+                background-color: #e9e3de;
+                border-radius: 20px;
+
+                margin: 10px auto 0;
+
+                overflow: hidden;
+
+                .qr-code-block{
+                    width: 88px;
+                    height: 88px;
+                    background-color: white;
+
+                    margin: 4px auto 0;
+
+                    overflow: hidden;
+
+                    .qr-code{
+                        position: absolute;
+                        width: 80px;
+                        height: 80px;
+                        background-color: #000000;
+                        margin: 4px 4px;
+                    }
+                }
+            }
+            */
+        }
+    }
+}
+
 #course-booking{
     position: fixed;
     left: 0;
@@ -3693,6 +3940,60 @@ body.mapping{
                 }
             }
         }
+    }
+}
+
+.image-slider-controller{
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    text-align: center;
+    z-index: 10;
+
+    .unselectable();
+
+    .dot{
+        display: inline-block;
+        margin: 0 7px 0;
+        width: 20px;
+        height: 20px;
+
+        cursor: pointer;
+
+        .icon{
+
+            margin-left: 5px;
+            margin-top : 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 20px;
+
+            background-color: white;
+        }
+
+        &.selected{
+
+            .icon{
+
+                margin-left: 1px;
+                margin-top : 1px;
+                width: 18px;
+                height: 18px;
+                background-color: #aa9980;
+            }
+
+//            &:active{
+//                .icon{
+//                    margin-top: 2px;
+//                }
+//            }
+        }
+
+//        &:active{
+//            .icon{
+//                margin-top: 6px;
+//            }
+//        }
     }
 }
 

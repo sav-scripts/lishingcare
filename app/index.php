@@ -182,7 +182,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
                         <div class="title"></div>
                         <div class="button baby">寶寶記錄</div><div class="gap"></div>
                         <div class="button course">媽媽課程</div><div class="gap"></div>
-                        <div class="button live unavailable">即時影像</div>
+                        <div class="button live">即時影像</div>
 
                         <div class="btn-logout"></div>
 
@@ -276,6 +276,8 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 <!--    <script src="js/lib/jquery-scrolltofixed-min.js"></script>-->
 
     <!-- build:js js/optimized.js -->
+    <script src="js/lib/jsmpeg.min.js"></script>
+    <script src="js/lib/qrcode.min.js"></script>
     <script src="js/lib/Logger.js"></script>
     <script src="js/lib/jquery.pep.js"></script>
     <script src="js/Main.js"></script>
@@ -303,6 +305,8 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <script src="js/Vip.js"></script>
     <script src="js/VipBaby.js"></script>
     <script src="js/VipCourse.js"></script>
+    <script src="js/VipLive.js"></script>
+    <script src="js/OpenLive.js"></script>
     <script src="js/CourseBooking.js"></script>
     <script src="js/ImageViewer.js"></script>
     <!-- endbuild -->

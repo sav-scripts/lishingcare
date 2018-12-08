@@ -29,7 +29,9 @@
         changeContent: function(hash)
         {
             if(_imageSlider) _imageSlider.destroy();
-            $doms.keyImageContainer.empty();
+
+
+            //$doms.keyImageContainer.empty();
 
             var obj = _roomDic[hash];
 
@@ -40,7 +42,9 @@
             $doms.container.find(".features > .right-part").html(obj.rawData.features);
             $doms.container.find(".equipments > .right-part").html(obj.rawData.equipments);
 
-            _imageSlider = new ImageSlider(obj.rawData.images, $doms.keyImageContainer);
+            _imageSlider = new ImageSlider(obj.rawData.images, $doms.keyImageContainer, true);
+            _imageSlider._animeDuration = 1;
+            _imageSlider._duration = 5;
             _imageSlider.replaceImages(Main.viewport.imageType);
         },
 

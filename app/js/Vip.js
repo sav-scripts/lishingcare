@@ -9,6 +9,7 @@
         _isHiding = true,
         _hashAfterLogin,
         _testLoginIsDone = false,
+        _vip_token,
         $doms;
 
     var self = window.Vip =
@@ -150,16 +151,23 @@
                 if(response.status == 'true')
                 {
                     _isLogin = true;
+                    _vip_token = response.vip_token;
                     Nav.toggleLogoutMode(true);
                 }
                 else
                 {
                     _isLogin = false;
+                    _vip_token = null;
                     Nav.toggleLogoutMode(false);
                 }
 
                 if(cb) cb.call(null, _isLogin);
             });
+        },
+
+        getVipToken: function()
+        {
+            return _vip_token;
         },
 
         reset: function()

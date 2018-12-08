@@ -39,6 +39,8 @@
                 "/Environmental": Environmental,
                 "/VipBaby": VipBaby,
                 "/VipCourse": VipCourse,
+                "/VipLive": VipLive,
+                "/OpenLive": OpenLive,
                 "/Login": Vip
             };
 
@@ -48,8 +50,11 @@
             ImageViewer.init();
 
 
+
+
             Vip.init(function()
             {
+
                 ScrollListener.init().bind(onScrolling).active();
 
                 checkLoginStatus(function()
@@ -58,6 +63,8 @@
                     onHashChange();
                 });
             });
+
+            //function
 
             function checkLoginStatus(cb)
             {
@@ -86,6 +93,7 @@
                                 Hash.to('/Login');
                             }
                         }
+
                     }
 
 
