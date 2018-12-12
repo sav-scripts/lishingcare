@@ -18,7 +18,7 @@ window._FAKE_DATA_ =
         "g_recaptcha_response": "xxxxxx"
     },
 
-    "login.response":
+    "login":
     {
         "error": '',
         "pop_questionnaire": "true"
@@ -853,7 +853,32 @@ window._FAKE_DATA_ =
         "ws_url": "ws://54.64.234.197:8080/taichung_ch1",
         "baby_name": "寶寶",
         "mon_name": "媽媽"
-    }
+    },
 
+    // 問券調查 送出
+    "questionnaire.send":
+    {
+        // 問券答案, 陣列
+        "answers":
+            [
+                "很滿意",
+                "很滿意",
+                "很滿意",
+                "很滿意",
+                "很滿意",
+                "很滿意",
+                "很滿意",
+                "很滿意",
+                "很滿意",
+                "很滿意"
+            ]
+    },
+
+    // 問券調查 回應
+    "questionnaire":
+    {
+        // 錯誤訊息
+        "error": ""
+    }
 
 };

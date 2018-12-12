@@ -108,6 +108,11 @@
                                 window._FAKE_DATA_.login_status.status = 'true';
                             }
 
+                            if(response.pop_questionnaire)
+                            {
+                                Questionnaire.show();
+                            }
+
                             self.getLoginStatus(function(isLogin)
                             {
                                 if(isLogin)

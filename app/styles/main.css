@@ -168,16 +168,16 @@ body.mapping #scene-container .content-mask {
 }
 #login-ui .container .btn-send {
   position: relative;
-  width: 70px;
+  width: 120px;
   background-color: #c490bf;
   border-radius: 3px;
   cursor: pointer;
   font-family: '微軟正黑體', "Heiti TC", serif;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
-  letter-spacing: 0px;
-  line-height: 28px;
-  height: 28px;
+  letter-spacing: 1px;
+  line-height: 34px;
+  height: 34px;
   text-align: center;
   margin: 20px auto 30px;
   -webkit-touch-callout: none;
@@ -2192,6 +2192,7 @@ body.mapping #scene-container .content-mask {
   margin: 0 1px 20px;
   background-size: auto 100%;
   transition: background-size 0.7s ease-out, background-position 0.7s ease-out;
+  background-position: center;
   cursor: pointer;
 }
 #environmental .env-main .part-2 .container .room .deco {
@@ -2246,7 +2247,6 @@ body.mapping #scene-container .content-mask {
 }
 #environmental .env-main .part-2 .container .room:hover {
   background-size: auto 106%;
-  background-position: -7.5px -14.25px;
 }
 #environmental .env-main .part-2 .container .room:hover .cover {
   opacity: 0.35;
@@ -2413,6 +2413,7 @@ body.mapping #scene-container .content-mask {
   margin: 0 1px 20px;
   background-size: auto 100%;
   transition: background-size 0.7s ease-out, background-position 0.7s ease-out;
+  background-position: center;
   cursor: pointer;
 }
 #environmental .env-main .part-4 .container .room .deco {
@@ -2449,7 +2450,6 @@ body.mapping #scene-container .content-mask {
 }
 #environmental .env-main .part-4 .container .room:hover {
   background-size: auto 106%;
-  background-position: -7.5px -14.25px;
 }
 #environmental .env-main .part-4 .container .room:hover .cover {
   opacity: 0.35;
@@ -3183,6 +3183,162 @@ body.mapping #scene-container .content-mask {
 }
 #image-viewer .container .middle-wrapper .ui .btn-close:active {
   margin: 11px auto 9px;
+}
+#questionnaire {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+}
+#questionnaire .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #211d20;
+  opacity: 0.3;
+}
+#questionnaire .container {
+  position: absolute;
+  width: 870px;
+  height: 558px;
+  border: 2px solid white;
+  background-color: #b5a18b;
+  left: 50%;
+  top: 50%;
+  margin-left: -437px;
+  margin-top: -281px;
+  border-radius: 13px;
+  overflow: hidden;
+}
+#questionnaire .container .btn-close {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background-image: url("../images/questionnaire-btn-close.png");
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+}
+#questionnaire .container .btn-close:active {
+  background-position: 0 1px;
+}
+#questionnaire .container .btn-skip,
+#questionnaire .container .btn-send {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 144px;
+  height: 32px;
+  cursor: pointer;
+}
+#questionnaire .container .btn-skip:active,
+#questionnaire .container .btn-send:active {
+  bottom: 29px;
+}
+#questionnaire .container .btn-skip {
+  background-image: url("../images/questionnaire-btn-skip.png");
+  margin-left: -174px;
+}
+#questionnaire .container .btn-send {
+  background-image: url("../images/questionnaire-btn-send.png");
+  margin-left: 30px;
+}
+#questionnaire .container .title-image {
+  position: relative;
+  width: 181px;
+  height: 27px;
+  margin: 40px auto 0;
+  background-image: url("../images/questionnaire-title.png");
+}
+#questionnaire .container .question-container {
+  position: relative;
+  margin: 26px auto 0;
+}
+#questionnaire .container .question-container .row {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 15px;
+  color: white;
+  position: relative;
+  margin: 0 auto 17px;
+  height: 15px;
+  text-align: center;
+}
+#questionnaire .container .question-container .row .left-part {
+  width: 370px;
+  display: inline-block;
+  text-align: left;
+}
+#questionnaire .container .question-container .row .right-part {
+  display: inline-block;
+}
+#questionnaire .container .question-container .row .right-part .col {
+  width: 80px;
+  text-align: center;
+  float: left;
+}
+#questionnaire .container .question-container .row .right-part .col .option {
+  position: relative;
+  margin: 0 auto -8px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/questionnaire-option.png");
+  background-position: right;
+  cursor: pointer;
+}
+#questionnaire .container .question-container .row .right-part .col .option.checked {
+  background-position: left;
+}
+#questionnaire .container .question-container .row .select-part {
+  display: none;
+}
+#questionnaire .container .question-container .row-title {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16.18px;
+  color: white;
+}
+#questionnaire-dialog {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1101;
+}
+#questionnaire-dialog .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+}
+#questionnaire-dialog .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -95px;
+  margin-top: -50px;
+  width: 190px;
+  height: 100px;
+  background-color: #7d6a54;
+  border-radius: 12px;
+}
+#questionnaire-dialog .container .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  line-height: 18px;
+  margin-left: -95px;
+  margin-top: -9px;
+  width: 190px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18px;
+  color: white;
+  text-align: center;
 }
 .image-slider-controller {
   position: absolute;
@@ -5147,7 +5303,6 @@ body.mapping #scene-container .content-mask {
   }
   #environmental .env-main .part-2 .container .room:hover {
     background-size: 100%;
-    background-position: 0 0;
   }
   #environmental .env-main .part-2 .container.num-1 .room {
     width: 600px;
@@ -5299,7 +5454,6 @@ body.mapping #scene-container .content-mask {
   }
   #environmental .env-main .part-4 .container .room:hover {
     background-size: 100%;
-    background-position: 0 0;
   }
   #environmental .env-main .part-4 .container.num-1 .room {
     width: 600px;
@@ -5403,6 +5557,35 @@ body.mapping #scene-container .content-mask {
   }
   #environmental .env-main .back-to-top:active .icon {
     background-position: right;
+  }
+  /* login */
+  #login-ui {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    overflow: hidden;
+    min-height: 500px;
+    display: table;
+  }
+  #login-ui .container .title {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 20px;
+    color: #666464;
+    letter-spacing: 2px;
+  }
+  #login-ui .container .btn-send {
+    width: 180px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 20px auto 30px;
   }
   #vip-baby .key-images {
     background-image: url("../images/vip-baby-key-image.m.jpg");
@@ -5703,6 +5886,116 @@ body.mapping #scene-container .content-mask {
     width: 294px;
     height: 50px;
     margin: 0;
+  }
+  #questionnaire .container {
+    width: 620px;
+    height: 620px;
+    border: 2px solid white;
+    background-color: #b5a18b;
+    left: 50%;
+    top: 50%;
+    margin-left: -312px;
+    margin-top: -312px;
+  }
+  #questionnaire .container .btn-close {
+    display: none;
+  }
+  #questionnaire .container .btn-skip,
+  #questionnaire .container .btn-send {
+    bottom: 30px;
+    width: 228px;
+    height: 51px;
+  }
+  #questionnaire .container .btn-skip:active,
+  #questionnaire .container .btn-send:active {
+    bottom: 29px;
+  }
+  #questionnaire .container .btn-skip {
+    background-image: url("../images/questionnaire-btn-skip.m.png");
+    margin-left: -258px;
+  }
+  #questionnaire .container .btn-send {
+    background-image: url("../images/questionnaire-btn-send.m.png");
+    margin-left: 30px;
+  }
+  #questionnaire .container .title-image {
+    width: 225px;
+    height: 35px;
+    margin: 30px auto 0;
+    background-image: url("../images/questionnaire-title.m.png");
+  }
+  #questionnaire .container .question-container {
+    position: relative;
+    margin: 36px auto 0;
+  }
+  #questionnaire .container .question-container .row-title {
+    display: none;
+  }
+  #questionnaire .container .question-container .row {
+    margin: 0 auto 26px;
+    height: 15px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 20.8px;
+    color: white;
+    text-align: center;
+  }
+  #questionnaire .container .question-container .row .left-part {
+    width: 460px;
+    text-align: left;
+  }
+  #questionnaire .container .question-container .row .right-part {
+    display: none;
+  }
+  #questionnaire .container .question-container .row .select-part {
+    display: inline-block;
+    width: 100px;
+  }
+  #questionnaire .container .question-container .row .select-part .option-select {
+    width: 100px;
+    height: 30px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 18px;
+    color: gray;
+  }
+  #questionnaire-dialog {
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1101;
+  }
+  #questionnaire-dialog .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+  }
+  #questionnaire-dialog .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -95px;
+    margin-top: -50px;
+    width: 190px;
+    height: 100px;
+    background-color: #7d6a54;
+    border-radius: 12px;
+  }
+  #questionnaire-dialog .container .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    line-height: 18px;
+    margin-left: -95px;
+    margin-top: -9px;
+    width: 190px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 18px;
+    color: white;
+    text-align: center;
   }
   .image-slider-controller {
     bottom: 40px;

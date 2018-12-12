@@ -49,7 +49,8 @@
             Footer.init();
             ImageViewer.init();
 
-
+            Questionnaire.init();
+            //Questionnaire.show();
 
 
             Vip.init(function()

@@ -416,7 +416,7 @@ body.mapping{
 
         .btn-send{
             position: relative;
-            width: 70px;
+            width: 120px;
 
 //            background-color:#d4beaa;
             background-color:@pink;
@@ -426,9 +426,9 @@ body.mapping{
 
             cursor: pointer;
 
-            .default-font(14px, white, 0);
-            line-height: 28px;
-            height: 28px;
+            .default-font(16px, white, 1px);
+            line-height: 34px;
+            height: 34px;
             text-align: center;
             margin: 20px auto 30px;
 
@@ -2738,6 +2738,8 @@ body.mapping{
 
                     transition: background-size .7s ease-out, background-position .7s ease-out;
 
+                    background-position: center;
+
                     cursor: pointer;
 
                     .deco {
@@ -2798,7 +2800,7 @@ body.mapping{
                     &:hover {
 
                         background-size: auto 106%;
-                        background-position: (-@block-width * .03) (-@block-height * .03);
+//                        background-position: (-@block-width * .03) (-@block-height * .03);
 
                         .cover {
                             opacity: .35;
@@ -3051,6 +3053,7 @@ body.mapping{
                     background-size: auto 100%;
 
                     transition: background-size .7s ease-out, background-position .7s ease-out;
+                    background-position: center;
 
                     cursor: pointer;
 
@@ -3093,7 +3096,7 @@ body.mapping{
                     &:hover {
 
                         background-size: auto 106%;
-                        background-position: (-@block-width * .03) (-@block-height * .03);
+//                        background-position: (-@block-width * .03) (-@block-height * .03);
 
                         .cover {
                             opacity: .35;
@@ -3939,6 +3942,208 @@ body.mapping{
 
                 }
             }
+        }
+    }
+}
+
+#questionnaire{
+
+    visibility: hidden;
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: @popup-depth;
+
+    .cover{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #211d20;
+        opacity: .3;
+    }
+
+    .container{
+        position: absolute;
+        @width: 870px;
+        @height: 558px;
+        @border-size: 2px;
+
+        width: @width;
+        height: @height;
+        border: @border-size solid white;
+        background-color: #b5a18b;
+
+        left: 50%;
+        top: 50%;
+        margin-left: (-@width * .5) - @border-size;
+        margin-top: (-@height * .5) - @border-size;
+        border-radius: 13px;
+
+        overflow: hidden;
+
+        .btn-close{
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            .image-bg("questionnaire-btn-close.png");
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+
+            &:active{
+                background-position: 0 1px;
+            }
+        }
+
+        @btn-width: 144px;
+        @btn-offset-x: 30px;
+
+        .btn-skip, .btn-send{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            width: @btn-width;
+            height: 32px;
+            cursor: pointer;
+
+            &:active{
+                bottom: 29px;
+            }
+        }
+
+        .btn-skip{
+            .image-bg("questionnaire-btn-skip.png");
+            margin-left: -@btn-offset-x - @btn-width;
+        }
+
+        .btn-send{
+            .image-bg("questionnaire-btn-send.png");
+            margin-left: @btn-offset-x;
+        }
+
+        .title-image{
+            position: relative;
+            width: 181px;
+            height: 27px;
+            margin: 40px auto 0;
+
+            .image-bg("questionnaire-title.png");
+        }
+
+        .question-container{
+            position: relative;
+            margin: 26px auto 0;
+
+
+//            font-weight: bold;
+
+            .row{
+
+                .default-font(15px, white);
+                position: relative;
+                margin: 0 auto 17px;
+                height: 15px;
+
+                text-align: center;
+
+                .left-part{
+                    width: 370px;
+                    display: inline-block;
+                    text-align: left;
+                }
+
+                .right-part{
+                    display: inline-block;
+                    .col{
+                        width: 80px;
+                        text-align: center;
+
+                        float: left;
+
+                        .option{
+                            position: relative;
+                            margin: 0 auto -8px;
+                            width: 25px;
+                            height: 25px;
+                            .image-bg("questionnaire-option.png");
+                            background-position: right;
+
+                            cursor: pointer;
+
+                            &.checked{
+                                background-position: left;
+                            }
+                        }
+                    }
+                }
+
+                .select-part{
+                    display: none;
+                }
+
+            }
+
+            .row-title{
+                .default-font(16.18px, white);
+            }
+        }
+    }
+}
+
+#questionnaire-dialog{
+
+    visibility: hidden;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: @popup-depth + 1;
+
+    .cover{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+//        opacity: .88;
+        opacity: 0;
+    }
+
+    .container{
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @w: 190px;
+        @h: 100px;
+        margin-left: -@w * .5;
+        margin-top: -@h * .5;
+        width: @w;
+        height: @h;
+        background-color: #7d6a54;
+
+        border-radius: 12px;
+
+
+        .text{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            line-height: 18px;
+            margin-left: -@w * .5;
+            margin-top: -18px * .5;
+            width: @w;
+
+            .default-font(18px, white);
+
+            text-align: center;
         }
     }
 }

@@ -253,6 +253,76 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
             <div class="text"><?=$copyright?></div>
         </div>
 
+        <div id="questionnaire">
+
+            <div class="cover"></div>
+
+            <div class="container">
+
+                <div class="title-image"></div>
+                <div class="btn-close"></div>
+                <div class="btn-skip"></div>
+                <div class="btn-send"></div>
+
+                <div class="question-container">
+
+
+                    <div class="row row-title">
+
+                        <div class="left-part"></div>
+                        <div class="right-part">
+                            <div class="col">很滿意</div>
+                            <div class="col">滿意</div>
+                            <div class="col">沒意見</div>
+                            <div class="col">不滿意</div>
+                            <div class="col">很不滿意</div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row question">
+
+                        <div class="left-part">1.對本機構提供定型化契約內容是否滿意?</div>
+                        <div class="right-part">
+
+                            <div class="col"><div class="option"></div></div>
+                            <div class="col"><div class="option"></div></div>
+                            <div class="col"><div class="option"></div></div>
+                            <div class="col"><div class="option"></div></div>
+                            <div class="col"><div class="option"></div></div>
+
+                        </div>
+
+                        <div class="select-part">
+
+
+                            <select class="option-select" title="">
+                                <option disabled selected value>請選擇</option>
+                                <option value="很滿意">很滿意</option>
+                                <option value="滿意">滿意</option>
+                                <option value="沒意見">沒意見</option>
+                                <option value="不滿意">不滿意</option>
+                                <option value="很不滿意">很不滿意</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="questionnaire-dialog">
+            <div class="cover"></div>
+            <div class="container">
+                <div class="text"></div>
+            </div>
+
+        </div>
 
 
     </div>
@@ -309,6 +379,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <script src="js/OpenLive.js"></script>
     <script src="js/CourseBooking.js"></script>
     <script src="js/ImageViewer.js"></script>
+    <script src="js/Questionnaire.js"></script>
     <!-- endbuild -->
 
     <script type="text/javascript">
