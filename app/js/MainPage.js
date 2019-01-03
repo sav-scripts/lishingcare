@@ -44,7 +44,7 @@
                 "/Login": Vip
             };
 
-
+            self.updateContentBySite($('body'));
 
             Footer.init();
             ImageViewer.init();
@@ -56,7 +56,7 @@
             Vip.init(function()
             {
 
-                ScrollListener.init().bind(onScrolling).active();
+                ScrollListener.init().addListener('MainPage', onScrolling).active();
 
                 checkLoginStatus(function()
                 {
@@ -117,6 +117,15 @@
                 });
             }
             */
+        },
+
+        updateContentBySite: function($container)
+        {
+            var $contents = $container.find('.site-dif');
+            $contents.toggleClass('site-dif', false)
+                .toggleClass('taipei', false)
+                .toggleClass('taichung', false)
+                .toggleClass(window._site_, true);
         },
 
         getIsHashLocking: function()

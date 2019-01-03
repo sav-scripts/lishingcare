@@ -73,7 +73,7 @@
                     /* banner */
                     (function(){
                         var imageList = _data.banner.images,
-                        $container = $doms.container.find(".key-images .image-container");
+                            $container = $doms.container.find(".key-images .image-container");
 
                         $container.empty();
 

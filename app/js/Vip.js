@@ -108,7 +108,7 @@
                                 window._FAKE_DATA_.login_status.status = 'true';
                             }
 
-                            if(response.pop_questionnaire)
+                            if(response.pop_questionnaire === "true")
                             {
                                 Questionnaire.show();
                             }

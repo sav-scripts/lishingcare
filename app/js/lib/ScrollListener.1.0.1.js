@@ -1,7 +1,15 @@
+/* change log
+    1.0.1
+        支援 addListener 和 removeListener
+        移除 bind, 統一由 listener 回應捲動事件
+
+
+ */
+
 (function(){
 
     var _isLocking = false,
-        _cbOnScrolling = null,
+        _listenerDic = {},
         _scrollBound =
         {
             top: 0,
@@ -21,9 +29,16 @@
             return self;
         },
 
-        bind: function(cbOnScrolling)
+        addListener: function(id, func)
         {
-            _cbOnScrolling = cbOnScrolling;
+            _listenerDic[id] = func;
+
+            return self;
+        },
+
+        removeListener: function(id)
+        {
+            delete _listenerDic[id];
 
             return self;
         },
@@ -98,7 +113,13 @@
 
         _tweenDic.scrollTop = $(window).scrollTop();
 
-        if(_cbOnScrolling) _cbOnScrolling.call(null, _scrollBound);
+        //if(_cbOnScrolling) _cbOnScrolling.call(null, _scrollBound);
+        var id, func;
+        for(id in _listenerDic)
+        {
+            func = _listenerDic[id];
+            func.call(null, _scrollBound);
+        }
     }
 
 }());

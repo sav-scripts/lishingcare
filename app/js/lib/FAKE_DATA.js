@@ -28,8 +28,8 @@ window._FAKE_DATA_ =
     "login_status":
     {
         // 已登入的話傳回 true (string)
-        //"status": 'true',
-        "status": 'false',
+        "status": 'true',
+        //"status": 'false',
 
         // 會員的唯一識別碼, 一個可以做為網址參數的字串, 供 trade_vip_camera_token api 送出使用
         "vip_token":"adsfaxcvwr123wsdfe"
@@ -116,7 +116,7 @@ window._FAKE_DATA_ =
                     "享新會員優惠。<br/>"+
                     "請洽預約專線 02-8626-9555",
 
-                // 圖片, 固定兩張, pc: 350 x 264, mobile: 502 x 380
+                // 圖片, 不固定數量, pc: 350 x 264, mobile: 502 x 380
                 "images":
                 [
                     {
@@ -142,13 +142,12 @@ window._FAKE_DATA_ =
                 "享新會員優惠。<br/>"+
                 "請洽預約專線 02-8626-9555",
 
-                // 圖片, 固定兩張, pc: 350 x 264, mobile: 502 x 380
                 "images":
                     [
-                        {
-                            "pc": "./test/images/news-image-1.jpg",
-                            "mobile": "./test/images/news-image-1.m.jpg"
-                        },
+                        //{
+                        //    "pc": "./test/images/news-image-1.jpg",
+                        //    "mobile": "./test/images/news-image-1.m.jpg"
+                        //},
 
                         {
                             "pc": "./test/images/news-image-2.jpg",
@@ -680,6 +679,32 @@ window._FAKE_DATA_ =
 
             {
                 "id": "2",
+                "year": "2018",
+                "month": "11",
+                "date": "5",
+                "time": "15:30 ~ 16:30",
+                "name": "新生兒常見照護問題 II",
+                "teacher": "張三",
+                "memo": "",
+                "is_book_able": "false",
+                "is_booked": "true"
+            },
+
+            {
+                "id": "2x",
+                "year": "2018",
+                "month": "11",
+                "date": "5",
+                "time": "15:30 ~ 16:30",
+                "name": "新生兒常見照護問題 II",
+                "teacher": "張三",
+                "memo": "",
+                "is_book_able": "false",
+                "is_booked": "true"
+            },
+
+            {
+                "id": "2xx",
                 "year": "2018",
                 "month": "11",
                 "date": "5",

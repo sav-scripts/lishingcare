@@ -7,6 +7,8 @@
 
     var self = window.Care =
     {
+        name: "Care",
+
         $doms: undefined,
 
         init: function (onReady)
@@ -53,6 +55,8 @@
                     ScrollListener.scrollTo(0);
                 });
 
+                setupAnime();
+
                 $doms.container.detach();
             }
         },
@@ -94,6 +98,10 @@
             tl.add(function ()
             {
                 _isHiding = false;
+
+                ScrollAnimeManager.switchListener(self.name, true);
+                self.resize();
+
                 if(cb) cb.call();
             });
         },
@@ -110,11 +118,46 @@
             tl.to($doms.container, .4, {autoAlpha: 0});
             tl.add(function ()
             {
+                ScrollAnimeManager.switchListener(self.name, false);
                 _isHiding = true;
                 $doms.container.detach();
                 if(cb) cb.call();
             });
 
+        },
+
+        resize: function()
+        {
+            if(!_isHiding)
+            {
+                if(Main.viewport.index === 0)
+                {
+                    ScrollAnimeManager.completeAll(self.name);
+                }
+            }
         }
     };
+
+
+
+    function setupAnime()
+    {
+        setupPart(1, -200);
+        setupPart(2, 200);
+        setupPart(3, -200);
+        setupPart(4, 200);
+
+        function setupPart(index, xOffset)
+        {
+            var container = $doms.container.find(".part-" + index)[0];
+
+            var tl = new TimelineMax;
+            tl.set(container, {autoAlpha: 0, x: xOffset});
+            tl.to(container, .9, {marginLeft: 0, autoAlpha: 1, x: 0, ease:Back.easeOut}, .1);
+
+            tl.pause();
+
+            ScrollAnimeManager.registAnime(self.name, "part" + index, tl, {dom: container, topOffset: 0, bottomOffset: -150});
+        }
+    }
 }());

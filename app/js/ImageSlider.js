@@ -117,6 +117,8 @@
 
             var newObj = self._dataList[self._currentIndex];
 
+            if(!newObj) return;
+
             if(skipLoading)
             {
                 if($oldImage) $oldImage.detach();

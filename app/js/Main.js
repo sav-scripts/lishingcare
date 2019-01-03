@@ -11,6 +11,16 @@
             isLocal: true
         },
 
+        taipei:
+        {
+            apiPath: "//admin.lihshing-care.com/taipei/"
+        },
+
+        taichung:
+        {
+            apiPath: "//admin.lihshing-care.com/taichung/"
+        },
+
         settings:
         {
             isLocal: false,
@@ -58,6 +68,16 @@
 
             if(Utility.urlParams.logger === '1') Logger.init(true).show().open();
 
+            //if(Utility.urlParams.site)
+            //{
+            //    window._site_ = Utility.urlParams.site;
+            //}
+
+            if(window._site_ === 'taichung')
+            {
+                self.apiPath = self.taichung.apiPath;
+            }
+
             ApiProxy.setApiPath(self.apiPath);
 
 
@@ -81,7 +101,7 @@
             }
 
 
-            MyLoader.init(window._version);
+            MyLoader.init(window._version, MainPage.updateContentBySite);
             Nav.init();
             MainPage.init();
 

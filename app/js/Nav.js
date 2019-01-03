@@ -107,7 +107,7 @@
 
             });
 
-            $doms.vip = $buttonContainer.find(".button:nth-child(13)").on("click", function(event)
+            $doms.vip = $buttonContainer.find(".button:nth-child(13)").on("mouseover", function(event)
             {
                 event.preventDefault();
 
@@ -117,6 +117,18 @@
 
             /* vip menu */
             $doms.vipMenu = $doms.container.find(".vip-menu");
+
+            $doms.vipMenu.on("mouseout", function(event)
+            {
+                //console.log(event.relatedTarget);
+
+                //console.log($.contains($doms.vipMenu[0], event.relatedTarget));
+
+                if(!$.contains($doms.vipMenu[0], event.relatedTarget))
+                {
+                    self.toggleVipMenu(false);
+                }
+            });
 
             $doms.vipMenuCover = $doms.container.find(".vip-menu-cover").on('click', function(event)
             {

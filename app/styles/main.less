@@ -1,4 +1,4 @@
-@import "common-mixins.less";
+@import "common-mixins-lishing.less";
 
 @background-color: #eeeeee;
 
@@ -9,6 +9,7 @@
 
 @cover-depth: 1000;
 @popup-depth: 1100;
+
 
 html {
     padding: 0;
@@ -805,6 +806,20 @@ body.mapping{
             top: 213px;
             width: 616px;
             height: 416px;
+
+            .my-map-label{
+                width: 50px;
+                height: 20px;
+
+                border: 1px solid #eb3a44;
+                border-radius: 5px;
+                background: #fee1d7;
+                text-align: center;
+                line-height: 20px;
+                font-weight: bold;
+                font-size: 14px;
+                color: #eb3a44;
+            }
         }
     }
 
@@ -905,6 +920,9 @@ body.mapping{
 
             .title-text{
                 .default-font(18px, @color);
+                &:before{
+                    content: '台北麗格館';
+                }
             }
 
             .tel{
@@ -1215,11 +1233,27 @@ body.mapping{
                     transition: background-size .7s ease-out, background-position .7s ease-out;
                 }
 
+                .cover{
+
+                    position: absolute;
+                    width: @image-width;
+                    height: @image-height;
+                    left: 0;
+                    top:0;
+                    background-color: #726654;
+                    opacity: 0;
+                    transition: opacity .4s ease-out;
+                }
+
                 &:hover{
                     .image{
                         background-size: 106% 106%;
                         background-position: (-@image-width * .03) (-@image-height * .03);
 
+                    }
+
+                    .cover{
+                        opacity: .35;
                     }
 
                 }
@@ -1882,28 +1916,39 @@ body.mapping{
                 line-height: 24px;
             }
 
-            .image{
+            .images{
 
                 position: relative;
-                width: 350px;
-                height: 264px;
-                margin-top: -2px;
+                width: 100%;
+                text-align: center;
+
+                .image{
+
+                    position: relative;
+                    display: inline-block;
+                    width: 350px;
+                    height: 264px;
+//                    margin-top: -2px;
+                    margin: -2px 5px 7px;
+                    text-align: center;
+                }
+
+//                .image-1{
+//                    margin-left: 45px;
+//                    //                .image-bg-test("news-image-1.jpg");
+//                    float: left;
+//                }
+//
+//                .image-2{
+//                    margin-right: 45px;
+//                    //                .image-bg-test("news-image-2.jpg");
+//                    float: right;
+//
+//                    margin-bottom: 40px;
+//
+//                }
             }
 
-            .image-1{
-                margin-left: 45px;
-//                .image-bg-test("news-image-1.jpg");
-                float: left;
-            }
-
-            .image-2{
-                margin-right: 45px;
-//                .image-bg-test("news-image-2.jpg");
-                float: right;
-
-                margin-bottom: 40px;
-
-            }
         }
     }
 
@@ -2424,7 +2469,12 @@ body.mapping{
             margin: 30px auto 0;
             width: 792px;
             height: 312px;
-            .image-bg("malt-step-1.png");
+//            .image-bg("malt-step-1.png");
+
+            .abs-div-2(title-image, 355, 32, 80, 44, "malt-step-1-title.png");
+            .abs-div-2(left, 0, 27, 258, 258, "malt-step-1-left.png");
+            .abs-div-2(right, 534, 27, 258, 258, "malt-step-1-right.png");
+            .abs-div-2(middle, 240, 0, 312, 312, "malt-step-middle.png");
         }
 
         .step-2{
@@ -2432,7 +2482,12 @@ body.mapping{
             margin: 23px auto 0;
             width: 794px;
             height: 312px;
-            .image-bg("malt-step-2.png");
+//            .image-bg("malt-step-2.png");
+
+            .abs-div-2(title-image, 348, 32, 95, 45, "malt-step-2-title.png");
+            .abs-div-2(left, 0, 27, 258, 258, "malt-step-2-left.png");
+            .abs-div-2(right, 534, 27, 258, 258, "malt-step-2-right.png");
+            .abs-div-2(middle, 240, 0, 312, 312, "malt-step-middle.png");
         }
 
         .step-3{
@@ -2440,7 +2495,12 @@ body.mapping{
             margin: 29px auto 0;
             width: 785px;
             height: 312px;
-            .image-bg("malt-step-3.png");
+//            .image-bg("malt-step-3.png");
+
+            .abs-div-2(title-image, 339, 26, 99, 51, "malt-step-3-title.png");
+            .abs-div-2(left, 0, 27, 258, 258, "malt-step-3-left.png");
+            .abs-div-2(right, 534, 27, 258, 258, "malt-step-3-right.png");
+            .abs-div-2(middle, 240, 0, 312, 312, "malt-step-middle.png");
         }
 
         .step-1, .step-2, .step-3{
@@ -2455,6 +2515,15 @@ body.mapping{
                 top: 85px;
 
                 .default-font(15.63px, @brown, 1px);
+            }
+            .line{
+                position: absolute;
+                width: 244px;
+                height: 1px;
+                left: 50%;
+                margin-left: -119px;
+                top: 101px;
+                background-color: @brown;
 
             }
             .detail{
@@ -4205,3 +4274,5 @@ body.mapping{
 /***** end *****/
 @import "calender.less";
 @import "main-mobile.less";
+@import "taichung.less";
+@import "taichung-m.less";

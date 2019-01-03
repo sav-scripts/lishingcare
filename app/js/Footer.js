@@ -45,18 +45,22 @@
 
     function buildFacebookPage()
     {
-        $doms.container.find(".facebook-page").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLihPaoLand%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
+        //$doms.container.find(".facebook-page").append('<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flihshingcare%2F&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
+        $doms.container.find(".facebook-page").append('<iframe src="https://www.facebook.com/plugins/page.php?href='+window._fbpage_+'&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
     }
 
     function buildGoogleMap()
     {
-        var mapDom = document.getElementById('map');
+        var mapDom = document.getElementById('map'),
+            lat = Number(mapDom.getAttribute('lat')),
+            lng = Number(mapDom.getAttribute('lng'));
 
         window.initMap = function()
         {
-            var myCenter = {lat: 25.159616, lng: 121.457664};
+            //var myCenter = {lat: 25.159616, lng: 121.457664};
+            var myCenter = {lat: lat, lng: lng};
             var map = new google.maps.Map(mapDom, {
-                zoom: 17,
+                zoom: 18,
                 center: myCenter,
 //                disableDefaultUI: true,
 
@@ -80,6 +84,8 @@
             var marker = new google.maps.Marker({
                 position: myCenter,
                 map: map
+                //label: 'test label',
+                //icon: markerIcon
             });
         };
 

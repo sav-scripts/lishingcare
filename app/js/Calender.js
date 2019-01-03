@@ -171,7 +171,9 @@
                 eventData,
                 $dateBlock,
                 $eventContainer,
-                $eventNode;
+                $eventNode,
+                $eventText,
+                maxRows = 2;
 
             if(d[year] && d[year][month])
             {
@@ -209,8 +211,35 @@
                         {
                             eventData = eventDataArray[k];
 
+                            console.log(eventData);
+
                             $eventNode = $('<div class="event-node"></div>');
                             $eventContainer.append($eventNode);
+
+                            var courseName = getShortenName(eventData.name, 5);
+
+
+                            if(k === maxRows)
+                            {
+                                courseName = 'more...';
+                            }
+
+
+                            $eventText = $('<div class="event-text">'+courseName+'</div>');
+
+                            $eventContainer.append($eventText);
+
+                            if(k === maxRows)
+                            {
+                                $eventNode.toggleClass('thrid-line', true);
+                                $eventText.toggleClass('thrid-line', true);
+                            }
+
+                            if(k > maxRows)
+                            {
+                                $eventNode.toggleClass('extra-line', true);
+                                $eventText.toggleClass('extra-line', true);
+                            }
 
                             $eventNode.toggleClass('booked', false);
                             $eventNode.toggleClass('full-booked', false);
@@ -316,6 +345,16 @@
 
         return numDates;
 
+    }
+
+    function getShortenName(string, maxLength)
+    {
+        if(string.length <= maxLength) return string;
+
+        var newString = string.substring(0, maxLength);
+        newString += '...';
+
+        return newString;
     }
 
 }());

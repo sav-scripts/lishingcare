@@ -138,6 +138,14 @@
 }
 .image-bg(@src; @image-path: "../images/";){
     background-image: url("@{image-path}@{src}");
+
+    &.taichung{
+        background-image: url("@{image-path}taichung/@{src}");
+    }
+
+    &.taipei{
+        background-image: url("@{image-path}taipei/@{src}");
+    }
 }
 .fade-button(@image-src, @background-offset: 0 -100%, @duration: .5s){
     &:hover{

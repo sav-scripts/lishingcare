@@ -138,15 +138,26 @@
     {
         var imageType = Main.viewport.imageType,
             dataObj,
-            $news;
+            $news,
+            $images;
 
         for(var i=0;i<_data.data_list.length;i++)
         {
             dataObj = _data.data_list[i];
             $news = dataObj.$news;
 
-            $news.find(".image-1").css("background-image", "url("+dataObj.images[0][imageType]+")");
-            $news.find(".image-2").css("background-image", "url("+dataObj.images[1][imageType]+")");
+            $images = $news.find(".images");
+            $images.empty();
+
+            for(var k=0;k<dataObj.images.length;k++){ updateImage($images, dataObj, imageType, k); }
         }
+    }
+
+    function updateImage($container, dataObj, imageType, index)
+    {
+        var $image = $("<div class='image'></div>");
+
+        $container.append($image);
+        $image.css("background-image", "url("+dataObj.images[index][imageType]+")");
     }
 }());

@@ -5,13 +5,15 @@
 
     var _loadedTemplates = {},
         _version = '0',
+        _cbContentPrefix,
         _Loading = null;
 
     var self = window.MyLoader =
     {
-        init: function(version)
+        init: function(version, cbContentPrefix)
         {
             _version = version;
+            _cbContentPrefix = cbContentPrefix;
         },
 
         loadTemplate: function(imageSetting, templates, cb, keepLoading, hideLoading)
@@ -62,15 +64,24 @@
 
                         var extractClass= templates.extractClass;
                         if(!extractClass) extractClass = "div:first";
-                        var extractDom = templateSetting.dom = $(frameDom).find(extractClass)[0];
+                        //var extractDom = templateSetting.dom = $(frameDom).find(extractClass)[0];
+                        
+                        var $extractDom = $(frameDom).find(extractClass);
+                        templateSetting.dom = $extractDom[0];
 
-                        $(extractDom).toggleClass(extractClass, false);
+                        $extractDom.toggleClass(extractClass, false);
 
-                        $("#invisible-container").append(extractDom);
+                        $("#invisible-container").append($extractDom);
 
-                        $(extractDom).waitForImages(function()
+                        if(_cbContentPrefix)
                         {
-                            if(extractDom.parentNode) extractDom.parentNode.removeChild(extractDom);
+                            _cbContentPrefix.call(null, $extractDom);
+                        }
+
+                        $extractDom.waitForImages(function()
+                        {
+                            //if(extractDom.parentNode) extractDom.parentNode.removeChild(extractDom);
+                            $extractDom.detach();
 
                             if(_Loading && !hideLoading)
                             {

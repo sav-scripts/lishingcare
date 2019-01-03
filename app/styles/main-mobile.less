@@ -428,6 +428,10 @@
                         transition: none;
                     }
 
+                    .cover{
+                        display: none;
+                    }
+
                     &:hover{
                         .image{
                             background-size: 100%;
@@ -1192,7 +1196,7 @@
                     margin-bottom: 42px;
                 }
 
-                @block-width: 563px;
+                @block-width: 564px;
 
                 width: @block-width;
 
@@ -1254,16 +1258,22 @@
                     line-height: 46px;
                 }
 
-                .image{
-                    width: 502px;
-                    height: 380px;
-                    margin: 0 auto 20px;
-                    float: none;
+                .images{
 
-                    &:last-child{
-                        margin-bottom: 26px;
+                    width: 100%;
+
+                    .image{
+                        width: 502px;
+                        height: 380px;
+                        margin: 0 auto 20px;
+//                        float: none;
+//
+//                        &:last-child{
+//                            margin-bottom: 26px;
+//                        }
                     }
                 }
+
 
 
             }
@@ -1445,6 +1455,10 @@
                 margin: 67px auto 0;
                 width: 573px;
                 height: 750px;
+
+                .left, .middle, .right, .title-image, .line{
+                    display: none;
+                }
 
 
                 .title{

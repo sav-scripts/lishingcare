@@ -1,16 +1,18 @@
-@import (once) "common-mixins.less";
+@import (once) "common-mixins-lishing.less";
 
 
 
 .make-calender();
 
 .make-calender(
-    @block-width: 110px;
-    @block-height:84px;
+    @block-width: 120px;
+    @block-height:104px;
     @node-container-left: 3px;
     @node-container-top: 26px;
-    @node-container-width: 104px;
-    @node-container-height: 58px;
+    @node-container-width: @block-width - 6px;
+    @node-container-height: @block-height - 26px;
+    @node-margin: 6px;
+    @node-text-display: block;
 ){
 
     .my-calender
@@ -164,10 +166,10 @@
                 .event-container{
                     @offset-y: 26px;
                     @size: 14px;
-                    @margin: 6px;
                     @num-cols: 4;
 
-                    @width: (@size + (@margin * 2)) * @num-cols;
+//                    @width: (@size + (@margin * 2)) * @num-cols;
+//                    @width: @block-width - 2px;
 
                     position: absolute;
                     left: @node-container-left;
@@ -177,7 +179,7 @@
 
                     .event-node{
                         position: relative;
-                        margin: @margin;
+                        margin: @node-margin;
                         width: @size;
                         height: @size;
                         //                    background-color: red;
@@ -193,6 +195,51 @@
 
                         &.full-booked{
                             background-position: left bottom;
+                        }
+                    }
+
+                    .event-text{
+                        display: @node-text-display;
+                        position: relative;
+                        margin: 4px 0 8px;
+                        width: @node-container-width - 26px;
+                        height: @size;
+
+//                        overflow: hidden;
+
+                        float: left;
+
+                        .default-font(14px; #a18b73);
+
+                        &.booked{
+                            background-position: right bottom;
+                        }
+
+                        &.full-booked{
+                            background-position: left bottom;
+                        }
+                    }
+
+
+                    @media (min-width: 641px) {
+
+                        .event-node {
+                            &.thrid-line{
+                                background: none;
+                            }
+
+                            &.extra-line{
+                                display: none;
+                            }
+                        }
+                        .event-text{
+
+                            &.thrid-line{
+                            }
+
+                            &.extra-line{
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -212,10 +259,12 @@
     .make-calender
     (
         82px,
-        70px,
+        72px,
         3px,
         26px,
         78px,
-        43px
+        43px,
+        4px 6px,
+        none
     );
 }

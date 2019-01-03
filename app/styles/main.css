@@ -245,6 +245,12 @@ body.mapping #scene-container .content-mask {
   transition: top 0.2s linear;
   cursor: pointer;
 }
+#nav .logo.taichung {
+  background-image: url("../images/taichung/logo.png");
+}
+#nav .logo.taipei {
+  background-image: url("../images/taipei/logo.png");
+}
 #nav .button-group {
   position: absolute;
   right: 0;
@@ -263,6 +269,12 @@ body.mapping #scene-container .content-mask {
   visibility: hidden;
   transition: visibility 0s linear 0.2s, opacity 0.2s linear;
   cursor: pointer;
+}
+#nav .button-group .btn-logout.taichung {
+  background-image: url("../images/taichung/btn-logout.png");
+}
+#nav .button-group .btn-logout.taipei {
+  background-image: url("../images/taipei/btn-logout.png");
 }
 #nav .button-group .btn-logout:active {
   margin-top: 4px;
@@ -407,6 +419,12 @@ body.mapping #scene-container .content-mask {
   background-position: center;
   background-color: white;
 }
+#footer.taichung {
+  background-image: url("../images/taichung/footer-bg.jpg");
+}
+#footer.taipei {
+  background-image: url("../images/taipei/footer-bg.jpg");
+}
 #footer .pink-bg {
   position: absolute;
   left: 0;
@@ -445,6 +463,18 @@ body.mapping #scene-container .content-mask {
   width: 616px;
   height: 416px;
 }
+#footer.map-only-mode #map .my-map-label {
+  width: 50px;
+  height: 20px;
+  border: 1px solid #eb3a44;
+  border-radius: 5px;
+  background: #fee1d7;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #eb3a44;
+}
 #footer .mode-1-content {
   visibility: visible;
   opacity: 1;
@@ -458,6 +488,12 @@ body.mapping #scene-container .content-mask {
   height: 97px;
   background-image: url("../images/logo-2.png");
 }
+#footer .mode-1-content .logo.taichung {
+  background-image: url("../images/taichung/logo-2.png");
+}
+#footer .mode-1-content .logo.taipei {
+  background-image: url("../images/taipei/logo-2.png");
+}
 #footer .mode-1-content .misc-image {
   position: absolute;
   left: 382px;
@@ -465,6 +501,12 @@ body.mapping #scene-container .content-mask {
   width: 348px;
   height: 138px;
   background-image: url("../images/footer-misc-1.png");
+}
+#footer .mode-1-content .misc-image.taichung {
+  background-image: url("../images/taichung/footer-misc-1.png");
+}
+#footer .mode-1-content .misc-image.taipei {
+  background-image: url("../images/taipei/footer-misc-1.png");
 }
 #footer .mode-1-content .field-tel,
 #footer .mode-1-content .field-address,
@@ -511,6 +553,12 @@ body.mapping #scene-container .content-mask {
   margin: 0 auto 17px;
   background-image: url("../images/footer-contact-title.png");
 }
+#footer .mode-2-content .top-part .title-image.taichung {
+  background-image: url("../images/taichung/footer-contact-title.png");
+}
+#footer .mode-2-content .top-part .title-image.taipei {
+  background-image: url("../images/taipei/footer-contact-title.png");
+}
 #footer .mode-2-content .top-part a {
   text-decoration: none;
 }
@@ -527,6 +575,9 @@ body.mapping #scene-container .content-mask {
   font-size: 18px;
   color: #666464;
 }
+#footer .mode-2-content .top-part .title-text:before {
+  content: '台北麗格館';
+}
 #footer .mode-2-content .top-part .tel {
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 16px;
@@ -541,6 +592,12 @@ body.mapping #scene-container .content-mask {
   margin-right: 6px;
   margin-bottom: -3px;
 }
+#footer .mode-2-content .top-part .tel .tel-icon.taichung {
+  background-image: url("../images/taichung/tel-icon.png");
+}
+#footer .mode-2-content .top-part .tel .tel-icon.taipei {
+  background-image: url("../images/taipei/tel-icon.png");
+}
 #footer .mode-2-content .top-part .address {
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 16px;
@@ -554,6 +611,12 @@ body.mapping #scene-container .content-mask {
   display: inline-block;
   margin-right: 6px;
   margin-bottom: -4px;
+}
+#footer .mode-2-content .top-part .address .address-icon.taichung {
+  background-image: url("../images/taichung/address-icon.png");
+}
+#footer .mode-2-content .top-part .address .address-icon.taipei {
+  background-image: url("../images/taipei/address-icon.png");
 }
 #footer .mode-2-content .bottom-part {
   position: absolute;
@@ -618,6 +681,12 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/index-reservation.png");
   cursor: pointer;
 }
+#index .key-images .reservation-icon.taichung {
+  background-image: url("../images/taichung/index-reservation.png");
+}
+#index .key-images .reservation-icon.taipei {
+  background-image: url("../images/taipei/index-reservation.png");
+}
 #index .key-images .reservation-icon:active {
   margin-bottom: -1px;
 }
@@ -646,6 +715,12 @@ body.mapping #scene-container .content-mask {
   height: 45px;
   margin: 0 auto 0;
   background-image: url("../images/index-about-us-title.png");
+}
+#index .about-us .left-part .title-image.taichung {
+  background-image: url("../images/taichung/index-about-us-title.png");
+}
+#index .about-us .left-part .title-image.taipei {
+  background-image: url("../images/taipei/index-about-us-title.png");
 }
 #index .about-us .left-part .title-text {
   position: relative;
@@ -695,6 +770,12 @@ body.mapping #scene-container .content-mask {
   margin-top: 22px;
   float: right;
 }
+#index .about-us .left-part .btn-more.taichung {
+  background-image: url("../images/taichung/btn-more.png");
+}
+#index .about-us .left-part .btn-more.taipei {
+  background-image: url("../images/taipei/btn-more.png");
+}
 #index .about-us .left-part .btn-more:active {
   background-position: bottom;
 }
@@ -706,6 +787,12 @@ body.mapping #scene-container .content-mask {
   width: 640px;
   height: 460px;
 }
+#index .about-us .right-part.taichung {
+  background-image: url("../images/taichung/index-about-us-image.jpg");
+}
+#index .about-us .right-part.taipei {
+  background-image: url("../images/taipei/index-about-us-image.jpg");
+}
 #index .environmental {
   overflow: hidden;
   position: relative;
@@ -713,12 +800,24 @@ body.mapping #scene-container .content-mask {
   height: 620px;
   background-image: url("../images/index-environmental-bg.jpg");
 }
+#index .environmental.taichung {
+  background-image: url("../images/taichung/index-environmental-bg.jpg");
+}
+#index .environmental.taipei {
+  background-image: url("../images/taipei/index-environmental-bg.jpg");
+}
 #index .environmental .title-image {
   position: relative;
   width: 312px;
   height: 53px;
   background-image: url("../images/index-environmental-title.png");
   margin: 37px auto 0;
+}
+#index .environmental .title-image.taichung {
+  background-image: url("../images/taichung/index-environmental-title.png");
+}
+#index .environmental .title-image.taipei {
+  background-image: url("../images/taipei/index-environmental-title.png");
 }
 #index .environmental .title-text {
   position: relative;
@@ -770,9 +869,22 @@ body.mapping #scene-container .content-mask {
   background-size: 100% 100%;
   transition: background-size 0.7s ease-out, background-position 0.7s ease-out;
 }
+#index .environmental .sample-part .sample .cover {
+  position: absolute;
+  width: 377px;
+  height: 251px;
+  left: 0;
+  top: 0;
+  background-color: #726654;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
 #index .environmental .sample-part .sample:hover .image {
   background-size: 106% 106%;
   background-position: -11.31px -7.53px;
+}
+#index .environmental .sample-part .sample:hover .cover {
+  opacity: 0.35;
 }
 #index .environmental .sample-part .sample .deco {
   position: absolute;
@@ -807,6 +919,12 @@ body.mapping #scene-container .content-mask {
   background-repeat: no-repeat;
   margin-left: -5px;
 }
+#index .environmental .sample-part .sample .sample-bottom .text .triangle.taichung {
+  background-image: url("../images/taichung/triangle-1.png");
+}
+#index .environmental .sample-part .sample .sample-bottom .text .triangle.taipei {
+  background-image: url("../images/taipei/triangle-1.png");
+}
 #index .environmental .sample-part .sample:nth-child(1) .sample-bottom .text:before {
   content: '房型介紹';
 }
@@ -833,6 +951,12 @@ body.mapping #scene-container .content-mask {
   height: 67px;
   background-image: url("../images/index-malt-title.png");
   margin: 0 auto 0;
+}
+#index .malt .top-part .title-image.taichung {
+  background-image: url("../images/taichung/index-malt-title.png");
+}
+#index .malt .top-part .title-image.taipei {
+  background-image: url("../images/taipei/index-malt-title.png");
 }
 #index .malt .top-part .title-text {
   position: relative;
@@ -880,6 +1004,12 @@ body.mapping #scene-container .content-mask {
   z-index: 2;
   background-image: url("../images/index-malt-top.png");
 }
+#index .malt .sample-part .sample .sample-top.taichung {
+  background-image: url("../images/taichung/index-malt-top.png");
+}
+#index .malt .sample-part .sample .sample-top.taipei {
+  background-image: url("../images/taipei/index-malt-top.png");
+}
 #index .malt .sample-part .sample .sample-top .title-image {
   position: absolute;
   left: 50%;
@@ -922,20 +1052,56 @@ body.mapping #scene-container .content-mask {
 #index .malt .sample-part .sample:nth-child(1) .image {
   background-image: url("../images/index-malt-sample-1.png");
 }
+#index .malt .sample-part .sample:nth-child(1) .image.taichung {
+  background-image: url("../images/taichung/index-malt-sample-1.png");
+}
+#index .malt .sample-part .sample:nth-child(1) .image.taipei {
+  background-image: url("../images/taipei/index-malt-sample-1.png");
+}
 #index .malt .sample-part .sample:nth-child(1) .sample-top .title-image {
   background-image: url("../images/index-malt-title-1.png");
+}
+#index .malt .sample-part .sample:nth-child(1) .sample-top .title-image.taichung {
+  background-image: url("../images/taichung/index-malt-title-1.png");
+}
+#index .malt .sample-part .sample:nth-child(1) .sample-top .title-image.taipei {
+  background-image: url("../images/taipei/index-malt-title-1.png");
 }
 #index .malt .sample-part .sample:nth-child(2) .image {
   background-image: url("../images/index-malt-sample-2.png");
 }
+#index .malt .sample-part .sample:nth-child(2) .image.taichung {
+  background-image: url("../images/taichung/index-malt-sample-2.png");
+}
+#index .malt .sample-part .sample:nth-child(2) .image.taipei {
+  background-image: url("../images/taipei/index-malt-sample-2.png");
+}
 #index .malt .sample-part .sample:nth-child(2) .sample-top .title-image {
   background-image: url("../images/index-malt-title-2.png");
+}
+#index .malt .sample-part .sample:nth-child(2) .sample-top .title-image.taichung {
+  background-image: url("../images/taichung/index-malt-title-2.png");
+}
+#index .malt .sample-part .sample:nth-child(2) .sample-top .title-image.taipei {
+  background-image: url("../images/taipei/index-malt-title-2.png");
 }
 #index .malt .sample-part .sample:nth-child(3) .image {
   background-image: url("../images/index-malt-sample-3.png");
 }
+#index .malt .sample-part .sample:nth-child(3) .image.taichung {
+  background-image: url("../images/taichung/index-malt-sample-3.png");
+}
+#index .malt .sample-part .sample:nth-child(3) .image.taipei {
+  background-image: url("../images/taipei/index-malt-sample-3.png");
+}
 #index .malt .sample-part .sample:nth-child(3) .sample-top .title-image {
   background-image: url("../images/index-malt-title-3.png");
+}
+#index .malt .sample-part .sample:nth-child(3) .sample-top .title-image.taichung {
+  background-image: url("../images/taichung/index-malt-title-3.png");
+}
+#index .malt .sample-part .sample:nth-child(3) .sample-top .title-image.taipei {
+  background-image: url("../images/taipei/index-malt-title-3.png");
 }
 #index .malt .bottom-part {
   position: absolute;
@@ -962,6 +1128,12 @@ body.mapping #scene-container .content-mask {
   cursor: pointer;
   display: inline-block;
   margin-left: 13px;
+}
+#index .malt .bottom-part .btn-more.taichung {
+  background-image: url("../images/taichung/btn-more.png");
+}
+#index .malt .bottom-part .btn-more.taipei {
+  background-image: url("../images/taipei/btn-more.png");
 }
 #index .malt .bottom-part .btn-more:active {
   background-position: bottom;
@@ -1010,6 +1182,12 @@ body.mapping #scene-container .content-mask {
   display: block;
   background-image: url("../images/index-care-title.png");
 }
+#index .care .block .detail .middle .title-image.taichung {
+  background-image: url("../images/taichung/index-care-title.png");
+}
+#index .care .block .detail .middle .title-image.taipei {
+  background-image: url("../images/taipei/index-care-title.png");
+}
 #index .care .block .detail .middle .title-text {
   position: relative;
   margin: 6px auto 0;
@@ -1046,6 +1224,12 @@ body.mapping #scene-container .content-mask {
   letter-spacing: 2px;
   margin-left: 32px;
 }
+#index .care .block .detail .middle .contents .brown-block.taichung {
+  background-image: url("../images/taichung/index-care-brown-square.png");
+}
+#index .care .block .detail .middle .contents .brown-block.taipei {
+  background-image: url("../images/taipei/index-care-brown-square.png");
+}
 #index .care .block .detail .middle .contents .texts {
   display: inline-block;
   vertical-align: top;
@@ -1071,6 +1255,12 @@ body.mapping #scene-container .content-mask {
   margin-top: 25px;
   margin-bottom: 35px;
 }
+#index .care .block .detail .middle .btn-more.taichung {
+  background-image: url("../images/taichung/btn-more-2.png");
+}
+#index .care .block .detail .middle .btn-more.taipei {
+  background-image: url("../images/taipei/btn-more-2.png");
+}
 #index .care .block .detail .middle .btn-more:active {
   background-position: bottom;
 }
@@ -1081,6 +1271,12 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/index-care-cover-1.png");
   margin-left: -30px;
 }
+#index .care .block.align-left .cover.taichung {
+  background-image: url("../images/taichung/index-care-cover-1.png");
+}
+#index .care .block.align-left .cover.taipei {
+  background-image: url("../images/taipei/index-care-cover-1.png");
+}
 #index .care .block.align-left .detail {
   left: 0;
 }
@@ -1090,11 +1286,23 @@ body.mapping #scene-container .content-mask {
 #index .care .block.align-right .cover {
   background-image: url("../images/index-care-cover-2.png");
 }
+#index .care .block.align-right .cover.taichung {
+  background-image: url("../images/taichung/index-care-cover-2.png");
+}
+#index .care .block.align-right .cover.taipei {
+  background-image: url("../images/taipei/index-care-cover-2.png");
+}
 #index .care .block.align-right .detail {
   right: 0;
 }
 #index .care .block:nth-child(2) .image {
   background-image: url("../images/index-care-image-1.jpg");
+}
+#index .care .block:nth-child(2) .image.taichung {
+  background-image: url("../images/taichung/index-care-image-1.jpg");
+}
+#index .care .block:nth-child(2) .image.taipei {
+  background-image: url("../images/taipei/index-care-image-1.jpg");
 }
 #index .care .block:nth-child(2) .brown-block:after {
   content: '醫療團隊';
@@ -1102,17 +1310,35 @@ body.mapping #scene-container .content-mask {
 #index .care .block:nth-child(3) .image {
   background-image: url("../images/index-care-image-2.jpg");
 }
+#index .care .block:nth-child(3) .image.taichung {
+  background-image: url("../images/taichung/index-care-image-2.jpg");
+}
+#index .care .block:nth-child(3) .image.taipei {
+  background-image: url("../images/taipei/index-care-image-2.jpg");
+}
 #index .care .block:nth-child(3) .brown-block:after {
   content: '媽媽照護';
 }
 #index .care .block:nth-child(4) .image {
   background-image: url("../images/index-care-image-3.jpg");
 }
+#index .care .block:nth-child(4) .image.taichung {
+  background-image: url("../images/taichung/index-care-image-3.jpg");
+}
+#index .care .block:nth-child(4) .image.taipei {
+  background-image: url("../images/taipei/index-care-image-3.jpg");
+}
 #index .care .block:nth-child(4) .brown-block:after {
   content: '寶寶照護';
 }
 #index .care .block:nth-child(5) .image {
   background-image: url("../images/index-care-image-4.jpg");
+}
+#index .care .block:nth-child(5) .image.taichung {
+  background-image: url("../images/taichung/index-care-image-4.jpg");
+}
+#index .care .block:nth-child(5) .image.taipei {
+  background-image: url("../images/taipei/index-care-image-4.jpg");
 }
 #index .care .block:nth-child(5) .brown-block:after {
   content: '產後教育';
@@ -1137,6 +1363,12 @@ body.mapping #scene-container .content-mask {
   margin-top: -22.5px;
   background-image: url("../images/back-to-top.png");
 }
+#index .back-to-top .icon.taichung {
+  background-image: url("../images/taichung/back-to-top.png");
+}
+#index .back-to-top .icon.taipei {
+  background-image: url("../images/taipei/back-to-top.png");
+}
 #index .back-to-top:active .icon {
   background-position: right;
 }
@@ -1154,12 +1386,24 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/about-key-image.jpg");
 }
+#about-us .key-images.taichung {
+  background-image: url("../images/taichung/about-key-image.jpg");
+}
+#about-us .key-images.taipei {
+  background-image: url("../images/taipei/about-key-image.jpg");
+}
 #about-us .title-image {
   position: relative;
   width: 195px;
   height: 45px;
   margin: 25px auto 0;
   background-image: url("../images/about-title.png");
+}
+#about-us .title-image.taichung {
+  background-image: url("../images/taichung/about-title.png");
+}
+#about-us .title-image.taipei {
+  background-image: url("../images/taipei/about-title.png");
 }
 #about-us .title-text {
   position: relative;
@@ -1177,6 +1421,12 @@ body.mapping #scene-container .content-mask {
   margin: 28px 0 60px 77px;
   float: left;
   background-image: url("../images/about-image-1.jpg");
+}
+#about-us .left-part.taichung {
+  background-image: url("../images/taichung/about-image-1.jpg");
+}
+#about-us .left-part.taipei {
+  background-image: url("../images/taipei/about-image-1.jpg");
 }
 #about-us .right-part {
   position: relative;
@@ -1202,11 +1452,23 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/news-key-image.jpg");
 }
+#news .key-images.taichung {
+  background-image: url("../images/taichung/news-key-image.jpg");
+}
+#news .key-images.taipei {
+  background-image: url("../images/taipei/news-key-image.jpg");
+}
 #news .title-image {
   width: 113px;
   height: 42px;
   margin: 27px auto 27px;
   background-image: url("../images/news-title.png");
+}
+#news .title-image.taichung {
+  background-image: url("../images/taichung/news-title.png");
+}
+#news .title-image.taipei {
+  background-image: url("../images/taipei/news-title.png");
 }
 #news .news-container {
   position: relative;
@@ -1214,6 +1476,12 @@ body.mapping #scene-container .content-mask {
   overflow: auto;
   background-image: url("../images/news-bg.jpg");
   background-repeat: repeat-y;
+}
+#news .news-container.taichung {
+  background-image: url("../images/taichung/news-bg.jpg");
+}
+#news .news-container.taipei {
+  background-image: url("../images/taipei/news-bg.jpg");
 }
 #news .news-container .news-block {
   position: relative;
@@ -1276,6 +1544,12 @@ body.mapping #scene-container .content-mask {
   margin-top: 0px;
   background-image: url("../images/news-slash.png");
 }
+#news .news-container .news-block .date-bar .slash.taichung {
+  background-image: url("../images/taichung/news-slash.png");
+}
+#news .news-container .news-block .date-bar .slash.taipei {
+  background-image: url("../images/taipei/news-slash.png");
+}
 #news .news-container .news-block .date-bar .day {
   left: 64px;
   top: 63px;
@@ -1300,20 +1574,18 @@ body.mapping #scene-container .content-mask {
   letter-spacing: 1px;
   line-height: 24px;
 }
-#news .news-container .news-block .image {
+#news .news-container .news-block .images {
   position: relative;
+  width: 100%;
+  text-align: center;
+}
+#news .news-container .news-block .images .image {
+  position: relative;
+  display: inline-block;
   width: 350px;
   height: 264px;
-  margin-top: -2px;
-}
-#news .news-container .news-block .image-1 {
-  margin-left: 45px;
-  float: left;
-}
-#news .news-container .news-block .image-2 {
-  margin-right: 45px;
-  float: right;
-  margin-bottom: 40px;
+  margin: -2px 5px 7px;
+  text-align: center;
 }
 /* contact */
 #contact {
@@ -1329,6 +1601,12 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/contact-key-image.jpg");
 }
+#contact .key-images.taichung {
+  background-image: url("../images/taichung/contact-key-image.jpg");
+}
+#contact .key-images.taipei {
+  background-image: url("../images/taipei/contact-key-image.jpg");
+}
 /* care */
 #care {
   position: relative;
@@ -1343,6 +1621,12 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/care-key-image.jpg");
 }
+#care .key-images.taichung {
+  background-image: url("../images/taichung/care-key-image.jpg");
+}
+#care .key-images.taipei {
+  background-image: url("../images/taipei/care-key-image.jpg");
+}
 #care .part-1 {
   position: relative;
   width: 100%;
@@ -1352,12 +1636,24 @@ body.mapping #scene-container .content-mask {
   background-repeat: repeat-y;
   overflow: hidden;
 }
+#care .part-1.taichung {
+  background-image: url("../images/taichung/care-title-bg.jpg");
+}
+#care .part-1.taipei {
+  background-image: url("../images/taipei/care-title-bg.jpg");
+}
 #care .part-1 .title-image {
   position: relative;
   margin: 28px auto 0;
   width: 345px;
   height: 66px;
   background-image: url("../images/care-title.png");
+}
+#care .part-1 .title-image.taichung {
+  background-image: url("../images/taichung/care-title.png");
+}
+#care .part-1 .title-image.taipei {
+  background-image: url("../images/taipei/care-title.png");
 }
 #care .part-1 .title-text {
   position: relative;
@@ -1375,6 +1671,12 @@ body.mapping #scene-container .content-mask {
   height: 50px;
   background-image: url("../images/care-brown-bar-1.png");
   overflow: hidden;
+}
+#care .part-1 .title-block.taichung {
+  background-image: url("../images/taichung/care-brown-bar-1.png");
+}
+#care .part-1 .title-block.taipei {
+  background-image: url("../images/taipei/care-brown-bar-1.png");
 }
 #care .part-1 .title-block .text {
   position: relative;
@@ -1418,6 +1720,12 @@ body.mapping #scene-container .content-mask {
   background-position: center;
   background-size: cover;
 }
+#care .part-2 .left-part.taichung {
+  background-image: url("../images/taichung/care-image-1.jpg");
+}
+#care .part-2 .left-part.taipei {
+  background-image: url("../images/taipei/care-image-1.jpg");
+}
 #care .part-2 .right-part {
   position: relative;
   float: right;
@@ -1456,6 +1764,12 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/care-brown-bar-2.png");
   overflow: hidden;
 }
+#care .part-2 .right-part .list .list-item .title-block.taichung {
+  background-image: url("../images/taichung/care-brown-bar-2.png");
+}
+#care .part-2 .right-part .list .list-item .title-block.taipei {
+  background-image: url("../images/taipei/care-brown-bar-2.png");
+}
 #care .part-2 .right-part .list .list-item .title-block .text {
   position: relative;
   margin: 26px auto 0;
@@ -1491,6 +1805,14 @@ body.mapping #scene-container .content-mask {
   height: 50px;
   background-image: url("../images/care-brown-bar-1.png");
   overflow: hidden;
+}
+#care .part-3 .item .title-block.taichung,
+#care .part-4 .item .title-block.taichung {
+  background-image: url("../images/taichung/care-brown-bar-1.png");
+}
+#care .part-3 .item .title-block.taipei,
+#care .part-4 .item .title-block.taipei {
+  background-image: url("../images/taipei/care-brown-bar-1.png");
 }
 #care .part-3 .item .title-block .text,
 #care .part-4 .item .title-block .text {
@@ -1558,6 +1880,12 @@ body.mapping #scene-container .content-mask {
   height: 406px;
   background-image: url("../images/care-part-3-image.jpg");
 }
+#care .part-3 .section-1.taichung {
+  background-image: url("../images/taichung/care-part-3-image.jpg");
+}
+#care .part-3 .section-1.taipei {
+  background-image: url("../images/taipei/care-part-3-image.jpg");
+}
 #care .part-3 .section-2 {
   float: left;
   width: 640px;
@@ -1574,6 +1902,12 @@ body.mapping #scene-container .content-mask {
   width: 640px;
   height: 567px;
   background-image: url("../images/care-part-4-image.jpg");
+}
+#care .part-4 .section-1.taichung {
+  background-image: url("../images/taichung/care-part-4-image.jpg");
+}
+#care .part-4 .section-1.taipei {
+  background-image: url("../images/taipei/care-part-4-image.jpg");
 }
 #care .part-4 .section-2 {
   float: right;
@@ -1609,6 +1943,12 @@ body.mapping #scene-container .content-mask {
   margin-top: -22.5px;
   background-image: url("../images/back-to-top.png");
 }
+#care .back-to-top .icon.taichung {
+  background-image: url("../images/taichung/back-to-top.png");
+}
+#care .back-to-top .icon.taipei {
+  background-image: url("../images/taipei/back-to-top.png");
+}
 #care .back-to-top:active .icon {
   background-position: right;
 }
@@ -1626,12 +1966,24 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/reservation-key-image.jpg");
 }
+#reservation .key-images.taichung {
+  background-image: url("../images/taichung/reservation-key-image.jpg");
+}
+#reservation .key-images.taipei {
+  background-image: url("../images/taipei/reservation-key-image.jpg");
+}
 #reservation .part-1 .title-image {
   position: relative;
   margin: 28px auto 0;
   width: 243px;
   height: 40px;
   background-image: url("../images/reservation-title.png");
+}
+#reservation .part-1 .title-image.taichung {
+  background-image: url("../images/taichung/reservation-title.png");
+}
+#reservation .part-1 .title-image.taipei {
+  background-image: url("../images/taipei/reservation-title.png");
 }
 #reservation .part-1 .title-text {
   position: relative;
@@ -1706,6 +2058,12 @@ body.mapping #scene-container .content-mask {
   background-position: 217px 11px;
   background-repeat: no-repeat;
 }
+#reservation .part-2 .field .field-select.taichung {
+  background-image: url("../images/taichung/brown-arrow.png");
+}
+#reservation .part-2 .field .field-select.taipei {
+  background-image: url("../images/taipei/brown-arrow.png");
+}
 #reservation .part-2 .field.big .label {
   width: 402px;
   border-radius: 5px 5px 0 0;
@@ -1725,6 +2083,12 @@ body.mapping #scene-container .content-mask {
   margin: 30px auto 25px;
   cursor: pointer;
 }
+#reservation .part-2 .btn-send.taichung {
+  background-image: url("../images/taichung/reservation-btn-send.png");
+}
+#reservation .part-2 .btn-send.taipei {
+  background-image: url("../images/taipei/reservation-btn-send.png");
+}
 #reservation .part-2 .btn-send:active {
   margin: 31px auto 24px;
 }
@@ -1742,6 +2106,12 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/malt-key-image.jpg");
 }
+#malt .key-images.taichung {
+  background-image: url("../images/taichung/malt-key-image.jpg");
+}
+#malt .key-images.taipei {
+  background-image: url("../images/taipei/malt-key-image.jpg");
+}
 #malt .malt-part {
   position: relative;
   width: 100%;
@@ -1755,6 +2125,12 @@ body.mapping #scene-container .content-mask {
   width: 281px;
   height: 66px;
   background-image: url("../images/care-malt-title.png");
+}
+#malt .malt-part .title-image.taichung {
+  background-image: url("../images/taichung/care-malt-title.png");
+}
+#malt .malt-part .title-image.taipei {
+  background-image: url("../images/taipei/care-malt-title.png");
 }
 #malt .malt-part .title-text-1 {
   position: relative;
@@ -1786,21 +2162,210 @@ body.mapping #scene-container .content-mask {
   margin: 30px auto 0;
   width: 792px;
   height: 312px;
-  background-image: url("../images/malt-step-1.png");
+}
+#malt .malt-part .step-1 .title-image {
+  position: absolute;
+  left: 355px;
+  top: 32px;
+  width: 80px;
+  height: 44px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-1-title.png");
+}
+#malt .malt-part .step-1 .title-image.taichung {
+  background-image: url("../images/taichung/malt-step-1-title.png");
+}
+#malt .malt-part .step-1 .title-image.taipei {
+  background-image: url("../images/taipei/malt-step-1-title.png");
+}
+#malt .malt-part .step-1 .left {
+  position: absolute;
+  left: 0px;
+  top: 27px;
+  width: 258px;
+  height: 258px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-1-left.png");
+}
+#malt .malt-part .step-1 .left.taichung {
+  background-image: url("../images/taichung/malt-step-1-left.png");
+}
+#malt .malt-part .step-1 .left.taipei {
+  background-image: url("../images/taipei/malt-step-1-left.png");
+}
+#malt .malt-part .step-1 .right {
+  position: absolute;
+  left: 534px;
+  top: 27px;
+  width: 258px;
+  height: 258px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-1-right.png");
+}
+#malt .malt-part .step-1 .right.taichung {
+  background-image: url("../images/taichung/malt-step-1-right.png");
+}
+#malt .malt-part .step-1 .right.taipei {
+  background-image: url("../images/taipei/malt-step-1-right.png");
+}
+#malt .malt-part .step-1 .middle {
+  position: absolute;
+  left: 240px;
+  top: 0px;
+  width: 312px;
+  height: 312px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-middle.png");
+}
+#malt .malt-part .step-1 .middle.taichung {
+  background-image: url("../images/taichung/malt-step-middle.png");
+}
+#malt .malt-part .step-1 .middle.taipei {
+  background-image: url("../images/taipei/malt-step-middle.png");
 }
 #malt .malt-part .step-2 {
   position: relative;
   margin: 23px auto 0;
   width: 794px;
   height: 312px;
-  background-image: url("../images/malt-step-2.png");
+}
+#malt .malt-part .step-2 .title-image {
+  position: absolute;
+  left: 348px;
+  top: 32px;
+  width: 95px;
+  height: 45px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-2-title.png");
+}
+#malt .malt-part .step-2 .title-image.taichung {
+  background-image: url("../images/taichung/malt-step-2-title.png");
+}
+#malt .malt-part .step-2 .title-image.taipei {
+  background-image: url("../images/taipei/malt-step-2-title.png");
+}
+#malt .malt-part .step-2 .left {
+  position: absolute;
+  left: 0px;
+  top: 27px;
+  width: 258px;
+  height: 258px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-2-left.png");
+}
+#malt .malt-part .step-2 .left.taichung {
+  background-image: url("../images/taichung/malt-step-2-left.png");
+}
+#malt .malt-part .step-2 .left.taipei {
+  background-image: url("../images/taipei/malt-step-2-left.png");
+}
+#malt .malt-part .step-2 .right {
+  position: absolute;
+  left: 534px;
+  top: 27px;
+  width: 258px;
+  height: 258px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-2-right.png");
+}
+#malt .malt-part .step-2 .right.taichung {
+  background-image: url("../images/taichung/malt-step-2-right.png");
+}
+#malt .malt-part .step-2 .right.taipei {
+  background-image: url("../images/taipei/malt-step-2-right.png");
+}
+#malt .malt-part .step-2 .middle {
+  position: absolute;
+  left: 240px;
+  top: 0px;
+  width: 312px;
+  height: 312px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-middle.png");
+}
+#malt .malt-part .step-2 .middle.taichung {
+  background-image: url("../images/taichung/malt-step-middle.png");
+}
+#malt .malt-part .step-2 .middle.taipei {
+  background-image: url("../images/taipei/malt-step-middle.png");
 }
 #malt .malt-part .step-3 {
   position: relative;
   margin: 29px auto 0;
   width: 785px;
   height: 312px;
-  background-image: url("../images/malt-step-3.png");
+}
+#malt .malt-part .step-3 .title-image {
+  position: absolute;
+  left: 339px;
+  top: 26px;
+  width: 99px;
+  height: 51px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-3-title.png");
+}
+#malt .malt-part .step-3 .title-image.taichung {
+  background-image: url("../images/taichung/malt-step-3-title.png");
+}
+#malt .malt-part .step-3 .title-image.taipei {
+  background-image: url("../images/taipei/malt-step-3-title.png");
+}
+#malt .malt-part .step-3 .left {
+  position: absolute;
+  left: 0px;
+  top: 27px;
+  width: 258px;
+  height: 258px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-3-left.png");
+}
+#malt .malt-part .step-3 .left.taichung {
+  background-image: url("../images/taichung/malt-step-3-left.png");
+}
+#malt .malt-part .step-3 .left.taipei {
+  background-image: url("../images/taipei/malt-step-3-left.png");
+}
+#malt .malt-part .step-3 .right {
+  position: absolute;
+  left: 534px;
+  top: 27px;
+  width: 258px;
+  height: 258px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-3-right.png");
+}
+#malt .malt-part .step-3 .right.taichung {
+  background-image: url("../images/taichung/malt-step-3-right.png");
+}
+#malt .malt-part .step-3 .right.taipei {
+  background-image: url("../images/taipei/malt-step-3-right.png");
+}
+#malt .malt-part .step-3 .middle {
+  position: absolute;
+  left: 240px;
+  top: 0px;
+  width: 312px;
+  height: 312px;
+  margin-left: 0px;
+  margin-top: 0px;
+  background-image: url("../images/malt-step-middle.png");
+}
+#malt .malt-part .step-3 .middle.taichung {
+  background-image: url("../images/taichung/malt-step-middle.png");
+}
+#malt .malt-part .step-3 .middle.taipei {
+  background-image: url("../images/taipei/malt-step-middle.png");
 }
 #malt .malt-part .step-1 .title,
 #malt .malt-part .step-2 .title,
@@ -1815,6 +2380,17 @@ body.mapping #scene-container .content-mask {
   font-size: 15.63px;
   color: #a18b73;
   letter-spacing: 1px;
+}
+#malt .malt-part .step-1 .line,
+#malt .malt-part .step-2 .line,
+#malt .malt-part .step-3 .line {
+  position: absolute;
+  width: 244px;
+  height: 1px;
+  left: 50%;
+  margin-left: -119px;
+  top: 101px;
+  background-color: #a18b73;
 }
 #malt .malt-part .step-1 .detail,
 #malt .malt-part .step-2 .detail,
@@ -1861,6 +2437,12 @@ body.mapping #scene-container .content-mask {
   margin-top: -22.5px;
   background-image: url("../images/back-to-top.png");
 }
+#malt .back-to-top .icon.taichung {
+  background-image: url("../images/taichung/back-to-top.png");
+}
+#malt .back-to-top .icon.taipei {
+  background-image: url("../images/taipei/back-to-top.png");
+}
 #malt .back-to-top:active .icon {
   background-position: right;
 }
@@ -1904,6 +2486,12 @@ body.mapping #scene-container .content-mask {
   min-height: 488px;
   background-image: url("../images/env-sub-page-bg.jpg");
   background-repeat: repeat-y;
+}
+#environmental .env-sub .detail.taichung {
+  background-image: url("../images/taichung/env-sub-page-bg.jpg");
+}
+#environmental .env-sub .detail.taipei {
+  background-image: url("../images/taipei/env-sub-page-bg.jpg");
 }
 #environmental .env-sub .detail .features,
 #environmental .env-sub .detail .equipments {
@@ -2017,6 +2605,12 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/env-title.png");
   margin: 28px auto 0;
 }
+#environmental .env-main .part-1 .title-image.taichung {
+  background-image: url("../images/taichung/env-title.png");
+}
+#environmental .env-main .part-1 .title-image.taipei {
+  background-image: url("../images/taipei/env-title.png");
+}
 #environmental .env-main .part-1 .title-text {
   position: relative;
   margin: 9px auto 17px;
@@ -2038,6 +2632,12 @@ body.mapping #scene-container .content-mask {
   width: 640px;
   height: 444px;
   background-image: url("../images/env-part-1-bg.png");
+}
+#environmental .env-main .part-1 .right-part.taichung {
+  background-image: url("../images/taichung/env-part-1-bg.png");
+}
+#environmental .env-main .part-1 .right-part.taipei {
+  background-image: url("../images/taipei/env-part-1-bg.png");
 }
 #environmental .env-main .part-1 .right-part .title {
   position: relative;
@@ -2285,6 +2885,12 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/triangle-2.png");
   margin: 0 auto;
 }
+#environmental .env-main .part-2 .triangle.taichung {
+  background-image: url("../images/taichung/triangle-2.png");
+}
+#environmental .env-main .part-2 .triangle.taipei {
+  background-image: url("../images/taipei/triangle-2.png");
+}
 #environmental .env-main .part-3 {
   position: relative;
   width: 100%;
@@ -2316,6 +2922,12 @@ body.mapping #scene-container .content-mask {
   height: 18px;
   background-image: url("../images/heart-icon.png");
   margin: 0 7px -3px 0;
+}
+#environmental .env-main .part-3 .container .item .title .heart.taichung {
+  background-image: url("../images/taichung/heart-icon.png");
+}
+#environmental .env-main .part-3 .container .item .title .heart.taipei {
+  background-image: url("../images/taipei/heart-icon.png");
 }
 #environmental .env-main .part-3 .container .item .detail {
   position: relative;
@@ -2382,12 +2994,24 @@ body.mapping #scene-container .content-mask {
             }
             */
 }
+#environmental .env-main .part-4.taichung {
+  background-image: url("../images/taichung/env-part-4-bg.jpg");
+}
+#environmental .env-main .part-4.taipei {
+  background-image: url("../images/taipei/env-part-4-bg.jpg");
+}
 #environmental .env-main .part-4 .title-image {
   position: relative;
   margin: 29px auto 0;
   width: 255px;
   height: 45px;
   background-image: url("../images/env-part-4-title.png");
+}
+#environmental .env-main .part-4 .title-image.taichung {
+  background-image: url("../images/taichung/env-part-4-title.png");
+}
+#environmental .env-main .part-4 .title-image.taipei {
+  background-image: url("../images/taipei/env-part-4-title.png");
 }
 #environmental .env-main .part-4 .title-text {
   position: relative;
@@ -2493,6 +3117,12 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/env-part-5-title.png");
   margin: 30px auto 0;
 }
+#environmental .env-main .part-5 .title-image.taichung {
+  background-image: url("../images/taichung/env-part-5-title.png");
+}
+#environmental .env-main .part-5 .title-image.taipei {
+  background-image: url("../images/taipei/env-part-5-title.png");
+}
 #environmental .env-main .part-5 .title-text {
   position: relative;
   font-family: '微軟正黑體', "Heiti TC", serif;
@@ -2529,11 +3159,29 @@ body.mapping #scene-container .content-mask {
   height: 100%;
   background-image: url("../images/env-baby-room-cover.png");
 }
+#environmental .env-main .part-5 .part .image .cover.taichung {
+  background-image: url("../images/taichung/env-baby-room-cover.png");
+}
+#environmental .env-main .part-5 .part .image .cover.taipei {
+  background-image: url("../images/taipei/env-baby-room-cover.png");
+}
 #environmental .env-main .part-5 .part:nth-child(1) .image {
   background-image: url("../images/env-part-5-image-1.jpg");
 }
+#environmental .env-main .part-5 .part:nth-child(1) .image.taichung {
+  background-image: url("../images/taichung/env-part-5-image-1.jpg");
+}
+#environmental .env-main .part-5 .part:nth-child(1) .image.taipei {
+  background-image: url("../images/taipei/env-part-5-image-1.jpg");
+}
 #environmental .env-main .part-5 .part:nth-child(2) .image {
   background-image: url("../images/env-part-5-image-2.jpg");
+}
+#environmental .env-main .part-5 .part:nth-child(2) .image.taichung {
+  background-image: url("../images/taichung/env-part-5-image-2.jpg");
+}
+#environmental .env-main .part-5 .part:nth-child(2) .image.taipei {
+  background-image: url("../images/taipei/env-part-5-image-2.jpg");
 }
 #environmental .env-main .part-5 .part .title {
   margin: 19px 0 0 5px;
@@ -2556,6 +3204,12 @@ body.mapping #scene-container .content-mask {
   height: 19px;
   margin: 0 5px 0;
   background-image: url("../images/heart-icon-2.png");
+}
+#environmental .env-main .part-5 .part .item .heart.taichung {
+  background-image: url("../images/taichung/heart-icon-2.png");
+}
+#environmental .env-main .part-5 .part .item .heart.taipei {
+  background-image: url("../images/taipei/heart-icon-2.png");
 }
 #environmental .env-main .part-5 .part .item .detail {
   position: relative;
@@ -2587,6 +3241,12 @@ body.mapping #scene-container .content-mask {
   margin-top: -22.5px;
   background-image: url("../images/back-to-top.png");
 }
+#environmental .env-main .back-to-top .icon.taichung {
+  background-image: url("../images/taichung/back-to-top.png");
+}
+#environmental .env-main .back-to-top .icon.taipei {
+  background-image: url("../images/taipei/back-to-top.png");
+}
 #environmental .env-main .back-to-top:active .icon {
   background-position: right;
 }
@@ -2602,6 +3262,12 @@ body.mapping #scene-container .content-mask {
   width: 100%;
   height: 393px;
   background-image: url("../images/vip-baby-key-image.jpg");
+}
+#vip-baby .key-images.taichung {
+  background-image: url("../images/taichung/vip-baby-key-image.jpg");
+}
+#vip-baby .key-images.taipei {
+  background-image: url("../images/taipei/vip-baby-key-image.jpg");
 }
 #vip-baby .main-container {
   position: relative;
@@ -2632,6 +3298,12 @@ body.mapping #scene-container .content-mask {
   letter-spacing: 2px;
   padding-left: 20px;
 }
+#vip-baby .main-container .part-select.taichung {
+  background-image: url("../images/taichung/pink-arrow.png");
+}
+#vip-baby .main-container .part-select.taipei {
+  background-image: url("../images/taipei/pink-arrow.png");
+}
 #vip-baby .main-container .part-select option {
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 16px;
@@ -2643,6 +3315,12 @@ body.mapping #scene-container .content-mask {
   width: 100%;
   height: 810px;
   background-image: url("../images/vip-baby-1-bg.jpg");
+}
+#vip-baby .main-container .part-1.taichung {
+  background-image: url("../images/taichung/vip-baby-1-bg.jpg");
+}
+#vip-baby .main-container .part-1.taipei {
+  background-image: url("../images/taipei/vip-baby-1-bg.jpg");
 }
 #vip-baby .main-container .part-1 .title-text {
   position: absolute;
@@ -2671,6 +3349,12 @@ body.mapping #scene-container .content-mask {
   width: 100%;
   height: 810px;
   background-image: url("../images/vip-baby-2-bg.jpg");
+}
+#vip-baby .main-container .part-2.taichung {
+  background-image: url("../images/taichung/vip-baby-2-bg.jpg");
+}
+#vip-baby .main-container .part-2.taipei {
+  background-image: url("../images/taipei/vip-baby-2-bg.jpg");
 }
 #vip-baby .main-container .part-2 .baby-image {
   position: absolute;
@@ -2701,6 +3385,12 @@ body.mapping #scene-container .content-mask {
   margin-top: 0px;
   background-image: url("../images/baby-text.png");
 }
+#vip-baby .main-container .part-2 .baby-text.taichung {
+  background-image: url("../images/taichung/baby-text.png");
+}
+#vip-baby .main-container .part-2 .baby-text.taipei {
+  background-image: url("../images/taipei/baby-text.png");
+}
 #vip-baby .main-container .part-2 .detail {
   position: absolute;
   width: 310px;
@@ -2718,6 +3408,12 @@ body.mapping #scene-container .content-mask {
   width: 100%;
   height: 810px;
   background-image: url("../images/vip-baby-3-bg.jpg");
+}
+#vip-baby .main-container .part-3.taichung {
+  background-image: url("../images/taichung/vip-baby-3-bg.jpg");
+}
+#vip-baby .main-container .part-3.taipei {
+  background-image: url("../images/taipei/vip-baby-3-bg.jpg");
 }
 #vip-baby .main-container .part-3 .baby-image-container {
   position: absolute;
@@ -2739,6 +3435,12 @@ body.mapping #scene-container .content-mask {
   height: 100%;
   background-image: url("../images/vip-baby-3-mask.png");
 }
+#vip-baby .main-container .part-3 .baby-image-container .mask.taichung {
+  background-image: url("../images/taichung/vip-baby-3-mask.png");
+}
+#vip-baby .main-container .part-3 .baby-image-container .mask.taipei {
+  background-image: url("../images/taipei/vip-baby-3-mask.png");
+}
 #vip-baby .main-container .part-3 .misc-1 {
   position: absolute;
   left: 515px;
@@ -2748,6 +3450,12 @@ body.mapping #scene-container .content-mask {
   margin-left: 0px;
   margin-top: 0px;
   background-image: url("../images/vip-baby-3-misc-1.png");
+}
+#vip-baby .main-container .part-3 .misc-1.taichung {
+  background-image: url("../images/taichung/vip-baby-3-misc-1.png");
+}
+#vip-baby .main-container .part-3 .misc-1.taipei {
+  background-image: url("../images/taipei/vip-baby-3-misc-1.png");
 }
 #vip-baby .main-container .part-3 .title-text {
   position: absolute;
@@ -2785,6 +3493,12 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/vip-course-key-image.jpg");
 }
+#vip-course .key-images.taichung {
+  background-image: url("../images/taichung/vip-course-key-image.jpg");
+}
+#vip-course .key-images.taipei {
+  background-image: url("../images/taipei/vip-course-key-image.jpg");
+}
 #vip-course .part-1 {
   position: relative;
   width: 100%;
@@ -2797,6 +3511,12 @@ body.mapping #scene-container .content-mask {
   height: 66px;
   background-image: url("../images/vip-course-title.png");
   margin: 26px auto 0;
+}
+#vip-course .part-1 .title-image.taichung {
+  background-image: url("../images/taichung/vip-course-title.png");
+}
+#vip-course .part-1 .title-image.taipei {
+  background-image: url("../images/taipei/vip-course-title.png");
 }
 #vip-course .part-1 .title-text {
   position: relative;
@@ -2829,6 +3549,16 @@ body.mapping #scene-container .content-mask {
   height: 14px;
   background-image: url("../images/calender-node.png");
 }
+#vip-course .part-1 .annotation .un-booked-node.taichung,
+#vip-course .part-1 .annotation .booked-node.taichung,
+#vip-course .part-1 .annotation .full-booked-node.taichung {
+  background-image: url("../images/taichung/calender-node.png");
+}
+#vip-course .part-1 .annotation .un-booked-node.taipei,
+#vip-course .part-1 .annotation .booked-node.taipei,
+#vip-course .part-1 .annotation .full-booked-node.taipei {
+  background-image: url("../images/taipei/calender-node.png");
+}
 #vip-course .part-1 .annotation .un-booked-node {
   background-position: right top;
 }
@@ -2854,6 +3584,14 @@ body.mapping #scene-container .content-mask {
   height: 393px;
   background-image: url("../images/vip-live-key-image.jpg");
 }
+#vip-live .key-images.taichung,
+#open-live .key-images.taichung {
+  background-image: url("../images/taichung/vip-live-key-image.jpg");
+}
+#vip-live .key-images.taipei,
+#open-live .key-images.taipei {
+  background-image: url("../images/taipei/vip-live-key-image.jpg");
+}
 #vip-live .main-container,
 #open-live .main-container {
   position: relative;
@@ -2868,6 +3606,14 @@ body.mapping #scene-container .content-mask {
   height: 46px;
   background-image: url("../images/vip-live-title.png");
   margin: 26px auto 0;
+}
+#vip-live .main-container .title-image.taichung,
+#open-live .main-container .title-image.taichung {
+  background-image: url("../images/taichung/vip-live-title.png");
+}
+#vip-live .main-container .title-image.taipei,
+#open-live .main-container .title-image.taipei {
+  background-image: url("../images/taipei/vip-live-title.png");
 }
 #vip-live .main-container .title-text,
 #open-live .main-container .title-text {
@@ -2959,6 +3705,14 @@ body.mapping #scene-container .content-mask {
   height: 28px;
   margin: 0 0 0 1px;
   cursor: pointer;
+}
+#vip-live .main-container .bottom-right-part .btn-share.taichung,
+#open-live .main-container .bottom-right-part .btn-share.taichung {
+  background-image: url("../images/taichung/vip-live-btn-share.png");
+}
+#vip-live .main-container .bottom-right-part .btn-share.taipei,
+#open-live .main-container .bottom-right-part .btn-share.taipei {
+  background-image: url("../images/taipei/vip-live-btn-share.png");
 }
 #course-booking {
   position: fixed;
@@ -3072,6 +3826,12 @@ body.mapping #scene-container .content-mask {
   background-position: top;
   cursor: pointer;
 }
+#course-booking .container .middle-wrapper .item .item-btn.taichung {
+  background-image: url("../images/taichung/course-booking-item-btn.png");
+}
+#course-booking .container .middle-wrapper .item .item-btn.taipei {
+  background-image: url("../images/taipei/course-booking-item-btn.png");
+}
 #course-booking .container .middle-wrapper .item .item-btn.cancel-mode {
   background-position: center;
 }
@@ -3146,9 +3906,21 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/arrow-prev.png");
   background-size: cover;
 }
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-prev.taichung {
+  background-image: url("../images/taichung/arrow-prev.png");
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-prev.taipei {
+  background-image: url("../images/taipei/arrow-prev.png");
+}
 #image-viewer .container .middle-wrapper .ui .bottom-ui .btn-next {
   background-image: url("../images/arrow-next.png");
   background-size: cover;
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-next.taichung {
+  background-image: url("../images/taichung/arrow-next.png");
+}
+#image-viewer .container .middle-wrapper .ui .bottom-ui .btn-next.taipei {
+  background-image: url("../images/taipei/arrow-next.png");
 }
 #image-viewer .container .middle-wrapper .ui .bottom-ui .progress {
   display: inline-block;
@@ -3223,6 +3995,12 @@ body.mapping #scene-container .content-mask {
   height: 40px;
   background-repeat: no-repeat;
 }
+#questionnaire .container .btn-close.taichung {
+  background-image: url("../images/taichung/questionnaire-btn-close.png");
+}
+#questionnaire .container .btn-close.taipei {
+  background-image: url("../images/taipei/questionnaire-btn-close.png");
+}
 #questionnaire .container .btn-close:active {
   background-position: 0 1px;
 }
@@ -3243,9 +4021,21 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/questionnaire-btn-skip.png");
   margin-left: -174px;
 }
+#questionnaire .container .btn-skip.taichung {
+  background-image: url("../images/taichung/questionnaire-btn-skip.png");
+}
+#questionnaire .container .btn-skip.taipei {
+  background-image: url("../images/taipei/questionnaire-btn-skip.png");
+}
 #questionnaire .container .btn-send {
   background-image: url("../images/questionnaire-btn-send.png");
   margin-left: 30px;
+}
+#questionnaire .container .btn-send.taichung {
+  background-image: url("../images/taichung/questionnaire-btn-send.png");
+}
+#questionnaire .container .btn-send.taipei {
+  background-image: url("../images/taipei/questionnaire-btn-send.png");
 }
 #questionnaire .container .title-image {
   position: relative;
@@ -3253,6 +4043,12 @@ body.mapping #scene-container .content-mask {
   height: 27px;
   margin: 40px auto 0;
   background-image: url("../images/questionnaire-title.png");
+}
+#questionnaire .container .title-image.taichung {
+  background-image: url("../images/taichung/questionnaire-title.png");
+}
+#questionnaire .container .title-image.taipei {
+  background-image: url("../images/taipei/questionnaire-title.png");
 }
 #questionnaire .container .question-container {
   position: relative;
@@ -3288,6 +4084,12 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/questionnaire-option.png");
   background-position: right;
   cursor: pointer;
+}
+#questionnaire .container .question-container .row .right-part .col .option.taichung {
+  background-image: url("../images/taichung/questionnaire-option.png");
+}
+#questionnaire .container .question-container .row .right-part .col .option.taipei {
+  background-image: url("../images/taipei/questionnaire-option.png");
 }
 #questionnaire .container .question-container .row .right-part .col .option.checked {
   background-position: left;
@@ -3377,7 +4179,7 @@ body.mapping #scene-container .content-mask {
 /***** end *****/
 .my-calender {
   position: relative;
-  width: 778px;
+  width: 848px;
   background-color: rgba(255, 0, 0, 0.2);
   box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.13);
 }
@@ -3408,12 +4210,24 @@ body.mapping #scene-container .content-mask {
   background-image: url("../images/white-arrow-1.png");
   left: 10px;
 }
+.my-calender .year-part .arrow-left.taichung {
+  background-image: url("../images/taichung/white-arrow-1.png");
+}
+.my-calender .year-part .arrow-left.taipei {
+  background-image: url("../images/taipei/white-arrow-1.png");
+}
 .my-calender .year-part .arrow-left:active {
   margin-left: -1px;
 }
 .my-calender .year-part .arrow-right {
   background-image: url("../images/white-arrow-2.png");
   right: 10px;
+}
+.my-calender .year-part .arrow-right.taichung {
+  background-image: url("../images/taichung/white-arrow-2.png");
+}
+.my-calender .year-part .arrow-right.taipei {
+  background-image: url("../images/taipei/white-arrow-2.png");
 }
 .my-calender .year-part .arrow-right:active {
   margin-right: -1px;
@@ -3437,7 +4251,7 @@ body.mapping #scene-container .content-mask {
 .my-calender .day-part .day-block {
   position: relative;
   float: left;
-  width: 110px;
+  width: 120px;
   height: 40px;
   margin-left: 1px;
 }
@@ -3466,8 +4280,8 @@ body.mapping #scene-container .content-mask {
 }
 .my-calender .date-part .date-block {
   position: relative;
-  width: 110px;
-  height: 84px;
+  width: 120px;
+  height: 104px;
   background-color: white;
   float: left;
   margin-left: 1px;
@@ -3499,8 +4313,8 @@ body.mapping #scene-container .content-mask {
   position: absolute;
   left: 3px;
   top: 26px;
-  width: 104px;
-  height: 58px;
+  width: 114px;
+  height: 78px;
 }
 .my-calender .date-part .date-block .event-container .event-node {
   position: relative;
@@ -3512,11 +4326,45 @@ body.mapping #scene-container .content-mask {
   background-position: right top;
   float: left;
 }
+.my-calender .date-part .date-block .event-container .event-node.taichung {
+  background-image: url("../images/taichung/calender-node.png");
+}
+.my-calender .date-part .date-block .event-container .event-node.taipei {
+  background-image: url("../images/taipei/calender-node.png");
+}
 .my-calender .date-part .date-block .event-container .event-node.booked {
   background-position: right bottom;
 }
 .my-calender .date-part .date-block .event-container .event-node.full-booked {
   background-position: left bottom;
+}
+.my-calender .date-part .date-block .event-container .event-text {
+  display: block;
+  position: relative;
+  margin: 4px 0 8px;
+  width: 88px;
+  height: 14px;
+  float: left;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 14px;
+  color: #a18b73;
+}
+.my-calender .date-part .date-block .event-container .event-text.booked {
+  background-position: right bottom;
+}
+.my-calender .date-part .date-block .event-container .event-text.full-booked {
+  background-position: left bottom;
+}
+@media (min-width: 641px) {
+  .my-calender .date-part .date-block .event-container .event-node.thrid-line {
+    background: none;
+  }
+  .my-calender .date-part .date-block .event-container .event-node.extra-line {
+    display: none;
+  }
+  .my-calender .date-part .date-block .event-container .event-text.extra-line {
+    display: none;
+  }
 }
 .my-calender .date-part .date-block:active {
   margin-top: 2px;
@@ -3556,12 +4404,24 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/white-arrow-1.png");
     left: 10px;
   }
+  .my-calender .year-part .arrow-left.taichung {
+    background-image: url("../images/taichung/white-arrow-1.png");
+  }
+  .my-calender .year-part .arrow-left.taipei {
+    background-image: url("../images/taipei/white-arrow-1.png");
+  }
   .my-calender .year-part .arrow-left:active {
     margin-left: -1px;
   }
   .my-calender .year-part .arrow-right {
     background-image: url("../images/white-arrow-2.png");
     right: 10px;
+  }
+  .my-calender .year-part .arrow-right.taichung {
+    background-image: url("../images/taichung/white-arrow-2.png");
+  }
+  .my-calender .year-part .arrow-right.taipei {
+    background-image: url("../images/taipei/white-arrow-2.png");
   }
   .my-calender .year-part .arrow-right:active {
     margin-right: -1px;
@@ -3615,7 +4475,7 @@ body.mapping #scene-container .content-mask {
   .my-calender .date-part .date-block {
     position: relative;
     width: 82px;
-    height: 70px;
+    height: 72px;
     background-color: white;
     float: left;
     margin-left: 1px;
@@ -3652,7 +4512,7 @@ body.mapping #scene-container .content-mask {
   }
   .my-calender .date-part .date-block .event-container .event-node {
     position: relative;
-    margin: 6px;
+    margin: 4px 6px;
     width: 14px;
     height: 14px;
     border-radius: 7px;
@@ -3660,15 +4520,49 @@ body.mapping #scene-container .content-mask {
     background-position: right top;
     float: left;
   }
+  .my-calender .date-part .date-block .event-container .event-node.taichung {
+    background-image: url("../images/taichung/calender-node.png");
+  }
+  .my-calender .date-part .date-block .event-container .event-node.taipei {
+    background-image: url("../images/taipei/calender-node.png");
+  }
   .my-calender .date-part .date-block .event-container .event-node.booked {
     background-position: right bottom;
   }
   .my-calender .date-part .date-block .event-container .event-node.full-booked {
     background-position: left bottom;
   }
+  .my-calender .date-part .date-block .event-container .event-text {
+    display: none;
+    position: relative;
+    margin: 4px 0 8px;
+    width: 52px;
+    height: 14px;
+    float: left;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 14px;
+    color: #a18b73;
+  }
+  .my-calender .date-part .date-block .event-container .event-text.booked {
+    background-position: right bottom;
+  }
+  .my-calender .date-part .date-block .event-container .event-text.full-booked {
+    background-position: left bottom;
+  }
   .my-calender .date-part .date-block:active {
     margin-top: 2px;
     margin-bottom: -1px;
+  }
+}
+@media (max-width: 640px) and (min-width: 641px) {
+  .my-calender .date-part .date-block .event-container .event-node.thrid-line {
+    background: none;
+  }
+  .my-calender .date-part .date-block .event-container .event-node.extra-line {
+    display: none;
+  }
+  .my-calender .date-part .date-block .event-container .event-text.extra-line {
+    display: none;
   }
 }
 @media (max-width: 640px) {
@@ -3733,6 +4627,12 @@ body.mapping #scene-container .content-mask {
     margin-top: 0px;
     background-image: url("../images/logo.m.png");
   }
+  #nav .logo.taichung {
+    background-image: url("../images/taichung/logo.m.png");
+  }
+  #nav .logo.taipei {
+    background-image: url("../images/taipei/logo.m.png");
+  }
   #nav .menu-icon {
     position: absolute;
     right: 31px;
@@ -3742,6 +4642,12 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/menu-icon.png");
     cursor: pointer;
     transition: top 0.2s linear;
+  }
+  #nav .menu-icon.taichung {
+    background-image: url("../images/taichung/menu-icon.png");
+  }
+  #nav .menu-icon.taipei {
+    background-image: url("../images/taipei/menu-icon.png");
   }
   #nav .menu-icon:active {
     margin-top: 1px;
@@ -3833,6 +4739,12 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/btn-logout.m.png");
     cursor: pointer;
   }
+  #nav .vip-menu.mobile-mode .btn-logout.taichung {
+    background-image: url("../images/taichung/btn-logout.m.png");
+  }
+  #nav .vip-menu.mobile-mode .btn-logout.taipei {
+    background-image: url("../images/taipei/btn-logout.m.png");
+  }
   #nav .vip-menu.mobile-mode .btn-logout:active {
     margin: 16px auto 13px;
   }
@@ -3872,6 +4784,12 @@ body.mapping #scene-container .content-mask {
     height: 202px;
     background-image: url("../images/index-reservation.m.png");
   }
+  #index .key-images .reservation-icon.taichung {
+    background-image: url("../images/taichung/index-reservation.m.png");
+  }
+  #index .key-images .reservation-icon.taipei {
+    background-image: url("../images/taipei/index-reservation.m.png");
+  }
   #index .brown-bar {
     position: relative;
     width: 100%;
@@ -3894,6 +4812,12 @@ body.mapping #scene-container .content-mask {
     margin: 43px auto 0;
     background-image: url("../images/index-about-us-title.m.png");
   }
+  #index .about-us .left-part .title-image.taichung {
+    background-image: url("../images/taichung/index-about-us-title.m.png");
+  }
+  #index .about-us .left-part .title-image.taipei {
+    background-image: url("../images/taipei/index-about-us-title.m.png");
+  }
   #index .about-us .left-part .title-text {
     margin: 24px auto 0;
     font-family: '微軟正黑體', "Heiti TC", serif;
@@ -3909,6 +4833,12 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/index-about-us-image.jpg");
     width: 640px;
     height: 460px;
+  }
+  #index .about-us .left-part .image-m.taichung {
+    background-image: url("../images/taichung/index-about-us-image.jpg");
+  }
+  #index .about-us .left-part .image-m.taipei {
+    background-image: url("../images/taipei/index-about-us-image.jpg");
   }
   #index .about-us .left-part .contents {
     width: 556px;
@@ -3941,6 +4871,12 @@ body.mapping #scene-container .content-mask {
     margin: 63px auto 64px;
     float: none;
   }
+  #index .about-us .left-part .btn-more.taichung {
+    background-image: url("../images/taichung/btn-more-3.png");
+  }
+  #index .about-us .left-part .btn-more.taipei {
+    background-image: url("../images/taipei/btn-more-3.png");
+  }
   #index .about-us .left-part .btn-more:active {
     background-position: bottom;
   }
@@ -3951,11 +4887,23 @@ body.mapping #scene-container .content-mask {
     height: 2145px;
     background-image: url("../images/index-environmental-bg.m.jpg");
   }
+  #index .environmental.taichung {
+    background-image: url("../images/taichung/index-environmental-bg.m.jpg");
+  }
+  #index .environmental.taipei {
+    background-image: url("../images/taipei/index-environmental-bg.m.jpg");
+  }
   #index .environmental .title-image {
     width: 543px;
     height: 72px;
     background-image: url("../images/index-environmental-title.m.png");
     margin: 40px auto 0;
+  }
+  #index .environmental .title-image.taichung {
+    background-image: url("../images/taichung/index-environmental-title.m.png");
+  }
+  #index .environmental .title-image.taipei {
+    background-image: url("../images/taipei/index-environmental-title.m.png");
   }
   #index .environmental .title-text {
     margin: 19px auto 0;
@@ -3992,6 +4940,9 @@ body.mapping #scene-container .content-mask {
     background-color: rgba(255, 0, 0, 0.4);
     transition: none;
   }
+  #index .environmental .sample-part .sample .cover {
+    display: none;
+  }
   #index .environmental .sample-part .sample:hover .image {
     background-size: 100%;
     background-position: 0 0;
@@ -4024,6 +4975,12 @@ body.mapping #scene-container .content-mask {
     background-position: 0 0;
     margin-left: -5px;
   }
+  #index .environmental .sample-part .sample .sample-bottom .text .triangle.taichung {
+    background-image: url("../images/taichung/triangle-3.png");
+  }
+  #index .environmental .sample-part .sample .sample-bottom .text .triangle.taipei {
+    background-image: url("../images/taipei/triangle-3.png");
+  }
   #index .environmental .sample-part .sample:nth-child(1) .sample-bottom .text:before {
     content: '房型介紹';
   }
@@ -4044,6 +5001,12 @@ body.mapping #scene-container .content-mask {
     height: 101px;
     background-image: url("../images/index-malt-title.m.png");
     margin: 0 auto 0;
+  }
+  #index .malt .top-part .title-image.taichung {
+    background-image: url("../images/taichung/index-malt-title.m.png");
+  }
+  #index .malt .top-part .title-image.taipei {
+    background-image: url("../images/taipei/index-malt-title.m.png");
   }
   #index .malt .top-part .title-text {
     margin: 16px auto 0;
@@ -4079,6 +5042,12 @@ body.mapping #scene-container .content-mask {
     width: 625px;
     height: 625px;
     background-image: url("../images/index-malt-top.m.png");
+  }
+  #index .malt .sample-part .sample .sample-top.taichung {
+    background-image: url("../images/taichung/index-malt-top.m.png");
+  }
+  #index .malt .sample-part .sample .sample-top.taipei {
+    background-image: url("../images/taipei/index-malt-top.m.png");
   }
   #index .malt .sample-part .sample .sample-top .title-image {
     left: 50%;
@@ -4119,20 +5088,56 @@ body.mapping #scene-container .content-mask {
   #index .malt .sample-part .sample:nth-child(1) .image {
     background-image: url("../images/index-malt-sample-1.m.png");
   }
+  #index .malt .sample-part .sample:nth-child(1) .image.taichung {
+    background-image: url("../images/taichung/index-malt-sample-1.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(1) .image.taipei {
+    background-image: url("../images/taipei/index-malt-sample-1.m.png");
+  }
   #index .malt .sample-part .sample:nth-child(1) .sample-top .title-image {
     background-image: url("../images/index-malt-title-1.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(1) .sample-top .title-image.taichung {
+    background-image: url("../images/taichung/index-malt-title-1.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(1) .sample-top .title-image.taipei {
+    background-image: url("../images/taipei/index-malt-title-1.m.png");
   }
   #index .malt .sample-part .sample:nth-child(2) .image {
     background-image: url("../images/index-malt-sample-2.m.png");
   }
+  #index .malt .sample-part .sample:nth-child(2) .image.taichung {
+    background-image: url("../images/taichung/index-malt-sample-2.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(2) .image.taipei {
+    background-image: url("../images/taipei/index-malt-sample-2.m.png");
+  }
   #index .malt .sample-part .sample:nth-child(2) .sample-top .title-image {
     background-image: url("../images/index-malt-title-2.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(2) .sample-top .title-image.taichung {
+    background-image: url("../images/taichung/index-malt-title-2.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(2) .sample-top .title-image.taipei {
+    background-image: url("../images/taipei/index-malt-title-2.m.png");
   }
   #index .malt .sample-part .sample:nth-child(3) .image {
     background-image: url("../images/index-malt-sample-3.m.png");
   }
+  #index .malt .sample-part .sample:nth-child(3) .image.taichung {
+    background-image: url("../images/taichung/index-malt-sample-3.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(3) .image.taipei {
+    background-image: url("../images/taipei/index-malt-sample-3.m.png");
+  }
   #index .malt .sample-part .sample:nth-child(3) .sample-top .title-image {
     background-image: url("../images/index-malt-title-3.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(3) .sample-top .title-image.taichung {
+    background-image: url("../images/taichung/index-malt-title-3.m.png");
+  }
+  #index .malt .sample-part .sample:nth-child(3) .sample-top .title-image.taipei {
+    background-image: url("../images/taipei/index-malt-title-3.m.png");
   }
   #index .malt .drag-hint {
     position: absolute;
@@ -4143,6 +5148,12 @@ body.mapping #scene-container .content-mask {
     margin-left: 0px;
     margin-top: 0px;
     background-image: url("../images/index-malt.drag-hint.png");
+  }
+  #index .malt .drag-hint.taichung {
+    background-image: url("../images/taichung/index-malt.drag-hint.png");
+  }
+  #index .malt .drag-hint.taipei {
+    background-image: url("../images/taipei/index-malt.drag-hint.png");
   }
   #index .malt .bottom-part {
     position: absolute;
@@ -4172,6 +5183,12 @@ body.mapping #scene-container .content-mask {
     display: block;
     margin: 5px auto 0;
   }
+  #index .malt .bottom-part .btn-more.taichung {
+    background-image: url("../images/taichung/btn-more-4.png");
+  }
+  #index .malt .bottom-part .btn-more.taipei {
+    background-image: url("../images/taipei/btn-more-4.png");
+  }
   #index .malt .bottom-part .btn-more:active {
     background-position: bottom;
   }
@@ -4186,6 +5203,12 @@ body.mapping #scene-container .content-mask {
     height: 89px;
     margin: 50px auto 0;
     background-image: url("../images/index-care-title.m.png");
+  }
+  #index .care .top-part .title-image.taichung {
+    background-image: url("../images/taichung/index-care-title.m.png");
+  }
+  #index .care .top-part .title-image.taipei {
+    background-image: url("../images/taipei/index-care-title.m.png");
   }
   #index .care .top-part .title-text {
     position: relative;
@@ -4245,6 +5268,12 @@ body.mapping #scene-container .content-mask {
     letter-spacing: 4px;
     margin: 24px auto 0;
   }
+  #index .care .block .detail .middle .contents .brown-block.taichung {
+    background-image: url("../images/taichung/index-care-brown-square.m.png");
+  }
+  #index .care .block .detail .middle .contents .brown-block.taipei {
+    background-image: url("../images/taipei/index-care-brown-square.m.png");
+  }
   #index .care .block .detail .middle .contents .texts {
     display: block;
     vertical-align: top;
@@ -4268,6 +5297,12 @@ body.mapping #scene-container .content-mask {
     cursor: pointer;
     margin: 34px auto 34px;
   }
+  #index .care .block .detail .middle .btn-more.taichung {
+    background-image: url("../images/taichung/btn-more-5.png");
+  }
+  #index .care .block .detail .middle .btn-more.taipei {
+    background-image: url("../images/taipei/btn-more-5.png");
+  }
   #index .care .block .detail .middle .btn-more:active {
     background-position: bottom;
   }
@@ -4290,11 +5325,23 @@ body.mapping #scene-container .content-mask {
   #index .care .block:nth-child(2) .image {
     background-image: url("../images/index-care-image-1.m.png");
   }
+  #index .care .block:nth-child(2) .image.taichung {
+    background-image: url("../images/taichung/index-care-image-1.m.png");
+  }
+  #index .care .block:nth-child(2) .image.taipei {
+    background-image: url("../images/taipei/index-care-image-1.m.png");
+  }
   #index .care .block:nth-child(2) .brown-block:after {
     content: '醫療團隊';
   }
   #index .care .block:nth-child(3) .image {
     background-image: url("../images/index-care-image-2.m.png");
+  }
+  #index .care .block:nth-child(3) .image.taichung {
+    background-image: url("../images/taichung/index-care-image-2.m.png");
+  }
+  #index .care .block:nth-child(3) .image.taipei {
+    background-image: url("../images/taipei/index-care-image-2.m.png");
   }
   #index .care .block:nth-child(3) .brown-block:after {
     content: '媽媽照護';
@@ -4302,11 +5349,23 @@ body.mapping #scene-container .content-mask {
   #index .care .block:nth-child(4) .image {
     background-image: url("../images/index-care-image-3.m.png");
   }
+  #index .care .block:nth-child(4) .image.taichung {
+    background-image: url("../images/taichung/index-care-image-3.m.png");
+  }
+  #index .care .block:nth-child(4) .image.taipei {
+    background-image: url("../images/taipei/index-care-image-3.m.png");
+  }
   #index .care .block:nth-child(4) .brown-block:after {
     content: '寶寶照護';
   }
   #index .care .block:nth-child(5) .image {
     background-image: url("../images/index-care-image-4.m.png");
+  }
+  #index .care .block:nth-child(5) .image.taichung {
+    background-image: url("../images/taichung/index-care-image-4.m.png");
+  }
+  #index .care .block:nth-child(5) .image.taipei {
+    background-image: url("../images/taipei/index-care-image-4.m.png");
   }
   #index .care .block:nth-child(5) .brown-block:after {
     content: '產後教育';
@@ -4330,6 +5389,12 @@ body.mapping #scene-container .content-mask {
     margin-left: -31.5px;
     margin-top: -39.5px;
     background-image: url("../images/back-to-top.m.png");
+  }
+  #index .back-to-top .icon.taichung {
+    background-image: url("../images/taichung/back-to-top.m.png");
+  }
+  #index .back-to-top .icon.taipei {
+    background-image: url("../images/taipei/back-to-top.m.png");
   }
   #index .back-to-top:active .icon {
     background-position: right;
@@ -4398,6 +5463,12 @@ body.mapping #scene-container .content-mask {
     height: 178px;
     background-image: url("../images/footer-misc-1.m.png");
   }
+  #footer .mode-1-content .misc-image.taichung {
+    background-image: url("../images/taichung/footer-misc-1.m.png");
+  }
+  #footer .mode-1-content .misc-image.taipei {
+    background-image: url("../images/taipei/footer-misc-1.m.png");
+  }
   #footer .mode-1-content .field-tel,
   #footer .mode-1-content .field-address,
   #footer .mode-1-content .field-facebook {
@@ -4437,9 +5508,21 @@ body.mapping #scene-container .content-mask {
     top: 140px;
     background-image: url("../images/footer-btn-map.png");
   }
+  #footer .mode-1-content .btn-map.taichung {
+    background-image: url("../images/taichung/footer-btn-map.png");
+  }
+  #footer .mode-1-content .btn-map.taipei {
+    background-image: url("../images/taipei/footer-btn-map.png");
+  }
   #footer .mode-1-content .btn-facebook {
     top: 191px;
     background-image: url("../images/footer-btn-facebook.png");
+  }
+  #footer .mode-1-content .btn-facebook.taichung {
+    background-image: url("../images/taichung/footer-btn-facebook.png");
+  }
+  #footer .mode-1-content .btn-facebook.taipei {
+    background-image: url("../images/taipei/footer-btn-facebook.png");
   }
   #footer .mode-1-content .facebook-page {
     display: none;
@@ -4476,6 +5559,12 @@ body.mapping #scene-container .content-mask {
     margin-right: 9px;
     margin-bottom: -2px;
   }
+  #footer .mode-2-content .top-part .tel .tel-icon.taichung {
+    background-image: url("../images/taichung/tel-icon.m.png");
+  }
+  #footer .mode-2-content .top-part .tel .tel-icon.taipei {
+    background-image: url("../images/taipei/tel-icon.m.png");
+  }
   #footer .mode-2-content .top-part .address {
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 25.7px;
@@ -4487,6 +5576,12 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/address-icon.m.png");
     margin-right: 8px;
     margin-bottom: -3px;
+  }
+  #footer .mode-2-content .top-part .address .address-icon.taichung {
+    background-image: url("../images/taichung/address-icon.m.png");
+  }
+  #footer .mode-2-content .top-part .address .address-icon.taipei {
+    background-image: url("../images/taipei/address-icon.m.png");
   }
   #footer .mode-2-content .bottom-part {
     left: 30px;
@@ -4507,12 +5602,24 @@ body.mapping #scene-container .content-mask {
   #contact .key-images {
     background-image: url("../images/contact-key-image.m.jpg");
   }
+  #contact .key-images.taichung {
+    background-image: url("../images/taichung/contact-key-image.m.jpg");
+  }
+  #contact .key-images.taipei {
+    background-image: url("../images/taipei/contact-key-image.m.jpg");
+  }
   /* about-us */
   #about-us {
     height: auto;
   }
   #about-us .key-images {
     background-image: url("../images/about-key-image.m.jpg");
+  }
+  #about-us .key-images.taichung {
+    background-image: url("../images/taichung/about-key-image.m.jpg");
+  }
+  #about-us .key-images.taipei {
+    background-image: url("../images/taipei/about-key-image.m.jpg");
   }
   #about-us .part-1 {
     overflow: hidden;
@@ -4535,6 +5642,12 @@ body.mapping #scene-container .content-mask {
     float: none;
     background-image: url("../images/about-image-1.m.jpg");
   }
+  #about-us .left-part.taichung {
+    background-image: url("../images/taichung/about-image-1.m.jpg");
+  }
+  #about-us .left-part.taipei {
+    background-image: url("../images/taipei/about-image-1.m.jpg");
+  }
   #about-us .right-part {
     position: relative;
     float: none;
@@ -4552,18 +5665,36 @@ body.mapping #scene-container .content-mask {
   #news .key-images {
     background-image: url("../images/news-key-image.m.jpg");
   }
+  #news .key-images.taichung {
+    background-image: url("../images/taichung/news-key-image.m.jpg");
+  }
+  #news .key-images.taipei {
+    background-image: url("../images/taipei/news-key-image.m.jpg");
+  }
   #news .title-image {
     width: 165px;
     height: 61px;
     margin: 34px auto 34px;
     background-image: url("../images/news-title.m.png");
   }
+  #news .title-image.taichung {
+    background-image: url("../images/taichung/news-title.m.png");
+  }
+  #news .title-image.taipei {
+    background-image: url("../images/taipei/news-title.m.png");
+  }
   #news .news-container {
     background-image: url("../images/news-bg.m.jpg");
   }
+  #news .news-container.taichung {
+    background-image: url("../images/taichung/news-bg.m.jpg");
+  }
+  #news .news-container.taipei {
+    background-image: url("../images/taipei/news-bg.m.jpg");
+  }
   #news .news-container .news-block {
     margin: 45px auto 0;
-    width: 563px;
+    width: 564px;
   }
   #news .news-container .news-block:nth-last-child(1) {
     margin-bottom: 42px;
@@ -4605,6 +5736,12 @@ body.mapping #scene-container .content-mask {
     margin-top: 0px;
     background-image: url("../images/news-slash.m.png");
   }
+  #news .news-container .news-block .date-bar .slash.taichung {
+    background-image: url("../images/taichung/news-slash.m.png");
+  }
+  #news .news-container .news-block .date-bar .slash.taipei {
+    background-image: url("../images/taipei/news-slash.m.png");
+  }
   #news .news-container .news-block .date-bar .day {
     left: 82px;
     top: 92px;
@@ -4627,18 +5764,23 @@ body.mapping #scene-container .content-mask {
     letter-spacing: 1px;
     line-height: 46px;
   }
-  #news .news-container .news-block .image {
+  #news .news-container .news-block .images {
+    width: 100%;
+  }
+  #news .news-container .news-block .images .image {
     width: 502px;
     height: 380px;
     margin: 0 auto 20px;
-    float: none;
-  }
-  #news .news-container .news-block .image:last-child {
-    margin-bottom: 26px;
   }
   /* reservation */
   #reservation .key-images {
     background-image: url("../images/reservation-key-image.m.jpg");
+  }
+  #reservation .key-images.taichung {
+    background-image: url("../images/taichung/reservation-key-image.m.jpg");
+  }
+  #reservation .key-images.taipei {
+    background-image: url("../images/taipei/reservation-key-image.m.jpg");
   }
   #reservation .part-1 .title-image {
     margin: 41px auto 0;
@@ -4713,6 +5855,12 @@ body.mapping #scene-container .content-mask {
     background-position: 320px 11px;
     background-repeat: no-repeat;
   }
+  #reservation .part-2 .field .field-select.taichung {
+    background-image: url("../images/taichung/brown-arrow.png");
+  }
+  #reservation .part-2 .field .field-select.taipei {
+    background-image: url("../images/taipei/brown-arrow.png");
+  }
   #reservation .part-2 .field.big .label {
     width: 573px;
     border-radius: 5px 5px 0 0;
@@ -4731,12 +5879,24 @@ body.mapping #scene-container .content-mask {
     height: 56px;
     margin: 29px auto 40px;
   }
+  #reservation .part-2 .btn-send.taichung {
+    background-image: url("../images/taichung/reservation-btn-send.m.png");
+  }
+  #reservation .part-2 .btn-send.taipei {
+    background-image: url("../images/taipei/reservation-btn-send.m.png");
+  }
   #reservation .part-2 .btn-send:active {
     margin: 30px auto 39px;
   }
   /* malt */
   #malt .key-images {
     background-image: url("../images/malt-key-image.m.jpg");
+  }
+  #malt .key-images.taichung {
+    background-image: url("../images/taichung/malt-key-image.m.jpg");
+  }
+  #malt .key-images.taipei {
+    background-image: url("../images/taipei/malt-key-image.m.jpg");
   }
   #malt .malt-part .title-image {
     margin: 34px auto 0;
@@ -4763,11 +5923,29 @@ body.mapping #scene-container .content-mask {
   #malt .malt-part .step-1 {
     background-image: url("../images/malt-step-1.m.png");
   }
+  #malt .malt-part .step-1.taichung {
+    background-image: url("../images/taichung/malt-step-1.m.png");
+  }
+  #malt .malt-part .step-1.taipei {
+    background-image: url("../images/taipei/malt-step-1.m.png");
+  }
   #malt .malt-part .step-2 {
     background-image: url("../images/malt-step-2.m.png");
   }
+  #malt .malt-part .step-2.taichung {
+    background-image: url("../images/taichung/malt-step-2.m.png");
+  }
+  #malt .malt-part .step-2.taipei {
+    background-image: url("../images/taipei/malt-step-2.m.png");
+  }
   #malt .malt-part .step-3 {
     background-image: url("../images/malt-step-3.m.png");
+  }
+  #malt .malt-part .step-3.taichung {
+    background-image: url("../images/taichung/malt-step-3.m.png");
+  }
+  #malt .malt-part .step-3.taipei {
+    background-image: url("../images/taipei/malt-step-3.m.png");
   }
   #malt .malt-part .step-1,
   #malt .malt-part .step-2,
@@ -4775,6 +5953,23 @@ body.mapping #scene-container .content-mask {
     margin: 67px auto 0;
     width: 573px;
     height: 750px;
+  }
+  #malt .malt-part .step-1 .left,
+  #malt .malt-part .step-2 .left,
+  #malt .malt-part .step-3 .left,
+  #malt .malt-part .step-1 .middle,
+  #malt .malt-part .step-2 .middle,
+  #malt .malt-part .step-3 .middle,
+  #malt .malt-part .step-1 .right,
+  #malt .malt-part .step-2 .right,
+  #malt .malt-part .step-3 .right,
+  #malt .malt-part .step-1 .title-image,
+  #malt .malt-part .step-2 .title-image,
+  #malt .malt-part .step-3 .title-image,
+  #malt .malt-part .step-1 .line,
+  #malt .malt-part .step-2 .line,
+  #malt .malt-part .step-3 .line {
+    display: none;
   }
   #malt .malt-part .step-1 .title,
   #malt .malt-part .step-2 .title,
@@ -4831,6 +6026,12 @@ body.mapping #scene-container .content-mask {
     margin-top: -22.5px;
     background-image: url("../images/back-to-top.png");
   }
+  #malt .back-to-top .icon.taichung {
+    background-image: url("../images/taichung/back-to-top.png");
+  }
+  #malt .back-to-top .icon.taipei {
+    background-image: url("../images/taipei/back-to-top.png");
+  }
   #malt .back-to-top:active .icon {
     background-position: right;
   }
@@ -4838,9 +6039,21 @@ body.mapping #scene-container .content-mask {
   #care .key-images {
     background-image: url("../images/care-key-image.m.jpg");
   }
+  #care .key-images.taichung {
+    background-image: url("../images/taichung/care-key-image.m.jpg");
+  }
+  #care .key-images.taipei {
+    background-image: url("../images/taipei/care-key-image.m.jpg");
+  }
   #care .part-1 {
     min-height: 629px;
     background-image: url("../images/care-title-bg.m.jpg");
+  }
+  #care .part-1.taichung {
+    background-image: url("../images/taichung/care-title-bg.m.jpg");
+  }
+  #care .part-1.taipei {
+    background-image: url("../images/taipei/care-title-bg.m.jpg");
   }
   #care .part-1 .title-image {
     margin: 34px auto 0;
@@ -4884,6 +6097,12 @@ body.mapping #scene-container .content-mask {
     height: 517px;
     background-image: url("../images/care-image-1.m.jpg");
   }
+  #care .part-2 .left-part.taichung {
+    background-image: url("../images/taichung/care-image-1.m.jpg");
+  }
+  #care .part-2 .left-part.taipei {
+    background-image: url("../images/taipei/care-image-1.m.jpg");
+  }
   #care .part-2 .right-part {
     float: none;
   }
@@ -4912,6 +6131,12 @@ body.mapping #scene-container .content-mask {
     width: 557px;
     height: 50px;
     background-image: url("../images/care-brown-bar-1.png");
+  }
+  #care .part-2 .right-part .list .list-item .title-block.taichung {
+    background-image: url("../images/taichung/care-brown-bar-1.png");
+  }
+  #care .part-2 .right-part .list .list-item .title-block.taipei {
+    background-image: url("../images/taipei/care-brown-bar-1.png");
   }
   #care .part-2 .right-part .list .list-item .title-block .text {
     margin: 6px auto 0;
@@ -4984,6 +6209,12 @@ body.mapping #scene-container .content-mask {
     height: 414px;
     background-image: url("../images/care-part-3-image.m.jpg");
   }
+  #care .part-3 .section-1.taichung {
+    background-image: url("../images/taichung/care-part-3-image.m.jpg");
+  }
+  #care .part-3 .section-1.taipei {
+    background-image: url("../images/taipei/care-part-3-image.m.jpg");
+  }
   #care .part-3 .section-2 {
     float: none;
   }
@@ -4992,6 +6223,12 @@ body.mapping #scene-container .content-mask {
     width: 640px;
     height: 414px;
     background-image: url("../images/care-part-4-image.m.jpg");
+  }
+  #care .part-4 .section-1.taichung {
+    background-image: url("../images/taichung/care-part-4-image.m.jpg");
+  }
+  #care .part-4 .section-1.taipei {
+    background-image: url("../images/taipei/care-part-4-image.m.jpg");
   }
   #care .part-4 .section-2 {
     float: none;
@@ -5027,6 +6264,12 @@ body.mapping #scene-container .content-mask {
     margin-left: -31.5px;
     margin-top: -39.5px;
     background-image: url("../images/back-to-top.m.png");
+  }
+  #care .back-to-top .icon.taichung {
+    background-image: url("../images/taichung/back-to-top.m.png");
+  }
+  #care .back-to-top .icon.taipei {
+    background-image: url("../images/taipei/back-to-top.m.png");
   }
   #care .back-to-top:active .icon {
     background-position: right;
@@ -5131,6 +6374,12 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/env-part-1-bg.m.jpg");
     background-repeat: no-repeat;
     background-position: top;
+  }
+  #environmental .env-main .part-1 .right-part.taichung {
+    background-image: url("../images/taichung/env-part-1-bg.m.jpg");
+  }
+  #environmental .env-main .part-1 .right-part.taipei {
+    background-image: url("../images/taipei/env-part-1-bg.m.jpg");
   }
   #environmental .env-main .part-1 .right-part .title {
     position: relative;
@@ -5323,6 +6572,12 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/triangle-2.png");
     margin: 0 auto;
   }
+  #environmental .env-main .part-2 .triangle.taichung {
+    background-image: url("../images/taichung/triangle-2.png");
+  }
+  #environmental .env-main .part-2 .triangle.taipei {
+    background-image: url("../images/taipei/triangle-2.png");
+  }
   #environmental .env-main .part-3 {
     background-color: #f2f0ec;
   }
@@ -5350,6 +6605,12 @@ body.mapping #scene-container .content-mask {
     height: 34px;
     background-image: url("../images/heart-icon-3.png");
     margin: 0 10px -5px 0;
+  }
+  #environmental .env-main .part-3 .container .item .title .heart.taichung {
+    background-image: url("../images/taichung/heart-icon-3.png");
+  }
+  #environmental .env-main .part-3 .container .item .title .heart.taipei {
+    background-image: url("../images/taipei/heart-icon-3.png");
   }
   #environmental .env-main .part-3 .container .item .detail {
     position: relative;
@@ -5402,6 +6663,12 @@ body.mapping #scene-container .content-mask {
                     .my-loop(1);
                 }
                 */
+  }
+  #environmental .env-main .part-4.taichung {
+    background-image: url("../images/taichung/env-part-4-bg.m.jpg");
+  }
+  #environmental .env-main .part-4.taipei {
+    background-image: url("../images/taipei/env-part-4-bg.m.jpg");
   }
   #environmental .env-main .part-4 .title-image {
     margin: 39px auto 0;
@@ -5501,8 +6768,20 @@ body.mapping #scene-container .content-mask {
   #environmental .env-main .part-5 .part:nth-child(1) .image {
     background-image: url("../images/env-part-5-image-1.m.png");
   }
+  #environmental .env-main .part-5 .part:nth-child(1) .image.taichung {
+    background-image: url("../images/taichung/env-part-5-image-1.m.png");
+  }
+  #environmental .env-main .part-5 .part:nth-child(1) .image.taipei {
+    background-image: url("../images/taipei/env-part-5-image-1.m.png");
+  }
   #environmental .env-main .part-5 .part:nth-child(2) .image {
     background-image: url("../images/env-part-5-image-2.m.png");
+  }
+  #environmental .env-main .part-5 .part:nth-child(2) .image.taichung {
+    background-image: url("../images/taichung/env-part-5-image-2.m.png");
+  }
+  #environmental .env-main .part-5 .part:nth-child(2) .image.taipei {
+    background-image: url("../images/taipei/env-part-5-image-2.m.png");
   }
   #environmental .env-main .part-5 .part .title {
     margin: 30px 0 0 5px;
@@ -5523,6 +6802,12 @@ body.mapping #scene-container .content-mask {
     height: 29px;
     margin: 0 13px 0 13px;
     background-image: url("../images/heart-icon-4.png");
+  }
+  #environmental .env-main .part-5 .part .item .heart.taichung {
+    background-image: url("../images/taichung/heart-icon-4.png");
+  }
+  #environmental .env-main .part-5 .part .item .heart.taipei {
+    background-image: url("../images/taipei/heart-icon-4.png");
   }
   #environmental .env-main .part-5 .part .item .detail {
     width: 520px;
@@ -5554,6 +6839,12 @@ body.mapping #scene-container .content-mask {
     margin-left: -31.5px;
     margin-top: -39.5px;
     background-image: url("../images/back-to-top.m.png");
+  }
+  #environmental .env-main .back-to-top .icon.taichung {
+    background-image: url("../images/taichung/back-to-top.m.png");
+  }
+  #environmental .env-main .back-to-top .icon.taipei {
+    background-image: url("../images/taipei/back-to-top.m.png");
   }
   #environmental .env-main .back-to-top:active .icon {
     background-position: right;
@@ -5590,6 +6881,12 @@ body.mapping #scene-container .content-mask {
   #vip-baby .key-images {
     background-image: url("../images/vip-baby-key-image.m.jpg");
   }
+  #vip-baby .key-images.taichung {
+    background-image: url("../images/taichung/vip-baby-key-image.m.jpg");
+  }
+  #vip-baby .key-images.taipei {
+    background-image: url("../images/taipei/vip-baby-key-image.m.jpg");
+  }
   #vip-baby .main-container {
     overflow: hidden;
   }
@@ -5611,6 +6908,12 @@ body.mapping #scene-container .content-mask {
     letter-spacing: 2px;
     padding-left: 20px;
   }
+  #vip-baby .main-container .part-select.taichung {
+    background-image: url("../images/taichung/pink-arrow.m.png");
+  }
+  #vip-baby .main-container .part-select.taipei {
+    background-image: url("../images/taipei/pink-arrow.m.png");
+  }
   #vip-baby .main-container .part-select option {
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 25.23px;
@@ -5631,11 +6934,23 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/vip-baby-1-deco-1.m.png");
     margin: -11px auto 0;
   }
+  #vip-baby .main-container .part-1 .deco-1.taichung {
+    background-image: url("../images/taichung/vip-baby-1-deco-1.m.png");
+  }
+  #vip-baby .main-container .part-1 .deco-1.taipei {
+    background-image: url("../images/taipei/vip-baby-1-deco-1.m.png");
+  }
   #vip-baby .main-container .part-1 .deco-2 {
     width: 565px;
     height: 157px;
     background-image: url("../images/vip-baby-1-deco-2.m.png");
     margin: 144px 0 0 52px;
+  }
+  #vip-baby .main-container .part-1 .deco-2.taichung {
+    background-image: url("../images/taichung/vip-baby-1-deco-2.m.png");
+  }
+  #vip-baby .main-container .part-1 .deco-2.taipei {
+    background-image: url("../images/taipei/vip-baby-1-deco-2.m.png");
   }
   #vip-baby .main-container .part-1 .title-text {
     width: 100%;
@@ -5654,6 +6969,12 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/vip-baby-1-deco-3.m.png");
     margin: 43px 0 20px 25px;
   }
+  #vip-baby .main-container .part-1 .deco-3.taichung {
+    background-image: url("../images/taichung/vip-baby-1-deco-3.m.png");
+  }
+  #vip-baby .main-container .part-1 .deco-3.taipei {
+    background-image: url("../images/taipei/vip-baby-1-deco-3.m.png");
+  }
   #vip-baby .main-container .part-1 .detail {
     position: relative;
     width: 536px;
@@ -5669,6 +6990,12 @@ body.mapping #scene-container .content-mask {
   #vip-baby .main-container .part-2 {
     height: 1690px;
     background-image: url("../images/vip-baby-2-bg.m.jpg");
+  }
+  #vip-baby .main-container .part-2.taichung {
+    background-image: url("../images/taichung/vip-baby-2-bg.m.jpg");
+  }
+  #vip-baby .main-container .part-2.taipei {
+    background-image: url("../images/taipei/vip-baby-2-bg.m.jpg");
   }
   #vip-baby .main-container .part-2 .baby-image {
     left: 61px;
@@ -5698,6 +7025,12 @@ body.mapping #scene-container .content-mask {
     margin-top: 0px;
     background-image: url("../images/baby-text.png");
   }
+  #vip-baby .main-container .part-2 .baby-text.taichung {
+    background-image: url("../images/taichung/baby-text.png");
+  }
+  #vip-baby .main-container .part-2 .baby-text.taipei {
+    background-image: url("../images/taipei/baby-text.png");
+  }
   #vip-baby .main-container .part-2 .detail {
     width: 386px;
     left: 170px;
@@ -5712,6 +7045,12 @@ body.mapping #scene-container .content-mask {
   #vip-baby .main-container .part-3 {
     height: 1713px;
     background-image: url("../images/vip-baby-3-bg.m.jpg");
+  }
+  #vip-baby .main-container .part-3.taichung {
+    background-image: url("../images/taichung/vip-baby-3-bg.m.jpg");
+  }
+  #vip-baby .main-container .part-3.taipei {
+    background-image: url("../images/taipei/vip-baby-3-bg.m.jpg");
   }
   #vip-baby .main-container .part-3 .baby-image-container {
     position: absolute;
@@ -5733,6 +7072,12 @@ body.mapping #scene-container .content-mask {
     height: 100%;
     background-image: url("../images/vip-baby-3-mask.m.png");
   }
+  #vip-baby .main-container .part-3 .baby-image-container .mask.taichung {
+    background-image: url("../images/taichung/vip-baby-3-mask.m.png");
+  }
+  #vip-baby .main-container .part-3 .baby-image-container .mask.taipei {
+    background-image: url("../images/taipei/vip-baby-3-mask.m.png");
+  }
   #vip-baby .main-container .part-3 .deco-1 {
     position: absolute;
     left: 22px;
@@ -5742,6 +7087,12 @@ body.mapping #scene-container .content-mask {
     margin-left: 0px;
     margin-top: 0px;
     background-image: url("../images/vip-baby-3-deco-1.m.png");
+  }
+  #vip-baby .main-container .part-3 .deco-1.taichung {
+    background-image: url("../images/taichung/vip-baby-3-deco-1.m.png");
+  }
+  #vip-baby .main-container .part-3 .deco-1.taipei {
+    background-image: url("../images/taipei/vip-baby-3-deco-1.m.png");
   }
   #vip-baby .main-container .part-3 .misc-1 {
     display: none;
@@ -5769,6 +7120,12 @@ body.mapping #scene-container .content-mask {
   /* vip course */
   #vip-course .key-images {
     background-image: url("../images/vip-course-key-image.m.jpg");
+  }
+  #vip-course .key-images.taichung {
+    background-image: url("../images/taichung/vip-course-key-image.m.jpg");
+  }
+  #vip-course .key-images.taipei {
+    background-image: url("../images/taipei/vip-course-key-image.m.jpg");
   }
   #vip-course .part-1 {
     min-height: 750px;
@@ -5801,6 +7158,16 @@ body.mapping #scene-container .content-mask {
     height: 14px;
     background-image: url("../images/calender-node.png");
   }
+  #vip-course .part-1 .annotation .un-booked-node.taichung,
+  #vip-course .part-1 .annotation .booked-node.taichung,
+  #vip-course .part-1 .annotation .full-booked-node.taichung {
+    background-image: url("../images/taichung/calender-node.png");
+  }
+  #vip-course .part-1 .annotation .un-booked-node.taipei,
+  #vip-course .part-1 .annotation .booked-node.taipei,
+  #vip-course .part-1 .annotation .full-booked-node.taipei {
+    background-image: url("../images/taipei/calender-node.png");
+  }
   #vip-course .part-1 .annotation .un-booked-node {
     background-position: right top;
   }
@@ -5815,6 +7182,14 @@ body.mapping #scene-container .content-mask {
   #open-live .key-images {
     background-image: url("../images/vip-live-key-image.m.jpg");
   }
+  #vip-live .key-images.taichung,
+  #open-live .key-images.taichung {
+    background-image: url("../images/taichung/vip-live-key-image.m.jpg");
+  }
+  #vip-live .key-images.taipei,
+  #open-live .key-images.taipei {
+    background-image: url("../images/taipei/vip-live-key-image.m.jpg");
+  }
   #vip-live .main-container,
   #open-live .main-container {
     min-height: 840px;
@@ -5826,6 +7201,14 @@ body.mapping #scene-container .content-mask {
     height: 66px;
     background-image: url("../images/vip-live-title.m.png");
     margin: 26px auto 0;
+  }
+  #vip-live .main-container .title-image.taichung,
+  #open-live .main-container .title-image.taichung {
+    background-image: url("../images/taichung/vip-live-title.m.png");
+  }
+  #vip-live .main-container .title-image.taipei,
+  #open-live .main-container .title-image.taipei {
+    background-image: url("../images/taipei/vip-live-title.m.png");
   }
   #vip-live .main-container .title-text,
   #open-live .main-container .title-text {
@@ -5887,6 +7270,14 @@ body.mapping #scene-container .content-mask {
     height: 50px;
     margin: 0;
   }
+  #vip-live .main-container .bottom-right-part .btn-share.taichung,
+  #open-live .main-container .bottom-right-part .btn-share.taichung {
+    background-image: url("../images/taichung/vip-live-btn-share.m.png");
+  }
+  #vip-live .main-container .bottom-right-part .btn-share.taipei,
+  #open-live .main-container .bottom-right-part .btn-share.taipei {
+    background-image: url("../images/taipei/vip-live-btn-share.m.png");
+  }
   #questionnaire .container {
     width: 620px;
     height: 620px;
@@ -5914,15 +7305,33 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/questionnaire-btn-skip.m.png");
     margin-left: -258px;
   }
+  #questionnaire .container .btn-skip.taichung {
+    background-image: url("../images/taichung/questionnaire-btn-skip.m.png");
+  }
+  #questionnaire .container .btn-skip.taipei {
+    background-image: url("../images/taipei/questionnaire-btn-skip.m.png");
+  }
   #questionnaire .container .btn-send {
     background-image: url("../images/questionnaire-btn-send.m.png");
     margin-left: 30px;
+  }
+  #questionnaire .container .btn-send.taichung {
+    background-image: url("../images/taichung/questionnaire-btn-send.m.png");
+  }
+  #questionnaire .container .btn-send.taipei {
+    background-image: url("../images/taipei/questionnaire-btn-send.m.png");
   }
   #questionnaire .container .title-image {
     width: 225px;
     height: 35px;
     margin: 30px auto 0;
     background-image: url("../images/questionnaire-title.m.png");
+  }
+  #questionnaire .container .title-image.taichung {
+    background-image: url("../images/taichung/questionnaire-title.m.png");
+  }
+  #questionnaire .container .title-image.taipei {
+    background-image: url("../images/taipei/questionnaire-title.m.png");
   }
   #questionnaire .container .question-container {
     position: relative;
@@ -6021,5 +7430,20 @@ body.mapping #scene-container .content-mask {
     width: 22px;
     height: 22px;
     background-color: #aa9980;
+  }
+}
+/* nav */
+#nav .logo.taichung {
+  width: 176px;
+  height: 39px;
+}
+#footer .mode-2-content .title-text.taichung:before {
+  content: '台中麗馨館';
+}
+@media (max-width: 640px) {
+  /* nav */
+  #nav .logo.taichung {
+    width: 303px;
+    height: 73px;
   }
 }
