@@ -50,7 +50,15 @@
 
             });
 
-            $doms.aboutUs = $buttonContainer.find(".button:nth-child(1)").on("click", function(event)
+            $doms.index = $buttonContainer.find(".button:nth-child(1)").on("click", function(event)
+            {
+                event.preventDefault();
+
+                self.switchMobileOpenMode(false);
+                Hash.to('/Index');
+            });
+
+            $doms.aboutUs = $buttonContainer.find(".button:nth-child(3)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -59,7 +67,7 @@
                 Hash.to('/AboutUs');
             });
 
-            $doms.news = $buttonContainer.find(".button:nth-child(3)").on("click", function(event)
+            $doms.news = $buttonContainer.find(".button:nth-child(5)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -68,7 +76,7 @@
 
             });
 
-            $doms.environmental = $buttonContainer.find(".button:nth-child(5)").on("click", function(event)
+            $doms.environmental = $buttonContainer.find(".button:nth-child(7)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -77,7 +85,7 @@
 
             });
 
-            $doms.malt = $buttonContainer.find(".button:nth-child(7)").on("click", function(event)
+            $doms.malt = $buttonContainer.find(".button:nth-child(9)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -88,7 +96,7 @@
 
             });
 
-            $doms.care = $buttonContainer.find(".button:nth-child(9)").on("click", function(event)
+            $doms.care = $buttonContainer.find(".button:nth-child(11)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -97,7 +105,7 @@
 
             });
 
-            $doms.contact = $buttonContainer.find(".button:nth-child(11)").on("click", function(event)
+            $doms.contact = $buttonContainer.find(".button:nth-child(13)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -107,7 +115,7 @@
 
             });
 
-            $doms.vip = $buttonContainer.find(".button:nth-child(13)").on("mouseover", function(event)
+            $doms.vip = $buttonContainer.find(".button:nth-child(15)").on("mouseover", function(event)
             {
                 event.preventDefault();
 
@@ -176,10 +184,20 @@
             {
                 event.preventDefault();
 
-                Vip.logout(function()
+                if(_logoutModeOn)
                 {
-                    self.switchMobileOpenMode(false);
-                });
+                    Vip.logout(function()
+                    {
+                        self.switchMobileOpenMode(false);
+                    });
+                }
+                else
+                {
+                    Hash.to('/Login');
+                }
+
+                self.switchMobileOpenMode(false);
+
             });
         },
 

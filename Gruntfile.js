@@ -126,8 +126,8 @@ module.exports = function(grunt)
                 }
             },
             release_enterance: {
-                src: 'app_oh/styles/main.less',
-                dest: 'dist/app_oh/styles/main.css',
+                src: 'enterance/styles/main.less',
+                dest: 'dist/enterance/styles/main.css',
                 options: {
                     compress: true
                 }

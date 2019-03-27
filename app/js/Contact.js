@@ -38,6 +38,16 @@
                 $doms.parent = $("#scene-container").find(".content-container");
                 $doms.container = $("#contact");
 
+                $doms.container.find(".map-part").append($("body").find(".contact-info").clone());
+
+                var mapDom = $doms.container.find("#contact-map")[0];
+
+                Footer.buildGoogleMap(mapDom, true);
+
+                $doms.reservationContainer = $doms.container.find(".reservation-container");
+
+                Reservation.setupDom($doms.reservationContainer);
+
                 $doms.container.detach();
             }
         },
@@ -56,7 +66,7 @@
 
             $doms.parent.append($doms.container);
 
-            Footer.toggleMapOnlyMode(true);
+            //Footer.toggleMapOnlyMode(true);
 
             var tl = new TimelineMax;
             tl.set($doms.container, {autoAlpha: 0});
@@ -76,7 +86,7 @@
                 return;
             }
 
-            Footer.toggleMapOnlyMode(false);
+            //Footer.toggleMapOnlyMode(false);
 
             var tl = new TimelineMax;
             tl.to($doms.container, .4, {autoAlpha: 0});

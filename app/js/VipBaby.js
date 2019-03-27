@@ -176,7 +176,7 @@
 
             $doms.parent.append($doms.container);
 
-            $("#footer").toggleClass("pink-mode", true);
+            //$("#footer").toggleClass("pink-mode", true);
 
             var tl = new TimelineMax;
             tl.set($doms.container, {autoAlpha: 0});
@@ -196,7 +196,7 @@
                 return;
             }
 
-            $("#footer").toggleClass("pink-mode", false);
+            //$("#footer").toggleClass("pink-mode", false);
 
             var tl = new TimelineMax;
             tl.to($doms.container, .4, {autoAlpha: 0});

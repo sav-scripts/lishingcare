@@ -6,7 +6,9 @@
 
     var $doms = {},
         _isMapOnlyMode = false,
-        _isHideMode = true;
+        _isHideMode = true,
+        _lat,
+        _lng;
 
 
     var self = window.Footer =
@@ -40,7 +42,9 @@
             _isHideMode = isHideMode;
 
             $doms.container.toggleClass('hide-mode', _isHideMode);
-        }
+        },
+
+        buildGoogleMap: buildGoogleMap
     };
 
     function buildFacebookPage()
@@ -49,11 +53,17 @@
         $doms.container.find(".facebook-page").append('<iframe src="https://www.facebook.com/plugins/page.php?href='+window._fbpage_+'&tabs=timeline&width=273&height=370&small_header=false&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=" width="273" height="370" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
     }
 
-    function buildGoogleMap()
+    function buildGoogleMap(mapContainer, withCustomIcon)
     {
-        var mapDom = document.getElementById('map'),
+        var mapDom = mapContainer || document.getElementById('map'),
             lat = Number(mapDom.getAttribute('lat')),
             lng = Number(mapDom.getAttribute('lng'));
+
+        if(lat) _lat = lat;
+        if(lng) _lng = lng;
+
+        if(!lat) lat = _lat;
+        if(!lng) lng = _lng;
 
         window.initMap = function()
         {
@@ -72,21 +82,25 @@
                 fullscreenControl: true
             });
 
+            var markerIconUrl = 'images/'+window._site_+'/map-marker.png';
 
             var markerIcon = {
-                url: 'http://image.flaticon.com/icons/svg/252/252025.svg',
-                scaledSize: new google.maps.Size(40, 40),
+                //url: 'http://local.savorks.com/projects/sid/lishingcare/app/images/taipei/map-marker.png',
+                url: markerIconUrl,
+                //scaledSize: new google.maps.Size(40, 40),
 //                origin: new google.maps.Point(0, 0),
 //                anchor: new google.maps.Point(32,65),
-                labelOrigin: new google.maps.Point(20,-20)
+                labelOrigin: new google.maps.Point(0,0)
             };
 
             var marker = new google.maps.Marker({
                 position: myCenter,
-                map: map
+                map: map,
                 //label: 'test label',
-                //icon: markerIcon
+                icon: withCustomIcon? markerIcon: null
             });
+
+
         };
 
         $('body').append('<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUz28xZ05DiXZuaR3JqXREm69h_EwjyEY&callback=initMap"></script>');

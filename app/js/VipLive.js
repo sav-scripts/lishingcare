@@ -45,6 +45,16 @@
 
                 $doms.videoCanvas = $doms.container.find(".video-canvas");
 
+                LiveQrcode.init($('#live-qrcode'));
+
+                $doms.container.find(".btn-share").on("click", function(event)
+                {
+                    event.preventDefault();
+
+                    LiveQrcode.show();
+
+                });
+
                 end();
 
 
@@ -111,6 +121,8 @@
                 return;
             }
 
+            LiveQrcode.hide();
+
             var tl = new TimelineMax;
             tl.to($doms.container, .4, {autoAlpha: 0});
             tl.add(function ()
@@ -154,19 +166,16 @@
                 $doms.container.find(".baby-name").text(response.baby_name);
                 $doms.container.find(".mon-name").text(response.mon_name);
 
-                //var shareUrl = Utility.getPath() + "?live=" + vipToken + "#/OpenLive";
-                //
+                var shareUrl = Utility.getPath() + "?live=" + vipToken;
+                if(Main.settings.useFakeData) shareUrl += '&usefakedata=1';
+                shareUrl += "#/OpenLive";
+
                 //console.log("share url: " + shareUrl);
-                //
-                //$doms.qrCodeBlock = $doms.container.find(".qr-code");
-                //var qrcode = new QRCode($doms.qrCodeBlock[0], {
-                //    text: shareUrl,
-                //    width: 80,
-                //    height: 80
-                //});
+
+                LiveQrcode.setQrcode(shareUrl);
             }
 
             cb.call();
-        });
+        }, null, true);
     }
 }());

@@ -26,291 +26,114 @@ body {
 }
 /* index */
 #index {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1280px;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.13);
-}
-#index .layout {
-  z-index: 1;
-  position: absolute;
-  width: 1280px;
-  height: 962px;
-  background-image: url("../images/layout/index.jpg");
-  background-size: auto;
-}
-#index .content {
-  position: relative;
-  z-index: 10;
-  background-color: white;
-  width: 1280px;
-}
-#index .content .top-block {
-  position: relative;
+  position: fixed;
+  margin: 0;
+  left: 0;
+  top: 0;
   width: 100%;
-  height: 220px;
+  height: 100%;
 }
-#index .content .top-block .logo {
+#index .taipei-block,
+#index .taichung-block {
   position: absolute;
-  left: 505px;
-  top: 41px;
-  width: 270px;
-  height: 141px;
-  margin-left: 0px;
-  margin-top: 0px;
-  background-image: url("../images/index-logo.png");
-  background-size: auto;
-}
-#index .content .middle-block {
-  position: relative;
-  width: 100%;
-  height: 606px;
-}
-#index .content .middle-block .part-1 {
-  position: relative;
-  float: left;
-  width: 640px;
-  height: 606px;
-  background-image: url("../images/index-img-1.jpg");
-  background-size: auto;
-}
-#index .content .middle-block .part-1 .option {
-  position: absolute;
-  left: 447px;
-  top: 27px;
-  width: 186px;
-  height: 49px;
-  margin-left: 0px;
-  margin-top: 0px;
-  background-image: url("../images/index-label-text-1.png");
-  background-size: auto;
-}
-#index .content .middle-block .part-1:hover .option {
-  background-position-x: 5px;
-}
-#index .content .middle-block .part-2 {
-  position: relative;
-  float: left;
-  width: 640px;
-  height: 606px;
-  background-image: url("../images/index-img-2.jpg");
-  background-size: auto;
-}
-#index .content .middle-block .part-2 .option {
-  position: absolute;
-  left: 6px;
-  top: 27px;
-  width: 186px;
-  height: 49px;
-  margin-left: 0px;
-  margin-top: 0px;
-  background-image: url("../images/index-label-text-2.png");
-  background-size: auto;
-}
-#index .content .middle-block .part-2:hover .option {
-  background-position-x: 25px;
-}
-#index .content .middle-block .part-1,
-#index .content .middle-block .part-2 {
   cursor: pointer;
+  width: 50%;
+  height: 100%;
 }
-#index .content .middle-block .part-1 .option,
-#index .content .middle-block .part-2 .option {
+#index .taipei-block .cover,
+#index .taichung-block .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.3;
+  transition: opacity 0.5s linear;
+}
+#index .taipei-block:hover .cover,
+#index .taichung-block:hover .cover {
+  opacity: 0;
+}
+#index .taipei-block .text,
+#index .taichung-block .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -120px;
+  background-image: url("../images/text-taipei.png");
+  background-size: auto;
+  width: 344px;
+  height: 203px;
+  margin-left: -172px;
+}
+#index .taipei-block {
+  left: 0;
+  top: 0;
+  background-image: url("../images/image-taipei.jpg");
+  background-size: auto;
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  background-position-x: 15px;
-  z-index: 30;
-  transition: background-position-x 0.4s ease-out;
 }
-#index .content .middle-block .main-label {
-  position: absolute;
-  left: 245px;
-  top: 23px;
-  width: 745px;
-  height: 78px;
-  margin-left: 0px;
-  margin-top: 0px;
-  background-image: url("../images/index-white-label.png");
-  background-size: auto;
-  z-index: 20;
-}
-#index .content .bottom-block-1 {
-  position: relative;
-  width: 100%;
-  height: 88px;
-}
-#index .content .bottom-block-1 .text {
-  position: absolute;
-  left: 442px;
-  top: 26px;
-  width: 397px;
-  height: 28px;
-  margin-left: 0px;
-  margin-top: 0px;
-  background-image: url("../images/index-bottom-text-1.png");
+#index .taipei-block .text {
+  background-image: url("../images/text-taipei.png");
   background-size: auto;
 }
-#index .content .bottom-block-2 {
-  position: relative;
-  width: 100%;
-  height: 46px;
-  background-color: #eae6e0;
-}
-#index .content .bottom-block-2 .text {
-  position: absolute;
-  left: 432px;
-  top: 16px;
-  width: 454px;
-  height: 15px;
-  margin-left: 0px;
-  margin-top: 0px;
-  background-image: url("../images/index-bottom-text-2.png");
+#index .taichung-block {
+  left: 50%;
+  top: 0;
+  background-image: url("../images/image-taichung.jpg");
   background-size: auto;
+  background-size: cover;
+  background-position: center;
+}
+#index .taichung-block .text {
+  background-image: url("../images/text-taichung.png");
+  background-size: auto;
+}
+#index .footer {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  background-image: url("../images/text-footer.png");
+  background-size: auto;
+  width: 164px;
+  height: 54px;
+  margin-left: -82px;
 }
 @media (max-width: 640px) {
   /* index */
-  #index {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    width: 640px;
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.13);
-  }
-  #index .layout {
-    z-index: 1;
-    position: absolute;
-    width: 640px;
-    height: 1436px;
-    background-image: url("../images/layout/index.m.jpg");
-    background-size: auto;
-  }
-  #index .content {
-    width: 640px;
-  }
-  #index .content .top-block {
-    position: relative;
+  #index .taipei-block,
+  #index .taichung-block {
     width: 100%;
-    height: 282px;
+    height: 50%;
   }
-  #index .content .top-block .logo {
-    position: absolute;
-    left: 172px;
-    top: 42px;
-    width: 295px;
-    height: 153px;
-    margin-left: 0px;
-    margin-top: 0px;
-    background-image: url("../images/index-logo.m.png");
+  #index .taipei-block {
+    background-image: url("../images/image-taichung.m.jpg");
     background-size: auto;
   }
-  #index .content .top-block .text {
-    position: absolute;
-    left: 85px;
-    top: 228px;
-    width: 470px;
-    height: 34px;
-    margin-left: 0px;
-    margin-top: 0px;
-    background-image: url("../images/index-bottom-text-1.m.png");
+  #index .taipei-block .text {
+    margin-top: -151.5px;
+  }
+  #index .taichung-block {
+    left: 0;
+    top: 50%;
+    background-image: url("../images/image-taipei.m.jpg");
     background-size: auto;
   }
-  #index .content .middle-block {
-    position: relative;
+  #index .taichung-block .text {
+    margin-top: -51.5px;
+  }
+  #index .middle-cover {
+    position: absolute;
+    left: 0;
     width: 100%;
-    height: auto;
+    top: 50%;
+    height: 140px;
+    margin-top: -70px;
+    background-color: #000000;
+    opacity: 0.85;
   }
-  #index .content .middle-block .part-1 {
-    position: relative;
-    width: 640px;
-    height: 538px;
-    float: none;
-    background-image: url("../images/index-img-1.m.jpg");
-    background-size: auto;
-  }
-  #index .content .middle-block .part-1 .option {
-    position: absolute;
-    left: 67px;
-    top: 453px;
-    width: 490px;
-    height: 87px;
-    margin-left: 0px;
-    margin-top: 0px;
-    background-image: url("../images/index-label-text-1.m.png");
-    background-size: auto;
-  }
-  #index .content .middle-block .part-1:hover .option {
-    background-position-x: 0;
-  }
-  #index .content .middle-block .part-2 {
-    position: relative;
-    width: 640px;
-    height: 537px;
-    float: none;
-    background-image: url("../images/index-img-2.m.jpg");
-    background-size: auto;
-    margin-top: 8px;
-  }
-  #index .content .middle-block .part-2 .option {
-    position: absolute;
-    left: 67px;
-    top: 453px;
-    width: 490px;
-    height: 87px;
-    margin-left: 0px;
-    margin-top: 0px;
-    background-image: url("../images/index-label-text-2.m.png");
-    background-size: auto;
-  }
-  #index .content .middle-block .part-2:hover .option {
-    background-position-x: 0;
-  }
-  #index .content .middle-block .part-1,
-  #index .content .middle-block .part-2 {
-    cursor: pointer;
-  }
-  #index .content .middle-block .part-1 .option,
-  #index .content .middle-block .part-2 .option {
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    transition: none;
-  }
-  #index .content .middle-block .part-1 .option .arrow,
-  #index .content .middle-block .part-2 .option .arrow {
-    position: absolute;
-    left: 360px;
-    top: 18px;
-    width: 12px;
-    height: 14px;
-    margin-left: 0px;
-    margin-top: 0px;
-    background-image: url("../images/index-arrow.png");
-    background-size: auto;
-  }
-  #index .content .middle-block .part-1:active .option .arrow,
-  #index .content .middle-block .part-2:active .option .arrow {
-    left: 365px;
-  }
-  #index .content .middle-block .main-label {
-    display: none;
-  }
-  #index .content .bottom-block-1 {
-    display: none;
-  }
-  #index .content .bottom-block-2 {
-    height: 66px;
-    margin-top: 5px;
-    background-color: #eae6e0;
-  }
-  #index .content .bottom-block-2 .text {
-    position: absolute;
-    left: 82px;
-    top: 29px;
-    width: 479px;
-    height: 13px;
-    margin-left: 0px;
-    margin-top: 0px;
-    background-image: url("../images/index-bottom-text-2.m.png");
-    background-size: auto;
+  #index .footer {
+    bottom: 50%;
+    margin-bottom: -29px;
   }
 }

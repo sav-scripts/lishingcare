@@ -126,6 +126,15 @@
                 .toggleClass('taipei', false)
                 .toggleClass('taichung', false)
                 .toggleClass(window._site_, true);
+
+            //if(window._site_ === 'taipei')
+            //{
+            //    $container.find('.taichung-only').css("display", "none");
+            //}
+            //else
+            //{
+            //    $container.find('.taipei-only').css("display", "none");
+            //}
         },
 
         getIsHashLocking: function()

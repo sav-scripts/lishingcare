@@ -66,7 +66,9 @@
                         $news.find(".day").text(dataObj.day);
 
                         $news.find(".title").text(dataObj.title);
-                        $news.find(".detail").html(dataObj.detail);
+                        $news.find(".detail").html(dataObj.content);
+
+                        //console.log($news.find('.detail').length);
 
                         dataObj.$news = $news;
 

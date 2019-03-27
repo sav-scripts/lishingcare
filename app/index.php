@@ -2,8 +2,15 @@
 
 $taichunt_hosts = array("taichung.lihshing-care.com");
 $isTaichung = false;
-//$isTaichung = true;
 
+// 本地測試用
+$test_hosts = array("local.savorks.com");
+if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
+{
+    $isTaichung = true;
+}
+
+// 台中站判定
 if(in_array($_SERVER['HTTP_HOST'], $taichunt_hosts))
 {
     $isTaichung = true;
@@ -18,7 +25,11 @@ if($isTaichung === false)
     $mapLat = '25.159616';
     $mapLng = '121.457664';
     $fb_name = '麗格產後護理之家';
+    $mapTitle = '台北麗格館';
     $facebookPageLink = 'https://www.facebook.com/%E9%BA%97%E6%A0%BC%E7%94%A2%E5%BE%8C%E8%AD%B7%E7%90%86%E4%B9%8B%E5%AE%B6-2169925723254680/';
+
+    $tel = '0286269555';
+    $telText = '02-8626-9555';
 }
 else
 {
@@ -29,7 +40,11 @@ else
     $mapLat = '24.146638';
     $mapLng = '120.683228';
     $fb_name = '麗馨產後護理之家';
+    $mapTitle = '台中麗馨館';
     $facebookPageLink = 'https://www.facebook.com/lihshingcare/';
+
+    $tel = '0422298000';
+    $telText = '04-2229-8000';
 }
 
 
@@ -44,9 +59,6 @@ $service_email = '';
 $ga_id = '';
 $copyright = 'CopyRight (c) 2018　LIHSIN POSTPARTUM CAREー All Rights Reserved.';
 
-$tel = '0286269555';
-$telText = '02-8626-9555';
-
 //@include dirname(__FILE__)."/site_setting.php";
 
 $test_hosts = array("local.savorks.com");
@@ -60,8 +72,10 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="zh-tw">
     <title><?=$site_name?></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta property="og:title" content="<?=$meta_title?>" />
     <meta property="og:keyword" content="<?=$meta_keyword?>" />
@@ -100,6 +114,36 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     </script>
 
     <div id="invisible-wrapper">
+
+        <div id="live-qrcode">
+
+            <div class="cover"></div>
+
+            <div class="container">
+
+                <div class="middle-wrapper">
+
+                    <div class="content-container">
+
+                        <div class="title"></div>
+
+                        <div class="qrcode-container">
+                            <div class="qr-code"></div>
+                        </div>
+
+                        <div class="btn-close-2"></div>
+
+                        <div class="btn-close"></div>
+                        <a class="btn-download" href="" download="qrcode.png"></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
 
         <div id="invisible-container" class="scene-container">
 
@@ -213,6 +257,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
                         <div class="button"></div><div class="gap"></div>
                         <div class="button"></div><div class="gap"></div>
                         <div class="button"></div><div class="gap"></div>
+                        <div class="button"></div><div class="gap"></div>
                         <div class="button pc-only"></div>
 
                         <div class="btn-logout"></div>
@@ -254,7 +299,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
         </div>
 
 
-        <div id="footer" class="hide-mode">
+        <div id="footer" class="hide-mode pink-mode">
 
             <div class="pink-bg"></div>
 
@@ -277,9 +322,9 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
             </div>
 
             <div class="mode-2-content">
-                <div class="top-part">
+                <div class="top-part contact-info">
                     <div class="title-image"></div>
-                    <div class="title-text site-dif"></div>
+                    <div class="title-text"><?=$mapTitle?></div>
                     <a href="tel:<?=$tel;?>"><div class="tel"><span class="tel-icon"></span><?=$telText;?></div></a>
                     <a target="_blank" href="<?=$googleMap?>"><div class="address"><span class="address-icon"></span><?=$address?></div></a>
                 </div>
@@ -292,65 +337,63 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
         </div>
 
-        <div class="copy-right">
+    <div class="copy-right">
 
-            <div class="text"><?=$copyright?></div>
-        </div>
+        <div class="text"><?=$copyright?></div>
+    </div>
 
-        <div id="questionnaire">
+    <div id="questionnaire">
 
-            <div class="cover"></div>
+        <div class="cover"></div>
 
-            <div class="container">
+        <div class="container">
 
-                <div class="title-image"></div>
-                <div class="btn-close"></div>
-                <div class="btn-skip"></div>
-                <div class="btn-send"></div>
+            <div class="title-image"></div>
+            <div class="btn-close"></div>
+            <div class="btn-skip"></div>
+            <div class="btn-send"></div>
 
-                <div class="question-container">
+            <div class="question-container">
 
 
-                    <div class="row row-title">
+                <div class="row row-title">
 
-                        <div class="left-part"></div>
-                        <div class="right-part">
-                            <div class="col">很滿意</div>
-                            <div class="col">滿意</div>
-                            <div class="col">沒意見</div>
-                            <div class="col">不滿意</div>
-                            <div class="col">很不滿意</div>
-
-                        </div>
+                    <div class="left-part"></div>
+                    <div class="right-part">
+                        <div class="col">很滿意</div>
+                        <div class="col">滿意</div>
+                        <div class="col">沒意見</div>
+                        <div class="col">不滿意</div>
+                        <div class="col">很不滿意</div>
 
                     </div>
 
-                    <div class="row question">
+                </div>
 
-                        <div class="left-part">1.對本機構提供定型化契約內容是否滿意?</div>
-                        <div class="right-part">
+                <div class="row question">
 
-                            <div class="col"><div class="option"></div></div>
-                            <div class="col"><div class="option"></div></div>
-                            <div class="col"><div class="option"></div></div>
-                            <div class="col"><div class="option"></div></div>
-                            <div class="col"><div class="option"></div></div>
+                    <div class="left-part">1.對本機構提供定型化契約內容是否滿意?</div>
+                    <div class="right-part">
 
-                        </div>
+                        <div class="col"><div class="option"></div></div>
+                        <div class="col"><div class="option"></div></div>
+                        <div class="col"><div class="option"></div></div>
+                        <div class="col"><div class="option"></div></div>
+                        <div class="col"><div class="option"></div></div>
 
-                        <div class="select-part">
+                    </div>
+
+                    <div class="select-part">
 
 
-                            <select class="option-select" title="">
-                                <option disabled selected value>請選擇</option>
-                                <option value="很滿意">很滿意</option>
-                                <option value="滿意">滿意</option>
-                                <option value="沒意見">沒意見</option>
-                                <option value="不滿意">不滿意</option>
-                                <option value="很不滿意">很不滿意</option>
-                            </select>
-
-                        </div>
+                        <select class="option-select" title="">
+                            <option disabled selected value>請選擇</option>
+                            <option value="很滿意">很滿意</option>
+                            <option value="滿意">滿意</option>
+                            <option value="沒意見">沒意見</option>
+                            <option value="不滿意">不滿意</option>
+                            <option value="很不滿意">很不滿意</option>
+                        </select>
 
                     </div>
 
@@ -360,7 +403,9 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
         </div>
 
-        <div id="questionnaire-dialog">
+    </div>
+
+    <div id="questionnaire-dialog">
             <div class="cover"></div>
             <div class="container">
                 <div class="text"></div>
@@ -369,7 +414,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
         </div>
 
 
-    </div>
+
 
     <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUz28xZ05DiXZuaR3JqXREm69h_EwjyEY&callback=initMap"></script>-->
 
@@ -387,6 +432,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"  property=""/>
 
 
+    <script src="js/lib/FileSaver.min.js"></script>
 
 <!--    <script src="js/lib/jquery-scrolltofixed-min.js"></script>-->
 
@@ -421,6 +467,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <script src="js/Vip.js"></script>
     <script src="js/VipBaby.js"></script>
     <script src="js/VipCourse.js"></script>
+    <script src="js/LiveQrcode.js"></script>
     <script src="js/VipLive.js"></script>
     <script src="js/OpenLive.js"></script>
     <script src="js/CourseBooking.js"></script>
