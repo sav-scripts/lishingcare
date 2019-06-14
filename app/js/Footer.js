@@ -69,6 +69,13 @@
 
         ApiProxy.callApi("linkages", {}, "linkages", function(response)
         {
+            if(!response)
+            {
+                $doms.linkage.css("display", "none");
+
+                return;
+            }
+
             _linkageData = response;
 
 
@@ -87,7 +94,7 @@
 
             updateLinkage();
 
-        });
+        }, null, true);
     }
 
     function createLinkItem(dataObj)

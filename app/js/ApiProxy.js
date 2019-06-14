@@ -81,6 +81,11 @@
                     console.log("API: ["+apiName+"] 無法取得伺服器回應");
                     console.log(event);
                     //complete({error:"API: ["+apiName+"] 無法取得伺服器回應"});
+
+                    if(completeWithError)
+                    {
+                        if(cb) cb.call(null, null);
+                    }
                 });
             }
 
