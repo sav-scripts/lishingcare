@@ -52,8 +52,16 @@
         }
     }
 
+    #reservation-icon{
+        display: none;
+    }
+
 
     /* nav */
+    #reservation-icon-mobile{
+
+    }
+
     #nav{
         width: @device-width-b;
         height: 164px;
@@ -88,6 +96,9 @@
             .menu-icon{
                 top: 12px;
             }
+            #reservation-icon-mobile{
+                top: 28px;
+            }
         }
 
         .logo{
@@ -97,10 +108,29 @@
         .menu-icon{
             position: absolute;
             right: 31px;
-            top: 46px;
+            top: 48px;
             width: 80px;
             height: 80px;
             .image-bg('menu-icon.png');
+
+            cursor: pointer;
+            transition: top .2s linear;
+
+            &:active{
+                margin-top: 1px;
+            }
+
+        }
+
+
+
+        #reservation-icon-mobile{
+            position: absolute;
+            right: 147px;
+            top: 62px;
+            width: 105px;
+            height: 53px;
+            .image-bg('preorder-icon.m.png');
 
             cursor: pointer;
             transition: top .2s linear;
@@ -286,6 +316,9 @@
             height: 550px;
 
             .reservation-icon{
+                position: absolute;
+                top: auto;
+                margin-right: auto;
                 right: 31px;
                 bottom: 14px;
                 width: 202px;
@@ -806,8 +839,10 @@
                                 line-height: 58px;
 
 
-                                width: 540px;
+                                width: 400px;
                                 margin: 15px auto 0;
+
+                                max-width: 400px;
 
                                 ul{
 //                                    margin-left: -20px;
@@ -904,6 +939,36 @@
     }
 
     /* page bottom*/
+    #linkages{
+        height: 121px;
+
+        overflow: hidden;
+
+        .link-item-container{
+
+            .link-item{
+                width: 320px;
+                height: 121px;
+                float: left;
+            }
+
+        }
+
+        .arrow-prev, .arrow-next{
+            width: 40px;
+            height: 121px;
+        }
+
+        .arrow-prev{
+            .image-bg("linkage-arrow-prev.m.png");
+        }
+
+        .arrow-next{
+            .image-bg("linkage-arrow-next.m.png");
+        }
+
+    }
+
     #footer{
 
         position: relative;
@@ -998,9 +1063,17 @@
                 .image-bg('footer-misc-1.m.png');
             }
 
-            .field-tel, .field-address, .field-facebook{
+            .field-site-name, .field-tel, .field-address, .field-facebook{
                 .default-font(25.57px, @dark-gray-brown);
 
+            }
+
+            .field-site-name{
+                left: 56px;
+                top: 26px;
+                letter-spacing: 2px;
+                font-size: 34px;
+                color: #a08c6e;
             }
 
             .field-tel{

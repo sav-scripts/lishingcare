@@ -183,7 +183,7 @@
                     }
                     else
                     {
-                        alert("預約成功文案");
+                        alert("謝謝您的預約，將有專人與您聯繫。");
 
                         self.reset($fields);
                     }

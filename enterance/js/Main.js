@@ -15,15 +15,11 @@
         init: function()
         {
 
-            $(window).on("resize", onResize);
-            onResize();
         }
     };
 
     function onResize()
     {
-        var width = $(window).width(),
-            height = $(window).height();
     }
 
 }());

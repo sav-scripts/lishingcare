@@ -231,6 +231,7 @@
             //self.setSceneScrollLock();
 
             ImageViewer.resize();
+            Footer.resize();
 
             if(_currentContentClass && _currentContentClass.resize)
             {
@@ -254,6 +255,7 @@
 
 
         var hash = Hash.getHash(),
+            pageName = hash? hash: '/Index',
             hashArray = Hash.analysis();
         if(hashArray.length === 0) hashArray = ['/Index'];
 
@@ -291,6 +293,8 @@
 
         function oldContentOut(cb)
         {
+            Nav.switchReservactionIcon(false);
+
             ScrollListener.scrollTo(0);
 
             _currentContentClass.hide(function()
@@ -346,6 +350,7 @@
         function newContentIn()
         {
             //console.log('newContentIn');
+            //console.log(pageName);
 
             contentClass.init(function()
             {
@@ -358,12 +363,22 @@
                 //contentClass.show(toContentDetail);
                 contentClass.show();
 
+                if(hash !== "/Reservation")
+                {
+                    Nav.switchReservactionIcon(true);
+                }
+
+
                 toContentDetail();
             });
         }
 
         function toContentDetail()
         {
+            //console.log('toContentDetail');
+            //console.log(pageName);
+            ga('send', 'pageview', pageName);
+
             _isHashLocking = false;
 
             var scrollToHash = null;

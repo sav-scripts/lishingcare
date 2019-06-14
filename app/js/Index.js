@@ -51,18 +51,29 @@
                     "/Contact": $doms.container.find(".page-bottom")
                 };
 
-                $doms.container.find(".reservation-icon").on("click", function(event)
-                {
-                    event.preventDefault();
-
-                    Hash.to("/Reservation");
-                });
+                //$doms.reservactionIcon = $doms.container.find(".reservation-icon").on("click", function(event)
+                //{
+                //    event.preventDefault();
+                //
+                //    Hash.to("/Reservation");
+                //});
 
                 $doms.container.find(".back-to-top").on("click", function(event)
                 {
                     event.preventDefault();
 
                     ScrollListener.scrollTo(0);
+                });
+
+                ScrollListener.addListener("Index", function(bound)
+                {
+                    //console.log(bound);
+                    //console.log(Main.viewport.index);
+
+                    if(_isHiding) return;
+
+                    //var isPinMode = (bound.top > 0 && Main.viewport.index > 0);
+                    //$doms.reservactionIcon.toggleClass("pin-mode", isPinMode);
                 });
 
                 /* 動態內容 */
@@ -220,6 +231,7 @@
             tl.add(function ()
             {
                 _isHiding = true;
+                //$doms.reservactionIcon.toggleClass("pin-mode", false);
                 $doms.container.detach();
                 if(cb) cb.call();
             });

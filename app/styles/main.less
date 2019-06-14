@@ -534,7 +534,7 @@ body.mapping{
 //        top: 15px;
         top: 20px;
 //        width: 650px;
-        width: 740px;
+        width: 814px;
 
 //        @fix-1: 0px;
 //        @fix-2: 0px;
@@ -544,13 +544,14 @@ body.mapping{
 //        @fix-6: 19px;
 
         @text-1: '首頁';
-        @text-2: '關於我們';
-        @text-3: '最新消息';
-        @text-4: '環境設施';
-        @text-5: '月子膳食';
-        @text-6: '專業照護';
-        @text-7: '聯絡資訊';
-        @text-8: '會員專屬';
+        @text-2: '麗馨首頁';
+        @text-3: '關於我們';
+        @text-4: '最新消息';
+        @text-5: '環境設施';
+        @text-6: '月子膳食';
+        @text-7: '專業照護';
+        @text-8: '聯絡資訊';
+        @text-9: '會員專屬';
 
         @fix: fix-;
         @text: text-;
@@ -602,6 +603,14 @@ body.mapping{
             &:active{
                 margin-top: 1px;
             }
+
+            &:nth-child(3).taipei
+            {
+                &:after{
+                    content: '麗格首頁';
+                }
+
+            }
         }
 
         .gap{
@@ -616,7 +625,7 @@ body.mapping{
         }
 
 
-        .mixin-loop (@i) when (@i <= 8) {
+        .mixin-loop (@i) when (@i <= 9) {
 
             @index: 1 + (@i - 1) * 2;
 
@@ -720,9 +729,9 @@ body.mapping{
     &.with-logout-btn{
 
         .button-group{
-            width: 740px;
+//            width: 770px;
 
-            transition: width @duration linear;
+//            transition: width @duration linear;
 
             .btn-logout{
 
@@ -751,6 +760,76 @@ body.mapping{
 }
 
 /* page bottom*/
+#linkages{
+
+    position: relative;
+    width: 100%;
+    height: 97px;
+
+    overflow: hidden;
+
+//    background-color: rgba(0, 112, 240, 0.09);
+    background-color: white;
+    .link-item-container{
+
+        position: absolute;
+        width: auto;
+
+        .link-item{
+            position: relative;
+            width: 256px;
+            height: 97px;
+            float: left;
+        }
+    }
+
+    .arrow-prev, .arrow-next{
+        position: absolute;
+        width: 40px;
+        height: 97px;
+        cursor: pointer;
+
+        &.hide-mode{
+            visibility: hidden;
+        }
+    }
+
+    .arrow-prev{
+        left: 0;
+        .image-bg("linkage-arrow-prev.png");
+
+        &:active{
+            background-position: -1px 0;
+        }
+    }
+
+    .arrow-next{
+        right: 0;
+        .image-bg("linkage-arrow-next.png");
+
+        &:active{
+            background-position: 1px 0;
+        }
+    }
+
+
+
+    &.centel-mode{
+
+        .link-item-container{
+
+//            position: relative;
+//            margin-left: auto;
+//            margin-right: auto;
+        }
+
+        .arrow-next, .arrow-prev{
+            display: none;
+        }
+    }
+
+}
+
 #footer{
 
     position: relative;
@@ -863,10 +942,17 @@ body.mapping{
             .image-bg('footer-misc-1.png');
         }
 
-        .field-tel, .field-address, .field-facebook{
+        .field-site-name, .field-tel, .field-address, .field-facebook{
             position: absolute;
             .default-font(16px, @dark-gray-brown);
 
+        }
+
+        .field-site-name{
+            left: 383px;
+            top: 60px;
+            letter-spacing: 2px;
+            font-size: 20px;
         }
 
         .field-tel{
@@ -1028,6 +1114,40 @@ body.mapping{
     }
 }
 
+
+
+#reservation-icon{
+    position: fixed;
+
+    right: 50%;
+    top: 650px;
+    width: 137px;
+    height: 137px;
+    .image-bg('index-reservation.png');
+
+    z-index: 10;
+
+    margin-right: -@device-width-a * .5 + 25px;
+
+
+    cursor: pointer;
+
+    transition: top .4s ease-out, opacity .4s ease-out;
+    opacity: 0;
+
+    &.active-mode{
+        opacity: 1;
+    }
+
+    &:active{
+        margin-bottom: -1px;
+    }
+
+    &.pin-mode{
+        top: calc(100% - 19px - 137px);
+    }
+}
+
 /* index */
 #index {
     position: relative;
@@ -1055,17 +1175,29 @@ body.mapping{
         }
 
         .reservation-icon{
-            position: absolute;
-            right: 25px;
-            bottom: 19px;
+            position: fixed;
+
+            right: 50%;
+            top: 650px;
             width: 137px;
             height: 137px;
             .image-bg('index-reservation.png');
 
+            z-index: 10;
+
+            margin-right: -@device-width-a * .5 + 25px;
+
+
             cursor: pointer;
+
+            transition: top .4s ease-out;
 
             &:active{
                 margin-bottom: -1px;
+            }
+
+            &.pin-mode{
+                top: calc(100% - 19px - 137px);
             }
         }
     }
@@ -1926,6 +2058,20 @@ body.mapping{
                 margin-bottom: 27px;
 
                 .default-font(13.5px, @dark-gray-brown);
+
+                letter-spacing: 1px;
+
+                line-height: 24px;
+            }
+
+            > .link{
+
+                position: relative;
+                margin-left: 270px;
+                margin-top: -20px;
+                margin-bottom: 27px;
+
+                .default-font(13.5px, #0070f0);
 
                 letter-spacing: 1px;
 

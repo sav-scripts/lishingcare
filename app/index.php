@@ -1,7 +1,10 @@
 <?php
-
+$uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+$site_path = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . $uri_parts[0];
 $taichunt_hosts = array("taichung.lihshing-care.com");
 $isTaichung = false;
+
+$pixelID = "10080739";
 
 // 本地測試用
 $test_hosts = array("local.savorks.com");
@@ -14,6 +17,7 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
 if(in_array($_SERVER['HTTP_HOST'], $taichunt_hosts))
 {
     $isTaichung = true;
+    $pixelID = "10080740";
 }
 
 if($isTaichung === false)
@@ -54,10 +58,12 @@ $site_name = '麗格產後護理之家';
 $meta_title = '麗格產後護理之家';
 $meta_description = '';
 $meta_keyword = '';
-$meta_url = '';
+$meta_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $service_email = '';
 $ga_id = '';
 $copyright = 'CopyRight (c) 2018　LIHSIN POSTPARTUM CAREー All Rights Reserved.';
+
+$ogImage = $site_path."misc/og-image.jpg";
 
 //@include dirname(__FILE__)."/site_setting.php";
 
@@ -77,11 +83,19 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
+    <meta name="description" content="<?=$meta_description?>">
+    <meta name="keywords" content="<?=$meta_keyword?>">
+
     <meta property="og:title" content="<?=$meta_title?>" />
-    <meta property="og:keyword" content="<?=$meta_keyword?>" />
-    <meta property="og:type" content="health" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="<?=$meta_url?>" />
     <meta property="og:description" content="<?=$meta_description?>" />
+
+    <meta property="og:image" content="<?=$ogImage?>" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -95,6 +109,22 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
         window._fbpage_ = '<?=$facebookPageLink?>';
 
     </script>
+
+    <!-- START 媒體 tracking-->
+    <script type="application/javascript">
+        (function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'<?=$pixelID?>'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', "<?=$ga_id?>", 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- END 媒體 tracking-->
 
 </head>
 <body onload="Main.init();">
@@ -240,6 +270,8 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <div id="scene-container" class="scene-container">
 
 
+        <div id="reservation-icon" class="pin-mode site-dif"></div>
+
         <div id="nav">
 
             <div class="white-bleed"></div>
@@ -252,6 +284,7 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
                     <div class="button-group">
 
                         <div class="button"></div><div class="gap"></div>
+                        <div class="button <?=$site?>"></div><div class="gap"></div>
                         <div class="button"></div><div class="gap"></div>
                         <div class="button"></div><div class="gap"></div>
                         <div class="button"></div><div class="gap"></div>
@@ -288,6 +321,8 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
             <div class="brown-bar"></div>
 
+            <div id="reservation-icon-mobile"></div>
+
         </div>
 
         <div class="top-bleed"></div>
@@ -298,6 +333,13 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
         </div>
 
+        <div id="linkages">
+
+            <div class="link-item-container"></div>
+            <div class="arrow-prev"></div>
+            <div class="arrow-next"></div>
+
+        </div>
 
         <div id="footer" class="hide-mode pink-mode">
 
@@ -306,7 +348,9 @@ if(!in_array($_SERVER['HTTP_HOST'], $test_hosts))
             <div class="mode-1-content">
 
                 <div class="logo site-dif <?=$site?>"></div>
-                <div class="misc-image site-dif <?=$site?>"></div>
+                <div class="misc-image"></div>
+
+                <div class="field-site-name"><?=$fb_name?></div>
 
                 <a href="tel:<?=$tel;?>"><div class="field-tel"><?=$telText?></div></a>
                 <a target="_blank" href="<?=$googleMap?>"><div class="field-address"><?=$address?></div></a>

@@ -41,6 +41,22 @@
                 self.switchMobileOpenMode();
             });
 
+
+
+            $doms.reservactionIcon = $("#reservation-icon").on("click", function(event)
+            {
+                event.preventDefault();
+
+                Hash.to("/Reservation");
+            });
+
+            $doms.reservactionIconMobile = $("#reservation-icon-mobile").on("click", function(event)
+            {
+                event.preventDefault();
+
+                Hash.to('/Reservation');
+            });
+
             $doms.logo = $doms.container.find(".logo").on("click", function(event)
             {
                 event.preventDefault();
@@ -58,7 +74,15 @@
                 Hash.to('/Index');
             });
 
-            $doms.aboutUs = $buttonContainer.find(".button:nth-child(3)").on("click", function(event)
+            $doms.enterance = $buttonContainer.find(".button:nth-child(3)").on("click", function(event)
+            {
+                event.preventDefault();
+
+                self.switchMobileOpenMode(false);
+                window.open('http://www.lihshing-care.com', '_self');
+            });
+
+            $doms.aboutUs = $buttonContainer.find(".button:nth-child(5)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -67,7 +91,7 @@
                 Hash.to('/AboutUs');
             });
 
-            $doms.news = $buttonContainer.find(".button:nth-child(5)").on("click", function(event)
+            $doms.news = $buttonContainer.find(".button:nth-child(7)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -76,7 +100,7 @@
 
             });
 
-            $doms.environmental = $buttonContainer.find(".button:nth-child(7)").on("click", function(event)
+            $doms.environmental = $buttonContainer.find(".button:nth-child(9)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -85,7 +109,7 @@
 
             });
 
-            $doms.malt = $buttonContainer.find(".button:nth-child(9)").on("click", function(event)
+            $doms.malt = $buttonContainer.find(".button:nth-child(11)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -96,7 +120,7 @@
 
             });
 
-            $doms.care = $buttonContainer.find(".button:nth-child(11)").on("click", function(event)
+            $doms.care = $buttonContainer.find(".button:nth-child(13)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -105,7 +129,7 @@
 
             });
 
-            $doms.contact = $buttonContainer.find(".button:nth-child(13)").on("click", function(event)
+            $doms.contact = $buttonContainer.find(".button:nth-child(15)").on("click", function(event)
             {
                 event.preventDefault();
 
@@ -115,12 +139,11 @@
 
             });
 
-            $doms.vip = $buttonContainer.find(".button:nth-child(15)").on("mouseover", function(event)
+            $doms.vip = $buttonContainer.find(".button:nth-child(17)").on("mouseover", function(event)
             {
                 event.preventDefault();
 
                 self.toggleVipMenu(!_vipMenuOn);
-
             });
 
             /* vip menu */
@@ -199,6 +222,11 @@
                 self.switchMobileOpenMode(false);
 
             });
+        },
+
+        switchReservactionIcon: function(isActive)
+        {
+            $doms.reservactionIcon.toggleClass("active-mode", isActive);
         },
 
         switchMobileOpenMode: function(b)

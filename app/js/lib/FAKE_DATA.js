@@ -93,12 +93,48 @@ window._FAKE_DATA_ =
 
     },
 
+    /*** API 外連網站 ***/
+    "linkages":
+    {
+        "error": '',
+
+        // 外連項目資料, link: 外聯網址, pc: 256 x 97, mobile: 320 x 121
+        "data_list":
+        [
+            {
+                "link": "http://example.com/",
+                "pc": "./test/images/linkage-1.jpg",
+                "mobile": "./test/images/linkage-1.m.jpg"
+            }
+
+            ,{
+                "link": "http://example.com/",
+                "pc": "./test/images/linkage-2.jpg",
+                "mobile": "./test/images/linkage-2.m.jpg"
+            },
+            {
+                "link": "http://example.com/",
+                "pc": "./test/images/linkage-3.jpg",
+                "mobile": "./test/images/linkage-3.m.jpg"
+            }
+
+            //,{
+            //    "link": "http://example.com/",
+            //    "pc": "./test/images/linkage-4.jpg",
+            //    "mobile": "./test/images/linkage-4.m.jpg"
+            //},
+            //{
+            //    "link": "http://example.com/",
+            //    "pc": "./test/images/linkage-5.jpg",
+            //    "mobile": "./test/images/linkage-5.m.jpg"
+            //}
+        ]
+    },
+
     /*** API 最新消息 ***/
     "news":
     {
         "error": '',
-
-        //"main_title": "10月開幕優惠開跑，歡迎預約參觀",
 
         "data_list":
         [
@@ -108,6 +144,10 @@ window._FAKE_DATA_ =
                 "day": "01",
 
                 "title":"慶開幕",
+
+                // 外連資料
+                "link": "http://example.com/",
+                "link_name": "外連網址",
 
                 "content":
                     "麗格產後護理之家即將在淡水開幕！<br/>"+
@@ -877,7 +917,8 @@ window._FAKE_DATA_ =
 
         "ws_url": "ws://54.64.234.197:8080/taichung_ch1",
         "baby_name": "寶寶",
-        "mon_name": "媽媽"
+        "mon_name": "媽媽",
+        "duration": 0
     },
 
     // 問券調查 送出

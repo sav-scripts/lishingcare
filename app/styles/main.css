@@ -261,7 +261,7 @@ body.mapping #scene-container .content-mask {
   position: absolute;
   right: 0;
   top: 20px;
-  width: 740px;
+  width: 814px;
   transition: width 0.3s linear 0.2s;
 }
 #nav .button-group .btn-logout {
@@ -297,6 +297,9 @@ body.mapping #scene-container .content-mask {
 #nav .button-group .button:active {
   margin-top: 1px;
 }
+#nav .button-group .button:nth-child(3).taipei:after {
+  content: '麗格首頁';
+}
 #nav .button-group .gap {
   position: relative;
   width: 1px;
@@ -311,24 +314,27 @@ body.mapping #scene-container .content-mask {
   content: '首頁';
 }
 #nav .button-group .button:nth-child(3):after {
-  content: '關於我們';
+  content: '麗馨首頁';
 }
 #nav .button-group .button:nth-child(5):after {
-  content: '最新消息';
+  content: '關於我們';
 }
 #nav .button-group .button:nth-child(7):after {
-  content: '環境設施';
+  content: '最新消息';
 }
 #nav .button-group .button:nth-child(9):after {
-  content: '月子膳食';
+  content: '環境設施';
 }
 #nav .button-group .button:nth-child(11):after {
-  content: '專業照護';
+  content: '月子膳食';
 }
 #nav .button-group .button:nth-child(13):after {
-  content: '聯絡資訊';
+  content: '專業照護';
 }
 #nav .button-group .button:nth-child(15):after {
+  content: '聯絡資訊';
+}
+#nav .button-group .button:nth-child(17):after {
   content: '會員專屬';
 }
 #nav .vip-menu-cover {
@@ -394,10 +400,6 @@ body.mapping #scene-container .content-mask {
   background-color: #a18b73;
   opacity: 0.4;
 }
-#nav.with-logout-btn .button-group {
-  width: 740px;
-  transition: width 0.3s linear;
-}
 #nav.with-logout-btn .button-group .btn-logout {
   background-image: url("../images/btn-logout.png");
 }
@@ -415,6 +417,64 @@ body.mapping #scene-container .content-mask {
   background-color: #a18b73;
 }
 /* page bottom*/
+#linkages {
+  position: relative;
+  width: 100%;
+  height: 97px;
+  overflow: hidden;
+  background-color: white;
+}
+#linkages .link-item-container {
+  position: absolute;
+  width: auto;
+}
+#linkages .link-item-container .link-item {
+  position: relative;
+  width: 256px;
+  height: 97px;
+  float: left;
+}
+#linkages .arrow-prev,
+#linkages .arrow-next {
+  position: absolute;
+  width: 40px;
+  height: 97px;
+  cursor: pointer;
+}
+#linkages .arrow-prev.hide-mode,
+#linkages .arrow-next.hide-mode {
+  visibility: hidden;
+}
+#linkages .arrow-prev {
+  left: 0;
+  background-image: url("../images/linkage-arrow-prev.png");
+}
+#linkages .arrow-prev.taichung {
+  background-image: url("../images/taichung/linkage-arrow-prev.png");
+}
+#linkages .arrow-prev.taipei {
+  background-image: url("../images/taipei/linkage-arrow-prev.png");
+}
+#linkages .arrow-prev:active {
+  background-position: -1px 0;
+}
+#linkages .arrow-next {
+  right: 0;
+  background-image: url("../images/linkage-arrow-next.png");
+}
+#linkages .arrow-next.taichung {
+  background-image: url("../images/taichung/linkage-arrow-next.png");
+}
+#linkages .arrow-next.taipei {
+  background-image: url("../images/taipei/linkage-arrow-next.png");
+}
+#linkages .arrow-next:active {
+  background-position: 1px 0;
+}
+#linkages.centel-mode .arrow-next,
+#linkages.centel-mode .arrow-prev {
+  display: none;
+}
 #footer {
   position: relative;
   width: 100%;
@@ -515,6 +575,7 @@ body.mapping #scene-container .content-mask {
 #footer .mode-1-content .misc-image.taipei {
   background-image: url("../images/taipei/footer-misc-1.png");
 }
+#footer .mode-1-content .field-site-name,
 #footer .mode-1-content .field-tel,
 #footer .mode-1-content .field-address,
 #footer .mode-1-content .field-facebook {
@@ -522,6 +583,12 @@ body.mapping #scene-container .content-mask {
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 16px;
   color: #666464;
+}
+#footer .mode-1-content .field-site-name {
+  left: 383px;
+  top: 60px;
+  letter-spacing: 2px;
+  font-size: 20px;
 }
 #footer .mode-1-content .field-tel {
   left: 407px;
@@ -654,6 +721,34 @@ body.mapping #scene-container .content-mask {
   margin-right: auto;
   color: #666464;
 }
+#reservation-icon {
+  position: fixed;
+  right: 50%;
+  top: 650px;
+  width: 137px;
+  height: 137px;
+  background-image: url("../images/index-reservation.png");
+  z-index: 10;
+  margin-right: -615px;
+  cursor: pointer;
+  transition: top 0.4s ease-out, opacity 0.4s ease-out;
+  opacity: 0;
+}
+#reservation-icon.taichung {
+  background-image: url("../images/taichung/index-reservation.png");
+}
+#reservation-icon.taipei {
+  background-image: url("../images/taipei/index-reservation.png");
+}
+#reservation-icon.active-mode {
+  opacity: 1;
+}
+#reservation-icon:active {
+  margin-bottom: -1px;
+}
+#reservation-icon.pin-mode {
+  top: calc(100% - 19px - 137px);
+}
 /* index */
 #index {
   position: relative;
@@ -677,13 +772,16 @@ body.mapping #scene-container .content-mask {
   height: 100%;
 }
 #index .key-images .reservation-icon {
-  position: absolute;
-  right: 25px;
-  bottom: 19px;
+  position: fixed;
+  right: 50%;
+  top: 650px;
   width: 137px;
   height: 137px;
   background-image: url("../images/index-reservation.png");
+  z-index: 10;
+  margin-right: -615px;
   cursor: pointer;
+  transition: top 0.4s ease-out;
 }
 #index .key-images .reservation-icon.taichung {
   background-image: url("../images/taichung/index-reservation.png");
@@ -693,6 +791,9 @@ body.mapping #scene-container .content-mask {
 }
 #index .key-images .reservation-icon:active {
   margin-bottom: -1px;
+}
+#index .key-images .reservation-icon.pin-mode {
+  top: calc(100% - 19px - 137px);
 }
 #index .brown-bar {
   position: relative;
@@ -1577,6 +1678,17 @@ body.mapping #scene-container .content-mask {
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 13.5px;
   color: #666464;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+#news .news-container .news-block > .link {
+  position: relative;
+  margin-left: 270px;
+  margin-top: -20px;
+  margin-bottom: 27px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13.5px;
+  color: #0070f0;
   letter-spacing: 1px;
   line-height: 24px;
 }
@@ -4858,6 +4970,9 @@ body.mapping #scene-container .content-mask {
   .scene-container .top-bleed {
     height: 167px;
   }
+  #reservation-icon {
+    display: none;
+  }
   /* nav */
   #nav {
     width: 640px;
@@ -4881,6 +4996,9 @@ body.mapping #scene-container .content-mask {
   #nav.pin-mode .menu-icon {
     top: 12px;
   }
+  #nav.pin-mode #reservation-icon-mobile {
+    top: 28px;
+  }
   #nav .logo {
     position: absolute;
     left: 34px;
@@ -4900,7 +5018,7 @@ body.mapping #scene-container .content-mask {
   #nav .menu-icon {
     position: absolute;
     right: 31px;
-    top: 46px;
+    top: 48px;
     width: 80px;
     height: 80px;
     background-image: url("../images/menu-icon.png");
@@ -4914,6 +5032,25 @@ body.mapping #scene-container .content-mask {
     background-image: url("../images/taipei/menu-icon.png");
   }
   #nav .menu-icon:active {
+    margin-top: 1px;
+  }
+  #nav #reservation-icon-mobile {
+    position: absolute;
+    right: 147px;
+    top: 62px;
+    width: 105px;
+    height: 53px;
+    background-image: url("../images/preorder-icon.m.png");
+    cursor: pointer;
+    transition: top 0.2s linear;
+  }
+  #nav #reservation-icon-mobile.taichung {
+    background-image: url("../images/taichung/preorder-icon.m.png");
+  }
+  #nav #reservation-icon-mobile.taipei {
+    background-image: url("../images/taipei/preorder-icon.m.png");
+  }
+  #nav #reservation-icon-mobile:active {
     margin-top: 1px;
   }
   #nav .table-container {
@@ -5048,6 +5185,9 @@ body.mapping #scene-container .content-mask {
     height: 550px;
   }
   #index .key-images .reservation-icon {
+    position: absolute;
+    top: auto;
+    margin-right: auto;
     right: 31px;
     bottom: 14px;
     width: 202px;
@@ -5552,8 +5692,9 @@ body.mapping #scene-container .content-mask {
     color: #666464;
     letter-spacing: 0px;
     line-height: 58px;
-    width: 540px;
+    width: 400px;
     margin: 15px auto 0;
+    max-width: 400px;
   }
   #index .care .block .detail .middle .contents .texts ul {
     margin: 0 0 -20px 0;
@@ -5671,6 +5812,38 @@ body.mapping #scene-container .content-mask {
     background-position: right;
   }
   /* page bottom*/
+  #linkages {
+    height: 121px;
+    overflow: hidden;
+  }
+  #linkages .link-item-container .link-item {
+    width: 320px;
+    height: 121px;
+    float: left;
+  }
+  #linkages .arrow-prev,
+  #linkages .arrow-next {
+    width: 40px;
+    height: 121px;
+  }
+  #linkages .arrow-prev {
+    background-image: url("../images/linkage-arrow-prev.m.png");
+  }
+  #linkages .arrow-prev.taichung {
+    background-image: url("../images/taichung/linkage-arrow-prev.m.png");
+  }
+  #linkages .arrow-prev.taipei {
+    background-image: url("../images/taipei/linkage-arrow-prev.m.png");
+  }
+  #linkages .arrow-next {
+    background-image: url("../images/linkage-arrow-next.m.png");
+  }
+  #linkages .arrow-next.taichung {
+    background-image: url("../images/taichung/linkage-arrow-next.m.png");
+  }
+  #linkages .arrow-next.taipei {
+    background-image: url("../images/taipei/linkage-arrow-next.m.png");
+  }
   #footer {
     position: relative;
     width: 100%;
@@ -5740,12 +5913,20 @@ body.mapping #scene-container .content-mask {
   #footer .mode-1-content .misc-image.taipei {
     background-image: url("../images/taipei/footer-misc-1.m.png");
   }
+  #footer .mode-1-content .field-site-name,
   #footer .mode-1-content .field-tel,
   #footer .mode-1-content .field-address,
   #footer .mode-1-content .field-facebook {
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 25.57px;
     color: #666464;
+  }
+  #footer .mode-1-content .field-site-name {
+    left: 56px;
+    top: 26px;
+    letter-spacing: 2px;
+    font-size: 34px;
+    color: #a08c6e;
   }
   #footer .mode-1-content .field-tel {
     left: 98px;

@@ -52,6 +52,7 @@ module.exports = function(grunt)
                             "templates/**",
                             'index.php',
                             'test/**',
+                            'misc/**',
                             'js/lib/**'
                         ],
                         dest: 'dist/app'

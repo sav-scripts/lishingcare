@@ -12,8 +12,34 @@
             width: 100%;
             height: 50%;
 
-            .text{
+            .container{
 
+                position: fixed;
+                width: 100%;
+                height: calc((100% - 140px) * .5);
+
+                .text{
+                    top: 50%;
+                    margin-top: (-203px * .5);
+
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                @media (max-height: 666px) {
+
+                    // container height is 263 here;
+
+                    @bleed-y: 20px;
+
+                    .text{
+                        top: @bleed-y;
+                        margin-top: 0;
+                        background-size: contain;
+                        height: calc(100% - (20px * 2));
+                    }
+
+                }
             }
         }
 
@@ -21,8 +47,12 @@
 
             .image-bg('image-taichung.m.jpg');
 
-            .text{
-                margin-top: (-203 * .5) - 50px;
+            .container{
+
+                top: 0;
+
+                .text{
+                }
             }
 
         }
@@ -32,9 +62,11 @@
             top: 50%;
             .image-bg('image-taipei.m.jpg');
 
+            .container{
+                bottom:  0;
 
-            .text{
-                margin-top: (-203 * .5) + 50px;
+                .text{
+                }
             }
 
         }

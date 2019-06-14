@@ -66,7 +66,18 @@
                         $news.find(".day").text(dataObj.day);
 
                         $news.find(".title").text(dataObj.title);
-                        $news.find(".detail").html(dataObj.content);
+                        $news.find(".detail").html(dataObj.content).append("<div class='spacer'></div>");
+
+                        var $link = $news.find(".link");
+                        if(dataObj.link && dataObj.link_name)
+                        {
+                            $link.find("a").html(dataObj.link_name).attr("href", dataObj.link);
+                        }
+                        else
+                        {
+                            $link.detach();
+                        }
+
 
                         //console.log($news.find('.detail').length);
 

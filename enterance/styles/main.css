@@ -106,12 +106,25 @@ body {
     width: 100%;
     height: 50%;
   }
+  #index .taipei-block .container,
+  #index .taichung-block .container {
+    position: fixed;
+    width: 100%;
+    height: calc((100% - 140px) * 0.5);
+  }
+  #index .taipei-block .container .text,
+  #index .taichung-block .container .text {
+    top: 50%;
+    margin-top: -101.5px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   #index .taipei-block {
     background-image: url("../images/image-taichung.m.jpg");
     background-size: auto;
   }
-  #index .taipei-block .text {
-    margin-top: -151.5px;
+  #index .taipei-block .container {
+    top: 0;
   }
   #index .taichung-block {
     left: 0;
@@ -119,8 +132,8 @@ body {
     background-image: url("../images/image-taipei.m.jpg");
     background-size: auto;
   }
-  #index .taichung-block .text {
-    margin-top: -51.5px;
+  #index .taichung-block .container {
+    bottom: 0;
   }
   #index .middle-cover {
     position: absolute;
@@ -135,5 +148,14 @@ body {
   #index .footer {
     bottom: 50%;
     margin-bottom: -29px;
+  }
+}
+@media (max-width: 640px) and (max-height: 666px) {
+  #index .taipei-block .container .text,
+  #index .taichung-block .container .text {
+    top: 20px;
+    margin-top: 0;
+    background-size: contain;
+    height: calc(100% - (20px * 2));
   }
 }

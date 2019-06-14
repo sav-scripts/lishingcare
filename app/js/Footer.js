@@ -5,6 +5,8 @@
 (function(){
 
     var $doms = {},
+        _linkageData,
+        _linkageIndex = 0,
         _isMapOnlyMode = false,
         _isHideMode = true,
         _lat,
@@ -17,6 +19,7 @@
         {
             $doms.container = $("#footer");
 
+            buildLinkages();
             buildFacebookPage();
             buildGoogleMap();
 
@@ -44,8 +47,159 @@
             $doms.container.toggleClass('hide-mode', _isHideMode);
         },
 
-        buildGoogleMap: buildGoogleMap
+        buildGoogleMap: buildGoogleMap,
+
+        resize: function()
+        {
+            var vp = Main.viewport;
+            if(vp.changed)
+            {
+
+                updateLinkage();
+            }
+        }
     };
+
+    function buildLinkages()
+    {
+        $doms.linkage = $("#linkages");
+        $doms.linkageContainer = $doms.linkage.find(".link-item-container");
+        $doms.linkageArrowPrev = $doms.linkage.find(".arrow-prev");
+        $doms.linkageArrowNext = $doms.linkage.find(".arrow-next");
+
+        ApiProxy.callApi("linkages", {}, "linkages", function(response)
+        {
+            _linkageData = response;
+
+
+            var i,
+                dataObj,
+                $linkItem;
+
+            for(i=0;i<_linkageData.data_list.length;i++)
+            {
+                dataObj = _linkageData.data_list[i];
+                $linkItem = createLinkItem(dataObj);
+
+            }
+
+            //$doms.linkageContainer.append("<div class='spacer'></div>");
+
+            updateLinkage();
+
+        });
+    }
+
+    function createLinkItem(dataObj)
+    {
+        var $linkItem = dataObj.$linkItem = $("<a href='"+dataObj.link+"' target='_blank'><div class='link-item'></div></a>");
+        $doms.linkageContainer.append($linkItem);
+
+    }
+
+    function updateLinkageImages()
+    {
+        if(!_linkageData) return;
+
+        var i,
+            dataObj,
+            keyword = Main.viewport.index == 0? "mobile": "pc";
+
+        for(i=0;i<_linkageData.data_list.length;i++)
+        {
+            dataObj = _linkageData.data_list[i];
+            dataObj.$linkItem.find("div").css("background-image", "url("+dataObj[keyword]+")");
+
+        }
+    }
+
+    function updateLinkage()
+    {
+        if(!_linkageData) return;
+
+        updateLinkageImages();
+
+        var vp = Main.viewport,
+            rowSize = (vp.index == 0)? 2: 5,
+            itemWidth = vp.index == 0? 320: 256,
+            isScrollNeeded = (_linkageData.data_list.length > rowSize);
+
+        var totalWidth = itemWidth * _linkageData.data_list.length;
+
+        $doms.linkageContainer.width(totalWidth);
+
+        TweenMax.killTweensOf($doms.linkageContainer);
+
+        if(isScrollNeeded)
+        {
+            _linkageIndex = 0;
+            $doms.linkage.toggleClass("centel-mode", false);
+            $doms.linkageContainer.css("left", 0).css("margin-left", "");
+
+            updateLinkageIndex();
+        }
+        else
+        {
+            $doms.linkage.toggleClass("centel-mode", true);
+
+            var width = parseInt($doms.linkageContainer.width());
+            $doms.linkageContainer.css("left", "50%").css("margin-left", -width * .5);
+
+        }
+    }
+
+    function updateLinkageIndex()
+    {
+        var vp = Main.viewport,
+            rowSize = vp.index == 0? 2: 5,
+            hasPrev = !(_linkageIndex === 0),
+            hasNext = ((_linkageData.data_list.length - rowSize - _linkageIndex) > 0);
+
+        console.log(_linkageData.data_list.length - rowSize - _linkageIndex);
+
+        console.log("hasNext = " + hasNext);
+
+        $doms.linkageArrowPrev.toggleClass('hide-mode', !hasPrev);
+        $doms.linkageArrowNext.toggleClass('hide-mode', !hasNext);
+
+        $doms.linkageArrowPrev.unbind("click");
+        $doms.linkageArrowNext.unbind("click");
+
+        if(hasPrev)
+        {
+            $doms.linkageArrowPrev.bind("click", function(event)
+            {
+                event.preventDefault();
+
+                linkageToIndex(_linkageIndex - 1);
+            });
+        }
+
+        if(hasNext)
+        {
+            $doms.linkageArrowNext.bind("click", function(event)
+            {
+                event.preventDefault();
+
+                linkageToIndex(_linkageIndex + 1);
+            });
+
+        }
+    }
+
+    function linkageToIndex(newIndex)
+    {
+        _linkageIndex = newIndex;
+
+        var vp = Main.viewport,
+            itemWidth = vp.index == 0? 320: 256,
+            targetLeft = -_linkageIndex * itemWidth;
+
+        TweenMax.to($doms.linkageContainer, .4,{left: targetLeft});
+
+
+        updateLinkageIndex();
+    }
 
     function buildFacebookPage()
     {

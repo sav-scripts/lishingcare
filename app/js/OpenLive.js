@@ -4,6 +4,9 @@
     var $doms,
         _isInit = false,
         _ws_url,
+        _durationLimit = 0,
+        _tlTimeout,
+        _player,
         _isHiding = true;
 
     var self = window.OpenLive =
@@ -74,7 +77,7 @@
 
         validTokenExist: function(token, cb)
         {
-            ApiProxy.callApi("trade_vip_camera_token", {vip_token: vipToken}, false, function(response)
+            ApiProxy.callApi("trade_vip_camera_token", {vip_token: token}, false, function(response)
             {
                 if(response.error)
                 {
@@ -119,6 +122,17 @@
                 return;
             }
 
+            if(_tlTimeout)
+            {
+                _tlTimeout.kill();
+                _tlTimeout = null;
+            }
+            //if(_player)
+            //{
+            //    _player.destroy();
+            //    _player = null;
+            //}
+
             var tl = new TimelineMax;
             tl.to($doms.container, .4, {autoAlpha: 0});
             tl.add(function ()
@@ -151,8 +165,9 @@
             else
             {
                 _ws_url = response.ws_url;
+                //_durationLimit = parseInt(response.duration);
 
-                var player = new JSMpeg.Player(_ws_url, {canvas: $doms.videoCanvas[0], pauseWhenHidden: false});
+                _player = new JSMpeg.Player(_ws_url, {canvas: $doms.videoCanvas[0], pauseWhenHidden: false});
 
                 $doms.container.find(".baby-name").text(response.baby_name);
                 $doms.container.find(".mon-name").text(response.mon_name);
@@ -164,6 +179,34 @@
                 console.log("share url: " + shareUrl);
 
                 LiveQrcode.setQrcode(shareUrl);
+
+                if(_durationLimit > 0)
+                {
+                    var tl = _tlTimeout = new TimelineMax;
+                    tl.add(function()
+                    {
+                        if(_tlTimeout)
+                        {
+                            _tlTimeout.kill();
+                            _tlTimeout = null;
+                        }
+                        //if(_player)
+                        //{
+                        //    _player.destroy();
+                        //    _player = null;
+                        //}
+
+                        //console.log("check");
+
+                        alert('視訊連線逾時, 將登出使用者帳號');
+
+                        Vip.logout(function()
+                        {
+                            Hash.to("/Login");
+                        });
+
+                    }, _durationLimit);
+                }
             }
 
             cb.call();

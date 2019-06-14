@@ -135,10 +135,7 @@
                         ScrollListener.scrollTo(targetScrollTop);
                     }
                 });
-
-
             }
-
         },
 
         show: function (cb)
