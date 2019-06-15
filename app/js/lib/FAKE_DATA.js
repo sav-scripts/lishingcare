@@ -878,7 +878,7 @@ window._FAKE_DATA_ =
             "weight": "60kg",
             "head": "很大",
 
-            // 寶寶照片, pc: 292 x 244, mobile: 509 x 590
+            // 寶寶照片, pc: 292 x 444, mobile: 509 x 590
             "photo":
             {
                 "pc": "./test/images/vip-baby-2-sample.jpg",
@@ -889,18 +889,33 @@ window._FAKE_DATA_ =
 
         // 成長紀錄
         "record":
-        {
-            "title": "我的第一張照片",
-            "detail":"今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。",
-
-            // 寶寶照片, pc: 290 x 290, mobile: 394 x 394
-            "photo":
+        [
             {
-                "pc": "./test/images/vip-baby-3-baby-sample.jpg",
-                "mobile": "./test/images/vip-baby-3-baby-sample.m.jpg"
-            }
+                "title": "我的第 1 張照片",
+                "detail":"今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。",
 
-        }
+                // 寶寶照片, pc: 290 x 290, mobile: 394 x 394
+                "photo":
+                {
+                    "pc": "./test/images/vip-baby-3-baby-sample.jpg",
+                    "mobile": "./test/images/vip-baby-3-baby-sample.m.jpg"
+                }
+
+            },
+
+            {
+                "title": "我的第 2 張照片",
+                "detail":"今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。今天…是我來到嘉禾的第一天，有點緊張又有點興奮，護理師阿姨很慎重的幫我拍一張美美照要送給媽咪和爸比，我要睜大眼睛看鏡頭。",
+
+                // 寶寶照片, pc: 290 x 290, mobile: 394 x 394
+                "photo":
+                {
+                    "pc": "./test/images/vip-baby-3-baby-sample2.jpg",
+                    "mobile": "./test/images/vip-baby-3-baby-sample2.m.jpg"
+                }
+
+            }
+        ]
     },
 
     // 公開分享視訊網址呼叫

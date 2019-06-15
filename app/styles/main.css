@@ -3667,73 +3667,90 @@ body.mapping #scene-container .content-mask {
 #vip-baby .main-container .part-3 {
   position: relative;
   width: 100%;
-  height: 810px;
+  height: auto;
+}
+#vip-baby .main-container .part-3 .top-part {
+  position: relative;
+  width: 100%;
+  height: 138px;
+  background-image: url("../images/vip-baby-3-top.jpg");
+}
+#vip-baby .main-container .part-3 .top-part.taichung {
+  background-image: url("../images/taichung/vip-baby-3-top.jpg");
+}
+#vip-baby .main-container .part-3 .top-part.taipei {
+  background-image: url("../images/taipei/vip-baby-3-top.jpg");
+}
+#vip-baby .main-container .part-3 .content-block {
+  position: relative;
+  width: 100%;
+  height: 676px;
   background-image: url("../images/vip-baby-3-bg.jpg");
 }
-#vip-baby .main-container .part-3.taichung {
+#vip-baby .main-container .part-3 .content-block.taichung {
   background-image: url("../images/taichung/vip-baby-3-bg.jpg");
 }
-#vip-baby .main-container .part-3.taipei {
+#vip-baby .main-container .part-3 .content-block.taipei {
   background-image: url("../images/taipei/vip-baby-3-bg.jpg");
 }
-#vip-baby .main-container .part-3 .baby-image-container {
+#vip-baby .main-container .part-3 .content-block .baby-image-container {
   position: absolute;
   width: 395px;
   height: 403px;
   left: 258px;
-  top: 238px;
+  top: 113px;
 }
-#vip-baby .main-container .part-3 .baby-image-container .image {
+#vip-baby .main-container .part-3 .content-block .baby-image-container .image {
   position: absolute;
   width: 290px;
   height: 290px;
   left: 50px;
   top: 60px;
 }
-#vip-baby .main-container .part-3 .baby-image-container .mask {
+#vip-baby .main-container .part-3 .content-block .baby-image-container .mask {
   position: absolute;
   width: 100%;
   height: 100%;
   background-image: url("../images/vip-baby-3-mask.png");
 }
-#vip-baby .main-container .part-3 .baby-image-container .mask.taichung {
+#vip-baby .main-container .part-3 .content-block .baby-image-container .mask.taichung {
   background-image: url("../images/taichung/vip-baby-3-mask.png");
 }
-#vip-baby .main-container .part-3 .baby-image-container .mask.taipei {
+#vip-baby .main-container .part-3 .content-block .baby-image-container .mask.taipei {
   background-image: url("../images/taipei/vip-baby-3-mask.png");
 }
-#vip-baby .main-container .part-3 .misc-1 {
+#vip-baby .main-container .part-3 .content-block .misc-1 {
   position: absolute;
   left: 515px;
-  top: 567px;
+  top: 442px;
   width: 166px;
   height: 167px;
   margin-left: 0px;
   margin-top: 0px;
   background-image: url("../images/vip-baby-3-misc-1.png");
 }
-#vip-baby .main-container .part-3 .misc-1.taichung {
+#vip-baby .main-container .part-3 .content-block .misc-1.taichung {
   background-image: url("../images/taichung/vip-baby-3-misc-1.png");
 }
-#vip-baby .main-container .part-3 .misc-1.taipei {
+#vip-baby .main-container .part-3 .content-block .misc-1.taipei {
   background-image: url("../images/taipei/vip-baby-3-misc-1.png");
 }
-#vip-baby .main-container .part-3 .title-text {
+#vip-baby .main-container .part-3 .content-block .title-text {
   position: absolute;
   width: 250px;
   left: 698px;
-  top: 257px;
+  top: 132px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 18.89px;
   color: #4c4c4c;
   letter-spacing: 3px;
   text-align: center;
 }
-#vip-baby .main-container .part-3 .detail {
+#vip-baby .main-container .part-3 .content-block .detail {
   position: absolute;
   width: 300px;
   left: 681px;
-  top: 322px;
+  top: 197px;
   font-family: '微軟正黑體', "Heiti TC", serif;
   font-size: 17.6px;
   color: #4c4c4c;
@@ -7587,75 +7604,85 @@ body.mapping #scene-container .content-mask {
     line-height: 60.2px;
     text-align: center;
   }
-  #vip-baby .main-container .part-3 {
-    height: 1713px;
+  #vip-baby .main-container .part-3 .top-part {
+    height: 77px;
+    background-image: url("../images/vip-baby-3-top.m.jpg");
+  }
+  #vip-baby .main-container .part-3 .top-part.taichung {
+    background-image: url("../images/taichung/vip-baby-3-top.m.jpg");
+  }
+  #vip-baby .main-container .part-3 .top-part.taipei {
+    background-image: url("../images/taipei/vip-baby-3-top.m.jpg");
+  }
+  #vip-baby .main-container .part-3 .content-block {
+    height: 1636px;
     background-image: url("../images/vip-baby-3-bg.m.jpg");
   }
-  #vip-baby .main-container .part-3.taichung {
+  #vip-baby .main-container .part-3 .content-block.taichung {
     background-image: url("../images/taichung/vip-baby-3-bg.m.jpg");
   }
-  #vip-baby .main-container .part-3.taipei {
+  #vip-baby .main-container .part-3 .content-block.taipei {
     background-image: url("../images/taipei/vip-baby-3-bg.m.jpg");
   }
-  #vip-baby .main-container .part-3 .baby-image-container {
+  #vip-baby .main-container .part-3 .content-block .baby-image-container {
     position: absolute;
     width: 536px;
     height: 547px;
     left: 52px;
-    top: 236px;
+    top: 159px;
   }
-  #vip-baby .main-container .part-3 .baby-image-container .image {
+  #vip-baby .main-container .part-3 .content-block .baby-image-container .image {
     position: absolute;
     width: 394px;
     height: 394px;
     left: 67px;
     top: 81px;
   }
-  #vip-baby .main-container .part-3 .baby-image-container .mask {
+  #vip-baby .main-container .part-3 .content-block .baby-image-container .mask {
     position: absolute;
     width: 100%;
     height: 100%;
     background-image: url("../images/vip-baby-3-mask.m.png");
   }
-  #vip-baby .main-container .part-3 .baby-image-container .mask.taichung {
+  #vip-baby .main-container .part-3 .content-block .baby-image-container .mask.taichung {
     background-image: url("../images/taichung/vip-baby-3-mask.m.png");
   }
-  #vip-baby .main-container .part-3 .baby-image-container .mask.taipei {
+  #vip-baby .main-container .part-3 .content-block .baby-image-container .mask.taipei {
     background-image: url("../images/taipei/vip-baby-3-mask.m.png");
   }
-  #vip-baby .main-container .part-3 .deco-1 {
+  #vip-baby .main-container .part-3 .content-block .deco-1 {
     position: absolute;
     left: 22px;
-    top: 722px;
+    top: 645px;
     width: 546px;
     height: 178px;
     margin-left: 0px;
     margin-top: 0px;
     background-image: url("../images/vip-baby-3-deco-1.m.png");
   }
-  #vip-baby .main-container .part-3 .deco-1.taichung {
+  #vip-baby .main-container .part-3 .content-block .deco-1.taichung {
     background-image: url("../images/taichung/vip-baby-3-deco-1.m.png");
   }
-  #vip-baby .main-container .part-3 .deco-1.taipei {
+  #vip-baby .main-container .part-3 .content-block .deco-1.taipei {
     background-image: url("../images/taipei/vip-baby-3-deco-1.m.png");
   }
-  #vip-baby .main-container .part-3 .misc-1 {
+  #vip-baby .main-container .part-3 .content-block .misc-1 {
     display: none;
   }
-  #vip-baby .main-container .part-3 .title-text {
+  #vip-baby .main-container .part-3 .content-block .title-text {
     width: 350px;
     left: 153px;
-    top: 830px;
+    top: 753px;
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 29.17px;
     color: #4c4c4c;
     letter-spacing: 3px;
     text-align: center;
   }
-  #vip-baby .main-container .part-3 .detail {
+  #vip-baby .main-container .part-3 .content-block .detail {
     width: 495px;
     left: 77px;
-    top: 908px;
+    top: 831px;
     font-family: '微軟正黑體', "Heiti TC", serif;
     font-size: 29.17px;
     color: #4c4c4c;

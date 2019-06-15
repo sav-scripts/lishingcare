@@ -5,6 +5,7 @@
         _isInit = false,
         _isHiding = true,
         _data,
+        _recordData,
         _currentContentHash = undefined;
 
     var self = window.VipBaby =
@@ -99,10 +100,32 @@
                     /* Record */
                     (function(){
 
-                        var $container = $doms.contents["/Record"],
-                            data = _data.record;
-                        $container.find(".title-text").text(data.title);
-                        $container.find(".detail").html(data.detail);
+                        var $partContainer = $doms.contents["/Record"];
+
+                        _recordData = _data.record.length? _data.record: [_data.record];
+
+                        $doms.recordSample = $partContainer.find(".content-block").detach();
+
+                        var i;
+
+                        for(i=0;i<_recordData.length;i++)
+                        {
+                            createBlock(i);
+                        }
+
+                        function createBlock(index)
+                        {
+
+                            var $container = $doms.recordSample.clone(),
+                                data = _recordData[index];
+
+                            $partContainer.append($container);
+
+                            data.$container = $container;
+
+                            $container.find(".title-text").text(data.title);
+                            $container.find(".detail").html(data.detail);
+                        }
 
                     }());
 
@@ -228,10 +251,15 @@
 
         $container.find('.baby-image').css("background-image", "url("+data.photo[imageType]+")");
 
-        $container = $doms.contents["/Record"];
-        data = _data.record;
 
-        $container.find('.baby-image-container .image').css("background-image", "url("+data.photo[imageType]+")");
+        var i;
+
+        for(i=0;i<_recordData.length;i++)
+        {
+            data = _data.record[i];
+            data.$container.find('.baby-image-container .image').css("background-image", "url("+data.photo[imageType]+")");
+
+        }
     }
 
 }());

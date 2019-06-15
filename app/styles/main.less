@@ -3801,63 +3801,84 @@ body.mapping{
         .part-3{
             position: relative;
             width: 100%;
-            height: 810px;
-            .image-bg('vip-baby-3-bg.jpg');
+            height: auto;
 
-            .baby-image-container{
+            .top-part{
+                position: relative;
+                width: 100%;
+                height: 138px;
 
-                @w: 395px;
-                @h: 403px;
-                position: absolute;
-                width: @w;
-                height: @h;
-                left: 258px;
-                top: 238px;
+                .image-bg("vip-baby-3-top.jpg");
+            }
 
+            .content-block{
 
-                .image{
+                position: relative;
+                width: 100%;
+                height: 676px;
+
+                @dy: 125px;
+
+                .image-bg('vip-baby-3-bg.jpg');
+
+                .baby-image-container{
+
+                    @w: 395px;
+                    @h: 403px;
                     position: absolute;
-                    width: 290px;
-                    height: 290px;
-//                    background-color: red;
-//                    .image-bg-test("vip-baby-3-baby-sample.jpg");
-                    left: 50px;
-                    top: 60px;
+                    width: @w;
+                    height: @h;
+                    left: 258px;
+                    top: 238px - @dy;
+
+
+                    .image{
+                        position: absolute;
+                        width: 290px;
+                        height: 290px;
+                        //                    background-color: red;
+                        //                    .image-bg-test("vip-baby-3-baby-sample.jpg");
+                        left: 50px;
+                        top: 60px;
+                    }
+
+                    .mask{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        .image-bg("vip-baby-3-mask.png");
+                    }
                 }
 
-                .mask{
+                .misc-1{
+                    .abs-div(515, 567 - 125, 166, 167, "vip-baby-3-misc-1.png");
+                }
+
+                .title-text{
                     position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    .image-bg("vip-baby-3-mask.png");
+                    width: 250px;
+                    left: 698px;
+                    top: 257px - @dy;
+                    //                background-color: rgba(255, 0, 0, .5);
+
+                    .default-font(18.89px, #4c4c4c, 3px);
+                    text-align: center;
+                }
+
+                .detail{
+                    position: absolute;
+                    width: 300px;
+                    left: 681px;
+                    top: 322px - @dy;
+                    //                background-color: rgba(255, 0, 0, .2);
+
+                    .default-font(17.6px, #4c4c4c, 3px);
+                    line-height: 43px;
                 }
             }
 
-            .misc-1{
-                .abs-div(515, 567, 166, 167, "vip-baby-3-misc-1.png");
-            }
 
-            .title-text{
-                position: absolute;
-                width: 250px;
-                left: 698px;
-                top: 257px;
-//                background-color: rgba(255, 0, 0, .5);
 
-                .default-font(18.89px, #4c4c4c, 3px);
-                text-align: center;
-            }
-
-            .detail{
-                position: absolute;
-                width: 300px;
-                left: 681px;
-                top: 322px;
-//                background-color: rgba(255, 0, 0, .2);
-
-                .default-font(17.6px, #4c4c4c, 3px);
-                line-height: 43px;
-            }
         }
     }
 }

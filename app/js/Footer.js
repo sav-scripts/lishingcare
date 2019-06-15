@@ -162,9 +162,8 @@
             hasPrev = !(_linkageIndex === 0),
             hasNext = ((_linkageData.data_list.length - rowSize - _linkageIndex) > 0);
 
-        console.log(_linkageData.data_list.length - rowSize - _linkageIndex);
-
-        console.log("hasNext = " + hasNext);
+        //console.log(_linkageData.data_list.length - rowSize - _linkageIndex);
+        //console.log("hasNext = " + hasNext);
 
         $doms.linkageArrowPrev.toggleClass('hide-mode', !hasPrev);
         $doms.linkageArrowNext.toggleClass('hide-mode', !hasNext);
